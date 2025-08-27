@@ -9,8 +9,7 @@ subtitle: "Data Science and Public Policy, McCourt School for Public Polcy, Geor
 
 **Slides**
 
-- [Week 1 Slides](/slides/week_01_intro.html)
-
+-   [Week 1 Slides](/slides/week_01_intro.html)
 
 **Required Readings**
 
@@ -23,5 +22,3 @@ Or one of the three below:
 -   Economics Perspective: [Gentzkow, Matthew, Bryan Kelly, and Matt Taddy. "Text as data." Journal of Economic Literature 57, no. 3 (2019): 535-574.](https://web.stanford.edu/~gentzkow/research/text-as-data.pdf)
 
 -   Sociology Perspective: <https://www.sciencedirect.com/science/article/pii/S0049089X22000904>
-
-
