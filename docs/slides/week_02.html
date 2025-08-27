@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content=" Professor: Tiago Ventura ">
+
+<title>PPOL 6801 - Text as Data - Computational Linguistics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles.scss">
+</head>
+
+<body class="nav-sidebar docked slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">PPOL 6801 - Text as Data - Computational Linguistics</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main">
+    <a href="https://github.com/TiagoVentura/PPOL_6801_2024" rel="" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../finalproject.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Final Project</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Materials</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 1: Intro</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#outline" id="toc-outline" class="nav-link active" data-scroll-target="#outline">Outline</a></li>
+  <li><a href="#challenge-i-text-is-high-dimensional" id="toc-challenge-i-text-is-high-dimensional" class="nav-link" data-scroll-target="#challenge-i-text-is-high-dimensional">Challenge I: Text is High-Dimensional</a></li>
+  <li><a href="#challenge-ii-text-is-an-unstructure-data-source" id="toc-challenge-ii-text-is-an-unstructure-data-source" class="nav-link" data-scroll-target="#challenge-ii-text-is-an-unstructure-data-source">Challenge II: Text is an unstructure data source</a></li>
+  <li><a href="#challenges-iii-outcomes-live-in-the-latent-space" id="toc-challenges-iii-outcomes-live-in-the-latent-space" class="nav-link" data-scroll-target="#challenges-iii-outcomes-live-in-the-latent-space">Challenges III: Outcomes live in the Latent Space</a></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link" data-scroll-target="#learning-goals">Learning goals</a>
+  <ul class="collapse">
+  <li><a href="#today" id="toc-today" class="nav-link" data-scroll-target="#today">Today:</a></li>
+  </ul></li>
+  <li><a href="#corpus-and-selecting-documents" id="toc-corpus-and-selecting-documents" class="nav-link" data-scroll-target="#corpus-and-selecting-documents">1. Corpus and selecting documents</a></li>
+  <li><a href="#ventura-et.-al.-streaming-chats-2021" id="toc-ventura-et.-al.-streaming-chats-2021" class="nav-link" data-scroll-target="#ventura-et.-al.-streaming-chats-2021">Ventura et. al., Streaming Chats, 2021</a></li>
+  <li><a href="#unit-of-analysis" id="toc-unit-of-analysis" class="nav-link" data-scroll-target="#unit-of-analysis">2. Unit of Analysis</a></li>
+  <li><a href="#reducing-complexity" id="toc-reducing-complexity" class="nav-link" data-scroll-target="#reducing-complexity">3. Reducing complexity</a></li>
+  <li><a href="#reducing-complexity-steps" id="toc-reducing-complexity-steps" class="nav-link" data-scroll-target="#reducing-complexity-steps">Reducing complexity: steps</a></li>
+  <li><a href="#tokenization" id="toc-tokenization" class="nav-link" data-scroll-target="#tokenization">Tokenization</a></li>
+  <li><a href="#stop-words" id="toc-stop-words" class="nav-link" data-scroll-target="#stop-words">Stop Words</a></li>
+  <li><a href="#equivalence-mapping" id="toc-equivalence-mapping" class="nav-link" data-scroll-target="#equivalence-mapping">Equivalence mapping</a></li>
+  <li><a href="#other-steps-functional-words-highly-frequent-or-rare-words" id="toc-other-steps-functional-words-highly-frequent-or-rare-words" class="nav-link" data-scroll-target="#other-steps-functional-words-highly-frequent-or-rare-words">Other steps: functional words, highly frequent or rare words</a></li>
+  <li><a href="#bag-of-words-assumption" id="toc-bag-of-words-assumption" class="nav-link" data-scroll-target="#bag-of-words-assumption">4. Bag-of-Words Assumption</a></li>
+  <li><a href="#can-we-preserve-the-word-order-another-pre-processing-decision" id="toc-can-we-preserve-the-word-order-another-pre-processing-decision" class="nav-link" data-scroll-target="#can-we-preserve-the-word-order-another-pre-processing-decision">Can we preserve the word order? (another pre-processing decision)</a>
+  <ul class="collapse">
+  <li><a href="#yes" id="toc-yes" class="nav-link" data-scroll-target="#yes">Yes</a></li>
+  </ul></li>
+  <li><a href="#complete-example" id="toc-complete-example" class="nav-link" data-scroll-target="#complete-example">Complete Example</a></li>
+  <li><a href="#denny-spirling-2018" id="toc-denny-spirling-2018" class="nav-link" data-scroll-target="#denny-spirling-2018">Denny &amp; Spirling, 2018</a></li>
+  <li><a href="#vector-space-model" id="toc-vector-space-model" class="nav-link" data-scroll-target="#vector-space-model">5. Vector Space Model</a></li>
+  <li><a href="#visualizing-vector-space-model" id="toc-visualizing-vector-space-model" class="nav-link" data-scroll-target="#visualizing-vector-space-model">Visualizing Vector Space Model</a></li>
+  <li><a href="#visualizing-vector-space-model-1" id="toc-visualizing-vector-space-model-1" class="nav-link" data-scroll-target="#visualizing-vector-space-model-1">Visualizing Vector Space Model</a></li>
+  <li><a href="#document-feature-matrix" id="toc-document-feature-matrix" class="nav-link" data-scroll-target="#document-feature-matrix">6. Document-Feature Matrix</a></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application">Application</a>
+  <ul class="collapse">
+  <li><a href="#ban-et.-al.-2019-how-newspapers-reveal-political-power." id="toc-ban-et.-al.-2019-how-newspapers-reveal-political-power." class="nav-link" data-scroll-target="#ban-et.-al.-2019-how-newspapers-reveal-political-power.">Ban et. al.&nbsp;2019, How Newspapers Reveal Political Power.</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="week_02.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">PPOL 6801 - Text as Data - Computational Linguistics</h1>
+<p class="subtitle lead"><span style="font-size: 180%;"> <br> Week 2: From Text to Matrices: Representing Text as Data </span></p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p><span style="font-size: 180%;"> Professor: Tiago Ventura </span> </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="outline" class="level2">
+<h2 class="anchored" data-anchor-id="outline">Outline</h2>
+<div class="nonincremental">
+<ul>
+<li>Challenges of working with text</li>
+<li>Defining a corpus and selecting documents</li>
+<li>Unit of analysis</li>
+<li>Reducing complexity (Denny &amp; Spirling’s article)</li>
+<li>Bag-of-Word, Vector model representation and Document-Feature Matrix</li>
+<li>Application (Ban et. al.’s paper)</li>
+</ul>
+</div>
+<!-- ## Text Analysis Workflow
+
+[**Acquire textual data:**]{.red}
+
+-   Existing corpora; scraped data; digitized text
+
+::: fragment
+[**Map Documents to a numerical representation *M***]{.red}
+
+-   Bag-of-words (sparse vectors)
+-   Embeddings (dense vectors)
+-   Reduce noise, capture signal
+:::
+
+::: fragment
+[**Map *M* to predicted values** $V^{*}$ of unknown outcomes V]{.red}
+
+-   Descriptive Analysis
+-   Classify documents into unknown categories \~ unsupervised/discovery
+-   Classify documents into known categories \~ supervised learning
+-   Scale documents on latent dimension:
+:::
+
+::: fragment
+[**Use** $V^{*}$ in subsequent analysis with other data sources]{.red}
+
+-   This is where social science happens!
+::: 
+-->
+</section>
+<section id="challenge-i-text-is-high-dimensional" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-i-text-is-high-dimensional">Challenge I: Text is High-Dimensional</h2>
+<p>From <a href="https://web.stanford.edu/~gentzkow/research/text-as-data.pdf">Gentzkow et al 2017</a>:</p>
+<ul>
+<li><p>sample of documents, each <span class="math inline">\(n_L\)</span> words long, drawn from vocabulary of <span class="math inline">\(n_V\)</span> words.</p></li>
+<li><p>The unique representation of each document has dimension <span class="math inline">\(n_{V}^{n_L}\)</span> .</p>
+<ul>
+<li>e.g., a sample of 30-word (<span class="math inline">\(n_L\)</span>) Twitter messages using only the one thousand most common words in the English language</li>
+<li>Dimensionality = <span class="math inline">\(1000^{30}\)</span></li>
+<li>As a matrix: <span class="math inline">\(M^{1000}_{n_tweets}\)</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="challenge-ii-text-is-an-unstructure-data-source" class="level2">
+<h2 class="anchored" data-anchor-id="challenge-ii-text-is-an-unstructure-data-source">Challenge II: Text is an unstructure data source</h2>
+<div class="cell" data-hash="week_02_cache/revealjs/unnamed-chunk-1_a1c2711538a656fc82374cc07d892661">
+<div class="cell-output-display">
+<p><img src="https://www.mzes.uni-mannheim.de/socialsciencedatalab/article/advancing-text-mining/figures/dfm.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="challenges-iii-outcomes-live-in-the-latent-space" class="level2">
+<h2 class="anchored" data-anchor-id="challenges-iii-outcomes-live-in-the-latent-space">Challenges III: Outcomes live in the Latent Space</h2>
+<p>In most social science applications of text as data, we are trying to make an inference about a <span class="red">latent variable</span></p>
+<ul>
+<li><span class="red">Latent variable</span>: we cannot observe directly but try to identify with statistical and theoretical assumptions.</li>
+<li>Examples: ideology, sentiment, political stance, propensity of someone to turnout</li>
+</ul>
+<div class="fragment">
+<p><span class="red">Traditional social science</span>: mapping between observed and latent/theoretical concepts is easier.</p>
+<ul>
+<li><p>We observe/measure country macroeconomic variables, collect survey responses, see how politicians vote.</p></li>
+<li><p>In text, we only observe the words. <span class="red">Much harder to identify the latent concepts.</span></p></li>
+</ul>
+</div>
+</section>
+<section id="learning-goals" class="level2">
+<h2 class="anchored" data-anchor-id="learning-goals">Learning goals</h2>
+<section id="today" class="level3">
+<h3 class="anchored" data-anchor-id="today">Today:</h3>
+<ul>
+<li><p>Cover techniques to reduce complexity from text data using a set of pre-processing steps ~ <span class="red">Challenge I</span></p></li>
+<li><p>How to represent text as numbers using the vector space model ~ <span class="red">Challenge II</span></p></li>
+<li><p>Starting next week we will deal more with inference and modeling <span class="red">latent parameters</span> using text ~ <span class="red">Challenge III</span></p></li>
+</ul>
+</section>
+</section>
+<section id="corpus-and-selecting-documents" class="level2">
+<h2 class="anchored" data-anchor-id="corpus-and-selecting-documents">1. Corpus and selecting documents</h2>
+<ul>
+<li><p>A <em>corpus</em> is (typically) a large set of texts or documents which we wish to analyze.</p>
+<ul>
+<li><span class="midgray">if you can read them in an small amount of time, you should just do it, not TAD</span></li>
+</ul></li>
+<li><p>When selecting a corpus, we should consider how the corpus relates to our research question in two aspects:</p>
+<ul>
+<li><p><span class="red">Population of interest</span>: does the corpus allows us to make inferences about them?</p></li>
+<li><p><span class="red">Quantity of interest</span>: can we measure what we plan to?</p></li>
+<li><p><span class="red">Sampling Bias</span>: documents are often sampled from a larger population. Are there concerns about sample selection bias?</p></li>
+</ul></li>
+<li><p>Most often we use these documents because they were available to us (<span class="red">custom made data</span>). In these cases, considering the three questions above is even more important.</p></li>
+</ul>
+</section>
+<section id="ventura-et.-al.-streaming-chats-2021" class="level2">
+<h2 class="anchored" data-anchor-id="ventura-et.-al.-streaming-chats-2021">Ventura et. al., Streaming Chats, 2021</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="week2_figs/ventura_jqd.png" class="img-fluid figure-img" width="600"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<section id="key-components" class="level3">
+<h3 class="anchored" data-anchor-id="key-components">Key components</h3>
+<div class="nonincremental">
+<ul>
+<li><p>RQ: Measure quality of comments on streaming chat platforms during political debates</p></li>
+<li><p>Population of interest?</p></li>
+<li><p>Quantity of interest?</p></li>
+<li><p>Source of bias?</p></li>
+</ul>
+</div>
+</section>
+</div>
+</div>
+</section>
+<section id="unit-of-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="unit-of-analysis">2. Unit of Analysis</h2>
+<p>After selecting your documents and converting them to a computer-friendly format, we must decide our <span class="red">unit of analysis</span></p>
+<ul>
+<li>entire document? sentence? paragraph? a larger group of documents?</li>
+</ul>
+<div class="fragment">
+<p><span class="red">Three things</span> to consider in making this decision:</p>
+<ul>
+<li><p>Features of your data and model fit</p></li>
+<li><p>Your research question</p></li>
+<li><p>Iterative model</p>
+<ul>
+<li>switching through different units of analysis has a low cost</li>
+<li>allows you to look at the data from a different angle</li>
+<li>provide new insights to your research</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="reducing-complexity" class="level2">
+<h2 class="anchored" data-anchor-id="reducing-complexity">3. Reducing complexity</h2>
+<p>Language is extraordinarily <span class="red">complex</span>, and involves great <span class="red">subtlety and nuanced interpretation</span>.</p>
+<ul>
+<li>We simplify documents so that we can analyze/compared them:
+<ul>
+<li>makes the modeling problem much more tractable.</li>
+<li>complexity makes not much difference in topic identification or simple prediction tasks (sentiment analysis, for example)</li>
+</ul></li>
+<li>the degree to which one simplifees is dependent on the particular task at hand.
+<ul>
+<li>Denny and Spirling (2019) ~ check sensitivity.</li>
+</ul></li>
+</ul>
+</section>
+<section id="reducing-complexity-steps" class="level2">
+<h2 class="anchored" data-anchor-id="reducing-complexity-steps">Reducing complexity: steps</h2>
+<ul>
+<li><p><span class="red">Tokenization</span>: What does constitute a feature?</p></li>
+<li><p><span class="red">Remove `superfulous’ material</span>: HTML tags, punctuation, numbers, lower case and stop words</p></li>
+<li><p><span class="red">Map words to equivalence forms</span>: stemming and lemmatization</p></li>
+<li><p><span class="red">Discard less useful features for your task at hand</span>: functional words, highly frequent or rare words</p></li>
+<li><p><span class="red">Discard word order</span>: Bag-of-Words Assumption</p></li>
+</ul>
+</section>
+<section id="tokenization" class="level2">
+<h2 class="anchored" data-anchor-id="tokenization">Tokenization</h2>
+<ul>
+<li><p>A first step in any text analysis task is to break documents in meaningful units of analysis (tokens)</p></li>
+<li><p><span class="red">Tokens</span> are often words for most tasks. A simple tokenizer uses white space marks to split documents in tokens.</p></li>
+<li><p>Tokenizer may vary [across tasks]{.red}:</p>
+<ul>
+<li>Twiter specific tokenizer ~ keep hashtags, for example.</li>
+</ul></li>
+<li><p>May also vary <span class="red">across languages</span>, in which white space is not a good marker to split text into tokens</p>
+<ul>
+<li>chinese and japanese</li>
+</ul></li>
+<li><p>Certain tokens, even in english, make more sense together than separate (“White House”, “United States”). These are collocations</p>
+<ul>
+<li>statistical testing for collocations ~ <span class="red">PMI(a, b) = log(p(a,b)/p(a)*p(b))</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="stop-words" class="level2">
+<h2 class="anchored" data-anchor-id="stop-words">Stop Words</h2>
+<ul>
+<li><p>There are certain words that serve as <span class="red">linguistic connectors (`function words’)</span> which we can remove.</p>
+<ul>
+<li>( <em>the, it, if, a, for, from, at, on, in, be</em> )</li>
+</ul></li>
+<li><p>Add noise to the document. <span class="red">Discard them</span>, focus on signal, meaningful words.</p></li>
+<li><p>Most TAD packages have a pre-selected list of stopwords. You can add more given you substantive knowledge (more about this later)</p></li>
+<li><p>Usually not important for unsupervised and mostly supervised tasks, but might matter for authorship detection.</p>
+<ul>
+<li>Federalist Papers, example. Stop words give away writing styles.</li>
+</ul></li>
+</ul>
+</section>
+<section id="equivalence-mapping" class="level2">
+<h2 class="anchored" data-anchor-id="equivalence-mapping">Equivalence mapping</h2>
+<section id="reduce-dimensionality-even-further" class="level4">
+<h4 class="anchored" data-anchor-id="reduce-dimensionality-even-further">Reduce dimensionality even further!</h4>
+<ul>
+<li><p>Different forms of words (<span class="midgray">family, families, familial</span>), or words which are similar in concept (<span class="midgray">bureaucratic, bureaucrat, bureaucratization</span>) that refer to same basic token/concept.</p></li>
+<li><p>use algorithms to map these variation to a equivalent form:</p>
+<ul>
+<li>stemming: chop the end of the words: <em>family, families, familiar</em> ~ <em>famili</em></li>
+<li>lemmatization: condition on part of speech
+<ul>
+<li>better (adj) ~ good</li>
+<li>leaves (noun) ~ leaf</li>
+<li>leaves (verb) ~ leave</li>
+</ul></li>
+</ul></li>
+<li><p>All [TAD/NLP packages[{.red}] offer easy applications for these algorithms.</p></li>
+</ul>
+</section>
+</section>
+<section id="other-steps-functional-words-highly-frequent-or-rare-words" class="level2">
+<h2 class="anchored" data-anchor-id="other-steps-functional-words-highly-frequent-or-rare-words">Other steps: functional words, highly frequent or rare words</h2>
+<p>Some other commons steps, which are highly dependent on your contextual knowledge, are:</p>
+<ul>
+<li><p><span class="red">discard functional words</span>: for example, when working with congressional speeches, remove <code>representative, congress, session, etc...</code></p></li>
+<li><p><span class="red">remove highly frequent words</span>: words that appear in all documents carry very little meaning for most supervised and unsupervised tasks ~ no clustering and not discrimination.</p></li>
+<li><p><span class="red">remove rare frequent words</span>: same logic as above, no signal. Commong practice, words appear less 5% fo documents.</p></li>
+</ul>
+</section>
+<section id="bag-of-words-assumption" class="level2">
+<h2 class="anchored" data-anchor-id="bag-of-words-assumption">4. Bag-of-Words Assumption</h2>
+<p>Now we have <span class="red">pre-processed</span> our data. So we simplify it even further:</p>
+<ul>
+<li><p><span class="red">Bag-of-Words Assumption:</span> the order in which words appear does not matter.</p>
+<ul>
+<li><p>Ignore order</p></li>
+<li><p><span class="red">But</span> keep multiplicity, we still consider frequency of words</p></li>
+</ul></li>
+</ul>
+<div class="fragment">
+<p><span class="red">How could this possible work:</span></p>
+<ul>
+<li><p><strong>it might note:</strong> you need validation</p></li>
+<li><p><strong>central tendency in text:</strong> some words are enough to topic detection, classificaiton, measures of similarity, and distance, for example.</p></li>
+<li><p><strong>humans in the loop:</strong> expertise knowledge help you figure it out subtle relationships between words and outcomes</p></li>
+</ul>
+</div>
+</section>
+<section id="can-we-preserve-the-word-order-another-pre-processing-decision" class="level2">
+<h2 class="anchored" data-anchor-id="can-we-preserve-the-word-order-another-pre-processing-decision">Can we preserve the word order? (another pre-processing decision)</h2>
+<section id="yes" class="level3">
+<h3 class="anchored" data-anchor-id="yes">Yes</h3>
+<ul>
+<li><p>we might retaining word order using n-grams.</p>
+<ul>
+<li><span class="midgray">White House, Bill Gates, State Department, Middle East</span></li>
+<li>we think some important subtlety of expression is lost: negation perhaps
+<ul>
+<li><em>I want coffee, not tea</em> might be interpreted very diferently without word order.</li>
+</ul></li>
+</ul></li>
+<li><p>can use [n-grams], which are (sometimes contiguous) sequences of two (bigrams) or three (trigrams) tokens.</p></li>
+<li><p>This makes computations considerably more complex. We can pick some n-grams to keep but not all:</p>
+<ul>
+<li><p><span class="math inline">\(PMI_{a,b} = log \frac{p_{a,b}}{p_a \cdot p_b}\)</span></p>
+<ul>
+<li>if p(a,b)=0 ~ log (0) = -inf</li>
+<li>if p(a,b)=p(a)p(b) ~ log(1) = 0</li>
+<li>if p(a,b)&lt;p(a)p(b) ~ log(0&lt;x&lt;1) &lt; 0</li>
+<li>if p(a,b)&gt;p(a)p(b) ~ log(x&gt;1) &gt; 0</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="complete-example" class="level2">
+<h2 class="anchored" data-anchor-id="complete-example">Complete Example</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Text
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>We use a new dataset containing nearly 50 million historical newspaper pages from 2,700 local US newspapers over the years 1877–1977. We define and discuss a measure of power we develop based on observed word frequencies, and we validate it through a series of analyses. Overall, we find that the relative coverage of political actors and of political offices is a strong indicator of political power for the cases we study</em></p>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+After pre-processing
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>use new dataset contain near 50 million historical newspaper pag 2700 local u newspaper year 18771977 define discus measure power develop bas observ word frequenc validate ser analys overall find relat coverage political actor political offic strong indicator political power cas study</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="denny-spirling-2018" class="level2">
+<h2 class="anchored" data-anchor-id="denny-spirling-2018">Denny &amp; Spirling, 2018</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center" data-hash="week_02_cache/revealjs/unnamed-chunk-2_4dfd6b1c267ab3ea2b99bace4d9bf6cf">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="week2_figs/DA_wordfish.png" class="img-fluid figure-img" width="734"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><span class="red"><strong>Starting point</strong></span>: No rigorous way to compare results across different pre-processing steps. Adapting recommendations from supervised learning tasks.</p>
+<ul>
+<li><p>Unsupervised vs Supervised Learning?</p></li>
+<li><p>What is their solution? (no math needed!)</p></li>
+</ul>
+<div class="notes">
+<ul>
+<li><p>calculate the distance for every pair of documents, and rank the distances</p></li>
+<li><p>compared to no pre processing, do the pair wise distances again, and get which document pair changed kth position, where k=1 for the pair that changed the most.</p></li>
+<li><p>Build vector Vm_i^ with the position of the pairwise distance k affected in every other m combination. So Vm_1_1 contains the position of the changes in parwise distance on every other combination other than m=1 for the most changed document in m_1.</p></li>
+<li><p>their words: vmk = the rank difference for pair k between specification i and all others.</p></li>
+<li><p>Another example with 3 documents, Vm1_1 = (1m2, 1m3), indicates that the document the changed the most in m1 is also the same in m2 and m3.</p></li>
+<li><p>pretext score: mean over k (mean of V_m_k)</p></li>
+</ul>
+</div>
+<ul>
+<li>Too much work? Substantive knowledge out of the table?</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="vector-space-model" class="level2">
+<h2 class="anchored" data-anchor-id="vector-space-model">5. Vector Space Model</h2>
+<p>To represent documents as numbers, we will use the <span class="red">vector space model representation</span>:</p>
+<ul>
+<li><p>A document <span class="math inline">\(D_i\)</span> is represented as a collection of features <span class="math inline">\(W\)</span> (words, tokens, n-grams..)</p></li>
+<li><p>Each feature <span class="math inline">\(w_i\)</span> can be place in a real line, then a document <span class="math inline">\(D_i\)</span> is a point in a <span class="math inline">\(W\)</span> dimensional space</p></li>
+</ul>
+<div class="fragment">
+<p>Imagine the sentence below: <em>“If that is a joke, I love it. If not, can’t wait to unpack that with you later.”</em></p>
+<ul>
+<li><p><strong>Sorted Vocabulary</strong> =(a, can’t, i, if, is, it, joke, later, love, not, that, to, unpack, wait, with, you”)</p></li>
+<li><p><strong>Feature Representation</strong> = (1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1)</p></li>
+<li><p>Features will typically be the n-gram (mostly unigram) <span class="red">frequencies</span> of the tokens in the document, or some <span class="red">function</span> of those frequencies</p></li>
+</ul>
+</div>
+<div class="fragment">
+<p>Now each document is now a vector (vector space model)</p>
+<ul>
+<li>stacking these vectors will give you our workhose representation for text: <span class="red"><strong>Document Feature Matrix</strong></span></li>
+</ul>
+</div>
+</section>
+<section id="visualizing-vector-space-model" class="level2">
+<h2 class="anchored" data-anchor-id="visualizing-vector-space-model">Visualizing Vector Space Model</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Documents
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Document 1 = “yes yes yes no no no”</p>
+<p>Document 2 = “yes yes yes yes yes yes”</p>
+</div>
+</div>
+<div class="cell" data-layout-align="center" data-hash="week_02_cache/revealjs/unnamed-chunk-3_19e0860c98b0cf56411cc9101009fdcb">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="week_02_files/figure-revealjs/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="visualizing-vector-space-model-1" class="level2">
+<h2 class="anchored" data-anchor-id="visualizing-vector-space-model-1">Visualizing Vector Space Model</h2>
+<p>In the vector space, we can use geometry to build well-defined comparison measures between the documents (more about this next week)</p>
+<div class="cell" data-layout-align="center" data-hash="week_02_cache/revealjs/unnamed-chunk-4_48863245ae56a1ec6e916a9eea910ce5">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="week_02_files/figure-revealjs/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="document-feature-matrix" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="document-feature-matrix">6. Document-Feature Matrix</h2>
+<div class="cell" data-layout-align="center" data-hash="week_02_cache/revealjs/unnamed-chunk-5_968375c428d4298713209eb979d78fec">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="week2_figs/DTM.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+
+<!-- ## Quick Exercise
+
+What is the vector representation of this sentence? Give me the vocabulary and the feature representation. Remove any punctuation.
+
+<br> <br>
+
+*"That's just what translation is, I think. That's all speaking is. Listening to the other and trying to see past your own biases to glimpse what they're trying to say."*
+
+## If you are curious ...
+
+::: {.cell layout-align="center" hash='week_02_cache/revealjs/unnamed-chunk-6_586ba9c14f1ef6f07ef95d5f4b5d7b2d'}
+::: {.cell-output-display}
+![](https://m.media-amazon.com/images/I/A1lv97-jJoL._SL1500_.jpg){fig-align='center'}
+:::
+:::
+
+-->
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Source: <a href="https://github.com/ArthurSpirling/text-as-data-class-spring2021">Arthur Spirling TAD Class</a></p>
+</div></div></section>
+<section id="application" class="level1">
+<h1>Application</h1>
+<section id="ban-et.-al.-2019-how-newspapers-reveal-political-power." class="level2">
+<h2 class="anchored" data-anchor-id="ban-et.-al.-2019-how-newspapers-reveal-political-power.">Ban et. al.&nbsp;2019, How Newspapers Reveal Political Power.</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-hash="week_02_cache/revealjs/unnamed-chunk-7_7b13d6a23d2e3df26b8c1d0949be1c7b">
+<div class="cell-output-display">
+<p><img src="week2_figs/ban_.png" class="img-fluid" width="846"></p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br> <br></p>
+<ul>
+<li><p>Purely descriptive</p></li>
+<li><p>Simple measure just by counting words.</p></li>
+<li><p>Theorethically-driven: measure that capture a theorethically relevant concept.</p></li>
+</ul>
+<div class="fragment">
+<p><span class="math display">\[
+\small \text{Coverage of Mayor}_{it} = \frac{\text{Mayor}_{it}}{\text{Mayor}_{it} + \text{City Manager}_{it} + \text{City Council}_{it}}
+\]</span></p>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+
+<script>
+  // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+  // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+  // slide changes (different for each slide format).
+  (function () {
+    // dispatch for htmlwidgets
+    function fireSlideEnter() {
+      const event = window.document.createEvent("Event");
+      event.initEvent("slideenter", true, true);
+      window.document.dispatchEvent(event);
+    }
+
+    function fireSlideChanged(previousSlide, currentSlide) {
+      fireSlideEnter();
+
+      // dispatch for shiny
+      if (window.jQuery) {
+        if (previousSlide) {
+          window.jQuery(previousSlide).trigger("hidden");
+        }
+        if (currentSlide) {
+          window.jQuery(currentSlide).trigger("shown");
+        }
+      }
+    }
+
+    // hookup for slidy
+    if (window.w3c_slidy) {
+      window.w3c_slidy.add_observer(function (slide_num) {
+        // slide_num starts at position 1
+        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+      });
+    }
+
+  })();
+</script>
+
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
