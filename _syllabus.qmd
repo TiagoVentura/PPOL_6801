@@ -1,16 +1,17 @@
 ---
 title: "Syllabus: PPOL 6801 - Text as Data: Computational Linguistics"
 subtitle: "Data Science and Public Policy, McCourt School for Public Policy, Georgetown University"
-author: "Professor Tiago Ventura"
-format: pdf
+format: html
 ---
+
+[**Download a PDF Version here**](_syllabus.pdf)
+
 ## Course Description
+This course introduces students to the quantitative analysis of text as data. With the increasing availability of large-scale textual data – from government documents and political speeches to social media and online news – the potential to extract meaningful insights from text has expanded dramatically. In this course, students will learn to transform text into data and apply it to social science questions and theories. The focus is on understanding the real-world use of text as data, through a large collection of recent academic articles, rather than just the mathematical and computational theory behind it, which we will definitely cover.
 
-This course introduces students to the quantitative analysis of text as data. With the increasing availability of large-scale textual data – from government documents and political speeches to social media and online news – the potential to extract meaningful insights from text has expanded greatly. In this course, students will learn to transform text into data and apply it to social science questions and theories. The focus is on understanding the real-world use of text as data, through a large collection of recent academic articles, rather than just the mathematical and computation theory behind it, which we will definitely cover.
+The class content can be broadly split into two parts. First, we start with traditional approaches that model text as data using a bag-of-words assumption. Here, we'll cover various methods, including building and utilizing dictionaries, understanding sentiment in text, scaling texts on ideological and policy dimensions, and applying machine learning to classify text. In the second half of the class, we will focus on state-of-the-art models that move beyond bag-of-words and sparse representations of text, and model text based on embeddings/dense representations of words. Here, we begin with an overview of how to represent text as data, from sparse representations via bag-of-words models to dense representations using word embeddings. We then discuss the use of deep learning models for text representation and downstream classification tasks. From here, we will discuss the foundation of the state-of-the-art machine learning models for text analysis: transformer models. Lastly, we will discuss several applications of large language models in social science tasks.
 
-The class content can be broadly split in two parts. First, we start with traditional approaches modelling text-as-data using a bag-of-words assumption. Here, we'll go over different methods, like building and using dictionaries, understanding sentiment in text, scaling texts on ideological and policy dimensions, and using machine learning to classify text. In the second half of the class, we will focus on state-of-the-art models that move apart from bag-of-words and sparse representation of text, and model text based on embeddings/dense representation of words. Here, we start with an overview of how to represent text as data, from a sparse representation via bag-of-words models, to a dense representation using word embeddings. We then discuss the use of deep learning models for text representation and downstream classification tasks. From here, we will discuss the foundation of the state-of-art machine learning models for text analysis: transformer models. Lastly, we will discuss several applications of Large Language Models in social science tasks.
-
-The course includes hands-on exercises using real-world data to reinforce lecture content. By the end, students will have a toolkit for text analysis useful in roles as policy experts and computational social scientists. Students should have completed at least an introductory statistics course and have a basic understanding of probability, distributions, hypothesis testing, and linear models. Students are also expected to have experience working with R, the programming language and software environment of this course, and Python for the LLM's components of the course.
+The course includes hands-on exercises using real-world data to reinforce lecture content. By the end, students will have a toolkit for text analysis that is useful in roles such as policy experts and computational social scientists. Students should have completed at least an introductory statistics course and have a basic understanding of probability, distributions, hypothesis testing, and linear models. Students are also expected to have experience working with R, the programming language and software environment used in this course, and Python for the LLM components of the course.
 
 **Important Note:** This course follows a PhD-style seminar format: I expect that you come to class having completed the readings for that week.
 
@@ -22,7 +23,7 @@ The course includes hands-on exercises using real-world data to reinforce lectur
 -   Email: [tv186\@georgetown.edu](mailto:tv186@georgetown.edu)
 -   Lectures: Every Monday, 9:30am - 12pm
 -   Office Hours: Every Tuesday, 3pm - 4pm
--   Location: McCourt Building, 766
+    - Location: McCourt Building, 766
 
 
 <!-- add zoom link for virtual office hours -->
@@ -39,13 +40,13 @@ Note that this class is scheduled to meet weekly for 2.5 hours. I will do my bes
 
 ## Required Materials
 
-**Readings**: We will rely primarily on the following textbooks for this course. While this textbook is not freely available online, all the other materials of the course will be or should be accessible through Georgetown library.
+**Readings**: We will rely primarily on the following textbooks. While the GMB textbook is not freely available online, all the other materials of the course will be or should be accessible through Georgetown library.
 
 -   Grimmer, Justin, Margaret E. Roberts, and Brandon M. Stewart. Text as data: A new framework for machine learning and the social sciences. Princeton University Press, 2022 - \[GMB\]
 
 -   Daniel Jurafsky and James H. Martin. [Speech and Language Processing, 3nd Edition.](https://web.stanford.edu/~jurafsky/slp3/ed3book.pdf) - \[SLP\]
 
-- Plus, weekly articles that are listed below. 
+- Weekly articles that are listed below. 
 
 **Tip on readings:** This class follows a PhD-style Seminar. This means I expect you to read the materials before class. This is my suggestion for you to optimize your reading time: 1) read very carefully the chapters from the textbook; 2) skim through the applied paper, and focus most of your attention to methods and results from the applied papers -- theory and literature review of these papers are less relevant for us. 
 
@@ -54,7 +55,7 @@ Note that this class is scheduled to meet weekly for 2.5 hours. I will do my bes
 
 **Class Website**: A class website will be used throughout the course and should be checked on a regular basis for lecture materials and required readings.
 
-**Class Slack Channel**: The class also has a dedicated [slack channel](https://join.slack.com/t/ppol6801fall2025/shared_invite/zt-3a50z355x-f9Xrc~x2iCGVW5e3_4GcAg). The channel serves as an open forum to discuss, collaborate, pose problems/questions, and offer solutions. Students are encouraged to pose any questions they have there as this will provide the professor and TA the means of answering the question so that all can see the response. If you're unfamiliar with, please consult the following start-up tutorial (https://get.slack.help/hc/en-us/articles/218080037-Getting-started-for-new-members).
+**Class Slack Channel**: The class also has a dedicated [slack channel](https://join.slack.com/t/ppol68012025/shared_invite/zt-3c33fiq9f-_YQ2c1p660cGIk~zLyaH7Q). The channel serves as an open forum to discuss, collaborate, pose problems/questions, and offer solutions. Students are encouraged to pose any questions they have there as this will provide the professor and TA the means of answering the question so that all can see the response. If you're unfamiliar with, please consult the following start-up tutorial (https://get.slack.help/hc/en-us/articles/218080037-Getting-started-for-new-members).
 
 **Canvas**: A Canvas site (http://canvas.georgetown.edu) will be used throughout the course and should be checked on a regular basis for announcements and assignments. All announcements for the assignments and classes will be posted on Canvas; they will not be distributed in class or by e-mail. Support for Canvas is available at (202) 687-4949
 
@@ -80,17 +81,17 @@ Or one of the three below:
 
 **Required Reading**:
 
--\[GMB\] - Chapters 2-5
+- \[GMB\] - Chapters 2-5
 
 -   **Applied Papers**:
 
-    -   Denny, M. J., & Spirling, A. (2018). Text preprocessing for unsupervised learning: why it matters, when it misleads, and what to do about it. Political Analysis, 26(2): 168-189.
+     -   Denny, M. J., & Spirling, A. (2018). Text preprocessing for unsupervised learning: why it matters, when it misleads, and what to do about it. Political Analysis, 26(2): 168-189.
 
     -   Ban, Pamela, Alexander Fouirnaies, Andrew B. Hall, and James M. Snyder. "How newspapers reveal political power." Political Science Research and Methods 7, no. 4 (2019): 661-678.
 
 **Optional Readings**
 
- -   Michel, J.B., et al. 2011. "Quantitative Analysis of Culture Using Millions of Digitized Books." Science 331 (6014): 176--82. https://doi.org/10.1126/science.1199644;
+-   Michel, J.B., et al. 2011. "Quantitative Analysis of Culture Using Millions of Digitized Books." Science 331 (6014): 176--82. https://doi.org/10.1126/science.1199644;
 
 ### Week 3: Text Similarity, Text re-use and Complexity (September 15)
 
@@ -149,11 +150,11 @@ Or one of the three below:
 
 **Optional Readings**
 
--   Siegel, Alexandra, et al. "Trumping Hate on Twitter? Online Hate Speech in the 2016 US Election Campaign and its Aftermath."
+    -   Siegel, Alexandra, et al. "Trumping Hate on Twitter? Online Hate Speech in the 2016 US Election Campaign and its Aftermath."
 
--   Theocharis, Y., Barberá, P., Fazekas, Z., & Popa, S. A. (2020). [The dynamics of political incivility on Twitter](https://journals.sagepub.com/doi/pdf/10.1177/2158244020919447). Sage Open, 10(2), 2158244020919447.
+    -   Theocharis, Y., Barberá, P., Fazekas, Z., & Popa, S. A. (2020). [The dynamics of political incivility on Twitter](https://journals.sagepub.com/doi/pdf/10.1177/2158244020919447). Sage Open, 10(2), 2158244020919447.
 
--   Mitts, T., Phillips, G., & Walter, B. (2021). [Studying the Impact of ISIS Propaganda Campaigns](https://www.journals.uchicago.edu/doi/abs/10.1086/716281). Journal of Politics
+    -   Mitts, T., Phillips, G., & Walter, B. (2021). [Studying the Impact of ISIS Propaganda Campaigns](https://www.journals.uchicago.edu/doi/abs/10.1086/716281). Journal of Politics
 
 ### Week 6: Unsupervised Learning: Topic Models (October 6)
 
@@ -168,18 +169,18 @@ Or one of the three below:
 
 -   **Applied Papers**:
 
-   -   Motolinia, Lucia. [Electoral accountability and particularistic legislation: evidence from an electoral reform in Mexico.](https://www.cambridge.org/core/journals/american-political-science-review/article/abs/electoral-accountability-and-particularistic-legislation-evidence-from-an-electoral-reform-in-mexico/BCFD6B0C73B041C8C410594BDB232DB1) American Political Science Review 115, no. 1 (2021): 97-113.
+    -   Motolinia, Lucia. [Electoral accountability and particularistic legislation: evidence from an electoral reform in Mexico.](https://www.cambridge.org/core/journals/american-political-science-review/article/abs/electoral-accountability-and-particularistic-legislation-evidence-from-an-electoral-reform-in-mexico/BCFD6B0C73B041C8C410594BDB232DB1) American Political Science Review 115, no. 1 (2021): 97-113.
 
-   -   Barberá, P., Casas, A., Nagler, J., Egan, P. J., Bonneau, R., Jost, J. T., & Tucker, J. A. (2019). [Who leads? Who follows? Measuring issue attention and agenda setting by legislators and the mass public using social media data](https://www.cambridge.org/core/journals/american-political-science-review/article/who-leads-who-follows-measuring-issue-attention-and-agenda-setting-by-legislators-and-the-mass-public-using-social-media-data/D855849CE288A241529E9EC2E4FBD3A8). American Political Science Review, 113(4), 883-901.
+    -   Barberá, P., Casas, A., Nagler, J., Egan, P. J., Bonneau, R., Jost, J. T., & Tucker, J. A. (2019). [Who leads? Who follows? Measuring issue attention and agenda setting by legislators and the mass public using social media data](https://www.cambridge.org/core/journals/american-political-science-review/article/who-leads-who-follows-measuring-issue-attention-and-agenda-setting-by-legislators-and-the-mass-public-using-social-media-data/D855849CE288A241529E9EC2E4FBD3A8). American Political Science Review, 113(4), 883-901.
 
 
 **Optional:**
  
- - Catalinac, Amy. "From pork to policy: The rise of programmatic campaigning in Japanese elections." The Journal of Politics 78.1 (2016): 1-18.
+    - Catalinac, Amy. "From pork to policy: The rise of programmatic campaigning in Japanese elections." The Journal of Politics 78.1 (2016): 1-18.
     
- - Roberts, M.E., Stewart, B.M. and Tingley, D. (2019). STM: An R package for structural topic models. Journal of Statistical Software, 91(2)
+    - Roberts, M.E., Stewart, B.M. and Tingley, D. (2019). STM: An R package for structural topic models. Journal of Statistical Software, 91(2)
 
- -   Eshima, Shusei, Kosuke Imai, and Tomoya Sasaki. "Keyword‐Assisted Topic Models." American Journal of Political Science (2020).
+    -   Eshima, Shusei, Kosuke Imai, and Tomoya Sasaki. "Keyword‐Assisted Topic Models." American Journal of Political Science (2020).
 
 ### Week 7: Using Text to Measure Ideology - Scaling (October 20)
 
@@ -199,13 +200,14 @@ Or one of the three below:
 
 ### Week 8: Representation Learning & Introduction to Deep Learning (October 27)
 
-**Topics:** How can we capture the meaning of words? Using Deep Learning model to represent text.
+**Topics:** How can we capture the meaning of words? Using Deep Learning models to represent text.
 
 **Required Readings:**
 
 -   [SLP: Chapter 7](https://stanford.edu/~jurafsky/slp3/7.pdf)
 
 -   [Lin, Gechun, and Christopher Lucas. "An Introduction to Neural Networks for the Social Sciences." (2023)](https://christopherlucas.org/files/PDFs/nn_chapter.pdf)
+
 
 ### Week 9: Word Embeddings: What they are and how to estimate? (November 3)
 
@@ -222,10 +224,9 @@ Or one of the three below:
 
 -   Spirling and Rodriguez, Word Embeddings: What works, what doesn't, and how to tell the difference for applied research.
 
-### Week 10: Word Embeddings: Social Science Applications
+### Week 10: Word Embeddings: Social Science Applications (November 10)
 
 **Topics:** How can we use embeddings in social science applications? Let's see several examples!
-
 
 **Required Readings:**
 
@@ -241,14 +242,11 @@ Or one of the three below:
 
     -   Garg, Nikhil, Londa Schiebinger, Dan Jurafsky and James Zou. 2018. "Word embeddings quantify 100 years of gender and ethnic stereotypes." Proceedings of the National Academy of Sciences 115(16):E3635--E3644.
 
--   **Problem set 3** Assigned
+### Week 11: Replication Class: Students' Presentation (November 17)
 
-### Week 11: Replication Class: Students' Presentation (November 10)
-
-### Week 12: Transformers (November 17)
+### Week 12: Transformers (November 24)
 
 **Topics**: We will learn about the Transformers architecture, attention, and the encoder-decoder infrastructure.
-
 
 **Required Readings**
 
@@ -261,7 +259,7 @@ Or one of the three below:
 -   [Timoneda and Vera, BERT, RoBERTa or DeBERTa? Comparing Performance Across Transformer Models in Political Science Text](https://www.journals.uchicago.edu/doi/full/10.1086/730737), The Journal of Politics 87, no. 1 (2025): 000-000.
 
 
-### Week 13: Large Language Models: Prompting, building chatbots, and social science applications. (Invited Speaker: Dr. Christopher Barrie, Professor Sociology New York University) (November 24)
+### Week 13: Large Language Models: Prompting, building chatbots, and social science applications. (Invited Speaker: Dr. Christopher Barrie, Professor Sociology New York University) (December 1)
 
 -   **Topics**: We will see some social science application of LLMs chatbots. Can we use ChatGPT to perform zero-shot classification tasks? What are the concerns of these applications?
 
@@ -285,8 +283,7 @@ Or one of the three below:
 
 -   [Argyle, L.P., Busby, E.C., Fulda, N., Gubler, J.R., Rytting, C. and Wingate, D., 2023. Out of one, many: Using language models to simulate human samples. Political Analysis, 31(3), pp.337-351.](https://www.cambridge.org/core/journals/political-analysis/article/out-of-one-many-using-language-models-to-simulate-human-samples/035D7C8A55B237942FB6DBAD7CAA4E49)
 
-
-### Week 14: Final Projects: Students Presentation (December 1)
+### Week 14: Final Projects: Students Presentation (December 8)
 
 ## Course Requirements
 
@@ -420,7 +417,7 @@ Due dates and breakdowns for the project are as follows:
 
 | **Requirement**  | **Due**           | **Length**    | **Percentage** |
 |------------------|-------------------|---------------|----------------|
-| Project Proposal | EOD Friday Week 9 | 2 pages       | 5%             |
+| Project Proposal | EOD Friday Week 8 | 2 pages       | 5%             |
 | Presentation     | Week 14           | 10-15 minutes | 10%            |
 | Project Report   | Wednesday Week 15 | 10 pages      | 25%            |
 
@@ -430,9 +427,7 @@ Due dates and breakdowns for the project are as follows:
 
 -   For the presentation, You will have 10-15 minutes in our last class of the semester to present you project.
 
--   **Take the final project seriously**. After you finish your Masters, in any path you take, you will need to show concrete examples of your portfolio. This is a good opportunity to start building it.
-
--   Your groups will be randomly assigned.
+-   **Take the final project seriously**. After you finish your Masters, in any path you take, you will need to show concrete examples of your portfolio. This is a good opportunity to start building one.
 
 **Submission of the Final Project**
 
