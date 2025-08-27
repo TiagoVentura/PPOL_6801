@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content=" Professor: Tiago Ventura ">
+
+<title>PPOL 6801 - Text as Data - Computational Linguistics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles.scss">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">PPOL 6801 - Text as Data - Computational Linguistics</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main">
+    <a href="https://github.com/TiagoVentura/PPOL_6801_2024" rel="" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../finalproject.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Final Project</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Materials</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 1: Intro</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 2: Text to Matrices</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 3: Text Similarity, Text re-use and Complexity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 4: Dictionaries &amp; Pre-Trained Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 5: Supervised Learning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 6: Replication Class</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 7: Unsupervised Learning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 8: Word Embeddings</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 9: Word Embeddings II</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 10: Scaling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 11: Replication Class II</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 12: Transformers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 13: LLMs - Applications</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#plans-for-today" id="toc-plans-for-today" class="nav-link active" data-scroll-target="#plans-for-today">Plans for Today:</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#many-questions-depends-on-policy-positions" id="toc-many-questions-depends-on-policy-positions" class="nav-link" data-scroll-target="#many-questions-depends-on-policy-positions">Many questions depends on policy positions</a></li>
+  <li><a href="#scaling-with-without-computational-text-analysis" id="toc-scaling-with-without-computational-text-analysis" class="nav-link" data-scroll-target="#scaling-with-without-computational-text-analysis">Scaling with without computational text analysis</a>
+  <ul class="collapse">
+  <li><a href="#surveys" id="toc-surveys" class="nav-link" data-scroll-target="#surveys">Surveys</a></li>
+  <li><a href="#behavioral-data-for-example-roll-call-voting" id="toc-behavioral-data-for-example-roll-call-voting" class="nav-link" data-scroll-target="#behavioral-data-for-example-roll-call-voting">Behavioral data (for example, roll-call voting):</a></li>
+  <li><a href="#content-analysis-using-text" id="toc-content-analysis-using-text" class="nav-link" data-scroll-target="#content-analysis-using-text">Content Analysis using Text</a></li>
+  <li><a href="#scaling-models-with-computational-text-analysis" id="toc-scaling-models-with-computational-text-analysis" class="nav-link" data-scroll-target="#scaling-models-with-computational-text-analysis">Scaling models with computational text analysis</a></li>
+  <li><a href="#wordscore-laver-benoit-garry-2003-apsr" id="toc-wordscore-laver-benoit-garry-2003-apsr" class="nav-link" data-scroll-target="#wordscore-laver-benoit-garry-2003-apsr">Wordscore (Laver, Benoit, Garry, 2003, APSR)</a></li>
+  <li><a href="#wordscore-calculation" id="toc-wordscore-calculation" class="nav-link" data-scroll-target="#wordscore-calculation">WordScore Calculation</a></li>
+  <li><a href="#scoring-virgin-texts" id="toc-scoring-virgin-texts" class="nav-link" data-scroll-target="#scoring-virgin-texts">Scoring virgin texts</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#wordfish-slapin-and-proksch-2008-ajps" id="toc-wordfish-slapin-and-proksch-2008-ajps" class="nav-link" data-scroll-target="#wordfish-slapin-and-proksch-2008-ajps">Wordfish, (Slapin and Proksch, 2008, AJPS)</a></li>
+  <li><a href="#estimation" id="toc-estimation" class="nav-link" data-scroll-target="#estimation">Estimation</a></li>
+  <li><a href="#results-i" id="toc-results-i" class="nav-link" data-scroll-target="#results-i">Results I</a></li>
+  <li><a href="#results-ii" id="toc-results-ii" class="nav-link" data-scroll-target="#results-ii">Results II</a></li>
+  </ul></li>
+  <li><a href="#scaling-models-with-network-data" id="toc-scaling-models-with-network-data" class="nav-link" data-scroll-target="#scaling-models-with-network-data">Scaling models with network data</a>
+  <ul class="collapse">
+  <li><a href="#spatial-following-model-barbera-2015" id="toc-spatial-following-model-barbera-2015" class="nav-link" data-scroll-target="#spatial-following-model-barbera-2015">Spatial Following Model, Barbera 2015</a></li>
+  <li><a href="#all-you-need-is-a-matrix" id="toc-all-you-need-is-a-matrix" class="nav-link" data-scroll-target="#all-you-need-is-a-matrix">All you need is a matrix!</a></li>
+  <li><a href="#statistical-model" id="toc-statistical-model" class="nav-link" data-scroll-target="#statistical-model">Statistical Model</a></li>
+  <li><a href="#ventura-et-al-news-sharing-model" id="toc-ventura-et-al-news-sharing-model" class="nav-link" data-scroll-target="#ventura-et-al-news-sharing-model">Ventura et al’ News Sharing Model</a></li>
+  <li><a href="#statistical-model-1" id="toc-statistical-model-1" class="nav-link" data-scroll-target="#statistical-model-1">Statistical Model</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="week_10.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">PPOL 6801 - Text as Data - Computational Linguistics</h1>
+<p class="subtitle lead"><span style="font-size: 140%;"> <br> Week 10: Scaling Models for Text</span></p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p><span style="font-size: 120%;"> Professor: Tiago Ventura </span> </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="plans-for-today" class="level2">
+<h2 class="anchored" data-anchor-id="plans-for-today">Plans for Today:</h2>
+<ul>
+<li><p>Overview of scaling models</p></li>
+<li><p>Scaling models using text</p>
+<ul>
+<li><p>supervised models: wordscore</p></li>
+<li><p>unsupervised models: wordfish</p>
+<ul>
+<li>But remember we saw the Doc2vec last week</li>
+</ul></li>
+</ul></li>
+<li><p>Scaling models with network data</p></li>
+</ul>
+</section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
+<div class="cell" data-hash="week_10_cache/html/unnamed-chunk-1_8513d8fc6c11f7dbdbd2f84347ef1a02">
+<div class="cell-output-display">
+<p><img src="./week10_figs/plot_dw_example.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
+</section>
+<section id="many-questions-depends-on-policy-positions" class="level2">
+<h2 class="anchored" data-anchor-id="many-questions-depends-on-policy-positions">Many questions depends on policy positions</h2>
+<p><strong>Many substantive questions in policy and politics depends on estimating ideological preferences</strong>:</p>
+<ul>
+<li>Is polarization increasing over time?
+<ul>
+<li>are parties moving together over time?</li>
+</ul></li>
+<li>Do governments/coalitions last longer conditional on:
+<ul>
+<li>how homogeneous coalition is?</li>
+<li>distance between coalition and congress ideal points?</li>
+<li>distance between coalition and median voter?</li>
+</ul></li>
+<li>Does ideology affect policy decisions?
+<ul>
+<li>Economic cycles and elections?</li>
+<li>Globalization and the social welfare state?</li>
+</ul></li>
+<li>Does motivated reasoning affects beliefs/sharing of online misinformation?</li>
+</ul>
+<p>Many more examples ….</p>
+</section>
+<section id="scaling-with-without-computational-text-analysis" class="level1">
+<h1>Scaling with without computational text analysis</h1>
+<section id="surveys" class="level2">
+<h2 class="anchored" data-anchor-id="surveys">Surveys</h2>
+<ul>
+<li>Ask elites or regular voters about policy preference, and scale them in some sort of political continuum.</li>
+<li>Challenges:
+<ul>
+<li>Expensive</li>
+<li>Sources of bias: non-response, social desirebility, strategic responses, to name a few</li>
+<li>Cannot be used for historical data</li>
+</ul></li>
+</ul>
+</section>
+<section id="behavioral-data-for-example-roll-call-voting" class="level2">
+<h2 class="anchored" data-anchor-id="behavioral-data-for-example-roll-call-voting">Behavioral data (for example, roll-call voting):</h2>
+<ul>
+<li>Politicians vote on proposals (or judges make decisions) that are close to their ideal points
+<ul>
+<li>Use statistical methods (mostly matrix factorization) to estimate orthogonal dimensions</li>
+<li>Nominate Scores</li>
+<li>Challenge
+<ul>
+<li>Most times politicians vote for many things other than ideology</li>
+<li>Face-Validity: AOC for example often place as a centrist (not always voting with democrats)</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="content-analysis-using-text" class="level2">
+<h2 class="anchored" data-anchor-id="content-analysis-using-text">Content Analysis using Text</h2>
+<ul>
+<li>Manually label content of political manifestos (Comparative Manifestos Project)</li>
+<li>Challenges:
+<ul>
+<li>Really expensive</li>
+<li>Costly to translate to other languages</li>
+<li>Heavily dependent on substantive knowledge</li>
+</ul></li>
+</ul>
+</section>
+<section id="scaling-models-with-computational-text-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="scaling-models-with-computational-text-analysis">Scaling models with computational text analysis</h2>
+<p>In the past 20 years, computational text analysis has been widely used for building scaling models.</p>
+<ul>
+<li><p>Advantages: fast, reliable, deals with large volumes of text, and easy to translate to other domains/language.</p></li>
+<li><p><strong>Wordscore:</strong> supervised approach, mimic naive bayesian models, start with reference, and score virgin texts.</p></li>
+<li><p><strong>Wordfish:</strong> unsupervised approach, learn word occurrence from the documents using a ideal-points model.</p></li>
+</ul>
+</section>
+<section id="wordscore-laver-benoit-garry-2003-apsr" class="level2">
+<h2 class="anchored" data-anchor-id="wordscore-laver-benoit-garry-2003-apsr">Wordscore (Laver, Benoit, Garry, 2003, APSR)</h2>
+<div class="fragment">
+<p><span class="red">Step 1</span>: Begin with a reference set (training set) of texts that have known positions.</p>
+<ul>
+<li>Get a speech by AOC , give it -1 score.</li>
+<li>Get a speech by MTG, give it a +1 score.</li>
+</ul>
+</div>
+<div class="fragment">
+<p><span class="red">Step 2</span>: Generate word scores from these reference texts</p>
+<ul>
+<li>Pretty much like a Naive Bayes</li>
+</ul>
+</div>
+<div class="fragment">
+<p><span class="red">Step 3</span>: Score the virgin texts (test set) of texts using those word scores</p>
+<ul>
+<li>scale virgin score to the same original metric (-1 to +1)<br>
+</li>
+<li>calculate confidence intervals</li>
+</ul>
+</div>
+</section>
+<section id="wordscore-calculation" class="level2">
+<h2 class="anchored" data-anchor-id="wordscore-calculation">WordScore Calculation</h2>
+<div class="fragment">
+<section id="learning-words" class="level4">
+<h4 class="anchored" data-anchor-id="learning-words">Learning Words</h4>
+<p><span class="math display">\[ P_{wr} = \frac{F_{wr}}{\sum_r F_{wr}}\]</span> - <span class="math inline">\(P_{wr}\)</span>: Probability of word <span class="math inline">\(w\)</span> being from reference document <span class="math inline">\(r\)</span></p>
+<ul>
+<li><span class="math inline">\(F_{wr}\)</span>: Frequency of word <span class="math inline">\(w\)</span> in reference text <span class="math inline">\(r\)</span></li>
+</ul>
+</section>
+</div>
+<div class="fragment">
+<section id="scoring-words" class="level4">
+<h4 class="anchored" data-anchor-id="scoring-words">Scoring Words</h4>
+<p><span class="math display">\[S_{wd} = \sum_r (P_{wr} \cdot A_{rd}) \]</span></p>
+<ul>
+<li><p><span class="math inline">\(S_{wd}\)</span>: Score of word <span class="math inline">\(w\)</span> in dimension <span class="math inline">\(d\)</span></p></li>
+<li><p><span class="math inline">\(A_{rd}\)</span>: Pre-defined position of reference text <span class="math inline">\(r\)</span> in dimension <span class="math inline">\(d\)</span></p></li>
+<li><p><span class="math inline">\(A_{rd}\)</span> will be -1 for liberal and +1 for conservative documents, for example.</p></li>
+</ul>
+</section>
+</div>
+</section>
+<section id="scoring-virgin-texts" class="level2">
+<h2 class="anchored" data-anchor-id="scoring-virgin-texts">Scoring virgin texts</h2>
+<p><span class="math display">\[ S_{vd} = \sum_w (F_{wv} · S_{wd}) \]</span> - <span class="math inline">\(S_{vd}\)</span> weighted average of the scores by word frequency.</p>
+</section>
+<section id="example" class="level2">
+<h2 class="anchored" data-anchor-id="example">Example</h2>
+<p>Republican manifesto uses `wall’ 25 times in 1000 words, while Democrat use it only 5 times. Assume 1 for republican and -1 for democrat</p>
+<p><span class="math display">\[P_{wr} = 0.83\]</span></p>
+<p><span class="math display">\[P_{wl} =  0.16 \]</span> <span class="math display">\[ S_w = 0.83*1 + -1*.16 = 0.66\]</span></p>
+<ul>
+<li><p>Virgin text 1 mentions wall 200 times in 1000 words ~ <span class="math inline">\(0.2 * 0.66 = 0.132\)</span></p></li>
+<li><p>Virgin text 2 mentions wall 1 times in 1000 words ~ <span class="math inline">\(0.001 * 0:66 = 0.0066\)</span></p></li>
+</ul>
+<section id="repeat-for-all-words" class="level4">
+<h4 class="anchored" data-anchor-id="repeat-for-all-words">Repeat for all words!</h4>
+</section>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<div class="cell" data-hash="week_10_cache/html/unnamed-chunk-2_01c2dd63cbe86fa451f1638e525ad62b">
+<div class="cell-output-display">
+<p><img src="./week10_figs/wordscores.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
+</section>
+<section id="wordfish-slapin-and-proksch-2008-ajps" class="level2">
+<h2 class="anchored" data-anchor-id="wordfish-slapin-and-proksch-2008-ajps">Wordfish, (Slapin and Proksch, 2008, AJPS)</h2>
+<p>Same assumptions as in <strong>Wordscore</strong> (<span class="midgray">word usage provides information about policy placement</span>), but in an <span class="red">unsupervised setting</span> and with <span class="red">fully specified language model</span>.</p>
+<div class="fragment">
+<section id="the-count-of-word-j-from-party-i-in-year-t" class="level4">
+<h4 class="anchored" data-anchor-id="the-count-of-word-j-from-party-i-in-year-t">The count of word <span class="math inline">\(j\)</span> from party <span class="math inline">\(i\)</span> , in year <span class="math inline">\(t\)</span>:</h4>
+<p><span class="math display">\[ y_{ijt}   \sim  Pois(\lambda)\]</span></p>
+<p><span class="math display">\[ \lambda_{ijt}=\exp({\alpha_{it} + \psi_j + \beta_j\times\omega_{it}}) \]</span></p>
+<ul>
+<li><p><span class="math inline">\(\alpha_{it}\)</span>: fixed effect(s) for party <span class="math inline">\(i\)</span> in time <span class="math inline">\(t\)</span> ~ deal with parties that write too much</p></li>
+<li><p><span class="math inline">\(\psi_j\)</span>: word fixed effect: some parties just use certain words more (e.g.&nbsp;their own name)</p></li>
+<li><p><span class="math inline">\(\beta_j\)</span>: <span class="red">word specific weights</span> (discrimination parameter, adds more information than simple usage)</p></li>
+<li><p><span class="math inline">\(\omega_{it}\)</span> estimate of <span class="red">party’s position</span> in a given year.</p></li>
+</ul>
+</section>
+</div>
+</section>
+<section id="estimation" class="level2">
+<h2 class="anchored" data-anchor-id="estimation">Estimation</h2>
+<p><span class="math display">\[ \lambda_{ijt}=\exp({\alpha_{it} + \psi_j + \beta_j\times\omega_{it}}) \]</span></p>
+<p>Nothing on RHS is known: everything needs to be estimated.</p>
+<ul>
+<li><p>Use Expectation Maximization (EM) algorithm (same as we could use for topic models):</p>
+<ul>
+<li><p>Initialize values based on counts in the data</p></li>
+<li><p>E-Step: run a Poisson regression holding word parameters fixed, and estimating the party parameters</p></li>
+<li><p>M-Step: run a Poisson regression holding party parameters fixed, and estimating the word parameter</p></li>
+<li><p>Iterate until convergence</p></li>
+</ul></li>
+<li><p>Other option: Bayesian Estimation with Gibbs sampling.</p></li>
+</ul>
+</section>
+<section id="results-i" class="level2">
+<h2 class="anchored" data-anchor-id="results-i">Results I</h2>
+<div class="cell" data-hash="week_10_cache/html/unnamed-chunk-3_19625256556def181cb6d76a35b73e18">
+<div class="cell-output-display">
+<p><img src="./week10_figs/wordfish_i.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
+</section>
+<section id="results-ii" class="level2">
+<h2 class="anchored" data-anchor-id="results-ii">Results II</h2>
+<div class="cell" data-hash="week_10_cache/html/unnamed-chunk-4_7d77bf3134d322187af71f42d0e8a909">
+<div class="cell-output-display">
+<p><img src="./week10_figs/wordfish_ii.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="scaling-models-with-network-data" class="level1">
+<h1>Scaling models with network data</h1>
+<section id="spatial-following-model-barbera-2015" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-following-model-barbera-2015">Spatial Following Model, Barbera 2015</h2>
+<p>With the emergence of social media data, not only more text data has become available, but also network data. Some of the most interesting developments in computational social science research in the past years has been on using this data to estimate ideological positions for a LARGE number of social media users.</p>
+<ul>
+<li><p>Assumption: users prefer to follow political accounts they perceive to be ideologically close to their own position.</p></li>
+<li><p>Following decisions contain information about allocation of scarce resource: attention</p></li>
+<li><p>Selective exposure: preference for information that reinforces current views</p></li>
+<li><p>Statistical model that builds on assumption to estimate positions of both individuals and political accounts</p></li>
+</ul>
+</section>
+<section id="all-you-need-is-a-matrix" class="level2">
+<h2 class="anchored" data-anchor-id="all-you-need-is-a-matrix">All you need is a matrix!</h2>
+<div class="cell" data-hash="week_10_cache/html/unnamed-chunk-5_81a1892af144f6ee0321ca913bed01ca">
+<div class="cell-output-display">
+<p><img src="./week10_figs/dfm.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
+</section>
+<section id="statistical-model" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-model">Statistical Model</h2>
+<ul>
+<li><p>Users’ and political accounts’ ideology (<span class="math inline">\(theta_i\)</span> and <span class="math inline">\(\phi_j\)</span> ) are defined as latent variables to be estimated.</p></li>
+<li><p>Data: “following” decisions, a matrix of binary choices (Y).</p></li>
+<li><p>Probability that user i follows political account j is</p></li>
+</ul>
+<p><span class="math display">\[P(y_{ij} = 1) = logit^{-1} (\alpha_j + \beta_i - \zeta(\theta_i - \phi_j)^2)\]</span></p>
+<p>with latent variables:</p>
+<ul>
+<li><p><span class="math inline">\(\theta_i\)</span> measures ideology of user i</p></li>
+<li><p><span class="math inline">\(\phi_j\)</span> measures ideology of political account j</p></li>
+<li><p><span class="math inline">\(\alpha_j\)</span> measures popularity of political account j</p></li>
+<li><p><span class="math inline">\(\beta_i\)</span> measures political interest of user i</p></li>
+</ul>
+</section>
+<section id="ventura-et-al-news-sharing-model" class="level2">
+<h2 class="anchored" data-anchor-id="ventura-et-al-news-sharing-model">Ventura et al’ News Sharing Model</h2>
+<div class="cell" data-hash="week_10_cache/html/unnamed-chunk-6_3573705fc7b8154aa7c87d0ecc66be85">
+<div class="cell-output-display">
+<p><img src="./week10_figs/nbpdSummary.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
+</section>
+<section id="statistical-model-1" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-model-1">Statistical Model</h2>
+<p>The estimation of the utility function for sharing uses a multilevel overdispersed poisson model.</p>
+<p><span class="math display">\[y_{ij} \sim \mbox{Po}(\mu_i)\]</span></p>
+<p><span class="math display">\[\mu_i = \exp(\alpha_{i[q]}\left(x_{i}-L_{j}\right)^2 + A_{[q]} + R_{[j]} + \gamma_{[i]})\]</span></p>
+<p>Where:</p>
+<ul>
+<li><p><span class="math inline">\(y_{i}\)</span> = Number of links embedded by user x media</p></li>
+<li><p><span class="math inline">\(\alpha_{q}\)</span> = Random Slope by quantile</p></li>
+<li><p><span class="math inline">\(A_{q}\)</span> = Random intercept by quantile</p></li>
+<li><p><span class="math inline">\(R_{j}\)</span> = Random intercept by media outlet</p></li>
+<li><p><span class="math inline">\(\gamma_{[i]}\)</span> = Overdispersion parameter</p></li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

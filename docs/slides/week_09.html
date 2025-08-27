@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content=" Professor: Tiago Ventura ">
+
+<title>PPOL 6801 - Text as Data - Computational Linguistics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.scss">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">PPOL 6801 - Text as Data - Computational Linguistics</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main">
+    <a href="https://github.com/TiagoVentura/PPOL_6801_2024" rel="" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../schedule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../finalproject.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Final Project</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Materials</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 1: Intro</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#plans-for-today" id="toc-plans-for-today" class="nav-link active" data-scroll-target="#plans-for-today">Plans for Today:</a></li>
+  <li><a href="#word-embeddings-quiz" id="toc-word-embeddings-quiz" class="nav-link" data-scroll-target="#word-embeddings-quiz">Word Embeddings Quiz</a></li>
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications">Applications</a>
+  <ul class="collapse">
+  <li><a href="#decisions-when-using-embeddings-rodriguez-and-spirling-2022" id="toc-decisions-when-using-embeddings-rodriguez-and-spirling-2022" class="nav-link" data-scroll-target="#decisions-when-using-embeddings-rodriguez-and-spirling-2022">Decisions when using embeddings, Rodriguez and Spirling, 2022</a></li>
+  <li><a href="#findings" id="toc-findings" class="nav-link" data-scroll-target="#findings">Findings</a></li>
+  <li><a href="#applications-1" id="toc-applications-1" class="nav-link" data-scroll-target="#applications-1">Applications</a></li>
+  <li><a href="#how-will-we-make-this-discussion-fun" id="toc-how-will-we-make-this-discussion-fun" class="nav-link" data-scroll-target="#how-will-we-make-this-discussion-fun">How will we make this discussion fun?</a></li>
+  <li><a href="#capturing-cultural-dimensions-with-embeddings" id="toc-capturing-cultural-dimensions-with-embeddings" class="nav-link" data-scroll-target="#capturing-cultural-dimensions-with-embeddings">Capturing cultural dimensions with embeddings</a></li>
+  <li><a href="#your-turn-how" id="toc-your-turn-how" class="nav-link" data-scroll-target="#your-turn-how">Your turn: How?</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#results-1" id="toc-results-1" class="nav-link" data-scroll-target="#results-1">Results</a></li>
+  <li><a href="#semantic-changes-over-time" id="toc-semantic-changes-over-time" class="nav-link" data-scroll-target="#semantic-changes-over-time">Semantic changes over time</a></li>
+  <li><a href="#results-2" id="toc-results-2" class="nav-link" data-scroll-target="#results-2">Results</a></li>
+  <li><a href="#your-turn-how-1" id="toc-your-turn-how-1" class="nav-link" data-scroll-target="#your-turn-how-1">Your turn: How?</a></li>
+  <li><a href="#ideological-scaling" id="toc-ideological-scaling" class="nav-link" data-scroll-target="#ideological-scaling">Ideological Scaling</a></li>
+  <li><a href="#your-turn-how-with-a-little-help." id="toc-your-turn-how-with-a-little-help." class="nav-link" data-scroll-target="#your-turn-how-with-a-little-help.">Your turn: How? With a little help.</a></li>
+  <li><a href="#results-3" id="toc-results-3" class="nav-link" data-scroll-target="#results-3">Results</a></li>
+  <li><a href="#measuring-emotion" id="toc-measuring-emotion" class="nav-link" data-scroll-target="#measuring-emotion">Measuring Emotion</a></li>
+  <li><a href="#you-turn-how" id="toc-you-turn-how" class="nav-link" data-scroll-target="#you-turn-how">You turn: How?</a></li>
+  <li><a href="#gender-and-ethnic-stereotypes" id="toc-gender-and-ethnic-stereotypes" class="nav-link" data-scroll-target="#gender-and-ethnic-stereotypes">Gender and ethnic stereotypes</a></li>
+  <li><a href="#your-turn-how-2" id="toc-your-turn-how-2" class="nav-link" data-scroll-target="#your-turn-how-2">Your turn: how?</a></li>
+  <li><a href="#results-4" id="toc-results-4" class="nav-link" data-scroll-target="#results-4">Results</a></li>
+  </ul></li>
+  <li><a href="#coding" id="toc-coding" class="nav-link" data-scroll-target="#coding"><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M64 96c0-35.3 28.7-64 64-64H512c35.3 0 64 28.7 64 64V352H512V96H128V352H64V96zM0 403.2C0 392.6 8.6 384 19.2 384H620.8c10.6 0 19.2 8.6 19.2 19.2c0 42.4-34.4 76.8-76.8 76.8H76.8C34.4 480 0 445.6 0 403.2zM281 209l-31 31 31 31c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-48-48c-9.4-9.4-9.4-24.6 0-33.9l48-48c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9zM393 175l48 48c9.4 9.4 9.4 24.6 0 33.9l-48 48c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l31-31-31-31c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z"></path></svg> Coding!</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="week_09.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">PPOL 6801 - Text as Data - Computational Linguistics</h1>
+<p class="subtitle lead"><span style="font-size: 140%;"> <br> Week 9: Word Embeddings II</span></p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p><span style="font-size: 120%;"> Professor: Tiago Ventura </span> </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="plans-for-today" class="level2">
+<h2 class="anchored" data-anchor-id="plans-for-today">Plans for Today:</h2>
+<ul>
+<li><p>A quick quizz (as a review exercise) about Word Embeddings</p></li>
+<li><p>Text as Data applications using Word Embeddings</p></li>
+<li><p>Coding</p></li>
+<li><p>Problem set 2!</p></li>
+</ul>
+</section>
+<section id="word-embeddings-quiz" class="level2">
+<h2 class="anchored" data-anchor-id="word-embeddings-quiz">Word Embeddings Quiz</h2>
+<div class="incremental">
+<ul class="incremental">
+<li><p>Explain these three concepts: <span class="red">Self-Supervision</span>, <span class="red">Distributional Hypothesis</span>, <span class="red">Dense Representation</span>.</p></li>
+<li><p>Put these three concepts together to explain how word vectors can capture meaning of words.</p></li>
+<li><p>What are the two main strategies to estimate word embeddings? One is named Glove, and the other is named Word2Vec</p></li>
+<li><p>Are word embeddings still a bag-of-word representation model?</p></li>
+<li><p>Are word2vec algorithms deep learning?</p></li>
+<li><p>Are word2vec algorithms unsupervised or supervised learning?</p></li>
+</ul>
+</div>
+</section>
+<section id="applications" class="level1">
+<h1>Applications</h1>
+<section id="decisions-when-using-embeddings-rodriguez-and-spirling-2022" class="level2">
+<h2 class="anchored" data-anchor-id="decisions-when-using-embeddings-rodriguez-and-spirling-2022">Decisions when using embeddings, Rodriguez and Spirling, 2022</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="cell" data-hash="week_09_cache/html/unnamed-chunk-1_5aa1490f7673248bf28c9787839243b4">
+<div class="cell-output-display">
+<p><img src="./week9_figs/rodriguez.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
+</div><div class="column" style="width:40%;">
+<p><br> <br></p>
+<p>When using/training embeddings, we face four key decisions:</p>
+<ul>
+<li><p>Window size</p></li>
+<li><p>Number of dimensions for the embedding matrix</p></li>
+<li><p>Pre-trained versus locally fit variants</p></li>
+<li><p>Which algorithm to use?</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="findings" class="level2">
+<h2 class="anchored" data-anchor-id="findings">Findings</h2>
+<div class="cell" data-layout-align="center" data-hash="week_09_cache/html/unnamed-chunk-2_ab1c081ee23f818f651248604438875a">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./week7_figs/rodriguez.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><p>popular, easily available pretrained embeddings perform at a level close to—or surpassing—both human coders andmore complicated locally fit models.</p></li>
+<li><p>GloVe pretrained word embeddings achieve on average—for the set of political queries—80% of human performance and are generally preferred to locally trained embeddings</p></li>
+<li><p>Larger window size and embeddings are often preferred.</p></li>
+</ul>
+</section>
+<section id="applications-1" class="level2">
+<h2 class="anchored" data-anchor-id="applications-1">Applications</h2>
+<p>Let’s discuss now several applications of embeddings on social science papers. These paper show:</p>
+<ul>
+<li><p>How to use embeddings to track semantic changes over time</p></li>
+<li><p>How to use embeddings to measure emotion in political language.</p></li>
+<li><p>How to use embeddings to measure gender and ethnic stereotypes</p></li>
+<li><p>And a favorite of political scientists, how to use embeddings to measure ideology.</p></li>
+</ul>
+</section>
+<section id="how-will-we-make-this-discussion-fun" class="level2">
+<h2 class="anchored" data-anchor-id="how-will-we-make-this-discussion-fun">How will we make this discussion fun?</h2>
+<ul>
+<li><p><span class="red">I</span>: introduce the paper and the main goals</p></li>
+<li><p><span class="red">You</span>: will explain to me how the author use the word embeddings to do so.</p></li>
+</ul>
+</section>
+<section id="capturing-cultural-dimensions-with-embeddings" class="level2">
+<h2 class="anchored" data-anchor-id="capturing-cultural-dimensions-with-embeddings">Capturing cultural dimensions with embeddings</h2>
+<blockquote class="blockquote">
+<p>Austin C. Kozlowski, Austin C., Matt Taddy, and James A. Evans. 2019. “The Geometry of Culture: Analyzing the Meanings of Class through Word Embeddings.” American Sociological Review 84, no. 5: 905–49. https://doi.org/10.1177/0003122419877135.</p>
+</blockquote>
+<ul>
+<li><p>Word Embeddings can be use to capture cultural dimensions</p></li>
+<li><p>Dimensions of word embedding vector space models closely correspond to meaningful “cultural dimensions,” such as rich-poor, moral-immoral, and masculine-feminine.</p></li>
+<li><p>a word vector’s position on these dimensions reflects the word’s respective cultural associations</p></li>
+</ul>
+</section>
+<section id="your-turn-how" class="level2">
+<h2 class="anchored" data-anchor-id="your-turn-how">Your turn: How?</h2>
+<ul>
+<li><p>How are the cultural dimensions built?</p></li>
+<li><p>How associations between words and dimensions are calculated?</p></li>
+<li><p>How are the result validated?</p></li>
+</ul>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<div class="cell" data-layout-align="center" data-hash="week_09_cache/html/unnamed-chunk-3_2bed25f0e94f31d60a8b9aa032ea7539">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./week9_figs/culture_1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="results-1" class="level2">
+<h2 class="anchored" data-anchor-id="results-1">Results</h2>
+<div class="cell" data-layout-align="center" data-hash="week_09_cache/html/unnamed-chunk-4_ad3ab5b4ca0141c79952c90656d7d535">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./week9_figs/culture_2.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="semantic-changes-over-time" class="level2">
+<h2 class="anchored" data-anchor-id="semantic-changes-over-time">Semantic changes over time</h2>
+<blockquote class="blockquote">
+<p>Rodman, E., 2020. A Timely Intervention: Tracking the Changing Meanings of Political Concepts with Word Vectors. Political Analysis, 28(1), pp.87-111.</p>
+</blockquote>
+<ul>
+<li><p>Word Vectors allow us to capture semantic meaning</p></li>
+<li><p>Interesting social science questions hinge on the recognition that meaning changes over time</p></li>
+<li><p>How can we properly use word to vectors to track changes over time?</p></li>
+<li><p>Three challenges:</p>
+<ul>
+<li>Arbitrary Cut Points</li>
+<li>Language Instability (same concept != words)</li>
+<li>Spatial Noncomparability (latent spaces are not constants)</li>
+</ul></li>
+<li><p>Solutions:</p>
+<ul>
+<li>naive time series model (just cut)</li>
+<li>overlapping time series model (just cut and add a t-1)</li>
+<li>chronologically trained model (initialize with global parameters)</li>
+<li>aligned time series method (post-modelling adjustments)</li>
+</ul></li>
+</ul>
+</section>
+<section id="results-2" class="level2">
+<h2 class="anchored" data-anchor-id="results-2">Results</h2>
+<div class="cell" data-layout-align="center" data-hash="week_09_cache/html/unnamed-chunk-5_3494b906c49c1824b833aee27130e846">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./week9_figs/rodman.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="your-turn-how-1" class="level2">
+<h2 class="anchored" data-anchor-id="your-turn-how-1">Your turn: How?</h2>
+<ul>
+<li><p>How does she uses word2vec?</p></li>
+<li><p>What is there pipeline to build a golden set?</p></li>
+<li><p>What is her outcome measure and how she builds it?</p></li>
+</ul>
+</section>
+<section id="ideological-scaling" class="level2">
+<h2 class="anchored" data-anchor-id="ideological-scaling">Ideological Scaling</h2>
+<blockquote class="blockquote">
+<p>Rheault, Ludovic, and Christopher Cochrane. “Word embeddings for the analysis of ideological placement in parliamentary corpora.” Political Analysis 28, no. 1 (2020): 112-133.</p>
+</blockquote>
+<ul>
+<li><p>Can word vectors be used to produce scaling estimates of ideological placement on political text?</p>
+<ul>
+<li><p>Yes, and word vectors are even better</p>
+<ul>
+<li><p>It captures semantics</p></li>
+<li><p>No need of training data (self-supervision)</p></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="your-turn-how-with-a-little-help." class="level2">
+<h2 class="anchored" data-anchor-id="your-turn-how-with-a-little-help.">Your turn: How? With a little help.</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-hash="week_09_cache/html/unnamed-chunk-6_f2023fea2e3b7e125c8fb43e1d51bc63">
+<div class="cell-output-display">
+<p><img src="./week9_figs/scaling_00.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><p>Other than the a vector for the covariate, what are the other things this model gives you?</p></li>
+<li><p>Can you get these vectors without having to re-estimate the model?</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="results-3" class="level2">
+<h2 class="anchored" data-anchor-id="results-3">Results</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-hash="week_09_cache/html/unnamed-chunk-7_398bf68dc9025fe365fb62d4661e2868">
+<div class="cell-output-display">
+<p><img src="./week9_figs/scaling_01.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-hash="week_09_cache/html/unnamed-chunk-8_aa2db171f121612b22d9c6ca81d2258a">
+<div class="cell-output-display">
+<p><img src="./week9_figs/scaling_02.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="measuring-emotion" class="level2">
+<h2 class="anchored" data-anchor-id="measuring-emotion">Measuring Emotion</h2>
+<blockquote class="blockquote">
+<p>Gennaro, Gloria, and Elliott Ash. “Emotion and reason in political language.” The Economic Journal 132, no. 643 (2022): 1037-1059.</p>
+</blockquote>
+<div class="cell" data-hash="week_09_cache/html/unnamed-chunk-9_538cc6212fc79777fd9fa18ab0ef55b4">
+<div class="cell-output-display">
+<p><img src="./week9_figs/emotion.png" class="img-fluid" style="width:90.0%"></p>
+</div>
+</div>
+</section>
+<section id="you-turn-how" class="level2">
+<h2 class="anchored" data-anchor-id="you-turn-how">You turn: How?</h2>
+<ul>
+<li><p>What are the seed words for emotion and cognition?</p></li>
+<li><p>How are word vectors for speech aggregated?</p></li>
+<li><p>How are word vectors for seed words aggregated?</p></li>
+<li><p>How do the authors measure emotionality in text?</p></li>
+</ul>
+</section>
+<section id="gender-and-ethnic-stereotypes" class="level2">
+<h2 class="anchored" data-anchor-id="gender-and-ethnic-stereotypes">Gender and ethnic stereotypes</h2>
+<blockquote class="blockquote">
+<p>Garg, Nikhil, Londa Schiebinger, Dan Jurafsky and James Zou. 2018. “Word embeddings quantify 100 years of gender and ethnic stereotypes.” Proceedings of the National Academy of Sciences 115(16):E3635–E3644.</p>
+</blockquote>
+<ul>
+<li><p>Word Embeddings are trained in huge volumes of data</p></li>
+<li><p>Training data contain stereotypes, for example, in gender and ethnic dimensions.</p></li>
+<li><p>How can we use word vectors to understand these stereotypes?</p></li>
+</ul>
+</section>
+<section id="your-turn-how-2" class="level2">
+<h2 class="anchored" data-anchor-id="your-turn-how-2">Your turn: how?</h2>
+<ul>
+<li><p>What are the measures of biases proposed by the author?</p></li>
+<li><p>What the input here? And the variation over time?</p></li>
+</ul>
+</section>
+<section id="results-4" class="level2">
+<h2 class="anchored" data-anchor-id="results-4">Results</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-hash="week_09_cache/html/unnamed-chunk-10_6bbe2a2a1a12918165d1a3b2682f6aee">
+<div class="cell-output-display">
+<p><img src="./week9_figs/bias_01.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-hash="week_09_cache/html/unnamed-chunk-11_e4c2dd3be35299ad720e1e569c76516d">
+<div class="cell-output-display">
+<p><img src="./week9_figs/bias_02.png" class="img-fluid" style="width:100.0%"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="coding" class="level1">
+<h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M64 96c0-35.3 28.7-64 64-64H512c35.3 0 64 28.7 64 64V352H512V96H128V352H64V96zM0 403.2C0 392.6 8.6 384 19.2 384H620.8c10.6 0 19.2 8.6 19.2 19.2c0 42.4-34.4 76.8-76.8 76.8H76.8C34.4 480 0 445.6 0 403.2zM281 209l-31 31 31 31c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-48-48c-9.4-9.4-9.4-24.6 0-33.9l48-48c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9zM393 175l48 48c9.4 9.4 9.4 24.6 0 33.9l-48 48c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l31-31-31-31c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z"></path></svg> Coding!</h1>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
