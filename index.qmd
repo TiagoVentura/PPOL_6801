@@ -23,22 +23,21 @@ The course includes hands-on exercises using real-world data to reinforce lectur
 -   Email: [tv186\@georgetown.edu](mailto:tv186@georgetown.edu)
 -   Lectures: Every Monday, 9:30am - 12pm
 -   Office Hours: Every Tuesday, 3pm - 4pm
-    - Location: McCourt Building, 766
+    -   Location: McCourt Building, 766
 
 ## Office Hours
 
 **You are all welcome to the office hours.** You can come to the office hours to:
 
--  Drink some coffee;
+-   Drink some coffee;
 
--  Ask what I am doing research at;
+-   Ask what I am doing research at;
 
--  Tell me about your research;
+-   Tell me about your research;
 
--  Ask any question about our class;
+-   Ask any question about our class;
 
--  Or just talk about soccer.
-
+-   Or just talk about soccer.
 
 All are valid options! And no need to schedule time with me!
 
@@ -46,7 +45,7 @@ All are valid options! And no need to schedule time with me!
 
 **Class Website:** This class website will be used throughout the course and should be checked on a regular basis for lecture materials and required readings.
 
-**Class Slack Channel:** The class also has a dedicated [slack channel](https://join.slack.com/t/ppol68012025/shared_invite/zt-3c33fiq9f-_YQ2c1p660cGIk~zLyaH7Q). The channel serves as an open forum to discuss, collaborate, pose problems/questions, and offer solutions. Students are encouraged to pose any questions they have there as this will provide the professor the means of answering the question so that all can see the response. If you're unfamiliar with, please consult the following start-up tutorial <https://get.slack.help/hc/en-us/articles/218080037-Getting-started-for-new-members>. Please follow the [invite link](https://join.slack.com/t/ppol5203fall2023/shared_invite/zt-2159njh4n-S4u1yonz4dA7Zxyo2n3bjA) to be added to the Slack channel.
+**Class Slack Channel:** The class also has a dedicated [slack channel](https://join.slack.com/t/ppol68012025/shared_invite/zt-3c33fiq9f-_YQ2c1p660cGIk~zLyaH7Q). The channel serves as an open forum to discuss, collaborate, pose problems/questions, and offer solutions. Students are encouraged to pose any questions they have there as this will provide the professor the means of answering the question so that all can see the response. If you're unfamiliar with, please consult the following start-up tutorial <https://get.slack.help/hc/en-us/articles/218080037-Getting-started-for-new-members>. Please follow the [invite link](https://join.slack.com/t/ppol68012025/shared_invite/zt-3c33fiq9f-_YQ2c1p660cGIk~zLyaH7Q) to be added to the Slack channel.
 
 **Canvas:** A Canvas site <http://canvas.georgetown.edu> will be used throughout the course and should be checked on a regular basis for announcements. Materials will be posted here, and not on canvas, or distributed in class or by e-mail. Support for Canvas is available at (202) 687-4949
 

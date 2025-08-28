@@ -67,6 +67,7 @@ editor_options:
 ::: 
 -->
 ```
+
 ## Challenge I: Text is High-Dimensional
 
 From [Gentzkow et al 2017](https://web.stanford.edu/~gentzkow/research/text-as-data.pdf):
@@ -128,12 +129,12 @@ In most social science applications of text as data, we are trying to make an in
 
 ## Ventura et. al., Streaming Chats, 2021
 
-::: columns
+:::::: columns
 ::: {.column width="50%"}
 ![](week2_figs/ventura_jqd.png){fig-align="left" width="600px"}
 :::
 
-::: {.column width="50%"}
+:::: {.column width="50%"}
 ### Key components
 
 ::: nonincremental
@@ -145,8 +146,8 @@ In most social science applications of text as data, we are trying to make an in
 
 -   Source of bias?
 :::
-:::
-:::
+::::
+::::::
 
 ## 2. Unit of Analysis
 
@@ -297,24 +298,24 @@ Now we have [pre-processed]{.red} our data. So we simplify it even further:
 *We use a new dataset containing nearly 50 million historical newspaper pages from 2,700 local US newspapers over the years 1877--1977. We define and discuss a measure of power we develop based on observed word frequencies, and we validate it through a series of analyses. Overall, we find that the relative coverage of political actors and of political offices is a strong indicator of political power for the cases we study*
 :::
 
-::: fragment
+:::: fragment
 ::: {.callout-note icon="false"}
 ## After pre-processing
 
 *use new dataset contain near 50 million historical newspaper pag 2700 local u newspaper year 18771977 define discus measure power develop bas observ word frequenc validate ser analys overall find relat coverage political actor political offic strong indicator political power cas study*
 :::
-:::
+::::
 
 ## Denny & Spirling, 2018
 
-::: columns
+:::::: columns
 ::: {.column width="50%"}
 ```{r fig.align="center"}
 knitr::include_graphics("week2_figs/DA_wordfish.png")
 ```
 :::
 
-::: {.column width="50%"}
+:::: {.column width="50%"}
 [**Starting point**]{.red}: No rigorous way to compare results across different pre-processing steps. Adapting recommendations from supervised learning tasks.
 
 -   Unsupervised vs Supervised Learning?
@@ -336,8 +337,8 @@ knitr::include_graphics("week2_figs/DA_wordfish.png")
 :::
 
 -   Too much work? Substantive knowledge out of the table?
-:::
-:::
+::::
+::::::
 
 ## 5. Vector Space Model
 
@@ -464,14 +465,14 @@ knitr::include_graphics("https://m.media-amazon.com/images/I/A1lv97-jJoL._SL1500
 
 ## Ban et. al. 2019, How Newspapers Reveal Political Power.
 
-::: columns
+:::::: columns
 ::: {.column width="50%"}
 ```{r fig.width=12}
 knitr::include_graphics("week2_figs/ban_.png")
 ```
 :::
 
-::: {.column width="50%"}
+:::: {.column width="50%"}
 <br> <br>
 
 -   Purely descriptive
@@ -485,5 +486,5 @@ $$
 \small \text{Coverage of Mayor}_{it} = \frac{\text{Mayor}_{it}}{\text{Mayor}_{it} + \text{City Manager}_{it} + \text{City Council}_{it}}
 $$
 :::
-:::
-:::
+::::
+::::::

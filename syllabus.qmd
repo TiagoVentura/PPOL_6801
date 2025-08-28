@@ -7,6 +7,7 @@ format: html
 [**Download a PDF Version here**](_syllabus.pdf)
 
 ## Course Description
+
 This course introduces students to the quantitative analysis of text as data. With the increasing availability of large-scale textual data – from government documents and political speeches to social media and online news – the potential to extract meaningful insights from text has expanded dramatically. In this course, students will learn to transform text into data and apply it to social science questions and theories. The focus is on understanding the real-world use of text as data, through a large collection of recent academic articles, rather than just the mathematical and computational theory behind it, which we will definitely cover.
 
 The class content can be broadly split into two parts. First, we start with traditional approaches that model text as data using a bag-of-words assumption. Here, we'll cover various methods, including building and utilizing dictionaries, understanding sentiment in text, scaling texts on ideological and policy dimensions, and applying machine learning to classify text. In the second half of the class, we will focus on state-of-the-art models that move beyond bag-of-words and sparse representations of text, and model text based on embeddings/dense representations of words. Here, we begin with an overview of how to represent text as data, from sparse representations via bag-of-words models to dense representations using word embeddings. We then discuss the use of deep learning models for text representation and downstream classification tasks. From here, we will discuss the foundation of the state-of-the-art machine learning models for text analysis: transformer models. Lastly, we will discuss several applications of large language models in social science tasks.
@@ -23,8 +24,7 @@ The course includes hands-on exercises using real-world data to reinforce lectur
 -   Email: [tv186\@georgetown.edu](mailto:tv186@georgetown.edu)
 -   Lectures: Every Monday, 9:30am - 12pm
 -   Office Hours: Every Tuesday, 3pm - 4pm
-    - Location: McCourt Building, 766
-
+    -   Location: McCourt Building, 766
 
 <!-- add zoom link for virtual office hours -->
 
@@ -46,10 +46,9 @@ Note that this class is scheduled to meet weekly for 2.5 hours. I will do my bes
 
 -   Daniel Jurafsky and James H. Martin. [Speech and Language Processing, 3nd Edition.](https://web.stanford.edu/~jurafsky/slp3/ed3book.pdf) - \[SLP\]
 
-- Weekly articles that are listed below. 
+-   Weekly articles that are listed below.
 
-**Tip on readings:** This class follows a PhD-style Seminar. This means I expect you to read the materials before class. This is my suggestion for you to optimize your reading time: 1) read very carefully the chapters from the textbook; 2) skim through the applied paper, and focus most of your attention to methods and results from the applied papers -- theory and literature review of these papers are less relevant for us. 
-
+**Tip on readings:** This class follows a PhD-style Seminar. This means I expect you to read the materials before class. This is my suggestion for you to optimize your reading time: 1) read very carefully the chapters from the textbook; 2) skim through the applied paper, and focus most of your attention to methods and results from the applied papers -- theory and literature review of these papers are less relevant for us.
 
 ## Course Infrastructure
 
@@ -63,7 +62,7 @@ Note that this class is scheduled to meet weekly for 2.5 hours. I will do my bes
 
 ### Week 1: Introductions and Course Overview (September 2)
 
-**Topics:** Review of the syllabus, class organization, and introduction to computational text analysis, and review/hands-on help with computational environment. 
+**Topics:** Review of the syllabus, class organization, and introduction to computational text analysis, and review/hands-on help with computational environment.
 
 -   \[GMB\] - Chapter 2.
 
@@ -81,11 +80,11 @@ Or one of the three below:
 
 **Required Reading**:
 
-- \[GMB\] - Chapters 2-5
+-   \[GMB\] - Chapters 2-5
 
 -   **Applied Papers**:
 
-     -   Denny, M. J., & Spirling, A. (2018). Text preprocessing for unsupervised learning: why it matters, when it misleads, and what to do about it. Political Analysis, 26(2): 168-189.
+    -   Denny, M. J., & Spirling, A. (2018). Text preprocessing for unsupervised learning: why it matters, when it misleads, and what to do about it. Political Analysis, 26(2): 168-189.
 
     -   Ban, Pamela, Alexander Fouirnaies, Andrew B. Hall, and James M. Snyder. "How newspapers reveal political power." Political Science Research and Methods 7, no. 4 (2019): 661-678.
 
@@ -94,7 +93,6 @@ Or one of the three below:
 -   Michel, J.B., et al. 2011. "Quantitative Analysis of Culture Using Millions of Digitized Books." Science 331 (6014): 176--82. https://doi.org/10.1126/science.1199644;
 
 ### Week 3: Text Similarity, Text re-use and Complexity (September 15)
-
 
 **Topics:** How do we evaluate complexity in text? Why should we care about complexity in text? How do we evaluate similarity in text? Why is this useful?
 
@@ -109,19 +107,16 @@ Or one of the three below:
     -   Spirling, Arthur. 2016. "Democratization and Linguistic Complexity", Journal of Politics.
 
     -   Benoit, K., Munger, K. and Spirling, A. 2017. Measuring and Explaining Political Sophistication Through Textual Complexity
-    
 
 **Optional Readings**
 
-- Adukia A. and Harrison E. (2024). Separation of Church and State Curricula? Examining Public and Religious Private School Textbooks. Working Paper.
-    
+-   Adukia A. and Harrison E. (2024). Separation of Church and State Curricula? Examining Public and Religious Private School Textbooks. Working Paper.
+
 -   Linder, Fridolin, Bruce Desmarais, Matthew Burgess, and Eugenia Giraudy. "Text as policy: Measuring policy similarity through bill text reuse." Policy Studies Journal 48, no. 2 (2020): 546-574.
 
 ### Week 4: Supervised Learning I: Dictionary Methods and Out-of-Box Classifier Analysis (September 22)
 
-
 **Topics:** What are dictionaries? Why/when are they useful? What are their limitations? Can we use models trained by others?
-
 
 **Required Readings**
 
@@ -135,8 +130,7 @@ Or one of the three below:
 
     -   Ventura, Tiago, Kevin Munger, Katherine McCabe, and Keng-Chi Chang. "Connective effervescence and streaming chat during political debates." Journal of Quantitative Description: Digital Media 1 (2021).
 
-### Week 5: Supervised Learning II: Training your own classifiers  (September 29)
-
+### Week 5: Supervised Learning II: Training your own classifiers (September 29)
 
 **Topics:** We will study the framework to train our own supervised models, and when to use them.
 
@@ -144,7 +138,7 @@ Or one of the three below:
 
 -   \[GMB\] - Chapters 17, 18, 19, and 20.
 
-- Benoit, K., et al. (2016). Crowd-sourced text analysis: Reproducible and agile production of political data. American Political Science Review, 110(2), 278-295.
+-   Benoit, K., et al. (2016). Crowd-sourced text analysis: Reproducible and agile production of political data. American Political Science Review, 110(2), 278-295.
 
 -   Barberá, Pablo, Amber E. Boydstun, Suzanna Linn, Ryan McMahon, and Jonathan Nagler. "Automated text classification of news articles: A practical guide." Political Analysis 29, no. 1 (2021): 19-42.
 
@@ -158,7 +152,6 @@ Or one of the three below:
 
 ### Week 6: Unsupervised Learning: Topic Models (October 6)
 
-
 **Topics**: what if we do not have an outcome to predict? can we cluster the text in groups? what are topics?
 
 **Required Redings**
@@ -167,8 +160,7 @@ Or one of the three below:
 
 -   David M. Blei . 2012. "Probabilistic Topic Models." http://www.cs.columbia.edu/\~blei/papers/ Blei2012.pdf
 
-- Roberts, M.E., Stewart, B.M. and Tingley, D. (2019). STM: An R package for structural topic models. Journal of Statistical Software, 91(2)
-
+-   Roberts, M.E., Stewart, B.M. and Tingley, D. (2019). STM: An R package for structural topic models. Journal of Statistical Software, 91(2)
 
 -   **Applied Papers**:
 
@@ -176,11 +168,10 @@ Or one of the three below:
 
     -   Barberá, P., Casas, A., Nagler, J., Egan, P. J., Bonneau, R., Jost, J. T., & Tucker, J. A. (2019). [Who leads? Who follows? Measuring issue attention and agenda setting by legislators and the mass public using social media data](https://www.cambridge.org/core/journals/american-political-science-review/article/who-leads-who-follows-measuring-issue-attention-and-agenda-setting-by-legislators-and-the-mass-public-using-social-media-data/D855849CE288A241529E9EC2E4FBD3A8). American Political Science Review, 113(4), 883-901.
 
-
 **Optional:**
- 
-- Catalinac, Amy. "From pork to policy: The rise of programmatic campaigning in Japanese elections." The Journal of Politics 78.1 (2016): 1-18.
-    
+
+-   Catalinac, Amy. "From pork to policy: The rise of programmatic campaigning in Japanese elections." The Journal of Politics 78.1 (2016): 1-18.
+
 -   Eshima, Shusei, Kosuke Imai, and Tomoya Sasaki. "Keyword‐Assisted Topic Models." American Journal of Political Science (2020).
 
 ### Week 7: Using Text to Measure Ideology - Scaling (October 20)
@@ -209,11 +200,9 @@ Or one of the three below:
 
 -   [Lin, Gechun, and Christopher Lucas. "An Introduction to Neural Networks for the Social Sciences." (2023)](https://christopherlucas.org/files/PDFs/nn_chapter.pdf)
 
-
 ### Week 9: Word Embeddings: What they are and how to estimate? (November 3)
 
 **Topics:** What are word-embeddings? When and how can we use them? What? Topic models again? Is this still a bag of words?
-
 
 **Required Readings:**
 
@@ -259,18 +248,17 @@ Or one of the three below:
 
 -   [Timoneda and Vera, BERT, RoBERTa or DeBERTa? Comparing Performance Across Transformer Models in Political Science Text](https://www.journals.uchicago.edu/doi/full/10.1086/730737), The Journal of Politics 87, no. 1 (2025): 000-000.
 
-
 ### Week 13: Large Language Models: Prompting, building chatbots, and social science applications. (Invited Speaker: Dr. Christopher Barrie, Professor Sociology New York University) (December 1)
 
--   **Topics**: We will see some social science application of LLMs chatbots. We will also discuss a working paper on replicability of research using LLMs. 
+-   **Topics**: We will see some social science application of LLMs chatbots. We will also discuss a working paper on replicability of research using LLMs.
 
 **Required Readings:**
 
 -   \[SLP\] - Chapter 10.
 
--  [Hugging Face NLP Course, Ch. 2](https://huggingface.co/learn/llm-course/chapter2/1)
+-   [Hugging Face NLP Course, Ch. 2](https://huggingface.co/learn/llm-course/chapter2/1)
 
--  [Barrie, Christopher, Alexis Palmer, and Arthur Spirling. "Replication for language models problems, principles, and best practice for political science."](https://arthurspirling.org/documents/BarriePalmerSpirling_TrustMeBro.pdf)
+-   [Barrie, Christopher, Alexis Palmer, and Arthur Spirling. "Replication for language models problems, principles, and best practice for political science."](https://arthurspirling.org/documents/BarriePalmerSpirling_TrustMeBro.pdf)
 
 **Optional:**
 
@@ -299,8 +287,7 @@ Or one of the three below:
 
 Your performance in the following aspects will be considered when assessing this part of your grade:
 
-
--  Doing the assigned readings, and engaging in the in class discussion. 
+-   Doing the assigned readings, and engaging in the in class discussion.
 
 -   Active involvement during class sessions, fostering a dynamic learning environment.
 

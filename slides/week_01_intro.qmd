@@ -50,7 +50,7 @@ format:
 
 ## Introduction
 
-::: columns
+:::::: columns
 ::: {.column width="40%"}
 <br>
 
@@ -59,7 +59,7 @@ knitr::include_graphics("me.jpg")
 ```
 :::
 
-::: {.column width="60%"}
+:::: {.column width="60%"}
 ::: nonincremental
 **Professor Tiago Ventura (he/him)**
 
@@ -77,8 +77,8 @@ knitr::include_graphics("me.jpg")
 
 **Outside of work, I enjoy [watching soccer, reading sci-fi and running]{.red}**
 :::
-:::
-:::
+::::
+::::::
 
 # Motivation
 
@@ -140,6 +140,7 @@ knitr::include_graphics("https://miro.medium.com/v2/resize:fit:1400/1*t2u_0FHoQS
 
 [**Focus on applications of computational linguistics to social science problems**]{.red} -->
 ```
+
 ## Principles of Text Analysis (GMB Textbook)
 
 -   [**Principle 1:**]{.red} Social science theories and substantive knowledge are essential for research design
@@ -256,14 +257,14 @@ From [Gentzkow et al 2017](https://web.stanford.edu/~gentzkow/research/text-as-d
 
 ## Your turn!
 
-::: columns
+:::::: columns
 ::: {.column width="40%"}
 ```{r  echo=FALSE, out.width = "100%", fig.align="center"}
 knitr::include_graphics("https://media.giphy.com/media/eKDp7xvUdbCrC/giphy.gif") 
 ```
 :::
 
-::: {.column width="60%"}
+:::: {.column width="60%"}
 ::: nonincremental
 <br> <br> <br>
 
@@ -275,8 +276,8 @@ knitr::include_graphics("https://media.giphy.com/media/eKDp7xvUdbCrC/giphy.gif")
 
 -   The most interesting thing you learned in the DSPP so far
 :::
-:::
-:::
+::::
+::::::
 
 # Let's take a break!
 
