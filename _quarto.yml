@@ -4,9 +4,9 @@ project:
 
 website:
   title: "PPOL 6801 - Text as Data - Computational Linguistics"
-  favicon: images/AU_mark.png
+  favicon: logo_gtown.png
   navbar:
-    logo: images/AU_mark.png
+    logo: logo_gtown.png
     left:
       - href: index.qmd
         text: Home
@@ -19,8 +19,10 @@ website:
       
 format:
   html:
-    theme: cosmo
+    theme: 
+      - cosmo        # base Bootswatch theme
+      - custom.scss  # your overrides in SCSS
     toc: true
-
+    
 editor: visual
 
