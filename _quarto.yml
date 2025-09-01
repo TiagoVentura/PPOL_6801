@@ -1,39 +1,25 @@
 project:
   type: website
   output-dir: docs
-  
 
 website:
   title: "PPOL 6801 - Text as Data - Computational Linguistics"
-  sidebar:
-    background: light
-    logo: "logo.png"
-    pinned: true
-    align: center
-    tools:
-       - icon: github
-         href: https://github.com/TiagoVentura/PPOL_6801_2024
-         text: GitHub
-    style: docked
-    contents:
+  favicon: images/AU_mark.png
+  navbar:
+    logo: images/AU_mark.png
+    left:
       - href: index.qmd
         text: Home
       - href: syllabus.qmd
         text: Syllabus
       - href: schedule.qmd
-        text: Schedule
+        text: Weekly Material
       - href: finalproject.qmd
         text: Final Project
-      - section: "Materials"
-        contents: 
-          - href: weeks/week-01.qmd
-            text: "Week 1: Intro"
-          
       
 format:
   html:
     theme: cosmo
-    css: styles.scss
     toc: true
 
 editor: visual

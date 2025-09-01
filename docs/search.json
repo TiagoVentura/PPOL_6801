@@ -121,16 +121,16 @@
   {
     "objectID": "schedule.html",
     "href": "schedule.html",
-    "title": "Instructions for PPOL 6801 - Final Project",
+    "title": "Weekly Schedule & Readings",
     "section": "",
-    "text": "Slides\n\nWeek 1 Slides\n\nCode\n\n Week 1 - Introduction to R \nPooling Data\n\nRequired Readings\n\nGrimmer, Justin, Margaret E. Roberts, and Brandon M. Stewart. Text as data: A new framework for machine learning and the social sciences. Princeton University Press, 2022 - Chapter 2.\n\nOr one of the three below:\n\nPolitical Science Perspective: Wilkerson, J. and Casas, A. (2017). Large-Scale Computerized Text Analysis in Political Science: Opportunities and Challenges. Annual Review of Political Science, 20, 529:544.\nEconomics Perspective: Gentzkow, Matthew, Bryan Kelly, and Matt Taddy. “Text as data.” Journal of Economic Literature 57, no. 3 (2019): 535-574.\nSociology Perspective: https://www.sciencedirect.com/science/article/pii/S0049089X22000904"
+    "text": "Topics: Course overview, logistics, introduction to R\nLecture: Week 1 - Introduction\nRequired Readings\n\nGrimmer, Justin, Margaret E. Roberts, and Brandon M. Stewart. Text as data: A new framework for machine learning and the social sciences. Princeton University Press, 2022 - Chapter 2.\n\nAnd one of the three below:\n\nPolitical Science Perspective: Wilkerson, J. and Casas, A. (2017). Large-Scale Computerized Text Analysis in Political Science: Opportunities and Challenges. Annual Review of Political Science, 20, 529:544.\nEconomics Perspective: Gentzkow, Matthew, Bryan Kelly, and Matt Taddy. “Text as data.” Journal of Economic Literature 57, no. 3 (2019): 535-574.\nSociology Perspective: https://www.sciencedirect.com/science/article/pii/S0049089X22000904\n\nCoding Materials:  Week 1 - Introduction to R \nData: Pooling Data"
   },
   {
     "objectID": "schedule.html#weekly-schedule-readings",
     "href": "schedule.html#weekly-schedule-readings",
     "title": "Instructions for PPOL 6801 - Final Project",
     "section": "",
-    "text": "Slides\n\nWeek 1 Slides\n\nCode\n\n Week 1 - Introduction to R \nPooling Data\n\nRequired Readings\n\nGrimmer, Justin, Margaret E. Roberts, and Brandon M. Stewart. Text as data: A new framework for machine learning and the social sciences. Princeton University Press, 2022 - Chapter 2.\n\nOr one of the three below:\n\nPolitical Science Perspective: Wilkerson, J. and Casas, A. (2017). Large-Scale Computerized Text Analysis in Political Science: Opportunities and Challenges. Annual Review of Political Science, 20, 529:544.\nEconomics Perspective: Gentzkow, Matthew, Bryan Kelly, and Matt Taddy. “Text as data.” Journal of Economic Literature 57, no. 3 (2019): 535-574.\nSociology Perspective: https://www.sciencedirect.com/science/article/pii/S0049089X22000904"
+    "text": "Topics: Course overview, logistics, introduction to R\nLecture: Week 1 - Introduction\nRequired Readings\n\nGrimmer, Justin, Margaret E. Roberts, and Brandon M. Stewart. Text as data: A new framework for machine learning and the social sciences. Princeton University Press, 2022 - Chapter 2.\n\nAnd one of the three below:\n\nPolitical Science Perspective: Wilkerson, J. and Casas, A. (2017). Large-Scale Computerized Text Analysis in Political Science: Opportunities and Challenges. Annual Review of Political Science, 20, 529:544.\nEconomics Perspective: Gentzkow, Matthew, Bryan Kelly, and Matt Taddy. “Text as data.” Journal of Economic Literature 57, no. 3 (2019): 535-574.\nSociology Perspective: https://www.sciencedirect.com/science/article/pii/S0049089X22000904\n\nCoding Materials:  Week 1 - Introduction to R \nData: Pooling Data"
   },
   {
     "objectID": "data/Week_11_GPT_Models.html",
@@ -2084,5 +2084,12 @@
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Weekly Schedule",
     "text": "Weekly Schedule\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\n\n\n\n\n1\nSept 2\nIntroductions and Course Overview\n\n\n2\nSept 8\nFrom Text to Matrices: Representing Text as Data\n\n\n3\nSept 15\nText Similarity, Text Re-use, and Complexity\n\n\n4\nSept 22\nSupervised Learning I: Dictionary Methods and Out-of-Box Classifiers\n\n\n5\nSept 29\nSupervised Learning II: Training Your Own Classifiers\n\n\n6\nOct 6\nUnsupervised Learning: Topic Models\n\n\n7\nOct 20\nUsing Text to Measure Ideology – Scaling\n\n\n8\nOct 27\nRepresentation Learning & Introduction to Deep Learning\n\n\n9\nNov 3\nWord Embeddings: What They Are and How to Estimate\n\n\n10\nNov 10\nWord Embeddings: Social Science Applications\n\n\n11\nNov 17\nReplication Class: Students’ Presentation\n\n\n12\nNov 24\nTransformers\n\n\n13\nDec 1\nLarge Language Models: Prompting, Chatbots, and Applications (Guest: Dr. Christopher Barrie, NYU)\n\n\n14\nDec 8\nFinal Projects: Students’ Presentation"
+  },
+  {
+    "objectID": "schedule.html#week-1-september-2nd",
+    "href": "schedule.html#week-1-september-2nd",
+    "title": "Weekly Schedule & Readings",
+    "section": "",
+    "text": "Topics: Course overview, logistics, introduction to R\nLecture: Week 1 - Introduction\nRequired Readings\n\nGrimmer, Justin, Margaret E. Roberts, and Brandon M. Stewart. Text as data: A new framework for machine learning and the social sciences. Princeton University Press, 2022 - Chapter 2.\n\nAnd one of the three below:\n\nPolitical Science Perspective: Wilkerson, J. and Casas, A. (2017). Large-Scale Computerized Text Analysis in Political Science: Opportunities and Challenges. Annual Review of Political Science, 20, 529:544.\nEconomics Perspective: Gentzkow, Matthew, Bryan Kelly, and Matt Taddy. “Text as data.” Journal of Economic Literature 57, no. 3 (2019): 535-574.\nSociology Perspective: https://www.sciencedirect.com/science/article/pii/S0049089X22000904\n\nCoding Materials:  Week 1 - Introduction to R \nData: Pooling Data"
   }
 ]
