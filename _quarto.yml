@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "PPOL 6801 - Text as Data - Computational Linguistics"
+  title: "PPOL-6801"
   favicon: logo_gtown.png
   navbar:
     logo: logo_gtown.png
