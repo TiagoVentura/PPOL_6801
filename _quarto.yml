@@ -21,7 +21,7 @@ format:
   html:
     theme: 
       - cosmo        # base Bootswatch theme
-      - custom.scss  # your overrides in SCSS
+      - style.scss  # your overrides in SCSS
     toc: true
     
 editor: visual
