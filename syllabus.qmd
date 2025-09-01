@@ -356,7 +356,7 @@ You will work in pairs for this assignment. Your partner will be randomly assign
 
 -   **Step 3**: Presentation
 
-    -   For weeks 11, you will do a presentation of your replication efforts.
+    -   For week 11, you will do a presentation of your replication efforts.
     -   The presentation should have the following sections:
         -   Introduction: introduction summarizing the article.
         -   Methods: data used in the article

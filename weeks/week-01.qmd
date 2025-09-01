@@ -62,9 +62,9 @@ Or one of the three below:
 
 **Coding Materials**
 
--  <a href="/code/week1_introduction_to_R.R" download> Week 1 - Introduction to R </a>
+-   <a href="/code/week1_introduction_to_R.R" download> Week 1 - Introduction to R </a>
 
-- [Pooling Data](https://www.dropbox.com/scl/fi/2j5wmwtgvsis4eul89as2/national_clinton_trump_6_20_2016.csv?rlkey=yh2ziddv1ixajunkompwepz6f&dl=0)
+-   [Pooling Data](https://www.dropbox.com/scl/fi/2j5wmwtgvsis4eul89as2/national_clinton_trump_6_20_2016.csv?rlkey=yh2ziddv1ixajunkompwepz6f&dl=0)
 
 # Slides
 
