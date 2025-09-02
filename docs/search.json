@@ -130,7 +130,7 @@
     "href": "slides/week_01_intro.html#section",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "",
-    "text": "For many years, social scientists have used text in their empirical analysis:\n\nClose reading of documents.\nQualitative Analysis of interviews\nContent Analysis\n\n\n\nIn the past 20 years, we have been going through a technological revolution:\n\nConsolidation of digital storage vs analogical\nInternet: Production of textual information increased\nThe capacity to store, access and share this large volume of data also increased.\nAt the same time, the cost of accessing large computing power reduced… think about your laptops…\nAnd even powerful computational models (that do not fit in your laptop) became easily accessible."
+    "text": "For many years, social scientists have used text in their empirical analysis:\n\nClose reading of documents.\nQualitative Analysis of interviews\nHand-Coded content analysis\n\n\n\nIn the past 20 years, we have been going through a technological revolution:\n\nConsolidation of digital storage vs analogical\nInternet: Production of textual information increased\nThe capacity to store, access and share this large volume of data also increased.\nAt the same time, the cost of accessing large computing power reduced… think about your laptops…\nAnd even powerful computational models (that do not fit in your laptop) became easily accessible."
   },
   {
     "objectID": "slides/week_01_intro.html#official-documents-congressional-speeches-bills-press-releases-transcripts-from-all-over-the-world",
@@ -165,7 +165,7 @@
     "href": "slides/week_01_intro.html#what-is-text-as-data",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "What is Text-as-Data?",
-    "text": "What is Text-as-Data?\n\n.red[TaD]: focuses on using text as a form of data to make .red[inferences] about the world around us, such as human behavior\nThis class covers:\n\nComputational methods to process and analyze text at scale (Data Science/NLP Tools)\nMany applications showing how we can use text to answer social science problems and test social science theories. (Applied Social Science)\nBridge the gap between cutting-edge NLP and meaningful, interpretable research"
+    "text": "What is Text-as-Data?\n\nTaD: focuses on using text as a form of data to make inferences about the world around us, such as human behavior\nThis class covers:\n\nComputational methods to process and analyze text at scale (Data Science/NLP Tools)\nMany applications showing how we can use text to answer social science problems and test social science theories. (Applied Social Science)\nBridge the gap between cutting-edge NLP and meaningful, interpretable research"
   },
   {
     "objectID": "slides/week_01_intro.html#challenges-i-text-is-an-unstructure-data-source",
@@ -214,7 +214,7 @@
     "href": "slides/week_01_intro.html#section-2",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "",
-    "text": "Professor Tiago Ventura (he/him)\n\nAssistant Professor at McCourt School.\nPolitical Science Ph.D.\nPostdoc at Center for Social Media and Politics - NYU.\nResearcher at Twitter.\n\n\n\nMy Research: Eeffects of technology in politics + applications of computational models to social science:\n\nGlobal Social Media Deactivation.\nEffects of WhatsApp Usage on Elections in the Global South.\nDeveloping a data donation pipeline for WhatsApp data.\nMeasuring Humanness vs AI-Generated Content on Social Media.\nUsing LLMs to augment web-browsing data with synthetic data\n\n\n\nOutside of work, I enjoy watching soccer, reading sci-fi and running"
+    "text": "Professor Tiago Ventura (he/him)\n\nAssistant Professor at McCourt School.\nPolitical Science Ph.D.\nPostdoc at Center for Social Media and Politics - NYU.\nResearcher at Twitter.\n\n\n\nMy Research: Effects of technology in politics + applications of computational models to social science:\n\nGlobal Social Media Deactivation.\nEffects of WhatsApp Usage on Elections in the Global South.\nDeveloping a data donation pipeline for WhatsApp data.\nMeasuring Humanness vs AI-Generated Content on Social Media.\nUsing LLMs to augment web-browsing data with synthetic data\n\n\n\nOutside of work, I enjoy watching soccer, reading sci-fi and running"
   },
   {
     "objectID": "slides/week_01_intro.html#your-turn",

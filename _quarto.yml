@@ -13,7 +13,7 @@ website:
       - href: syllabus.qmd
         text: Syllabus
       - href: schedule.qmd
-        text: Weekly Material
+        text: Weekly Materials
       - href: finalproject.qmd
         text: Final Project
       

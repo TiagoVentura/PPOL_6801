@@ -20,6 +20,12 @@ body {
   font-family: $font-family-sans-serif;
 }
 
+/* make bold red */
+
+.reveal b, 
+.reveal strong {
+  color: #D50032;
+}
 .blue {
   color: #041E42;
   font-weight: bold;

@@ -12,6 +12,7 @@ $font-family-monospace: "Courier New", monospace !default;
 $presentation-font-size-root: 32px;
 $presentation-heading-color: #012169;
 $code-block-bg: #F0F0F0;
+$link-color: #FF0000;
 
 /* Apply fonts globally */
 body {
@@ -20,6 +21,11 @@ body {
   font-size: 18px;
   line-height: 1.65;
   color: #222;
+}
+
+b, strong {
+  font-weight: bold;
+  color: red;
 }
 
 /* Headings use Source Sans Pro */

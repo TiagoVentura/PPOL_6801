@@ -57,7 +57,7 @@ For many years, social scientists have used text in their empirical analysis:
 
 -   Qualitative Analysis of interviews
 
--   Content Analysis
+-   Hand-Coded content analysis
 :::
 
 ::: fragment
@@ -103,7 +103,7 @@ knitr::include_graphics("https://diplo-media.s3.eu-central-1.amazonaws.com/2025/
 
 ## What is Text-as-Data?
 
--   .red[TaD]: focuses on using text as a form of data to make .red[inferences] about the world around us, such as human behavior
+-   [TaD]{.red}: focuses on using text as a form of data to make [inferences]{.red} about the world around us, such as human behavior
 
 -   This class covers:
 
@@ -211,7 +211,7 @@ In text, we only observe the words. Much harder to identify the latent concepts.
 :::
 
 ::: fragment
-**My Research: Eeffects of technology in politics + applications of computational models to social science:**
+**My Research: Effects of technology in politics + applications of computational models to social science:**
 
 -   Global Social Media Deactivation.
 -   Effects of WhatsApp Usage on Elections in the Global South.
