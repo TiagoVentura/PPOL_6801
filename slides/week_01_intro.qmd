@@ -344,11 +344,11 @@ This is a one meeting per week class. You should expect:
 
 -   **Communication**: via slack. Join the [channel!](https://join.slack.com/t/ppol68012024/shared_invite/zt-2a4ofec2d-KH8YDtoiJ3gHRWTNhuBPcQ)
 
--   **All materials**: hosted on the class website: <https://tiagoventura.github.io/PPOL_6801_2024//>
+-   **All materials**: hosted on the class website: <https://tiagoventura.github.io/PPOL_6801/>
 
 -   **Syllabus**: also on the website.
 
--   **My Office Hours**: Every Tuesday from 4 to 6pm. Just stop by!
+-   **My Office Hours**: Every Tuesday from 3 to 4pm. Just stop by!
 
 -   **Canvas**: Only for communication! Materials will be hosted in the website!
 
