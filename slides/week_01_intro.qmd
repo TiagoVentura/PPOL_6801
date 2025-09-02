@@ -22,12 +22,11 @@ format:
     theme: [simple, custom.scss]
 ---
 
-# Welcome to Text-as-Data! 
+# Welcome to Text-as-Data!
 
 ## Outline
 
 ::: nonincremental
-
 -   Motivation for Computational Linguistics
 
     -   Digital information age
@@ -45,14 +44,13 @@ format:
 -   Q&A
 
 -   Introduction to R/RStudio
-
 :::
 
 # Motivation
 
 ## 
 
-:::{.fragment}
+::: fragment
 For many years, social scientists have used text in their empirical analysis:
 
 -   Close reading of documents.
@@ -62,19 +60,22 @@ For many years, social scientists have used text in their empirical analysis:
 -   Content Analysis
 :::
 
-:::{.fragment}
+::: fragment
+**In the past 20 years, we have been going through a technological revolution:**
 
-**In the past 20 years, we have been going through a digital revolution:**
+-   Consolidation of digital storage vs analogical
 
-  -   Production of textual information increased with the internet.
+-   Internet: Production of textual information increased
 
-  -   The capacity to store, access and share this large volume of data also increased.
+-   The capacity to store, access and share this large volume of data also increased.
 
-  -   At the same time, the cost of accessing large computing power reduced... think about your laptops...
+-   At the same time, the cost of accessing large computing power reduced... think about your laptops...
 
-  -   And even powerful computational models (that do not fit in your laptop) became easily accessible.
-
+-   And even powerful computational models (that do not fit in your laptop) became easily accessible.
 :::
+
+# Examples of Textual Data 
+
 
 ## Official Documents: Congressional Speeches, Bills, Press Releases, Transcripts, from all over the world!!
 
@@ -100,17 +101,22 @@ knitr::include_graphics("https://miro.medium.com/v2/resize:fit:1400/1*t2u_0FHoQS
 knitr::include_graphics("https://diplo-media.s3.eu-central-1.amazonaws.com/2025/03/openai-chatgpt-surge-deepseek.jpg") 
 ```
 
-## Text-as-Data
+## What is Text-as-Data?
 
--  Focuses on using text as a form of data to make inferences about the world around us, such as human behavior
+-   .red[TaD]: focuses on using text as a form of data to make .red[inferences] about the world around us, such as human behavior
 
--   This class covers: 
+-   This class covers:
 
-    - Computational methods to process and analyze text at scale ([Data Science]{.red})
-  
-    - Many applications showing how we can use text to answer social science problems and test social science theories. ([Applied Social Science]{.red})
+    -   Computational methods to process and analyze text at scale ([Data Science/NLP Tools]{.red})
 
-# But... why do I need an entire course for this? Isn't my stats/DS class enough?
+    -   Many applications showing how we can use text to answer social science problems and test social science theories. ([Applied Social Science]{.red})
+    
+    - Bridge the gap between cutting-edge NLP and meaningful, interpretable
+research
+
+# Do I need an entire course for this? Aren't my stats/DS classed enough?
+
+## {background-image="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExODJhdmI1dzNrb2k5c2cybnJ0ZjNhdzF1ZWU2YXRobnN1bXloNnV1eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eKrgVyZ7zLvJrgZNZn/giphy.gif"}
 
 ## Challenges I: Text is an unstructure data source
 
@@ -118,7 +124,7 @@ knitr::include_graphics("https://diplo-media.s3.eu-central-1.amazonaws.com/2025/
 knitr::include_graphics("https://socialsciencedatalab.mzes.uni-mannheim.de/article/advancing-text-mining/figures/dfm.png")
 ```
 
-## Challenge II: Text is High dimensionality
+## Challenge II: Text is High Dimensional
 
 From [Gentzkow et al 2017](https://web.stanford.edu/~gentzkow/research/text-as-data.pdf):
 
@@ -127,77 +133,27 @@ From [Gentzkow et al 2017](https://web.stanford.edu/~gentzkow/research/text-as-d
 -   The unique representation of each document has dimension $n_{V}^{n_L}$ .
 
     -   e.g., a sample of 30-word ($n_L$) Twitter messages using only the one thousand most common words in the English language
-    -   Dimensionality = $1000^{30}$
-    -   As a matrix: $M^{1000}_{n_tweets}$
+    -   Unique Representation: 1000^30 (1000 * 1000 * ..... * 1000)
+    -   As a simplified matrix: $M^{1000}_{30}$
+    -   And this matrix will be really sparse!
 
--   Most of what you learned in statistics so far does not equip you to deal with this curse of dimensionality.
-
+-   Most of what you learned in statistics so far does not equip you to deal with large and sparse data
 
 ## Challenge III: Working in the Latent Space
 
-::: {.fragment}
+::: fragment
 When working with text, we aim to make an inferences about a [latent variable]{.red}
 
 -   [Latent variable]{.red}: we cannot observe directly but try to identify with statistical and theoretical assumptions.
 
 -   Examples: ideology, sentiment, political stance, propensity of someone to turnout
 
--  Quite different than asking direct questions via surveys or using macro economic variables... 
-
+-   Quite different than asking direct questions via surveys or using macro economic variables...
 :::
 
-:::{.fragment}
+::: fragment
 In text, we only observe the words. Much harder to identify the latent concepts.
-
 :::
-## Text-as-Data Workflow
-
-::: nonincremental
-[**Acquire textual data:**]{.red}
-
--   Existing corpora; scraped data; digitilized text
-:::
-
-## Text-as-Data Workflow
-
-::: nonincremental
-[**Map Documents to a numerical representation *M***]{.red}
-
--   Bag-of-words (sparse vectors)
--   Embeddings (dense vectors)
--   Reduce noise, capture signal
-:::
-
-## Text-as-Data Workflow
-
-::: nonincremental
-[**Map *M* to predicted values** $V^{*}$ of unknown outcomes V]{.red}
-
--   Descriptive Analysis
--   Classify documents into unknown categories
-    -   Topic models
--   Classify documents into known categories
-    -   Dictionary methods
-    -   Supervised machine learning
-    -   Transfer-Learning - use models trained in text for other purposes
--   Scale documents on latent dimension:
-:::
-
-## Text-as-Data Workflow
-
-::: nonincremental
-[**Use** $V^{*}$ in subsequent analysis with other data sources]{.red}
-
--   This is where social science happens!
-:::
-
-## Assume you already did it!
-
--   [**Acquire textual data:**]{.red} Existing corpora; scraped data; digitized text
-
-- If not, happy to share code for you to learn 
-
-    - I know DSPP student saw this last fall with me!!
 
 ## Overview of TAD Methods
 
@@ -207,10 +163,9 @@ In text, we only observe the words. Much harder to identify the latent concepts.
 
 -   [**Unsupervised techniques:**]{.red} clustering, topic models, embeddings.
 
--   [**Generative AI:**]{.red} Word embeddings and Large Language Models. 
+-   [**Generative AI:**]{.red} Word embeddings and Large Language Models.
 
-     - Generative AI will actually be pretty much half of this course!
-
+    -   Generative AI will actually be pretty much half of this course!
 
 ## Some cool TaD applications
 
@@ -222,11 +177,13 @@ In text, we only observe the words. Much harder to identify the latent concepts.
 
 -   Estimate ideological positions using [who a user follows on Twitter](https://www.cambridge.org/core/journals/political-analysis/article/birds-of-the-same-feather-tweet-together-bayesian-ideal-point-estimation-using-twitter-data/91E37205F69AEA32EF27F12563DC2A0A), [what a user share on social media](https://journals.sagepub.com/doi/abs/10.1177/19401612211057068), [political manifestos](https://www.cambridge.org/core/journals/political-analysis/article/abs/word-embeddings-for-the-analysis-of-ideological-placement-in-parliamentary-corpora/017F0CEA9B3DB6E1B94AC36A509A8A7B), or [just asking ChatGPT to pair-wise compare politicians](https://arxiv.org/abs/2303.12057)
 
-- [Use Generative AI to create synthetic data, even survey responses](https://www.cambridge.org/core/journals/political-analysis/article/out-of-one-many-using-language-models-to-simulate-human-samples/035D7C8A55B237942FB6DBAD7CAA4E49)
+-   [Use Generative AI to create synthetic data, even survey responses](https://www.cambridge.org/core/journals/political-analysis/article/out-of-one-many-using-language-models-to-simulate-human-samples/035D7C8A55B237942FB6DBAD7CAA4E49)
 
 ## What this class in not about it...
 
 -   Data acquisition: [no scrapping in class]{.red}. Assume you have learned already.
+   
+    - I can share code for those who haven't. 
 
 -   Regular expressions and basic text manipulation.
 
@@ -237,13 +194,14 @@ In text, we only observe the words. Much harder to identify the latent concepts.
         -   theoretically driven discovery and measurement
         -   integration with social science problems + tabular data.
 
+# Again: Welcome to Text-as-Data!!
 
-# Introduction
+# Introductions
 
-##
+## 
+::: nonincremental
 
-::: {.fragment}
-
+::: fragment
 **Professor Tiago Ventura (he/him)**
 
 -   Assistant Professor at McCourt School.
@@ -252,26 +210,21 @@ In text, we only observe the words. Much harder to identify the latent concepts.
 -   Researcher at Twitter.
 :::
 
-
-::: {.fragment}
-
-**My Research: Effects of technology in politics + Applications of computational models to social science: **
+::: fragment
+**My Research: Eeffects of technology in politics + applications of computational models to social science:**
 
 -   Global Social Media Deactivation.
 -   Effects of WhatsApp Usage on Elections in the Global South.
 -   Developing a data donation pipeline for WhatsApp data.
 -   Measuring Humanness vs AI-Generated Content on Social Media.
 -   Using LLMs to augment web-browsing data with synthetic data
-
 :::
 
-
-::: {.fragment}
-
+::: fragment
 **Outside of work, I enjoy [watching soccer, reading sci-fi and running]{.red}**
-
 :::
 
+:::
 
 ## Your turn!
 
@@ -284,7 +237,6 @@ knitr::include_graphics("https://media.giphy.com/media/eKDp7xvUdbCrC/giphy.gif")
 
 :::: {.column width="60%"}
 ::: nonincremental
-
 -   Name & pronouns
 
 -   Why are you taking this course?
@@ -292,7 +244,6 @@ knitr::include_graphics("https://media.giphy.com/media/eKDp7xvUdbCrC/giphy.gif")
 -   Your experience (if any) working with text
 
 -   Your favorite place in DC (restaurant, park, bar, brewery, bakery, you call it!)
-
 :::
 ::::
 ::::::
@@ -313,37 +264,34 @@ countdown(minutes = 10, seconds = 0,
 
 # Class Logistics
 
-## Weekly Schedule
+## Weekly Schedule{style="font-size: .8em;"}
 
-| Week | Date       | Topic                                                                 |
-|------|------------|------------------------------------------------------------------------|
-| 1    | Sept 2     | Introductions and Course Overview                                      |
-| 2    | Sept 8     | From Text to Matrices: Representing Text as Data                       |
-| 3    | Sept 15    | Text Similarity, Text Re-use, and Complexity                           |
-| 4    | Sept 22    | Supervised Learning I: Dictionary Methods and Out-of-Box Classifiers   |
-| 5    | Sept 29    | Supervised Learning II: Training Your Own Classifiers                  |
-| 6    | Oct 6      | Unsupervised Learning: Topic Models                                    |
-| 7    | Oct 20     | Using Text to Measure Ideology – Scaling                               |
-| 8    | Oct 27     | Representation Learning & Introduction to Deep Learning                |
-| 9    | Nov 3      | Word Embeddings: What They Are and How to Estimate                     |
-| 10   | Nov 10     | Word Embeddings: Social Science Applications                           |
-| 11   | Nov 17     | Replication Class: Students’ Presentation                              |
-| 12   | Nov 24     | Transformers                                                           |
-| 13   | Dec 1      | Large Language Models: Prompting, Chatbots, and Applications (Guest: Dr. Christopher Barrie, NYU) |
-| 14   | Dec 8      | Final Projects: Students’ Presentation   
+| Week | Date | Topic |
+|------------|------------|-------------------------------------------------|
+| 1 | Sept 2 | Introductions and Course Overview |
+| 2 | Sept 8 | From Text to Matrices: Representing Text as Data |
+| 3 | Sept 15 | Text Similarity, Text Re-use, and Complexity |
+| 4 | Sept 22 | Supervised Learning I: Dictionary Methods and Out-of-Box Classifiers |
+| 5 | Sept 29 | Supervised Learning II: Training Your Own Classifiers |
+| 6 | Oct 6 | Unsupervised Learning: Topic Models |
+| 7 | Oct 20 | Using Text to Measure Ideology – Scaling |
+| 8 | Oct 27 | Representation Learning & Introduction to Deep Learning |
+| 9 | Nov 3 | Word Embeddings: What They Are and How to Estimate |
+| 10 | Nov 10 | Word Embeddings: Social Science Applications |
+| 11 | Nov 17 | Replication Class: Students’ Presentation |
+| 12 | Nov 24 | Transformers |
+| 13 | Dec 1 | Large Language Models: Prompting, Chatbots, and Applications (Guest: Dr. Christopher Barrie, NYU) |
+| 14 | Dec 8 | Final Projects: Students’ Presentation |
+
 ## Between Replication and Transformers... I might have some updates...
 
-::: {.fragment}
-
+::: fragment
 ```{r  echo=FALSE, out.width = "100%", fig.align="center"}
 knitr::include_graphics("baby.jpeg") 
 ```
-
 :::
 
-
 ## Class Requirements
-
 
 -   [**Math:**]{.red} Basic knowledge of calculus, probability, densities, distributions, statistical tests, hypothesis testing, the linear model, maximum likelihood and generalized linear models will help you in class.
 
@@ -356,14 +304,14 @@ knitr::include_graphics("baby.jpeg")
     -   We will divide our learning between using `tidytext` and `quanteda` for text analysis.
 
     -   [Download RStudio IDE]{.red}!
-    
-- **Python**: we will do some, but later in the course!    
+
+-   **Python**: we will do some, but later in the course!
 
 ## How to do well in the class?
 
 I designed this course as [PhD style seminar]{.red}:
 
--   On your poragrams,you learn a lot of DS/Stats techniques 
+-   On your pragrams, you learn a lot of DS/Stats techniques
 
 -   You haven't dig deep enough in a particular field. [That's what electives are for!]{.red}
 
@@ -375,7 +323,7 @@ I designed this course as [PhD style seminar]{.red}:
 
 -   Plan ahead -- [particularly for the replication exercise]{.red}
 
--   If you have a dataser you want work with, please bring it to class!
+-   If you have a dataset you want work with, please bring it to class!
 
 ## What our classes will look like.
 
@@ -427,7 +375,7 @@ This is a one meeting per week class. You should expect:
 |:----------:|:-------------:|:-----------------------------:|
 |   No. 1    |    Week 4     | Before EOD of Week 5's class  |
 |   No. 2    |    Week 7     | Before EOD of Week 8's class  |
-|   No. 3    |    Week 10     | Before EOD of Week 11's class |
+|   No. 3    |    Week 10    | Before EOD of Week 11's class |
 
 -   You will have a week to complete your assignments
 
@@ -459,22 +407,22 @@ Work in randomly assigned pairs I will post on Slack.
 
 ## Final Project
 
-The project is composed of three parts:
-
--   a 2 page project proposal: (which should be discussed and approved by me)
--   an in-class presentation,
--   A 10-page project report.
-
 | **Requirement**  | **Due**           | **Length**    | **Percentage** |
 |------------------|-------------------|---------------|----------------|
 | Project Proposal | EOD Friday Week 8 | 2 pages       | 5%             |
 | Presentation     | Week 14           | 10-15 minutes | 10%            |
 | Project Report   | Wednesday Week 15 | 10 pages      | 25%            |
 
-## ChatGPT
+The final project is composed of three parts:
+
+-   a 2 page project proposal: (which should be discussed and approved by me)
+-   an in-class presentation,
+-   A 10-page project report.
+
+## GenAI
 
 ::: nonincremental
-You are allowed to use ChatGPT as you would use google in this class. This means:
+You are allowed to use GenAI as you would use google in this class. This means:
 
 -   Do not copy the responses from chatgpt -- a lot of them are wrong or will just not run on your computer
 
@@ -482,11 +430,9 @@ You are allowed to use ChatGPT as you would use google in this class. This means
 
 -   If your entire homework comes straight from chatgpt, I will consider it plagiarism.
 
--   If you use chatgpt, I ask you to mention on your code how chatgpt worked for you.
+-   If you use any GenAi Model, I ask you to mention on your code how it worked for you.
 :::
 
 # Questions?
 
-
 # R 101
-

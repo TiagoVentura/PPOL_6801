@@ -26,15 +26,11 @@ The course includes hands-on exercises using real-world data to reinforce lectur
 -   Office Hours: Every Tuesday, 3pm - 4pm
     -   Location: McCourt Building, 766
 
-<!-- add zoom link for virtual office hours -->
-
-<!-- Download the [syllabus in pdf here]("./_syllabus.pdf") -->
-
 ## Our classes
 
 Classes will take place at the scheduled class time/place and will involve a combination of lectures, coding walkthrough, breakout group sessions, and questions. We will start our classes with a lecture highlighting what I consider to be the broader substantive and programming concepts covered in the class. From that, we will switch to a mix of coding walk through and breakout group sessions.
 
-This class follows a more classic PhD style seminar. This means that the class is heavy on the readings, and I expect you to do the readings before class. For most classes, you will read one or more chapters of the text book and between two or three applied articles. Most of the lectures will cover topics discussed on the readings.
+This class follows a more classic PhD style seminar. This means that the class is heavy on the readings, and I expect you to do the readings before class. For most classes, you will read one or more chapters of the textbook and between two or three applied articles. Most of the lectures will cover topics discussed on the readings.
 
 Note that this class is scheduled to meet weekly for 2.5 hours. I will do my best to make our meetings dynamic and enjoyable for all parts involved. We will take one or two breaks in each of our lecture.
 
@@ -48,7 +44,7 @@ Note that this class is scheduled to meet weekly for 2.5 hours. I will do my bes
 
 -   Weekly articles that are listed below.
 
-**Tip on readings:** This class follows a PhD-style Seminar. This means I expect you to read the materials before class. This is my suggestion for you to optimize your reading time: 1) read very carefully the chapters from the textbook; 2) skim through the applied paper, and focus most of your attention to methods and results from the applied papers -- theory and literature review of these papers are less relevant for us.
+**Tip on readings:** This class follows a PhD-style seminar. This means I expect you to read the materials before class. This is my suggestion for you to optimize your reading time: 1) read very carefully the chapters from the textbook; 2) skim through the applied papers, and focus most of your attention to methods and results from the applied papers -- theory and literature review of these papers are less relevant for us.
 
 ## Course Infrastructure
 

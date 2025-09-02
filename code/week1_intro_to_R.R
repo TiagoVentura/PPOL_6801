@@ -104,11 +104,11 @@ setwd()
 ## Packages are a combination of functions that someone developed for you. 
 ## You can install them either from the official R repository (CRAN)
 
-install.packages("wesanderson")
+#install.packages("wesanderson")
 
 ## Or from a development version available on github
 
-devtools::install_github("karthik/wesanderson")
+#devtools::install_github("karthik/wesanderson")
 
 ## Install and Activate a package. 
 
