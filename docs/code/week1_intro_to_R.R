@@ -12,7 +12,7 @@
 ### As most materials from this course, this code combines my own code +
 ### materials I borrowed from other colleagues. 
 
-###This code in particular takes  a lot from R Session materials from the TaD Class from Arthur Spirling, 
+### This code in particular takes  a lot from R Session materials from the TaD Class from Arthur Spirling, 
 ### Sessions prepare by TAS: 
 ### Elisa Wirsching, Lucia Motolinia, Pedro L. Rodriguez, Kevin Munger, 
 ### Patrick Chester and Leslie Huang.
@@ -27,8 +27,10 @@
 ## <<< Python for Machine Learning Tasks
 
 
-## For those familiar with Python, R is a functional programming language. 
-## This means most things in R work around uniquely defined functions + objects, 
+## For those familiar with Python, 
+# R is a functional programming language. 
+## This means most things in R work around uniquely 
+# defined functions + objects, 
 ## instead of classes, objects and methods as in Python. 
 
 
@@ -95,7 +97,7 @@ rm(list = ls())
 getwd() 
 
 ### redefine 
-setwd()
+setwd("/Users/tb186/Dropbox/courses/ppol_6801/fall_2025/ppol_6801")
 
 # Tip: use the Rproject feature. It will define your working directory for you. 
 
@@ -104,7 +106,7 @@ setwd()
 ## Packages are a combination of functions that someone developed for you. 
 ## You can install them either from the official R repository (CRAN)
 
-#install.packages("wesanderson")
+# install.packages("wesanderson")
 
 ## Or from a development version available on github
 
@@ -144,7 +146,6 @@ pacman::p_load(tidyverse,
 
 
 # Loading data
-
 polling_data  <- read_csv("data/national_clinton_trump_6_20_2016.csv")
 
 # the readr + haven has many other read_* functions. 
@@ -153,7 +154,6 @@ polling_data  <- read_csv("data/national_clinton_trump_6_20_2016.csv")
 
 
 # Take a peek, get to know the structure of the data
-
 head(polling_data)  # display first lines of an object
 head(polling_data, n = 10)  # same as above but specifying number of lines 
 tail(polling_data)  # display last lines of an object
@@ -167,10 +167,11 @@ class(polling_data)  # returns class of an R object
 sapply(polling_data, class) # returns class for each variable (column)
 str(polling_data)  # display structure of an R object (e.g. a dataframe)
 glimpse(polling_data)
+
 ?sapply  # get R Documentation on this command (see Help panel below)
+??sapply
 
 ## Modyfing and saving dataframes
-
 polling_data <- clean_names(polling_data)
 
 ## Manipulating dataframes --- 
@@ -179,7 +180,7 @@ polling_data <- clean_names(polling_data)
 head(polling_data$pollster)
 
 # Matrix identifier: df[rowname, colname]
-polling_data[, "pollster"]
+polling_data[ , "pollster"] # brackets!!!
 
 # That was pretty impossible to read in the console, let's try this:
 view(polling_data[, c("pollster", "number_of_observations")])
@@ -215,10 +216,10 @@ View(polling_data[polling_data$pollster == "CBS", c("pollster", "number_of_obser
 
 # Base R: From the inside out
 x <- c(1:10)
-round(exp(sqrt(mean (x))), 1)
+round(exp(sqrt(mean(x))), 1)
 
 ### The Pipe
-x%>%
+x %>%
   mean()%>%
   sqrt()%>%
   exp()%>%
@@ -272,7 +273,8 @@ polling_data %>%
 # Creating new variables (columns) in a data frame 
 
 # Dollar sign operator
-polling_data$net_clinton_a <- polling_data$clinton - polling_data$trump
+polling_data$net_clinton_a <- polling_data$clinton -
+                             polling_data$trump
 
 
 # Matrix identifier
@@ -291,7 +293,7 @@ summary(polling_data)  # summary statistics where appropriate (non-string/charac
 mean(polling_data$net_clinton_a, na.rm=T)
 sd(polling_data$net_clinton_a)
 
-# pipe + tidyvers
+# pipe + tidyverse
 polling_data %>% 
   summarise(mean_net_clinton = mean(net_clinton_a))  
 
@@ -306,13 +308,14 @@ polling_data %>%
 
 polling_data %>% 
   group_by(pollster) %>% 
-  summarise(mean_net_clinton = mean(net_clinton_a), sd_net_clinton = sd(net_clinton_a))  # can perform multiple summary stats
+  summarise(mean_net_clinton = mean(net_clinton_a), 
+            sd_net_clinton = sd(net_clinton_a))  # can perform multiple summary stats
 
 table1 <- polling_data %>% 
   group_by(pollster, population) %>% 
   summarise(mean_net_clinton = mean(net_clinton_a)) %>% 
   ungroup %>% 
-  arrange(pollster, Population) # can group by more than one variable
+  arrange(pollster, population) # can group by more than one variable
 
 
 # Create a new variable by group

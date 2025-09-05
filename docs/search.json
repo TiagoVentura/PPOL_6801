@@ -14,6 +14,13 @@
     "text": "Topics: Course overview, logistics, introduction to R\nLecture: Week 1 - Introduction\nCoding Materials:  Week 1 - Introduction to R \nData: Pooling Data\nRequired Readings\n\nGrimmer, Justin, Margaret E. Roberts, and Brandon M. Stewart. Text as data: A new framework for machine learning and the social sciences. Princeton University Press, 2022 - Chapter 2.\n\nAnd one of the three below:\n\nPolitical Science Perspective: Wilkerson, J. and Casas, A. (2017). Large-Scale Computerized Text Analysis in Political Science: Opportunities and Challenges. Annual Review of Political Science, 20, 529:544.\nEconomics Perspective: Gentzkow, Matthew, Bryan Kelly, and Matt Taddy. “Text as data.” Journal of Economic Literature 57, no. 3 (2019): 535-574.\nSociology Perspective: Macanovic, A., 2022. Text mining for social science–The state and the future of computational text analysis in sociology. Social Science Research, 108, p.102784."
   },
   {
+    "objectID": "schedule.html#week-2-september-8th",
+    "href": "schedule.html#week-2-september-8th",
+    "title": "Weekly Materials & Readings",
+    "section": "Week 2, September 8th",
+    "text": "Week 2, September 8th\n\nTopics: How to represent text as data, Bag of Words Assumption, Tokens and Pre-Processing\nLecture: Week 2 - From Text to Matrices: Representing Text as Data\nCoding Materials:  Week 2 - Text Data Processing \nRequired Readings\n\nGrimmer, Justin, Margaret E. Roberts, and Brandon M. Stewart. Text as data: A new framework for machine learning and the social sciences. Princeton University Press, 2022 - Chapters 3-5\nDenny, M. J., & Spirling, A. (2018). Text preprocessing for unsupervised learning: why it matters, when it misleads, and what to do about it. Political Analysis, 26(2): 168-189.\nBan, Pamela, Alexander Fouirnaies, Andrew B. Hall, and James M. Snyder. “How newspapers reveal political power.” Political Science Research and Methods 7, no. 4 (2019): 661-678.\n\nOptional Readings:\n\nMichel, J.B., et al. 2011. “Quantitative Analysis of Culture Using Millions of Digitized Books.” Science 331 (6014): 176–82. https://doi.org/10.1126/science.1199644"
+  },
+  {
     "objectID": "data/Week_11_GPT_Models.html",
     "href": "data/Week_11_GPT_Models.html",
     "title": "Using OpenAI’s ChatGPT",
