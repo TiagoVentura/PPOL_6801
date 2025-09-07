@@ -380,7 +380,7 @@ Now we have [pre-processed]{.red} our data. So we can simplify it even further:
 :::
 
 ::: fragment
-**Summary:**
+**Example of the issue:**
 
 -   Four sets of UK election manifestos
 
@@ -397,7 +397,7 @@ knitr::include_graphics("week2_figs/DA_wordfish2.png")
 
 ## preText: A New Method for Assessing Sensitivity
 
-In your words, describe their solution to the pre-processing issue:
+In your words, describe their solution to the pre-processing issue.
 
 :::: notes
 ::: fragment
@@ -407,13 +407,45 @@ In your words, describe their solution to the pre-processing issue:
 
 -   Each specification will have a largest (k) pair-mover.
 
+- V_M_1 = rank order of the top k moves in M1 across all other M pre-processing.
+
 $$ v_{M1} = \bigl( 2M_{2},\, 14M_{3},\, 2M_{4},\, 3M_{5},\, \ldots,\, 15M_{127} \bigr)$$
 
 -   Repeat for every k largest mover and average across $v_{Mi}^k$
 
 $$\text{preText score}_{i} \;=\; \frac{2\,v_{M_i}^{(k)}}{n(n-1)}$$
 :::
+
 ::::
+
+## Results
+::: nonincremental
+
+::: columns
+::: {.column width="30%"}
+
+**Interpretation**
+
+- Lower score r ~ Typical changes
+- Higher score r ~ Atypical changes
+
+
+**Implementation**
+
+- R package `preText`
+
+:::
+
+::: {.column width="70%"}
+
+```{r fig.align="center",out.width="20cm", out.height="20cm"}
+knitr::include_graphics("week2_figs/danny_reg.png")
+```
+
+:::
+:::
+:::
+
 
 # Vector Space Model: Convert Text to Numbers
 
@@ -540,32 +572,38 @@ knitr::include_graphics("https://m.media-amazon.com/images/I/A1lv97-jJoL._SL1500
 
 ## Ban et. al. 2019, How Newspapers Reveal Political Power.
 
-```{r fig.width=12, fig.align="center"}
-knitr::include_graphics("week2_figs/ban_.png")
-```
-
-## Things you like about this paper...
-
-## Things I like about this paper...
-
 ::: nonincremental
--   Descriptive paper
+
+**Abstract:** *Political science is in large part the study of power, but power itself is difficult to measure. We argue that we can use newspaper coverage—in particular, the relative amount of space devoted to particular subjects in newspapers—to measure the relative power of an important set of political actors and offices.*
+
+-   Descriptive paper with TaD
 
     -   No complicated statistical model
 
     -   Nice data + theory + contextual knowledge
 
--   An clever example of using text to measure a latent outcome (political power)
+-   Clever example of using text to measure a latent outcome (political power)
 
--   TaD + Metadata 
-
-    - Most applied social science papers will consist of this combination
-
--   Simple quantity of interest: just by counting words.
+-   Simple measure: just by counting words.
 
 $$
-\small \text{Coverage of Mayor}_{it} = \frac{\text{Mayor}_{it}}{\text{Mayor}_{it} + \text{City Manager}_{it} + \text{City Council}_{it}}
+\text{Relative Power of A} \;=\; 
+\frac{\# \text{ of Newspaper Mentions of A}}
+     {\# \text{ of Newspaper Mentions of A} + \# \text{ of Newspaper Mentions of B}}
 $$
 :::
+
+## Validation
+```{r fig.width=12, fig.align="center"}
+knitr::include_graphics("week2_figs/pam_validation.png")
+```
+
+
+## Results
+```{r fig.width=12, fig.align="center"}
+knitr::include_graphics("week2_figs/ban_.png")
+```
+
+## Things you like about this paper...
 
 # Coding!
