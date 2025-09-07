@@ -35,6 +35,10 @@ subtitle: "Data Science and Public Policy, McCourt School for Public Polcy, Geor
 
 - **Coding Materials**: <a href="/code/week2_introduction_to_text_analysis.R" download> Week 2 - Text Data Processing </a>
 
+- **Data**: 
+
+    - [Tweets from Elections](https://www.dropbox.com/scl/fi/mj8ldtyqwpkelnpyv0aja/tweets_congress.csv?rlkey=oltuf3odk3trrwjfl0a6ka25t&dl=0)
+
 - **Required Readings**
 
      -   Grimmer, Justin, Margaret E. Roberts, and Brandon M. Stewart. Text as data: A new framework for machine learning and the social sciences. Princeton University Press, 2022 - Chapters 3-5

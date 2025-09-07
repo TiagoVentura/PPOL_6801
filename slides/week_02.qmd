@@ -1,7 +1,7 @@
 ---
 title: "PPOL 6801 - Text as Data - Computational Linguistics"
-subtitle: "<span style = 'font-size: 180%;'> <br> Week 2: From Text to Matrices: Representing Text as Data </span>"
-author: "<span style = 'font-size: 180%;'> Professor: Tiago Ventura </span>"
+subtitle: "<span style = 'font-size: 150%;'> <br> Week 2: From Text to Matrices: Representing Text as Data </span>"
+author: "<span style = 'font-size: 120%;'> Professor: Tiago Ventura </span>"
 execute: 
   echo: false
   error: true
@@ -390,7 +390,7 @@ $$\text{preText score}_{i} \;=\; \frac{2\,v_{M_i}^{(k)}}{n(n-1)}$$
 
 # Vector Space Model: Convert Text to Numbers
 
-##
+## 
 
 To represent documents as numbers, we will use the [vector space model representation]{.red}:
 
@@ -414,10 +414,11 @@ Each document is now a vector (vector space model)!!
 
 -   stacking these vectors will give you our workhorse representation for text: [**Document Feature Matrix**]{.red}
 
--  linear algebra teach us how to work with vectors: magnitude, direction, projection, distance, similarity... all work in many dimensions. 
+-   linear algebra teach us how to work with vectors: magnitude, direction, projection, distance, similarity... all work in many dimensions.
 
 ::: fragment
 ### DFM
+
 ```{r echo=FALSE, out.width = "80%", fig.align="center"}
 knitr::include_graphics("week2_figs/DTM.png") 
 ```
@@ -516,8 +517,7 @@ knitr::include_graphics("https://m.media-amazon.com/images/I/A1lv97-jJoL._SL1500
 knitr::include_graphics("week2_figs/ban_.png")
 ```
 
-
-## Things you like about this paper... 
+## Things you like about this paper...
 
 ## Things I like about this paper...
 
