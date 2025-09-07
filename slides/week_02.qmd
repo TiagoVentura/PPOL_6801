@@ -134,6 +134,24 @@ editor_options:
 :::
 ::::
 
+## Principles of Text Analysis (GMB Textbook)
+
+::: nonincremental
+
+-   [**Principle 1:**]{.red} Social science theories and substantive knowledge are essential for research design
+
+-   [**Principle 2:**]{.red} Text analysis does not replace humans---it augments them.
+
+-   [**Principle 3:**]{.red} Building, refining, and testing social science theories requires iteration and accumulation
+
+-   [**Principle 4:**]{.red} Text analysis methods distill generalizations from language. (all models are wrong!)
+
+-   [**Principle 5:**]{.red} The best method depends on the task.
+
+-   [**Principle 6:**]{.red} Validate, Validate, Validate...
+
+:::
+
 ## Overview of the Process
 
 ```{r fig.align="center"}
@@ -162,14 +180,13 @@ knitr::include_graphics("week2_figs/overview.png")
 
     -   [Sampling Bias]{.red}: ommited variables between being in the sample and your outcomes
 
--   Most often we use these documents because they were available to us ([custom made data]{.red}). In these cases, considering the three questions above is even more important.
+-  [Custommade data]{.red}: Most often we use these documents because they were available to us.  In these cases, the three questions above are even more important.
 
-```{r include=FALSE, echo=FALSE, eval=FALSE}
 ## Ventura et. al., Streaming Chats, 2021
 
-#```{r fig.align="center"}
+```{r fig.align="center"}
 knitr::include_graphics("week2_figs/ventura_jqd.png")
-#```
+```
 
 ## Exercise: Key components
 
@@ -180,7 +197,6 @@ knitr::include_graphics("week2_figs/ventura_jqd.png")
     -   **Quantity of interest:**
 
     -   **Source of bias:**
-```
 
 ## 2. Unit of Analysis
 
@@ -199,7 +215,7 @@ After selecting your documents and converting them to a computer-friendly format
 
     -   switching through different units of analysis has a low cost
     -   allows you to look at the data from a different angle
-    -   provide new insights to your research
+
 :::
 
 ## 3. Reducing complexity
@@ -231,17 +247,24 @@ Document Term Matrix = cornerstone in computational text analysis
 -   Matrix where rows = documents; columns = terms (words or tokens)
 -   Each cell contains the frequency or weight of a term within a document
 
+::: fragment
+
 ```{r echo=FALSE, out.width = "80%", fig.align="center"}
 knitr::include_graphics("week2_figs/DTM.png") 
 ```
 
+:::
+
+
 ## Tokenization
 
--   A first step in any text analysis task is to break documents in meaningful units of analysis (tokens)
+-   **Def:** break documents in meaningful units of analysis
 
--   [Tokens]{.red} are often words for most tasks. A simple tokenizer uses white space marks to split documents in tokens.
+-  [Tokens]{.red} are often words. 
 
--   Tokenizer may vary \[across tasks\]{.red}:
+-  A simple **tokenizer** uses white space marks to split documents in tokens.
+
+-   Tokenizer may vary **across tasks**
 
     -   Twiter specific tokenizer \~ keep hashtags, for example.
 
@@ -277,7 +300,7 @@ knitr::include_graphics("week2_figs/DTM.png")
         -   leaves (noun) \~ leaf
         -   leaves (verb) \~ leave
 
--   All \[TAD/NLP packages\[{.red}\] offer easy applications for these algorithms.
+-   All **TAD/NLP packages** offer easy applications for these algorithms.
 
 ## Other steps: functional words, highly frequent or rare words
 
@@ -352,8 +375,11 @@ Now we have [pre-processed]{.red} our data. So we can simplify it even further:
 
 ## Denny & Spirling, 2018
 
+:::fragment
 [**Starting point**]{.red}: No rigorous way to compare results across different pre-processing steps. Adapting recommendations from supervised learning tasks.
+:::
 
+::: fragment
 **Summary:**
 
 -   Four sets of UK election manifestos
@@ -361,6 +387,7 @@ Now we have [pre-processed]{.red} our data. So we can simplify it even further:
 -   Run Wordfish to assess positions of parties from their manifestos
 
 -   Different preprocessing choices → Substantially different conclusions
+:::
 
 ## 
 
@@ -528,9 +555,11 @@ knitr::include_graphics("week2_figs/ban_.png")
 
     -   Nice data + theory + contextual knowledge
 
--   An clever example of using text to measure a latent outcome (Political power)
+-   An clever example of using text to measure a latent outcome (political power)
 
--   TaD + Metadata \~ Most applied social science papers will consist of this combination
+-   TaD + Metadata 
+
+    - Most applied social science papers will consist of this combination
 
 -   Simple quantity of interest: just by counting words.
 

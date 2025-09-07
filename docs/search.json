@@ -77,6 +77,13 @@
     "text": "Different Methods for Different Goals\n\n\nSupervised: Pursuing a known goal\n\nHuman labels a subset of documents\nAlgorithm labels the rest\nHighest effort before running the model\n\n\n\n\n\nUnsupervised: Learning a goal\n\nAlgorithm discovers patterns in the text\nHuman interprets the results\nHigher effort after running the model"
   },
   {
+    "objectID": "slides/week_02.html#principles-of-text-analysis-gmb-textbook-1",
+    "href": "slides/week_02.html#principles-of-text-analysis-gmb-textbook-1",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Principles of Text Analysis (GMB Textbook)",
+    "text": "Principles of Text Analysis (GMB Textbook)\n\n\nPrinciple 1: Social science theories and substantive knowledge are essential for research design\nPrinciple 2: Text analysis does not replace humans—it augments them.\nPrinciple 3: Building, refining, and testing social science theories requires iteration and accumulation\nPrinciple 4: Text analysis methods distill generalizations from language. (all models are wrong!)\nPrinciple 5: The best method depends on the task.\nPrinciple 6: Validate, Validate, Validate…"
+  },
+  {
     "objectID": "slides/week_02.html#overview-of-the-process",
     "href": "slides/week_02.html#overview-of-the-process",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
@@ -95,14 +102,28 @@
     "href": "slides/week_02.html#section",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "",
-    "text": "When selecting a corpus, consider:\n\nPopulation of interest: does the corpus allows us to make inferences about them?\nQuantity of interest: can we measure what we plan to?\nSampling Bias: ommited variables between being in the sample and your outcomes\n\nMost often we use these documents because they were available to us (custom made data). In these cases, considering the three questions above is even more important."
+    "text": "When selecting a corpus, consider:\n\nPopulation of interest: does the corpus allows us to make inferences about them?\nQuantity of interest: can we measure what we plan to?\nSampling Bias: ommited variables between being in the sample and your outcomes\n\nCustommade data: Most often we use these documents because they were available to us. In these cases, the three questions above are even more important."
+  },
+  {
+    "objectID": "slides/week_02.html#ventura-et.-al.-streaming-chats-2021",
+    "href": "slides/week_02.html#ventura-et.-al.-streaming-chats-2021",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Ventura et. al., Streaming Chats, 2021",
+    "text": "Ventura et. al., Streaming Chats, 2021"
+  },
+  {
+    "objectID": "slides/week_02.html#exercise-key-components",
+    "href": "slides/week_02.html#exercise-key-components",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Exercise: Key components",
+    "text": "Exercise: Key components\n\nRQ: Measure quality of comments on streaming chat platforms during political debates\n\nPopulation of interest:\nQuantity of interest:\nSource of bias:"
   },
   {
     "objectID": "slides/week_02.html#unit-of-analysis",
     "href": "slides/week_02.html#unit-of-analysis",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "2. Unit of Analysis",
-    "text": "2. Unit of Analysis\nAfter selecting your documents and converting them to a computer-friendly format, we must decide our unit of analysis\n\nentire document? sentence? paragraph? a larger group of documents?\n\n\nThree things to consider in making this decision:\n\nFeatures of your data\nYour research question\nIterative model\n\nswitching through different units of analysis has a low cost\nallows you to look at the data from a different angle\nprovide new insights to your research"
+    "text": "2. Unit of Analysis\nAfter selecting your documents and converting them to a computer-friendly format, we must decide our unit of analysis\n\nentire document? sentence? paragraph? a larger group of documents?\n\n\nThree things to consider in making this decision:\n\nFeatures of your data\nYour research question\nIterative model\n\nswitching through different units of analysis has a low cost\nallows you to look at the data from a different angle"
   },
   {
     "objectID": "slides/week_02.html#reducing-complexity",
@@ -130,7 +151,7 @@
     "href": "slides/week_02.html#tokenization",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Tokenization",
-    "text": "Tokenization\n\nA first step in any text analysis task is to break documents in meaningful units of analysis (tokens)\nTokens are often words for most tasks. A simple tokenizer uses white space marks to split documents in tokens.\nTokenizer may vary [across tasks]{.red}:\n\nTwiter specific tokenizer ~ keep hashtags, for example.\n\nMay also vary across languages, in which white space is not a good marker to split text into tokens\nCertain tokens, even in english, make more sense together than separate (“White House”, “United States”). These are called collocations"
+    "text": "Tokenization\n\nDef: break documents in meaningful units of analysis\nTokens are often words.\nA simple tokenizer uses white space marks to split documents in tokens.\nTokenizer may vary across tasks\n\nTwiter specific tokenizer ~ keep hashtags, for example.\n\nMay also vary across languages, in which white space is not a good marker to split text into tokens\nCertain tokens, even in english, make more sense together than separate (“White House”, “United States”). These are called collocations"
   },
   {
     "objectID": "slides/week_02.html#stop-words",
@@ -144,7 +165,7 @@
     "href": "slides/week_02.html#equivalence-mapping",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Equivalence mapping",
-    "text": "Equivalence mapping\nReduce dimensionality even further!\n\nDifferent forms of words (family, families, familial), or words which are similar in concept (bureaucratic, bureaucrat, bureaucratization) that refer to same basic token/concept.\nuse algorithms to map these variation to a equivalent form:\n\nstemming: chop the end of the words: family, families, familiar ~ famili\nlemmatization: condition on part of speech\n\nbetter (adj) ~ good\nleaves (noun) ~ leaf\nleaves (verb) ~ leave\n\n\nAll [TAD/NLP packages[{.red}] offer easy applications for these algorithms."
+    "text": "Equivalence mapping\nReduce dimensionality even further!\n\nDifferent forms of words (family, families, familial), or words which are similar in concept (bureaucratic, bureaucrat, bureaucratization) that refer to same basic token/concept.\nuse algorithms to map these variation to a equivalent form:\n\nstemming: chop the end of the words: family, families, familiar ~ famili\nlemmatization: condition on part of speech\n\nbetter (adj) ~ good\nleaves (noun) ~ leaf\nleaves (verb) ~ leave\n\n\nAll TAD/NLP packages offer easy applications for these algorithms."
   },
   {
     "objectID": "slides/week_02.html#other-steps-functional-words-highly-frequent-or-rare-words",
@@ -193,7 +214,7 @@
     "href": "slides/week_02.html#denny-spirling-2018",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Denny & Spirling, 2018",
-    "text": "Denny & Spirling, 2018\nStarting point: No rigorous way to compare results across different pre-processing steps. Adapting recommendations from supervised learning tasks.\nSummary:\n\nFour sets of UK election manifestos\nRun Wordfish to assess positions of parties from their manifestos\nDifferent preprocessing choices → Substantially different conclusions"
+    "text": "Denny & Spirling, 2018\n\nStarting point: No rigorous way to compare results across different pre-processing steps. Adapting recommendations from supervised learning tasks.\n\n\nSummary:\n\nFour sets of UK election manifestos\nRun Wordfish to assess positions of parties from their manifestos\nDifferent preprocessing choices → Substantially different conclusions"
   },
   {
     "objectID": "slides/week_02.html#pretext-a-new-method-for-assessing-sensitivity",
@@ -249,7 +270,7 @@
     "href": "slides/week_02.html#things-i-like-about-this-paper",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Things I like about this paper…",
-    "text": "Things I like about this paper…\n\n\nDescriptive paper\n\nNo complicated statistical model\nNice data + theory + contextual knowledge\n\nAn clever example of using text to measure a latent outcome (Political power)\nTaD + Metadata ~ Most applied social science papers will consist of this combination\nSimple quantity of interest: just by counting words.\n\n\\[\n\\small \\text{Coverage of Mayor}_{it} = \\frac{\\text{Mayor}_{it}}{\\text{Mayor}_{it} + \\text{City Manager}_{it} + \\text{City Council}_{it}}\n\\]"
+    "text": "Things I like about this paper…\n\n\nDescriptive paper\n\nNo complicated statistical model\nNice data + theory + contextual knowledge\n\nAn clever example of using text to measure a latent outcome (political power)\nTaD + Metadata\n\nMost applied social science papers will consist of this combination\n\nSimple quantity of interest: just by counting words.\n\n\\[\n\\small \\text{Coverage of Mayor}_{it} = \\frac{\\text{Mayor}_{it}}{\\text{Mayor}_{it} + \\text{City Manager}_{it} + \\text{City Council}_{it}}\n\\]"
   },
   {
     "objectID": "finalproject.html",

@@ -454,6 +454,19 @@
 </div>
 </div>
 </section>
+<section id="principles-of-text-analysis-gmb-textbook-1" class="slide level2 center">
+<h2>Principles of Text Analysis (GMB Textbook)</h2>
+<div>
+<ul>
+<li><p><span class="red"><strong>Principle 1:</strong></span> Social science theories and substantive knowledge are essential for research design</p></li>
+<li><p><span class="red"><strong>Principle 2:</strong></span> Text analysis does not replace humans—it augments them.</p></li>
+<li><p><span class="red"><strong>Principle 3:</strong></span> Building, refining, and testing social science theories requires iteration and accumulation</p></li>
+<li><p><span class="red"><strong>Principle 4:</strong></span> Text analysis methods distill generalizations from language. (all models are wrong!)</p></li>
+<li><p><span class="red"><strong>Principle 5:</strong></span> The best method depends on the task.</p></li>
+<li><p><span class="red"><strong>Principle 6:</strong></span> Validate, Validate, Validate…</p></li>
+</ul>
+</div>
+</section>
 <section id="overview-of-the-process" class="slide level2 center">
 <h2>Overview of the Process</h2>
 
@@ -485,7 +498,22 @@
 <li class="fragment"><p><span class="red">Quantity of interest</span>: can we measure what we plan to?</p></li>
 <li class="fragment"><p><span class="red">Sampling Bias</span>: ommited variables between being in the sample and your outcomes</p></li>
 </ul></li>
-<li class="fragment"><p>Most often we use these documents because they were available to us (<span class="red">custom made data</span>). In these cases, considering the three questions above is even more important.</p></li>
+<li class="fragment"><p><span class="red">Custommade data</span>: Most often we use these documents because they were available to us. In these cases, the three questions above are even more important.</p></li>
+</ul>
+</section>
+<section id="ventura-et.-al.-streaming-chats-2021" class="slide level2 center">
+<h2>Ventura et. al., Streaming Chats, 2021</h2>
+
+<img data-src="week2_figs/ventura_jqd.png" width="372" class="r-stretch quarto-figure-center"></section>
+<section id="exercise-key-components" class="slide level2 center">
+<h2>Exercise: Key components</h2>
+<ul>
+<li class="fragment"><p>RQ: Measure quality of comments on streaming chat platforms during political debates</p>
+<ul>
+<li class="fragment"><p><strong>Population of interest:</strong></p></li>
+<li class="fragment"><p><strong>Quantity of interest:</strong></p></li>
+<li class="fragment"><p><strong>Source of bias:</strong></p></li>
+</ul></li>
 </ul>
 </section>
 <section id="unit-of-analysis" class="slide level2 center">
@@ -503,7 +531,6 @@
 <ul>
 <li class="fragment">switching through different units of analysis has a low cost</li>
 <li class="fragment">allows you to look at the data from a different angle</li>
-<li class="fragment">provide new insights to your research</li>
 </ul></li>
 </ul>
 </div>
@@ -540,14 +567,25 @@
 <li class="fragment">Matrix where rows = documents; columns = terms (words or tokens)</li>
 <li class="fragment">Each cell contains the frequency or weight of a term within a document</li>
 </ul>
-
-<img data-src="week2_figs/DTM.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
+<div class="fragment">
+<div class="cell" data-layout-align="center" data-hash="week_02_cache/revealjs/unnamed-chunk-3_0c58ccc6a123e3603b96a7071b748082">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week2_figs/DTM.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="tokenization" class="slide level2 center">
 <h2>Tokenization</h2>
 <ul>
-<li class="fragment"><p>A first step in any text analysis task is to break documents in meaningful units of analysis (tokens)</p></li>
-<li class="fragment"><p><span class="red">Tokens</span> are often words for most tasks. A simple tokenizer uses white space marks to split documents in tokens.</p></li>
-<li class="fragment"><p>Tokenizer may vary [across tasks]{.red}:</p>
+<li class="fragment"><p><strong>Def:</strong> break documents in meaningful units of analysis</p></li>
+<li class="fragment"><p><span class="red">Tokens</span> are often words.</p></li>
+<li class="fragment"><p>A simple <strong>tokenizer</strong> uses white space marks to split documents in tokens.</p></li>
+<li class="fragment"><p>Tokenizer may vary <strong>across tasks</strong></p>
 <ul>
 <li class="fragment">Twiter specific tokenizer ~ keep hashtags, for example.</li>
 </ul></li>
@@ -585,7 +623,7 @@
 <li class="fragment">leaves (verb) ~ leave</li>
 </ul></li>
 </ul></li>
-<li class="fragment"><p>All [TAD/NLP packages[{.red}] offer easy applications for these algorithms.</p></li>
+<li class="fragment"><p>All <strong>TAD/NLP packages</strong> offer easy applications for these algorithms.</p></li>
 </ul>
 </section>
 <section id="other-steps-functional-words-highly-frequent-or-rare-words" class="slide level2 center">
@@ -670,13 +708,17 @@
 </section>
 <section id="denny-spirling-2018" class="slide level2 center">
 <h2>Denny &amp; Spirling, 2018</h2>
+<div class="fragment">
 <p><span class="red"><strong>Starting point</strong></span>: No rigorous way to compare results across different pre-processing steps. Adapting recommendations from supervised learning tasks.</p>
+</div>
+<div class="fragment">
 <p><strong>Summary:</strong></p>
 <ul>
 <li class="fragment"><p>Four sets of UK election manifestos</p></li>
 <li class="fragment"><p>Run Wordfish to assess positions of parties from their manifestos</p></li>
 <li class="fragment"><p>Different preprocessing choices → Substantially different conclusions</p></li>
 </ul>
+</div>
 </section>
 <section id="section-2" class="slide level2 center">
 <h2></h2>
@@ -817,8 +859,11 @@ What is the vector representation of this sentence? Give me the vocabulary and t
 <li><p>No complicated statistical model</p></li>
 <li><p>Nice data + theory + contextual knowledge</p></li>
 </ul></li>
-<li><p>An clever example of using text to measure a latent outcome (Political power)</p></li>
-<li><p>TaD + Metadata ~ Most applied social science papers will consist of this combination</p></li>
+<li><p>An clever example of using text to measure a latent outcome (political power)</p></li>
+<li><p>TaD + Metadata</p>
+<ul>
+<li>Most applied social science papers will consist of this combination</li>
+</ul></li>
 <li><p>Simple quantity of interest: just by counting words.</p></li>
 </ul>
 <p><span class="math display">\[
