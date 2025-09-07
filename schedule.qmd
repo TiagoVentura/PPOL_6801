@@ -9,7 +9,7 @@ subtitle: "Data Science and Public Policy, McCourt School for Public Polcy, Geor
 
 -   **Lecture**: [Week 1 - Introduction](/slides/week_01_intro.html)
 
--   **Coding Materials**: <a href="/code/week1_intro_to_R.R" download> Week 1 - Introduction to R </a>
+-   **Coding Materials**: <a href="/code/week1_intro_to_R.R" download> Week 1 - Introduction to R </a> 
 
 -   **Data:** [Pooling Data](https://www.dropbox.com/scl/fi/2j5wmwtgvsis4eul89as2/national_clinton_trump_6_20_2016.csv?rlkey=yh2ziddv1ixajunkompwepz6f&dl=0)
 
