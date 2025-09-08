@@ -376,80 +376,6 @@ Now we have [pre-processed]{.red} our data. So we can simplify it even further:
 
 -   Open science and GitHub repositories are our friend!
 
-## Denny & Spirling, 2018
-
-:::fragment
-[**Starting point**]{.red}: No rigorous way to compare results across different pre-processing steps. Adapting recommendations from supervised learning tasks.
-:::
-
-::: fragment
-**Example of the issue:**
-
--   Four sets of UK election manifestos
-
--   Run Wordfish to assess positions of parties from their manifestos
-
--   Different preprocessing choices → Substantially different conclusions
-:::
-
-## 
-
-```{r fig.align="center",out.width="20cm", out.height="20cm"}
-knitr::include_graphics("week2_figs/DA_wordfish2.png")
-```
-
-## preText: A New Method for Assessing Sensitivity
-
-In your words, describe their solution to the pre-processing issue.
-
-:::: notes
-::: fragment
--   Calculate distance of every document under no pre-processing
-
--   Calculate distance of every document under M_i pre-processing
-
--   Each specification will have a largest (k) pair-mover.
-
-- V_M_1 = rank order of the top k moves in M1 across all other M pre-processing.
-
-$$ v_{M1} = \bigl( 2M_{2},\, 14M_{3},\, 2M_{4},\, 3M_{5},\, \ldots,\, 15M_{127} \bigr)$$
-
--   Repeat for every k largest mover and average across $v_{Mi}^k$
-
-$$\text{preText score}_{i} \;=\; \frac{2\,v_{M_i}^{(k)}}{n(n-1)}$$
-:::
-
-::::
-
-## Results
-::: nonincremental
-
-::: columns
-::: {.column width="30%"}
-
-**Interpretation**
-
-- Lower score r ~ Typical changes
-- Higher score r ~ Atypical changes
-
-
-**Implementation**
-
-- R package `preText`
-
-:::
-
-::: {.column width="70%"}
-
-```{r fig.align="center",out.width="20cm", out.height="20cm"}
-knitr::include_graphics("week2_figs/danny_reg.png")
-```
-
-:::
-:::
-:::
-
-
 # Vector Space Model: Convert Text to Numbers
 
 ## 
@@ -571,7 +497,82 @@ knitr::include_graphics("https://m.media-amazon.com/images/I/A1lv97-jJoL._SL1500
 -->
 ````
 
-# Application
+# Applications
+
+
+## Denny & Spirling, 2018
+
+:::fragment
+[**Starting point**]{.red}: No rigorous way to compare results across different pre-processing steps. Adapting recommendations from supervised learning tasks.
+:::
+
+::: fragment
+**Example of the issue:**
+
+-   Four sets of UK election manifestos
+
+-   Run Wordfish to assess positions of parties from their manifestos
+
+-   Different preprocessing choices → Substantially different conclusions
+:::
+
+## 
+
+```{r fig.align="center",out.width="20cm", out.height="20cm"}
+knitr::include_graphics("week2_figs/DA_wordfish2.png")
+```
+
+## preText: A New Method for Assessing Sensitivity
+
+In your words, describe their solution to the pre-processing issue.
+
+:::: notes
+::: fragment
+-   Calculate distance of every document under no pre-processing
+
+-   Calculate distance of every document under M_i pre-processing
+
+-   Each specification will have a largest (k) pair-mover.
+
+- V_M_1 = rank order of the top k moves in M1 across all other M pre-processing.
+
+$$ v_{M1} = \bigl( 2M_{2},\, 14M_{3},\, 2M_{4},\, 3M_{5},\, \ldots,\, 15M_{127} \bigr)$$
+
+-   Repeat for every k largest mover and average across $v_{Mi}^k$
+
+$$\text{preText score}_{i} \;=\; \frac{2\,v_{M_i}^{(k)}}{n(n-1)}$$
+:::
+
+::::
+
+## Results
+::: nonincremental
+
+::: columns
+::: {.column width="30%"}
+
+**Interpretation**
+
+- Lower score r ~ Typical changes
+- Higher score r ~ Atypical changes
+
+
+**Implementation**
+
+- R package `preText`
+
+:::
+
+::: {.column width="70%"}
+
+```{r fig.align="center",out.width="20cm", out.height="20cm"}
+knitr::include_graphics("week2_figs/danny_reg.png")
+```
+
+:::
+:::
+:::
+
 
 ## Ban et. al. 2019, How Newspapers Reveal Political Power.
 

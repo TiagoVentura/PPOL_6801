@@ -716,6 +716,89 @@
 </ul></li>
 <li class="fragment"><p>Open science and GitHub repositories are our friend!</p></li>
 </ul>
+</section></section>
+<section>
+<section id="vector-space-model-convert-text-to-numbers" class="title-slide slide level1 center">
+<h1>Vector Space Model: Convert Text to Numbers</h1>
+
+</section>
+<section id="section-2" class="slide level2 center">
+<h2></h2>
+<p>To represent documents as numbers, we will use the <span class="red">vector space model representation</span>:</p>
+<ul>
+<li class="fragment"><p>A document <span class="math inline">\(D_i\)</span> is represented as a collection of features <span class="math inline">\(W\)</span> (words, tokens, n-grams..)</p></li>
+<li class="fragment"><p>Each feature <span class="math inline">\(w_i\)</span> can be place in a real line, then a document <span class="math inline">\(D_i\)</span> is a point in a <span class="math inline">\(W\)</span> dimensional space</p></li>
+</ul>
+<div class="fragment">
+<p>Imagine the sentence below: <em>“If that is a joke, I love it. If not, can’t wait to unpack that with you later.”</em></p>
+<ul>
+<li class="fragment"><p><strong>Sorted Vocabulary</strong> =(a, can’t, i, if, is, it, joke, later, love, not, that, to, unpack, wait, with, you”)</p></li>
+<li class="fragment"><p><strong>Feature Representation</strong> = (1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1)</p></li>
+<li class="fragment"><p>Features will typically be the n-gram (mostly unigram) <span class="red">frequencies</span> of the tokens in the document, or some <span class="red">function</span> of those frequencies</p></li>
+</ul>
+</div>
+</section>
+<section id="section-3" class="slide level2 center">
+<h2></h2>
+<p>Each document is now a vector (vector space model)!!</p>
+<ul>
+<li class="fragment"><p>stacking these vectors will give you our workhorse representation for text: <span class="red"><strong>Document Feature Matrix</strong></span></p></li>
+<li class="fragment"><p>linear algebra teach us how to work with vectors: magnitude, direction, projection, distance, similarity… all work in many dimensions.</p></li>
+</ul>
+<div class="fragment">
+<!-- -->
+<h3 id="dfm">DFM</h3>
+<div class="cell" data-layout-align="center" data-hash="week_02_cache/revealjs/unnamed-chunk-4_924c6004363275ca2b4be2a81ebea19c">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week2_figs/DTM.png" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualizing-vector-space-model" class="slide level2 center">
+<h2>Visualizing Vector Space Model</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Documents</strong></p>
+</div>
+<div class="callout-content">
+<p>Document 1 = “yes yes yes no no no”</p>
+<p>Document 2 = “yes yes yes yes yes yes”</p>
+</div>
+</div>
+</div>
+
+<img data-src="week_02_files/figure-revealjs/unnamed-chunk-5-1.png" width="768" class="r-stretch quarto-figure-center"></section>
+<section id="visualizing-vector-space-model-1" class="slide level2 center">
+<h2>Visualizing Vector Space Model</h2>
+
+<!-- ## Quick Exercise
+
+What is the vector representation of this sentence? Give me the vocabulary and the feature representation. Remove any punctuation.
+
+<br> <br>
+
+*"That's just what translation is, I think. That's all speaking is. Listening to the other and trying to see past your own biases to glimpse what they're trying to say."*
+
+## If you are curious ...
+
+::: {.cell layout-align="center" hash='week_02_cache/revealjs/unnamed-chunk-7_053f822b010d0a72d4dba97243e3e75f'}
+::: {.cell-output-display}
+![](https://m.media-amazon.com/images/I/A1lv97-jJoL._SL1500_.jpg){fig-align='center'}
+:::
+:::
+
+-->
+<img data-src="week_02_files/figure-revealjs/unnamed-chunk-6-1.png" width="768" class="r-stretch quarto-figure-center"></section></section>
+<section>
+<section id="applications" class="title-slide slide level1 center">
+<h1>Applications</h1>
+
 </section>
 <section id="denny-spirling-2018" class="slide level2 center">
 <h2>Denny &amp; Spirling, 2018</h2>
@@ -731,9 +814,9 @@
 </ul>
 </div>
 </section>
-<section id="section-2" class="slide level2 center">
+<section id="section-4" class="slide level2 center">
 <h2></h2>
-<div class="cell" data-layout-align="center" data-hash="week_02_cache/revealjs/unnamed-chunk-4_ddc275b9db60607dab6ab67f964e19e4">
+<div class="cell" data-layout-align="center" data-hash="week_02_cache/revealjs/unnamed-chunk-8_5e62b93d8becaa1e8e064a8f92948943">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -787,7 +870,7 @@
 <li>R package <code>preText</code></li>
 </ul>
 </div><div class="column" style="width:70%;">
-<div class="cell" data-layout-align="center" data-hash="week_02_cache/revealjs/unnamed-chunk-5_92c69100b000dd30e45774aedabffbb9">
+<div class="cell" data-layout-align="center" data-hash="week_02_cache/revealjs/unnamed-chunk-9_10cca1ca1fc9e0b0a20d39732ca38521">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -799,89 +882,6 @@
 </div>
 </div>
 </div>
-</section></section>
-<section>
-<section id="vector-space-model-convert-text-to-numbers" class="title-slide slide level1 center">
-<h1>Vector Space Model: Convert Text to Numbers</h1>
-
-</section>
-<section id="section-3" class="slide level2 center">
-<h2></h2>
-<p>To represent documents as numbers, we will use the <span class="red">vector space model representation</span>:</p>
-<ul>
-<li class="fragment"><p>A document <span class="math inline">\(D_i\)</span> is represented as a collection of features <span class="math inline">\(W\)</span> (words, tokens, n-grams..)</p></li>
-<li class="fragment"><p>Each feature <span class="math inline">\(w_i\)</span> can be place in a real line, then a document <span class="math inline">\(D_i\)</span> is a point in a <span class="math inline">\(W\)</span> dimensional space</p></li>
-</ul>
-<div class="fragment">
-<p>Imagine the sentence below: <em>“If that is a joke, I love it. If not, can’t wait to unpack that with you later.”</em></p>
-<ul>
-<li class="fragment"><p><strong>Sorted Vocabulary</strong> =(a, can’t, i, if, is, it, joke, later, love, not, that, to, unpack, wait, with, you”)</p></li>
-<li class="fragment"><p><strong>Feature Representation</strong> = (1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1)</p></li>
-<li class="fragment"><p>Features will typically be the n-gram (mostly unigram) <span class="red">frequencies</span> of the tokens in the document, or some <span class="red">function</span> of those frequencies</p></li>
-</ul>
-</div>
-</section>
-<section id="section-4" class="slide level2 center">
-<h2></h2>
-<p>Each document is now a vector (vector space model)!!</p>
-<ul>
-<li class="fragment"><p>stacking these vectors will give you our workhorse representation for text: <span class="red"><strong>Document Feature Matrix</strong></span></p></li>
-<li class="fragment"><p>linear algebra teach us how to work with vectors: magnitude, direction, projection, distance, similarity… all work in many dimensions.</p></li>
-</ul>
-<div class="fragment">
-<!-- -->
-<h3 id="dfm">DFM</h3>
-<div class="cell" data-layout-align="center" data-hash="week_02_cache/revealjs/unnamed-chunk-6_ac398f5a4ce7d071b51107802aadf500">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="week2_figs/DTM.png" style="width:80.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="visualizing-vector-space-model" class="slide level2 center">
-<h2>Visualizing Vector Space Model</h2>
-<div class="callout callout-note no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Documents</strong></p>
-</div>
-<div class="callout-content">
-<p>Document 1 = “yes yes yes no no no”</p>
-<p>Document 2 = “yes yes yes yes yes yes”</p>
-</div>
-</div>
-</div>
-
-<img data-src="week_02_files/figure-revealjs/unnamed-chunk-7-1.png" width="768" class="r-stretch quarto-figure-center"></section>
-<section id="visualizing-vector-space-model-1" class="slide level2 center">
-<h2>Visualizing Vector Space Model</h2>
-
-<!-- ## Quick Exercise
-
-What is the vector representation of this sentence? Give me the vocabulary and the feature representation. Remove any punctuation.
-
-<br> <br>
-
-*"That's just what translation is, I think. That's all speaking is. Listening to the other and trying to see past your own biases to glimpse what they're trying to say."*
-
-## If you are curious ...
-
-::: {.cell layout-align="center" hash='week_02_cache/revealjs/unnamed-chunk-9_ce54a1bec2e8d49ef183e43988fec181'}
-::: {.cell-output-display}
-![](https://m.media-amazon.com/images/I/A1lv97-jJoL._SL1500_.jpg){fig-align='center'}
-:::
-:::
-
--->
-<img data-src="week_02_files/figure-revealjs/unnamed-chunk-8-1.png" width="768" class="r-stretch quarto-figure-center"></section></section>
-<section>
-<section id="application" class="title-slide slide level1 center">
-<h1>Application</h1>
-
 </section>
 <section id="ban-et.-al.-2019-how-newspapers-reveal-political-power." class="slide level2 center">
 <h2>Ban et. al.&nbsp;2019, How Newspapers Reveal Political Power.</h2>

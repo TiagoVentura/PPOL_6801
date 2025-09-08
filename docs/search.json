@@ -228,7 +228,7 @@
     "href": "slides/week_02.html#section-3",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "",
-    "text": "To represent documents as numbers, we will use the vector space model representation:\n\nA document \\(D_i\\) is represented as a collection of features \\(W\\) (words, tokens, n-grams..)\nEach feature \\(w_i\\) can be place in a real line, then a document \\(D_i\\) is a point in a \\(W\\) dimensional space\n\n\nImagine the sentence below: “If that is a joke, I love it. If not, can’t wait to unpack that with you later.”\n\nSorted Vocabulary =(a, can’t, i, if, is, it, joke, later, love, not, that, to, unpack, wait, with, you”)\nFeature Representation = (1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1)\nFeatures will typically be the n-gram (mostly unigram) frequencies of the tokens in the document, or some function of those frequencies"
+    "text": "Each document is now a vector (vector space model)!!\n\nstacking these vectors will give you our workhorse representation for text: Document Feature Matrix\nlinear algebra teach us how to work with vectors: magnitude, direction, projection, distance, similarity… all work in many dimensions.\n\n\n\nDFM"
   },
   {
     "objectID": "slides/week_02.html#section-4",
@@ -649,5 +649,12 @@
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Results",
     "text": "Results"
+  },
+  {
+    "objectID": "slides/week_02.html#section-2",
+    "href": "slides/week_02.html#section-2",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "",
+    "text": "To represent documents as numbers, we will use the vector space model representation:\n\nA document \\(D_i\\) is represented as a collection of features \\(W\\) (words, tokens, n-grams..)\nEach feature \\(w_i\\) can be place in a real line, then a document \\(D_i\\) is a point in a \\(W\\) dimensional space\n\n\nImagine the sentence below: “If that is a joke, I love it. If not, can’t wait to unpack that with you later.”\n\nSorted Vocabulary =(a, can’t, i, if, is, it, joke, later, love, not, that, to, unpack, wait, with, you”)\nFeature Representation = (1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1)\nFeatures will typically be the n-gram (mostly unigram) frequencies of the tokens in the document, or some function of those frequencies"
   }
 ]
