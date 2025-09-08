@@ -174,7 +174,7 @@ knitr::include_graphics("week2_figs/overview.png")
 
 -   When selecting a corpus, consider:
 
-    -   [Population of interest]{.red}: does the corpus allows us to make inferences about them?
+    -   [Population of interest]{.red}: does the corpus allow us to make inferences about our population of interest?
 
     -   [Quantity of interest]{.red}: can we measure what we plan to?
 
@@ -185,9 +185,12 @@ knitr::include_graphics("week2_figs/overview.png")
 ## Ventura et. al., Streaming Chats, 2021
 
 ```{r fig.align="center"}
-knitr::include_graphics("week2_figs/ventura_jqd.png")
+knitr::include_graphics("week2_figs/ventura_jqd2.png")
 ```
 
+:::aside
+Link: [https://journalqd.org/article/view/2573/1820](https://journalqd.org/article/view/2573/1820)
+:::
 ## Exercise: Key components
 
 -   RQ: Measure quality of comments on streaming chat platforms during political debates
@@ -576,15 +579,7 @@ knitr::include_graphics("https://m.media-amazon.com/images/I/A1lv97-jJoL._SL1500
 
 **Abstract:** *Political science is in large part the study of power, but power itself is difficult to measure. We argue that we can use newspaper coverage—in particular, the relative amount of space devoted to particular subjects in newspapers—to measure the relative power of an important set of political actors and offices.*
 
--   Descriptive paper with TaD
-
-    -   No complicated statistical model
-
-    -   Nice data + theory + contextual knowledge
-
--   Clever example of using text to measure a latent outcome (political power)
-
--   Simple measure: just by counting words.
+**Inference just by counting words**
 
 $$
 \text{Relative Power of A} \;=\; 

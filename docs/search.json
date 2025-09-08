@@ -102,14 +102,14 @@
     "href": "slides/week_02.html#section",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "",
-    "text": "When selecting a corpus, consider:\n\nPopulation of interest: does the corpus allows us to make inferences about them?\nQuantity of interest: can we measure what we plan to?\nSampling Bias: ommited variables between being in the sample and your outcomes\n\nCustommade data: Most often we use these documents because they were available to us. In these cases, the three questions above are even more important."
+    "text": "When selecting a corpus, consider:\n\nPopulation of interest: does the corpus allow us to make inferences about our population of interest?\nQuantity of interest: can we measure what we plan to?\nSampling Bias: ommited variables between being in the sample and your outcomes\n\nCustommade data: Most often we use these documents because they were available to us. In these cases, the three questions above are even more important."
   },
   {
     "objectID": "slides/week_02.html#ventura-et.-al.-streaming-chats-2021",
     "href": "slides/week_02.html#ventura-et.-al.-streaming-chats-2021",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Ventura et. al., Streaming Chats, 2021",
-    "text": "Ventura et. al., Streaming Chats, 2021"
+    "text": "Ventura et. al., Streaming Chats, 2021\n\n\n\n\n\n\n\n\n\n\n\nLink: https://journalqd.org/article/view/2573/1820"
   },
   {
     "objectID": "slides/week_02.html#exercise-key-components",
@@ -256,7 +256,7 @@
     "href": "slides/week_02.html#ban-et.-al.-2019-how-newspapers-reveal-political-power.",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Ban et. al. 2019, How Newspapers Reveal Political Power.",
-    "text": "Ban et. al. 2019, How Newspapers Reveal Political Power.\n\nAbstract: Political science is in large part the study of power, but power itself is difficult to measure. We argue that we can use newspaper coverage—in particular, the relative amount of space devoted to particular subjects in newspapers—to measure the relative power of an important set of political actors and offices.\n\nDescriptive paper with TaD\n\nNo complicated statistical model\nNice data + theory + contextual knowledge\n\nClever example of using text to measure a latent outcome (political power)\nSimple measure: just by counting words.\n\n\\[\n\\text{Relative Power of A} \\;=\\;\n\\frac{\\# \\text{ of Newspaper Mentions of A}}\n     {\\# \\text{ of Newspaper Mentions of A} + \\# \\text{ of Newspaper Mentions of B}}\n\\]"
+    "text": "Ban et. al. 2019, How Newspapers Reveal Political Power.\n\nAbstract: Political science is in large part the study of power, but power itself is difficult to measure. We argue that we can use newspaper coverage—in particular, the relative amount of space devoted to particular subjects in newspapers—to measure the relative power of an important set of political actors and offices.\nInference just by counting words\n\\[\n\\text{Relative Power of A} \\;=\\;\n\\frac{\\# \\text{ of Newspaper Mentions of A}}\n     {\\# \\text{ of Newspaper Mentions of A} + \\# \\text{ of Newspaper Mentions of B}}\n\\]"
   },
   {
     "objectID": "slides/week_02.html#things-you-like-about-this-paper",
