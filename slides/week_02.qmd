@@ -137,7 +137,6 @@ editor_options:
 ## Principles of Text Analysis (GMB Textbook)
 
 ::: nonincremental
-
 -   [**Principle 1:**]{.red} Social science theories and substantive knowledge are essential for research design
 
 -   [**Principle 2:**]{.red} Text analysis does not replace humans---it augments them.
@@ -149,7 +148,6 @@ editor_options:
 -   [**Principle 5:**]{.red} The best method depends on the task.
 
 -   [**Principle 6:**]{.red} Validate, Validate, Validate...
-
 :::
 
 ## Overview of the Process
@@ -180,7 +178,7 @@ knitr::include_graphics("week2_figs/overview.png")
 
     -   [Sampling Bias]{.red}: ommited variables between being in the sample and your outcomes
 
--  [Custommade data]{.red}: Most often we use these documents because they were available to us.  In these cases, the three questions above are even more important.
+-   [Custommade data]{.red}: Most often we use these documents because they were available to us. In these cases, the three questions above are even more important.
 
 ## Ventura et. al., Streaming Chats, 2021
 
@@ -188,9 +186,10 @@ knitr::include_graphics("week2_figs/overview.png")
 knitr::include_graphics("week2_figs/ventura_jqd2.png")
 ```
 
-:::aside
-Link: [https://journalqd.org/article/view/2573/1820](https://journalqd.org/article/view/2573/1820)
+::: aside
+Link: <https://journalqd.org/article/view/2573/1820>
 :::
+
 ## Exercise: Key components
 
 -   RQ: Measure quality of comments on streaming chat platforms during political debates
@@ -218,7 +217,6 @@ After selecting your documents and converting them to a computer-friendly format
 
     -   switching through different units of analysis has a low cost
     -   allows you to look at the data from a different angle
-
 :::
 
 ## 3. Reducing complexity
@@ -251,21 +249,18 @@ Document Term Matrix = cornerstone in computational text analysis
 -   Each cell contains the frequency or weight of a term within a document
 
 ::: fragment
-
 ```{r echo=FALSE, out.width = "80%", fig.align="center"}
 knitr::include_graphics("week2_figs/DTM.png") 
 ```
-
 :::
-
 
 ## Tokenization
 
 -   **Def:** break documents in meaningful units of analysis
 
--  [Tokens]{.red} are often words. 
+-   [Tokens]{.red} are often words.
 
--  A simple **tokenizer** uses white space marks to split documents in tokens.
+-   A simple **tokenizer** uses white space marks to split documents in tokens.
 
 -   Tokenizer may vary **across tasks**
 
@@ -499,10 +494,9 @@ knitr::include_graphics("https://m.media-amazon.com/images/I/A1lv97-jJoL._SL1500
 
 # Applications
 
-
 ## Denny & Spirling, 2018
 
-:::fragment
+::: fragment
 [**Starting point**]{.red}: No rigorous way to compare results across different pre-processing steps. Adapting recommendations from supervised learning tasks.
 :::
 
@@ -534,7 +528,7 @@ In your words, describe their solution to the pre-processing issue.
 
 -   Each specification will have a largest (k) pair-mover.
 
-- V_M_1 = rank order of the top k moves in M1 across all other M pre-processing.
+-   V_M_1 = rank order of the top k moves in M1 across all other M pre-processing.
 
 $$ v_{M1} = \bigl( 2M_{2},\, 14M_{3},\, 2M_{4},\, 3M_{5},\, \ldots,\, 15M_{127} \bigr)$$
 
@@ -542,42 +536,34 @@ $$ v_{M1} = \bigl( 2M_{2},\, 14M_{3},\, 2M_{4},\, 3M_{5},\, \ldots,\, 15M_{127} 
 
 $$\text{preText score}_{i} \;=\; \frac{2\,v_{M_i}^{(k)}}{n(n-1)}$$
 :::
-
 ::::
 
 ## Results
-::: nonincremental
 
-::: columns
+:::::: nonincremental
+::::: columns
 ::: {.column width="30%"}
-
 **Interpretation**
 
-- Lower score r ~ Typical changes
-- Higher score r ~ Atypical changes
-
+-   Lower score r \~ Typical changes
+-   Higher score r \~ Atypical changes
 
 **Implementation**
 
-- R package `preText`
-
+-   R package `preText`
 :::
 
 ::: {.column width="70%"}
-
 ```{r fig.align="center",out.width="20cm", out.height="20cm"}
 knitr::include_graphics("week2_figs/danny_reg.png")
 ```
-
 :::
-:::
-:::
-
+:::::
+::::::
 
 ## Ban et. al. 2019, How Newspapers Reveal Political Power.
 
 ::: nonincremental
-
 **Abstract:** *Political science is in large part the study of power, but power itself is difficult to measure. We argue that we can use newspaper coverage—in particular, the relative amount of space devoted to particular subjects in newspapers—to measure the relative power of an important set of political actors and offices.*
 
 **Inference just by counting words**
@@ -590,12 +576,13 @@ $$
 :::
 
 ## Validation
+
 ```{r fig.width=12, fig.align="center"}
 knitr::include_graphics("week2_figs/pam_validation.png")
 ```
 
-
 ## Results
+
 ```{r fig.width=12, fig.align="center"}
 knitr::include_graphics("week2_figs/ban_.png")
 ```
