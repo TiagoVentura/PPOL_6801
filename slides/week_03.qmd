@@ -29,7 +29,11 @@ editor_options:
 
 ## Housekeeping
 
-You have your pairs for the replication exercise [Next steps]{.red}:
+:::nonincremental
+
+You have your pairs for the replication exercise.
+
+[Next steps]{.red}:
 
 - Select the paper you wish to replicate (until lecture day next week)
 
@@ -37,6 +41,7 @@ You have your pairs for the replication exercise [Next steps]{.red}:
 
 - Talk to me if you have any issues
 
+:::
 
 ## Where are we?
 
@@ -196,9 +201,10 @@ $$
 
 #### Can be performed for any number of features J 
 
-::: notes
-no negative distances: sij   0 2 distance between documents is zero () documents are identical 3 distance between documents is symmetric: sij = sji 4 measures satisfy triangle inequality. sik   sij + sjk
-:::
+- No negative distances
+- Distance between documents is zero when documents are identical 
+- Distance between documents is symmetric 
+- Satisfy triangle inequality: $s_{ik} \leq s_{ij} + s_{jk}$
 
 ## Euclidean Distance, w=2
 
@@ -206,7 +212,7 @@ no negative distances: sij   0 2 distance between documents is zero () documen
 ## Euclidean Distance
 
 $$
-||U - V|| = \sqrt{\sum^{i}(U_{i} - y_{V_i})^2}
+||U - V|| = \sqrt{\sum^{i}(u_{i} - v_{i})^2}
 $$
 :::
 
@@ -226,7 +232,7 @@ sqrt(sum((a-b)^2))
 ## Exercise
 
 ::: {.callout-note icon="false"}
-## Documents, W=3 {yes, no}
+## Documents, W=2 {yes, no}
 
 Document 1 = "yes yes yes no no no" (3, 3)
 
@@ -321,10 +327,14 @@ Given a vector U and a scalar constant k, we can multiply a vector.
 $$ 
 U*k = [k*u_1, k*u_2, k*u_3 ... k*u_n]
 $$
+
+:::nonincremental
 - increases the length/magnitude
 
 - does not change the direction
+:::
 
+:::fragment
 ```{r echo=FALSE, fig.align="center",fig.width=8}
 # Load necessary libraries
 pacman::p_load(tidyverse)
@@ -358,6 +368,7 @@ ggplot(df, aes(x = yes, y = no, label = document)) +
   ggtitle("Vector Representation of Texts") +
   theme_minimal()
 ```
+:::
 
 ## Magnitude of a vector
 
@@ -367,21 +378,22 @@ The denominator of the cosine similarity formula gives you the magnitude or leng
 
 - It converts a vector to a scalar representing the size of a vector 
 
+:::fragment
 $$ 
 ||\mathbf{U}|| = \sqrt(u1*u1 + u2*u2 ... u_n*u_n) = \sqrt(\sum^i u_i^2) 
 $$
+:::
 
 ## Vector Multiplication: Dot (Inner) Product
 
 The numerator of the cosine similarity is called 'dot product' between two vectors. This a multiplication between two vectors. 
 
-Formula:
 
 $$ 
 \mathbf{U} \cdot \mathbf{V}= u_1*v_1 + u_2*v_2 + u_n*v_n = \sum^i u_i*v_i 
 $$
 
-Notice: the dot product maps two vectors to real numbers. 
+- **Notice**: the dot product maps two vectors to real numbers. 
 
 
 ## Dot Product: Geometric Intuition
@@ -461,13 +473,13 @@ $$
 \text{cosine similarity}(\mathbf{U}, \mathbf{V}) = \frac{\mathbf{U} \cdot \mathbf{V}}{\|\mathbf{U}\| \|\mathbf{V}\|}
 $$
 
--   $\mathbf{y_a} \cdot \mathbf{y_b}$ \~ dot product between vectors
+-   $U \cdot V$ \~ dot product between vectors
 
     -   it is a projection of one vector into another
     -   Works as a measure of similarity 
     -   But rewards magnitude
 
--   $||\mathbf{U}||$ \~ vector magnitude, length \~ $\sqrt{\sum{y_{U_i}^2}}$
+-   $||\mathbf{U}||$ \~ vector magnitude, length \~ $\sqrt{\sum{u_{i}^2}}$
 
     -   normalizes a vector projection of documents' by their lengths
 
@@ -538,7 +550,7 @@ The cosine function can range from \[-1, 1\]. When thinking about document vecto
 
 ## Applications: Think Tank Reports
 
--Compiled a dataset of 36,603 episodes from 79 prominent political podcasters
+- Compiled a dataset of 36,603 episodes from 79 prominent political podcasters
 
 - Pre-processed text transcripts
 
@@ -601,7 +613,7 @@ $$
 TTR:\frac{\text{total type}}{\text{total tokens}} 
 $$
 
-- [authors with limited vocabularies will have a low lexical diversity]{.midgray}
+- authors with limited vocabularies will have a low lexical diversity
 :::
 
 ## Issues with TTR and Extensions
@@ -703,7 +715,7 @@ Can we do better?
 
 -   One option: [weighting]{.red}
 
--   [Weighting function:]{.red}:
+-   [Weighting function:]{.red}
 
     -   [Reward]{.red} words more unique;
     -   [Punish]{.red} words that appear in most documents
@@ -711,7 +723,7 @@ Can we do better?
 ## TF-IDF = Term Frequency - Inverse Document Frequency
 
 $$
-\text{TF-IDF}(t, d) = \text{TF}(t, d) \times \text{IDF}(t)$ - 
+\text{TF-IDF}(t, d) = \text{TF} \times \text{IDF} 
 $$
 
 $$

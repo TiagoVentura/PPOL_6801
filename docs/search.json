@@ -53,7 +53,7 @@
     "href": "slides/week_03.html#housekeeping",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Housekeeping",
-    "text": "Housekeeping\nYou have your pairs for the replication exercise Next steps:\n\nSelect the paper you wish to replicate (until lecture day next week)\nPost on Slack\nTalk to me if you have any issues"
+    "text": "Housekeeping\n\nYou have your pairs for the replication exercise.\nNext steps:\n\nSelect the paper you wish to replicate (until lecture day next week)\nPost on Slack\nTalk to me if you have any issues"
   },
   {
     "objectID": "slides/week_03.html#where-are-we",
@@ -102,21 +102,21 @@
     "href": "slides/week_03.html#euclidean-distance",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Euclidean Distance",
-    "text": "Euclidean Distance\nThe ordinary, straight line distance between two points in space. Using document vectors \\(y_a\\) and \\(y_b\\) with \\(j\\) dimensions\n\n\n\nEuclidean Distance\n\n\n\\[\n||U - V|| = \\sqrt{\\sum^{i}(U_{i} - {V_i})^2}\n\\]\n\n\n\nCan be performed for any number of features J\n\nno negative distances: sij   0 2 distance between documents is zero () documents are identical 3 distance between documents is symmetric: sij = sji 4 measures satisfy triangle inequality. sik   sij + sjk"
+    "text": "Euclidean Distance\nThe ordinary, straight line distance between two points in space. Using document vectors \\(y_a\\) and \\(y_b\\) with \\(j\\) dimensions\n\n\n\nEuclidean Distance\n\n\n\\[\n||U - V|| = \\sqrt{\\sum^{i}(U_{i} - {V_i})^2}\n\\]\n\n\n\nCan be performed for any number of features J\n\nNo negative distances\nDistance between documents is zero when documents are identical\nDistance between documents is symmetric\nSatisfy triangle inequality: \\(s_{ik} \\leq s_{ij} + s_{jk}\\)"
   },
   {
     "objectID": "slides/week_03.html#euclidean-distance-w2",
     "href": "slides/week_03.html#euclidean-distance-w2",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Euclidean Distance, w=2",
-    "text": "Euclidean Distance, w=2\n\n\n\nEuclidean Distance\n\n\n\\[\n||U - V|| = \\sqrt{\\sum^{i}(U_{i} - y_{V_i})^2}\n\\]\n\n\n\n\n\\(U\\) = [0, 2.51, 3.6, 0] and \\(yV\\) = [0, 2.3, 3.1, 9.2]\n\\(\\sum^{i}(U_{i} - y_{V_i})^2\\) = \\((0-0)^2 + (2.51-2.3)^2 + (3.6-3.1)^2 + (9-0)^2\\) = \\(84.9341\\)\n\\(\\sqrt{\\sum_{j=1}^j (y_a - y_b)^2}\\) = 9.21"
+    "text": "Euclidean Distance, w=2\n\n\n\nEuclidean Distance\n\n\n\\[\n||U - V|| = \\sqrt{\\sum^{i}(u_{i} - v_{i})^2}\n\\]\n\n\n\n\n\\(U\\) = [0, 2.51, 3.6, 0] and \\(yV\\) = [0, 2.3, 3.1, 9.2]\n\\(\\sum^{i}(U_{i} - y_{V_i})^2\\) = \\((0-0)^2 + (2.51-2.3)^2 + (3.6-3.1)^2 + (9-0)^2\\) = \\(84.9341\\)\n\\(\\sqrt{\\sum_{j=1}^j (y_a - y_b)^2}\\) = 9.21"
   },
   {
     "objectID": "slides/week_03.html#exercise",
     "href": "slides/week_03.html#exercise",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Exercise",
-    "text": "Exercise\n\n\n\nDocuments, W=3 {yes, no}\n\n\nDocument 1 = “yes yes yes no no no” (3, 3)\nDocument 2 = “yes yes yes yes yes yes” (6,0)\nDocument 3= “yes yes yes no no no yes yes yes no no no yes yes yes no no no yes yes yes no no no” (12, 12)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhich documents will the euclidean distance place closer together?\nDoes it look like a good measure for similarity?\n\nDoc C = Doc A * 3"
+    "text": "Exercise\n\n\n\nDocuments, W=2 {yes, no}\n\n\nDocument 1 = “yes yes yes no no no” (3, 3)\nDocument 2 = “yes yes yes yes yes yes” (6,0)\nDocument 3= “yes yes yes no no no yes yes yes no no no yes yes yes no no no yes yes yes no no no” (12, 12)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhich documents will the euclidean distance place closer together?\nDoes it look like a good measure for similarity?\n\nDoc C = Doc A * 3"
   },
   {
     "objectID": "slides/week_03.html#cosine-similarity",
@@ -144,14 +144,14 @@
     "href": "slides/week_03.html#scalar-multiplication-of-vectors",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Scalar Multiplication of Vectors",
-    "text": "Scalar Multiplication of Vectors\nGiven a vector U and a scalar constant k, we can multiply a vector.\n\\[\nU*k = [k*u_1, k*u_2, k*u_3 ... k*u_n]\n\\] - increases the length/magnitude\n\ndoes not change the direction"
+    "text": "Scalar Multiplication of Vectors\nGiven a vector U and a scalar constant k, we can multiply a vector.\n\\[\nU*k = [k*u_1, k*u_2, k*u_3 ... k*u_n]\n\\]\n\n\nincreases the length/magnitude\ndoes not change the direction"
   },
   {
     "objectID": "slides/week_03.html#magnitude-of-a-vector",
     "href": "slides/week_03.html#magnitude-of-a-vector",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Magnitude of a vector",
-    "text": "Magnitude of a vector\nThe denominator of the cosine similarity formula gives you the magnitude or length of a vector.\n\nMagnitude: Use L2 Norm, Euclidean distance from origin point (0,0)\nIt converts a vector to a scalar representing the size of a vector\n\n\\[\n||\\mathbf{U}|| = \\sqrt(u1*u1 + u2*u2 ... u_n*u_n) = \\sqrt(\\sum^i u_i^2)\n\\]"
+    "text": "Magnitude of a vector\nThe denominator of the cosine similarity formula gives you the magnitude or length of a vector.\n\nMagnitude: Use L2 Norm, Euclidean distance from origin point (0,0)\nIt converts a vector to a scalar representing the size of a vector\n\n\n\\[\n||\\mathbf{U}|| = \\sqrt(u1*u1 + u2*u2 ... u_n*u_n) = \\sqrt(\\sum^i u_i^2)\n\\]"
   },
   {
     "objectID": "slides/week_03.html#vector-multiplication-dot-product",
@@ -179,7 +179,7 @@
     "href": "slides/week_03.html#back-to-the-cosine-similarity",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Back to the Cosine Similarity",
-    "text": "Back to the Cosine Similarity\n\\[\n\\text{cosine similarity}(\\mathbf{U}, \\mathbf{V}) = \\frac{\\mathbf{U} \\cdot \\mathbf{V}}{\\|\\mathbf{U}\\| \\|\\mathbf{V}\\|}\n\\]\n\n\\(\\mathbf{y_a} \\cdot \\mathbf{y_b}\\) ~ dot product between vectors\n\nit is a projection of one vector into another\nWorks as a measure of similarity\nBut rewards magnitude\n\n\\(||\\mathbf{U}||\\) ~ vector magnitude, length ~ \\(\\sqrt{\\sum{y_{U_i}^2}}\\)\n\nnormalizes a vector projection of documents’ by their lengths\n\ncosine similarity captures some notion of relative direction controlling for different magnitudes."
+    "text": "Back to the Cosine Similarity\n\\[\n\\text{cosine similarity}(\\mathbf{U}, \\mathbf{V}) = \\frac{\\mathbf{U} \\cdot \\mathbf{V}}{\\|\\mathbf{U}\\| \\|\\mathbf{V}\\|}\n\\]\n\n\\(U \\cdot V\\) ~ dot product between vectors\n\nit is a projection of one vector into another\nWorks as a measure of similarity\nBut rewards magnitude\n\n\\(||\\mathbf{U}||\\) ~ vector magnitude, length ~ \\(\\sqrt{\\sum{u_{i}^2}}\\)\n\nnormalizes a vector projection of documents’ by their lengths\n\ncosine similarity captures some notion of relative direction controlling for different magnitudes."
   },
   {
     "objectID": "slides/week_03.html#cosine-similarity-1",
@@ -200,7 +200,7 @@
     "href": "slides/week_03.html#applications-think-tank-reports",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Applications: Think Tank Reports",
-    "text": "Applications: Think Tank Reports\n-Compiled a dataset of 36,603 episodes from 79 prominent political podcasters\n\nPre-processed text transcripts\nCalculated the cosine similarity between podcast transcripts and fact-checked claims (PolitiFact and Snopes)\nSet a cosine similarity threshold (e.g., 0.5) to filter significant matches\nOnce a claim was detected in a transcript, the analysis moved to determine how the claim was presented (manual review, sentiment analysis)\nQuantified the prevalence of unsubstantiated and false claims across the podcast episodes"
+    "text": "Applications: Think Tank Reports\n\nCompiled a dataset of 36,603 episodes from 79 prominent political podcasters\nPre-processed text transcripts\nCalculated the cosine similarity between podcast transcripts and fact-checked claims (PolitiFact and Snopes)\nSet a cosine similarity threshold (e.g., 0.5) to filter significant matches\nOnce a claim was detected in a transcript, the analysis moved to determine how the claim was presented (manual review, sentiment analysis)\nQuantified the prevalence of unsubstantiated and false claims across the podcast episodes"
   },
   {
     "objectID": "slides/week_03.html#more-metrics",
@@ -284,14 +284,14 @@
     "href": "slides/week_03.html#can-we-do-better-than-just-using-frequencies",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Can we do better than just using frequencies?",
-    "text": "Can we do better than just using frequencies?\nSo far our inputs for the vector representation of documents have relied simply the word frequencies.\nCan we do better?\n\nOne option: weighting\nWeighting function::\n\nReward words more unique;\nPunish words that appear in most documents"
+    "text": "Can we do better than just using frequencies?\nSo far our inputs for the vector representation of documents have relied simply the word frequencies.\nCan we do better?\n\nOne option: weighting\nWeighting function:\n\nReward words more unique;\nPunish words that appear in most documents"
   },
   {
     "objectID": "slides/week_03.html#tf-idf-term-frequency---inverse-document-frequency",
     "href": "slides/week_03.html#tf-idf-term-frequency---inverse-document-frequency",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "TF-IDF = Term Frequency - Inverse Document Frequency",
-    "text": "TF-IDF = Term Frequency - Inverse Document Frequency\n\\[\n\\text{TF-IDF}(t, d) = \\text{TF}(t, d) \\times \\text{IDF}(t)$ -\n\\]\n\\[\n\\text{TF}(t, d) = \\frac{\\text{Number of times term } t \\text{ appears in document } d}{\\text{Total number of terms in document } d}\n\\]\n\\[\n\\text{IDF}(t) = \\log \\left( \\frac{\\text{Total number of documents}}{\\text{Number of documents with term } t \\text{ in them}} \\right)\n\\]"
+    "text": "TF-IDF = Term Frequency - Inverse Document Frequency\n\\[\n\\text{TF-IDF}(t, d) = \\text{TF} \\times \\text{IDF}\n\\]\n\\[\n\\text{TF}(t, d) = \\frac{\\text{Number of times term } t \\text{ appears in document } d}{\\text{Total number of terms in document } d}\n\\]\n\\[\n\\text{IDF}(t) = \\log \\left( \\frac{\\text{Total number of documents}}{\\text{Number of documents with term } t \\text{ in them}} \\right)\n\\]"
   },
   {
     "objectID": "slides/week_03.html#federalist-papers",
@@ -921,7 +921,7 @@
     "href": "slides/week_03.html#vector-multiplication-dot-inner-product",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Vector Multiplication: Dot (Inner) Product",
-    "text": "Vector Multiplication: Dot (Inner) Product\nThe numerator of the cosine similarity is called ‘dot product’ between two vectors. This a multiplication between two vectors.\nFormula:\n\\[\n\\mathbf{U} \\cdot \\mathbf{V}= u_1*v_1 + u_2*v_2 + u_n*v_n = \\sum^i u_i*v_i\n\\]\nNotice: the dot product maps two vectors to real numbers."
+    "text": "Vector Multiplication: Dot (Inner) Product\nThe numerator of the cosine similarity is called ‘dot product’ between two vectors. This a multiplication between two vectors.\n\\[\n\\mathbf{U} \\cdot \\mathbf{V}= u_1*v_1 + u_2*v_2 + u_n*v_n = \\sum^i u_i*v_i\n\\]\n\nNotice: the dot product maps two vectors to real numbers."
   },
   {
     "objectID": "slides/week_03.html#section-1",

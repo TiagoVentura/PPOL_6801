@@ -347,12 +347,15 @@
 </section>
 <section id="housekeeping" class="slide level2 center">
 <h2>Housekeeping</h2>
-<p>You have your pairs for the replication exercise <span class="red">Next steps</span>:</p>
+<div>
+<p>You have your pairs for the replication exercise.</p>
+<p><span class="red">Next steps</span>:</p>
 <ul>
-<li class="fragment"><p>Select the paper you wish to replicate (until lecture day next week)</p></li>
-<li class="fragment"><p>Post on Slack</p></li>
-<li class="fragment"><p>Talk to me if you have any issues</p></li>
+<li><p>Select the paper you wish to replicate (until lecture day next week)</p></li>
+<li><p>Post on Slack</p></li>
+<li><p>Talk to me if you have any issues</p></li>
 </ul>
+</div>
 </section>
 <section id="where-are-we" class="slide level2 center">
 <h2>Where are we?</h2>
@@ -475,19 +478,12 @@ For vectors i and j, with distance $s_{ij}$:
 </div>
 </div>
 <h4 id="can-be-performed-for-any-number-of-features-j">Can be performed for any number of features J</h4>
-<aside class="notes">
-<p>no negative distances: sij   0 2 distance between documents is zero () documents are identical 3 distance between documents is symmetric: sij = sji 4 measures satisfy triangle inequality. sik   sij + sjk</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<ul>
+<li class="fragment">No negative distances</li>
+<li class="fragment">Distance between documents is zero when documents are identical</li>
+<li class="fragment">Distance between documents is symmetric</li>
+<li class="fragment">Satisfy triangle inequality: <span class="math inline">\(s_{ik} \leq s_{ij} + s_{jk}\)</span></li>
+</ul>
 </section>
 <section id="euclidean-distance-w2" class="slide level2 center">
 <h2>Euclidean Distance, w=2</h2>
@@ -498,7 +494,7 @@ For vectors i and j, with distance $s_{ij}$:
 </div>
 <div class="callout-content">
 <p><span class="math display">\[
-||U - V|| = \sqrt{\sum^{i}(U_{i} - y_{V_i})^2}
+||U - V|| = \sqrt{\sum^{i}(u_{i} - v_{i})^2}
 \]</span></p>
 </div>
 </div>
@@ -514,7 +510,7 @@ For vectors i and j, with distance $s_{ij}$:
 <div class="callout callout-note no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Documents, W=3 {yes, no}</strong></p>
+<p><strong>Documents, W=2 {yes, no}</strong></p>
 </div>
 <div class="callout-content">
 <p>Document 1 = “yes yes yes no no no” (3, 3)</p>
@@ -581,12 +577,25 @@ For vectors i and j, with distance $s_{ij}$:
 <p>Given a vector U and a scalar constant k, we can multiply a vector.</p>
 <p><span class="math display">\[
 U*k = [k*u_1, k*u_2, k*u_3 ... k*u_n]
-\]</span> - increases the length/magnitude</p>
+\]</span></p>
+<div>
 <ul>
-<li class="fragment">does not change the direction</li>
+<li><p>increases the length/magnitude</p></li>
+<li><p>does not change the direction</p></li>
 </ul>
-
-<img data-src="week_03_files/figure-revealjs/unnamed-chunk-6-1.png" width="768" class="r-stretch quarto-figure-center"></section>
+</div>
+<div class="fragment">
+<div class="cell" data-layout-align="center" data-hash="week_03_cache/revealjs/unnamed-chunk-6_b59f09f92bc7b51ebc277ad0dbdff2be">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="week_03_files/figure-revealjs/unnamed-chunk-6-1.png" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="magnitude-of-a-vector" class="slide level2 center">
 <h2>Magnitude of a vector</h2>
 <p>The denominator of the cosine similarity formula gives you the magnitude or length of a vector.</p>
@@ -594,18 +603,21 @@ U*k = [k*u_1, k*u_2, k*u_3 ... k*u_n]
 <li class="fragment"><p>Magnitude: Use L2 Norm, Euclidean distance from origin point (0,0)</p></li>
 <li class="fragment"><p>It converts a vector to a scalar representing the size of a vector</p></li>
 </ul>
+<div class="fragment">
 <p><span class="math display">\[
 ||\mathbf{U}|| = \sqrt(u1*u1 + u2*u2 ... u_n*u_n) = \sqrt(\sum^i u_i^2)
 \]</span></p>
+</div>
 </section>
 <section id="vector-multiplication-dot-inner-product" class="slide level2 center">
 <h2>Vector Multiplication: Dot (Inner) Product</h2>
 <p>The numerator of the cosine similarity is called ‘dot product’ between two vectors. This a multiplication between two vectors.</p>
-<p>Formula:</p>
 <p><span class="math display">\[
 \mathbf{U} \cdot \mathbf{V}= u_1*v_1 + u_2*v_2 + u_n*v_n = \sum^i u_i*v_i
 \]</span></p>
-<p>Notice: the dot product maps two vectors to real numbers.</p>
+<ul>
+<li class="fragment"><strong>Notice</strong>: the dot product maps two vectors to real numbers.</li>
+</ul>
 </section>
 <section id="dot-product-geometric-intuition" class="slide level2 center">
 <h2>Dot Product: Geometric Intuition</h2>
@@ -645,13 +657,13 @@ U*k = [k*u_1, k*u_2, k*u_3 ... k*u_n]
 \text{cosine similarity}(\mathbf{U}, \mathbf{V}) = \frac{\mathbf{U} \cdot \mathbf{V}}{\|\mathbf{U}\| \|\mathbf{V}\|}
 \]</span></p>
 <ul>
-<li class="fragment"><p><span class="math inline">\(\mathbf{y_a} \cdot \mathbf{y_b}\)</span> ~ dot product between vectors</p>
+<li class="fragment"><p><span class="math inline">\(U \cdot V\)</span> ~ dot product between vectors</p>
 <ul>
 <li class="fragment">it is a projection of one vector into another</li>
 <li class="fragment">Works as a measure of similarity</li>
 <li class="fragment">But rewards magnitude</li>
 </ul></li>
-<li class="fragment"><p><span class="math inline">\(||\mathbf{U}||\)</span> ~ vector magnitude, length ~ <span class="math inline">\(\sqrt{\sum{y_{U_i}^2}}\)</span></p>
+<li class="fragment"><p><span class="math inline">\(||\mathbf{U}||\)</span> ~ vector magnitude, length ~ <span class="math inline">\(\sqrt{\sum{u_{i}^2}}\)</span></p>
 <ul>
 <li class="fragment">normalizes a vector projection of documents’ by their lengths</li>
 </ul></li>
@@ -675,8 +687,8 @@ U*k = [k*u_1, k*u_2, k*u_3 ... k*u_n]
 </section>
 <section id="applications-think-tank-reports" class="slide level2 center">
 <h2>Applications: Think Tank Reports</h2>
-<p>-Compiled a dataset of 36,603 episodes from 79 prominent political podcasters</p>
 <ul>
+<li class="fragment"><p>Compiled a dataset of 36,603 episodes from 79 prominent political podcasters</p></li>
 <li class="fragment"><p>Pre-processed text transcripts</p></li>
 <li class="fragment"><p>Calculated the cosine similarity between podcast transcripts and fact-checked claims (PolitiFact and Snopes)</p></li>
 <li class="fragment"><p>Set a cosine similarity threshold (e.g., 0.5) to filter significant matches</p></li>
@@ -732,7 +744,7 @@ U*k = [k*u_1, k*u_2, k*u_3 ... k*u_n]
 TTR:\frac{\text{total type}}{\text{total tokens}}
 \]</span></p>
 <ul>
-<li class="fragment"><span class="midgray">authors with limited vocabularies will have a low lexical diversity</span></li>
+<li class="fragment">authors with limited vocabularies will have a low lexical diversity</li>
 </ul>
 </div>
 </section>
@@ -834,7 +846,7 @@ FRE = 15.59 - 0.39\left(\frac{\mbox{total words}}{\mbox{total sentences}}\right)
 <p>Can we do better?</p>
 <ul>
 <li class="fragment"><p>One option: <span class="red">weighting</span></p></li>
-<li class="fragment"><p><span class="red">Weighting function:</span>:</p>
+<li class="fragment"><p><span class="red">Weighting function:</span></p>
 <ul>
 <li class="fragment"><span class="red">Reward</span> words more unique;</li>
 <li class="fragment"><span class="red">Punish</span> words that appear in most documents</li>
@@ -844,7 +856,7 @@ FRE = 15.59 - 0.39\left(\frac{\mbox{total words}}{\mbox{total sentences}}\right)
 <section id="tf-idf-term-frequency---inverse-document-frequency" class="slide level2 center">
 <h2>TF-IDF = Term Frequency - Inverse Document Frequency</h2>
 <p><span class="math display">\[
-\text{TF-IDF}(t, d) = \text{TF}(t, d) \times \text{IDF}(t)$ -
+\text{TF-IDF}(t, d) = \text{TF} \times \text{IDF}
 \]</span></p>
 <p><span class="math display">\[
 \text{TF}(t, d) = \frac{\text{Number of times term } t \text{ appears in document } d}{\text{Total number of terms in document } d}
