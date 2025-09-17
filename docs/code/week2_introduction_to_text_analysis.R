@@ -1,6 +1,6 @@
 ##############################################################################
 # File-Name: week2_introduction_to_text_analysis.r
-# Date: January 22, 2024
+# Date: September 15, 2025
 # author: Tiago Ventura
 # course: PPOL 6801 - text as data
 # topics: basic introduction to text analysis using quanteda and tidy text
@@ -10,19 +10,26 @@
 
 # 0 -  Introduction -------------------------------------------------------------
 
-## This script provides a basic introduction to text analysis using primarily quanteda. Some topics we will cover:
+## This script provides a basic introduction to text analysis using primarily quanteda. 
+
+## Some topics we will cover:
 # - loading text data in R
 # - creating a corpus
 # - pre processing steps: stop words, stem, lemmatization and normalization using quanteda
 # - convert corpus to document feature matrices
 # - basic descriptive analysis.
 
-## `quanteda` is far from being the only package to work with text in R. Other competitors are tm, text2vec, and even just base R. 
+## `quanteda` is far from being the only package to work with text in R. 
+## Other competitors are tm, text2vec, and even just base R. 
 ## These packages follow a similar logic on how to process text data.
 
-## A more distinct approach comes from the tidytext family of packages, which tries to import the tidy text philosophy (https://r4ds.had.co.nz/tidy-data.html)
-## to work with text. If you are already familiar with using dplyr/tidyverse for data manipulation, the tidytext approach can be 
-## super useful for descriptive tasks and pre-processing text in R. For this reason, we will cover a bit the tidytext approach 
+## A more distinct approach comes from the tidytext family of packages, 
+## which tries to import the tidy text philosophy (https://r4ds.had.co.nz/tidy-data.html)
+## to work with text. 
+
+## If you are already familiar with using dplyr/tidyverse for data manipulation, 
+## the tidytext approach can be  super useful for descriptive tasks and pre-processing text in R.
+## For this reason, we will cover a bit the tidytext approach 
 ## in the end of this script.
 
 
@@ -31,7 +38,7 @@
 ## to load packages in R, I strongly suggest you to use the `pacman` as package management tool (https://trinker.github.io/pacman/vignettes/Introduction_to_pacman.html)
 ## the pacman combines the install.package and library steps in a single function, basically. 
 
-install.packages("pacman")
+#install.packages("pacman")
 
 # Install the latest stable version of quanteda from CRAN
 
@@ -50,7 +57,7 @@ pacman::p_load(tidyverse,
 
 # let's load some text data. We are working with a corpus of Twitter timelines for members of the congress during the 2021 election year
 
-# download the data here: https://www.dropbox.com/scl/fi/l5rc7nptc23en7fj1halz/tweets_congress.csv?rlkey=joqnuldgh3xanx8y9h8wvkf8p&dl=0
+# download the data here: https://www.dropbox.com/scl/fi/mj8ldtyqwpkelnpyv0aja/tweets_congress.csv?rlkey=oltuf3odk3trrwjfl0a6ka25t&dl=0
 
 # open dataset
 tweets <- read_csv("data/tweets_congress.csv")
@@ -93,7 +100,8 @@ c("trump", "biden", "who else?") %in% c("biden", "who else?", "trump")
 
 ## 2.2 - stringr --------------------------------------
 
-# To more advanced string manipulation, we will use primarily the stringr package from the tidyverse family
+# To more advanced string manipulation, 
+# we will use primarily the stringr package from the tidyverse family
 
 pacman::p_load(stringr)
 
@@ -166,7 +174,8 @@ str_extract_all(tweets_s$text[1:1000], '@[0-9_A-Za-z]+', simplify=TRUE)
 # now with hashtags...
 str_extract_all(tweets_s$text[1:1000], "#(\\d|\\w)+", simplify=TRUE)
 
-# This is not review of regular expressions. this serves only the purpose to show you how you can use it in 
+# This is not review of regular expressions. 
+# this serves only the purpose to show you how you can use it in 
 # string detection in R. much more to learn online!
 
 # see more about string manipulations here: https://r4ds.had.co.nz/strings.html
@@ -223,7 +232,8 @@ class(tweet_json_corpus)
 
 
 ### 3.1.3 - Quanteda Corpora ----
-pacman::p_load(quanteda.corpora)
+devtools::install_github("quanteda/quanteda.corpora")
+library(quanteda.corpora)
 
 # Quanteda also offer several pre-loaded corpus. 
 # From now on, we will work with the US State of the Union addresses
@@ -244,7 +254,6 @@ summary(data_corpus_sotu)
 
 # document-level variables (called docvars)
 head(docvars(data_corpus_sotu)) 
-
 class(docvars(data_corpus_sotu))
 
 # corpus-level variables
@@ -266,7 +275,8 @@ ggplot(data = summary(data_corpus_sotu),
   theme_bw()
 
 
-# One nice feature of quanteda is that we can easily add metadata to the corpus object.
+# One nice feature of quanteda is that we can 
+# easily add metadata to the corpus object.
 docvars(tweet_json_corpus, "text_length") <- nchar(tweet_json$text)
 docvars(tweet_json_corpus)
 
@@ -275,8 +285,9 @@ AZ.tweets <- corpus_subset(tweet_json_corpus, State=="AZ")
 class(AZ.tweets)
 
 # And then extract the text
-AZ.texts <- quanteda::texts(tweet_json_corpus)
-
+AZ.df <- quanteda::convert(AZ.tweets, to = "data.frame")
+AZ.df$text %>% head()
+AZ.df$date
 
 ## 3.3 - Pre-Processing -------
 
@@ -291,7 +302,6 @@ tokens <- tokens(data_corpus_sotu)
 str(tokens)
 
 ### 3.3.2 Remove Non-Informative Tokens -----
-
 
 # tokens() is deliberately conservative, meaning that it does not remove anything 
 # from the text unless told to do so.
@@ -381,11 +391,12 @@ str_subset(unname(unlist(tokens_ex)), "middle")
 
 ## 3.4 - From text to Matrices - Converting tokens to DFMs -----
 
-# a crucial part of any text as data task is to convert text to numerical representation. 
-# as we saw in class, the workhorse model to represent text as numbers is by using the document-feature representation
+# a crucial part of any text as data task is to convert text 
+# to numerical representation. 
+# as we saw in class, the workhorse model to represent text as
+# numbers is by using the document-feature representation
 
 # quanteda allows us to convert tokens to dfms quite easily
-
 tokens_preproc = tokens(data_corpus_sotu,
        remove_punct = TRUE, 
        remove_numbers=TRUE, 
@@ -404,25 +415,12 @@ topfeatures(dfm_sotu)
 
 # remove too frequent and rare words is also quite easy using dfm
 dfm_sotu_trim <- dfm_sotu %>% 
-          dfm_trim(min_docfreq = 0.05,
+                 dfm_trim(min_docfreq = 0.05,
                    max_docfreq = 0.95,
                    docfreq_type ="prop", 
                    verbose = TRUE)
 
 topfeatures(dfm_sotu_trim)
-
-# see all features
-featnames(dfm_sotu_trim)
-
-#`dfm` has many useful options, including pre-processing
-
-twdfm <- dfm(data_corpus_sotu, tolower=TRUE, stem=TRUE,
-             remove_punct = TRUE, ngrams=1:3,
-             verbose=TRUE, remove=c(
-               stopwords("english")))
-
-# throws a bunch of warnings
-topfeatures(twdfm)
 
 # wordcloud
 pacman::p_load(quanteda.textplots)
