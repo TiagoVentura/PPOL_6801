@@ -68,6 +68,7 @@ tweets %>% glimpse() # tweet text is stored in text variable.
 # pretty big dataset, let's get a sample
 tweets_s <- tweets %>% sample_n(10000)
 
+tweets_s
 ## 2.1 - Basic string manipulation --------------------------------------
 
 # R stores strings as characters. 
@@ -421,6 +422,16 @@ dfm_sotu_trim <- dfm_sotu %>%
                    verbose = TRUE)
 
 topfeatures(dfm_sotu_trim)
+
+as.matrix(dfm_sotu_trim) %>% View() 
+
+l  = list("a", "b")
+
+#lists
+str(l[[1]])
+str(l[2])
+
+str(l)
 
 # wordcloud
 pacman::p_load(quanteda.textplots)

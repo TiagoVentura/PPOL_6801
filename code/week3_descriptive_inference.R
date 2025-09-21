@@ -1,6 +1,6 @@
 ##############################################################################
 # File-Name: week3_descriptive_inference.r
-# Date: January 31, 2024
+# Date: September, 2025
 # author: Tiago Ventura
 # course: PPOL 6801 - text as data
 # topics: document similarity,tf-idf, and readability measures in text
@@ -60,11 +60,9 @@ calculate_cosine_similarity(a, b)
 
 # 1.1 Similarity Measures on Quanteda ----------
 
-# Let's know use these similarity measures with real text and using Quanteda
+# Let's now use these similarity measures with real text and using Quanteda
 
 # Open the tweets dataset we worked with last week
-
-# download the data here: https://www.dropbox.com/scl/fi/l5rc7nptc23en7fj1halz/tweets_congress.csv?rlkey=joqnuldgh3xanx8y9h8wvkf8p&dl=0
 
 # open dataset
 tweets <- read_csv("data/tweets_congress.csv")
@@ -76,16 +74,18 @@ sample_n_politicians <- tweets %>%
   distinct() %>% 
   ungroup() %>%
   sample_n(100) 
-  
+
+# Make sure TedCruz is here
+if("SenTedCruz" %in% sample_n_politicians$author){
+  sample_n_politicians <- sample_n_politicians
+} else {
+  sample_n_politicians= bind_rows(sample_n_politicians, 
+                                  tibble(author="SenTedCruz"))
+}
+
 # merge back the full data
+
 tweets_g = left_join(sample_n_politicians, tweets)
-
-# let me aggregate politicians tweets
-
-# tweets_g <- tweets_g %>%
-#            group_by(author) %>%
-#            summarize(text=paste0(text, collapse = " ")) %>% 
-#            ungroup()
 
 # convert to a corpus
 tweets_corpus  <- corpus(tweets_g, text_field="text")
@@ -131,7 +131,7 @@ df_sim %>%
   pivot_longer(cols = -c(names), 
                names_to = "rep", 
                values_to="similarity") %>%
-  arrange(similarity) 
+  arrange(desc(similarity))
   
 # easily plot this as a heat map. Let's use a random sample of 10 politicians
 df_sim_sample = df_sim %>%
@@ -198,7 +198,7 @@ tfidf_sim = as_tibble(as.matrix(simil_tweets)) %>%
 
 # get the 10 closest to ted cruz
 top10_df = df_sim %>%
-  filter(names=="SenatorRomney") %>%
+  filter(names=="SenTedCruz") %>%
   pivot_longer(cols = -c(names), 
                names_to = "rep", 
                values_to="similarity") %>%
@@ -206,7 +206,7 @@ top10_df = df_sim %>%
   slice(2:21) %>% mutate(cell="No Weight") %>% rownames_to_column()
 
 top10_idfdf = tfidf_sim %>%
-  filter(names=="SenatorRomney") %>%
+  filter(names=="SenTedCruz") %>%
   pivot_longer(cols = -c(names), 
                names_to = "rep", 
                values_to="similarity") %>%
@@ -217,8 +217,6 @@ top10_idfdf = tfidf_sim %>%
 cos_sim_tweets = bind_rows(top10_df, top10_idfdf) %>%
                   mutate(rowname=fct_rev(fct_inorder(rowname)))
   
-  
-levels(cos_sim_tweets$rowname)
 
 # plot
 ggplot(cos_sim_tweets, aes(y=rowname, x=.5, fill=cell, label=rep)) +
@@ -237,7 +235,7 @@ rm(list = ls())
 # Load in data: SOTU 
 library(quanteda.corpora)
 
-# TTR (by hand) ####################
+## 3.1 TTR (by hand) -----
 sotu_dfm <- tokens(data_corpus_sotu, 
                      remove_punct = TRUE) %>% dfm()
 
@@ -314,7 +312,6 @@ all_ <- all_ %>%
 
 # plot
 library(wesanderson)
-wesanderson::wes_palette("FantasticFox1", 4)
 
 all_ %>%
   select(year,Complexity, val) %>%
@@ -329,7 +326,7 @@ all_ %>%
 # to work with the measure developed by Benoit et al, check the github link below:
 
 # https://github.com/kbenoit/sophistication
-install.packages("spacyr")
+#install.packages("spacyr")
 
 library(spacyr)
 library(reticulate) 
@@ -338,8 +335,7 @@ library(reticulate)
 reticulate::conda_list()
 
 # create conda environment
-reticulate::conda_create("ppol6801")
-
+#reticulate::conda_create("ppol6801")
 
 # activate my conda envinroment
 reticulate::use_condaenv("ppol6801")
@@ -351,11 +347,11 @@ Sys.setenv(RETICULATE_PYTHON ="/Users/tb186/anaconda3/envs/ppol6801/bin/python")
 Sys.setenv(SPACY_PYTHON = "/Users/tb186/anaconda3/envs/ppol6801/")
 
 # install spacy
-spacyr::spacy_install()
-spacyr::spacy_initialize()
+#spacyr::spacy_install()
+#spacyr::spacy_initialize()
 
 # install sophistication
-devtools::install_github("kbenoit/sophistication")
+#devtools::install_github("kbenoit/sophistication")
 library(sophistication)
 
 # the package provides you with the best model from the paper
@@ -368,6 +364,4 @@ library(sophistication)
 # run this function in a new dataset
 sophistication_sotu = predict_readability(data_BTm_bms, 
                             newdata = data_corpus_sotu)
-
-
 

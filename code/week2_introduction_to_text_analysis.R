@@ -68,6 +68,7 @@ tweets %>% glimpse() # tweet text is stored in text variable.
 # pretty big dataset, let's get a sample
 tweets_s <- tweets %>% sample_n(10000)
 
+tweets_s
 ## 2.1 - Basic string manipulation --------------------------------------
 
 # R stores strings as characters. 

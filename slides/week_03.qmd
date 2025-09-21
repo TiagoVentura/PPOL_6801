@@ -29,18 +29,16 @@ editor_options:
 
 ## Housekeeping
 
-:::nonincremental
-
+::: nonincremental
 You have your pairs for the replication exercise.
 
 [Next steps]{.red}:
 
-- Select the paper you wish to replicate (until lecture day next week)
+-   Select the paper you wish to replicate (until lecture day next week)
 
-- Post on Slack
+-   Post on Slack
 
-- Talk to me if you have any issues
-
+-   Talk to me if you have any issues
 :::
 
 ## Where are we?
@@ -51,8 +49,7 @@ You have your pairs for the replication exercise.
 
 -   Text representation using vectors of numbers \~\> document feature matrix (text to numbers)
 
-- Example of counting words to make inference
-
+-   Example of counting words to make inference
 
 ## Plans for today
 
@@ -62,7 +59,7 @@ We will start thinking about latent outcomes from text. Our first approach will 
 
 -   Using similarity to measure text-reuse
 
-     - Quick linear algebra review
+    -   Quick linear algebra review
 
 -   Evaluating complexity in text
 
@@ -199,12 +196,12 @@ $$
 $$
 :::
 
-#### Can be performed for any number of features J 
+#### Can be performed for any number of features J
 
-- No negative distances
-- Distance between documents is zero when documents are identical 
-- Distance between documents is symmetric 
-- Satisfy triangle inequality: $s_{ik} \leq s_{ij} + s_{jk}$
+-   No negative distances
+-   Distance between documents is zero when documents are identical
+-   Distance between documents is symmetric
+-   Satisfy triangle inequality: $s_{ik} \leq s_{ij} + s_{jk}$
 
 ## Euclidean Distance, w=2
 
@@ -302,39 +299,39 @@ $$
 
 ## Vectors
 
-- **Vector**: an ordered list of numbers in a space with well-defined addition and scalar multiplication operations
+-   **Vector**: an ordered list of numbers in a space with well-defined addition and scalar multiplication operations
 
-- It is defined as an object with both magnitude and direction
+-   It is defined as an object with both magnitude and direction
 
-- **Magnitude:** how long it is
+-   **Magnitude:** how long it is
 
-- **Direction:** where it points
+-   **Direction:** where it points
 
 ## Vectors
 
-- The dimensionality of a vector is the number of elements it has
+-   The dimensionality of a vector is the number of elements it has
 
-- For example, [1, 2, 3, ] has dimensionality 3
+-   For example, \[1, 2, 3, \] has dimensionality 3
 
-- In other words, it is a vector in 3D space
+-   In other words, it is a vector in 3D space
 
-- The vector [3,5] is 2D
+-   The vector \[3,5\] is 2D
 
 ## Scalar Multiplication of Vectors
 
-Given a vector U and a scalar constant k, we can multiply a vector. 
+Given a vector U and a scalar constant k, we can multiply a vector.
 
 $$ 
 U*k = [k*u_1, k*u_2, k*u_3 ... k*u_n]
 $$
 
-:::nonincremental
-- increases the length/magnitude
+::: nonincremental
+-   increases the length/magnitude
 
-- does not change the direction
+-   does not change the direction
 :::
 
-:::fragment
+::: fragment
 ```{r echo=FALSE, fig.align="center",fig.width=8}
 # Load necessary libraries
 pacman::p_load(tidyverse)
@@ -372,13 +369,13 @@ ggplot(df, aes(x = yes, y = no, label = document)) +
 
 ## Magnitude of a vector
 
-The denominator of the cosine similarity formula gives you the magnitude or length of a vector. 
+The denominator of the cosine similarity formula gives you the magnitude or length of a vector.
 
-- Magnitude: Use L2 Norm, Euclidean distance from origin point (0,0) 
+-   Magnitude: Use L2 Norm, Euclidean distance from origin point (0,0)
 
-- It converts a vector to a scalar representing the size of a vector 
+-   It converts a vector to a scalar representing the size of a vector
 
-:::fragment
+::: fragment
 $$ 
 ||\mathbf{U}|| = \sqrt(u1*u1 + u2*u2 ... u_n*u_n) = \sqrt(\sum^i u_i^2) 
 $$
@@ -386,19 +383,17 @@ $$
 
 ## Vector Multiplication: Dot (Inner) Product
 
-The numerator of the cosine similarity is called 'dot product' between two vectors. This a multiplication between two vectors. 
-
+The numerator of the cosine similarity is called 'dot product' between two vectors. This a multiplication between two vectors.
 
 $$ 
 \mathbf{U} \cdot \mathbf{V}= u_1*v_1 + u_2*v_2 + u_n*v_n = \sum^i u_i*v_i 
 $$
 
-- **Notice**: the dot product maps two vectors to real numbers. 
-
+-   **Notice**: the dot product maps two vectors to real numbers.
 
 ## Dot Product: Geometric Intuition
 
-**Intuition:** 
+**Intuition:**
 
 > "the product of two vectors a and b is the **projection** of a onto b times the **length** of b (it is symmetric, so equivalently the projection of b onto a times the length of a)." (GMB, pp71)
 
@@ -408,7 +403,7 @@ $$
 \mathbf{U} \cdot \mathbf{V}= ||U|| \cdot ||V|| \cdot cos(\theta)
 $$
 
-##
+## 
 
 More interestingly:
 
@@ -421,7 +416,6 @@ Yet another formula
 $$ 
 \mathbf{U} \cdot \mathbf{V} = ||Proj(U)_v || ||V||
 $$
-
 
 ## Dot Product Visually
 
@@ -461,11 +455,9 @@ ggplot(df, aes(x = yes, y = no, label = document)) +
   theme_minimal()
 ```
 
-##
+## 
 
 > "the product of two vectors a and b is the **projection** of a onto b times the **length** of b (it is symmetric, so equivalently the projection of b onto a times the length of a)." (GMB, pp71)
-
-
 
 ## Back to the Cosine Similarity
 
@@ -476,7 +468,7 @@ $$
 -   $U \cdot V$ \~ dot product between vectors
 
     -   it is a projection of one vector into another
-    -   Works as a measure of similarity 
+    -   Works as a measure of similarity
     -   But rewards magnitude
 
 -   $||\mathbf{U}||$ \~ vector magnitude, length \~ $\sqrt{\sum{u_{i}^2}}$
@@ -550,17 +542,17 @@ The cosine function can range from \[-1, 1\]. When thinking about document vecto
 
 ## Applications: Think Tank Reports
 
-- Compiled a dataset of 36,603 episodes from 79 prominent political podcasters
+-   Compiled a dataset of 36,603 episodes from 79 prominent political podcasters
 
-- Pre-processed text transcripts
+-   Pre-processed text transcripts
 
--  Calculated the cosine similarity between podcast transcripts and fact-checked claims (PolitiFact and Snopes)
+-   Calculated the cosine similarity between podcast transcripts and fact-checked claims (PolitiFact and Snopes)
 
-- Set a cosine similarity threshold (e.g., 0.5) to filter significant matches
+-   Set a cosine similarity threshold (e.g., 0.5) to filter significant matches
 
-- Once a claim was detected in a transcript, the analysis moved to determine how the claim was presented (manual review, sentiment analysis)
+-   Once a claim was detected in a transcript, the analysis moved to determine how the claim was presented (manual review, sentiment analysis)
 
-- Quantified the prevalence of unsubstantiated and false claims across the podcast episodes
+-   Quantified the prevalence of unsubstantiated and false claims across the podcast episodes
 
 # Quizz: What could have gone wrong if the author had used euclidean distance between podcasts and fact-checked news?
 
@@ -572,29 +564,29 @@ knitr::include_graphics("week3_figs/metrics.png")
 
 ## How to decide
 
-- Magnitude? Euclidean or Manhattan Distance if total size/frequency of terms is important.
+-   Magnitude? Euclidean or Manhattan Distance if total size/frequency of terms is important.
 
-- Proportions? Cosine Similarity if relative distribution of terms matters more than document length.
+-   Proportions? Cosine Similarity if relative distribution of terms matters more than document length.
 
-- Overlap? Jaccard Similarity if interested in shared terms regardless of frequency.
+-   Overlap? Jaccard Similarity if interested in shared terms regardless of frequency.
 
-- Trends? Pearson Correlation to compare patterns in term distributions across documents.
+-   Trends? Pearson Correlation to compare patterns in term distributions across documents.
 
--  Sparse, high-dimensional text data? Cosine similarity because it emphasizes proportional relationships and ignores document length.
+-   Sparse, high-dimensional text data? Cosine similarity because it emphasizes proportional relationships and ignores document length.
 
-- Dense data with similar distribution? Euclidean distance because length are likely the same
+-   Dense data with similar distribution? Euclidean distance because length are likely the same
 
 # Break!
 
 ## 
 
-We saw how to compare documents... now let's move to other features of documents description. Let's talk about: 
+We saw how to compare documents... now let's move to other features of documents description. Let's talk about:
 
-- Lexical Diversity
+-   Lexical Diversity
 
-- Readability
+-   Readability
 
-- Political Sophistication
+-   Political Sophistication
 
 ## Lexical Diversity
 
@@ -613,7 +605,7 @@ $$
 TTR:\frac{\text{total type}}{\text{total tokens}} 
 $$
 
-- authors with limited vocabularies will have a low lexical diversity
+-   authors with limited vocabularies will have a low lexical diversity
 :::
 
 ## Issues with TTR and Extensions
@@ -635,16 +627,14 @@ $$
 
     -   Human inputs to built parameters about the readers
 
-- Hundred years of literature on the measurement of ‘readability’.  The general issue was assigning school texts to students of different ages and abilities.
+-   Hundred years of literature on the measurement of ‘readability’. The general issue was assigning school texts to students of different ages and abilities.
 
     -   Example: [Flesch-Kincaid readability index]{.red}
-
 :::
 
 ## Flesch-Kincaid readability index
 
-::: {.callout-note icon="false"
-}
+::: {.callout-note icon="false"}
 ## Flesch Reading Ease (FRE)
 
 $$ 
@@ -653,7 +643,6 @@ $$
 :::
 
 ::: {.callout-note icon="false"}
-
 ## Flesch-Kincaid (Rescaled to US Educational Grade Levels)
 
 $$ 
@@ -683,21 +672,21 @@ knitr::include_graphics("week3_figs/spirling_jop2.png")
 knitr::include_graphics("week3_figs/fre_.png") 
 ```
 
-## Benoit et al., 2019, Political Sophistication. 
+## Benoit et al., 2019, Political Sophistication.
 
 #### Approach
 
--  Get human judgments of relative textual easiness for specifically political texts.
+-   Get human judgments of relative textual easiness for specifically political texts.
 
-- Use a logit model to estimate latent "easiness" as equivalent to the "ability" parameter in the Bradley-Terry framework.
+-   Use a logit model to estimate latent "easiness" as equivalent to the "ability" parameter in the Bradley-Terry framework.
 
-- Use these as training data for a tree-based model. Pick most important parameters
+-   Use these as training data for a tree-based model. Pick most important parameters
 
-- Re-estimate the models using these covariates (Logit + covariates)
+-   Re-estimate the models using these covariates (Logit + covariates)
 
-- Using these parameters, one can "predict" the easiness parameter for a given new text
+-   Using these parameters, one can "predict" the easiness parameter for a given new text
 
-  - Nice plus ~ add uncertainty to model-based estimates via bootstrapping
+    -   Nice plus \~ add uncertainty to model-based estimates via bootstrapping
 
 ## Benoit et al., 2019, Political Sophistication
 
@@ -728,8 +717,7 @@ $$
 
 $$
 \text{TF}(t, d) = \frac{\text{Number of times term } t \text{ appears in document } d}{\text{Total number of terms in document } d}
-$$ 
-
+$$
 
 $$
 \text{IDF}(t) = \log \left( \frac{\text{Total number of documents}}{\text{Number of documents with term } t \text{ in them}} \right)

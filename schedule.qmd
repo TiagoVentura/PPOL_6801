@@ -33,4 +33,16 @@ subtitle: "Data Science and Public Policy, McCourt School for Public Polcy, Geor
 
 -   **Coding Materials**: <a href="/code/week3_descriptive_inference.R" download> Week 3 - Descriptive Inference </a>
 
+## Week 4: September 22
 
+- **Topics:** Dictionaries, Pros and Cons, and Using Off-the-Shelf Models
+
+- **Lecture:** [Week 4 - Dictionaries and Off-the-Shelf Classifiers](/slides/week_04.html)
+
+- **Coding Materials:**
+
+     -   <a href="/code/week4_dictionaries.R" download> Week 4 - Dictionaries and Off-the-Shelf Classifiers</a>
+
+     -   <a href="/code/_week4_transformers.ipynb" download> Week 4 - Transformers Based Classifiers </a>
+
+- **Data:** [Dropbox link here](https://www.dropbox.com/scl/fi/efgllmfeyo5rhnvblq9ki/comments_facebook_presidental_elections.csv?rlkey=aqebsrcf5sb63txetovb9nnkc&dl=0)
