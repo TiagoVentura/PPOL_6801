@@ -70,7 +70,7 @@ For the next two weeks, we will talk about [measurement]{.red} and **classificat
     -   Discuss some well-known dictionaries
 -   Off-the-Shelf Classifiers
     -   Perspective API
-    -   Hugging Face (only see as a off-the-shelf machines, LMMs later in this course)
+    -   Hugging Face (only see as a off-the-shelf machines, Fine tunning later in this course)
 :::
 
 ::: fragment
@@ -107,21 +107,20 @@ In the machine learning tradition, we are introduced to two core families of mod
 
 ## Principles of a Good Measurement (Ch. 15)
 
-::: incremental
 
--  1.  Measures should have clear goals
+1. Measures should have clear goals
 
--  2.  Source material should always be identified and ideally made public
+2.  Source material should always be identified and ideally made public
 
--  3.  Coding should be explainable and reproducible
+3.  Coding should be explainable and reproducible
 
--  4.  Validate!
+4.  Validate!
 
--  5.  Limitations should be explored, documented, and communicated
+5.  Limitations should be explored, documented, and communicated
 
--   **Plus:** Develop the measure in a training set → Apply the measure in the test set
+**Plus:** Develop the measure in a training set → Apply the measure in the test set
 
-:::
+
 
 
 ## Measurement/Supervised Learning Pipeline
@@ -191,15 +190,8 @@ Assume you can travel back twenty years ago, you want to run a simple sentiment 
     -   some continuous variation.
 :::
 
-## More specifically...
+## Math...
 
-We have a set of [key words]{.red} with weights,
-
--   e.g. for sentiment analysis: **horrible** is scored as $-1$ and **beautiful** as $+1$
-
--   the relative rate of occurrence of these terms tells us about the overall tone or category that the document should be placed in.
-
-::: fragment
 For document $i$ and words $m=1,\ldots, M$ in the dictionary,
 
 $$\text{tone of document $i$}= \sum^M_{m=1} \frac{s_m w_{im}}{N_i}$$
@@ -209,7 +201,6 @@ Where:
 -   $s_m$ is the score of word $m$
 -   $w_{im}$ is the number of occurrences of the $m_{th}$ dictionary word in the document $i$
 -   $N_i$ is the total number of all dictionary words in the document
-:::
 
 ## Example: Review Red Rising
 
@@ -508,5 +499,7 @@ knitr::include_graphics("./week4_figs/llm.png")
 ::: aside
 Paper: <https://www.pnas.org/doi/10.1073/pnas.2308950121>
 :::
+
+# Still useful?
 
 # `r fontawesome::fa("laptop-code")` Coding!

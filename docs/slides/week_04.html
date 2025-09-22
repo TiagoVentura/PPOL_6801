@@ -386,7 +386,7 @@
 <li>Off-the-Shelf Classifiers
 <ul>
 <li>Perspective API</li>
-<li>Hugging Face (only see as a off-the-shelf machines, LMMs later in this course)</li>
+<li>Hugging Face (only see as a off-the-shelf machines, Fine tunning later in this course)</li>
 </ul></li>
 </ul>
 </div>
@@ -433,26 +433,14 @@
 </section>
 <section id="principles-of-a-good-measurement-ch.-15" class="slide level2 center">
 <h2>Principles of a Good Measurement (Ch. 15)</h2>
-<div>
-<ul>
-<li class="fragment"><ol type="1">
-<li class="fragment">Measures should have clear goals</li>
-</ol></li>
-<li class="fragment"><ol start="2" type="1">
-<li class="fragment">Source material should always be identified and ideally made public</li>
-</ol></li>
-<li class="fragment"><ol start="3" type="1">
-<li class="fragment">Coding should be explainable and reproducible</li>
-</ol></li>
-<li class="fragment"><ol start="4" type="1">
-<li class="fragment">Validate!</li>
-</ol></li>
-<li class="fragment"><ol start="5" type="1">
-<li class="fragment">Limitations should be explored, documented, and communicated</li>
-</ol></li>
-<li class="fragment"><strong>Plus:</strong> Develop the measure in a training set → Apply the measure in the test set</li>
-</ul>
-</div>
+<ol type="1">
+<li><p>Measures should have clear goals</p></li>
+<li><p>Source material should always be identified and ideally made public</p></li>
+<li><p>Coding should be explainable and reproducible</p></li>
+<li><p>Validate!</p></li>
+<li><p>Limitations should be explored, documented, and communicated</p></li>
+</ol>
+<p><strong>Plus:</strong> Develop the measure in a training set → Apply the measure in the test set</p>
 </section>
 <section id="measurementsupervised-learning-pipeline" class="slide level2 center">
 <h2>Measurement/Supervised Learning Pipeline</h2>
@@ -527,14 +515,8 @@
 </ul>
 </div>
 </section>
-<section id="more-specifically" class="slide level2 center">
-<h2>More specifically…</h2>
-<p>We have a set of <span class="red">key words</span> with weights,</p>
-<ul>
-<li><p>e.g.&nbsp;for sentiment analysis: <strong>horrible</strong> is scored as <span class="math inline">\(-1\)</span> and <strong>beautiful</strong> as <span class="math inline">\(+1\)</span></p></li>
-<li><p>the relative rate of occurrence of these terms tells us about the overall tone or category that the document should be placed in.</p></li>
-</ul>
-<div class="fragment">
+<section id="math" class="slide level2 center">
+<h2>Math…</h2>
 <p>For document <span class="math inline">\(i\)</span> and words <span class="math inline">\(m=1,\ldots, M\)</span> in the dictionary,</p>
 <p><span class="math display">\[\text{tone of document $i$}= \sum^M_{m=1} \frac{s_m w_{im}}{N_i}\]</span></p>
 <p>Where:</p>
@@ -543,7 +525,6 @@
 <li><span class="math inline">\(w_{im}\)</span> is the number of occurrences of the <span class="math inline">\(m_{th}\)</span> dictionary word in the document <span class="math inline">\(i\)</span></li>
 <li><span class="math inline">\(N_i\)</span> is the total number of all dictionary words in the document</li>
 </ul>
-</div>
 </section>
 <section id="example-review-red-rising" class="slide level2 center">
 <h2>Example: Review Red Rising</h2>
@@ -854,6 +835,11 @@
 <aside><div>
 <p>Paper: <a href="https://www.pnas.org/doi/10.1073/pnas.2308950121" class="uri">https://www.pnas.org/doi/10.1073/pnas.2308950121</a></p>
 </div></aside></section></section>
+<section id="still-useful" class="title-slide slide level1 center">
+<h1>Still useful?</h1>
+
+</section>
+
 <section id="coding" class="title-slide slide level1 center">
 <h1><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M64 96c0-35.3 28.7-64 64-64H512c35.3 0 64 28.7 64 64V352H512V96H128V352H64V96zM0 403.2C0 392.6 8.6 384 19.2 384H620.8c10.6 0 19.2 8.6 19.2 19.2c0 42.4-34.4 76.8-76.8 76.8H76.8C34.4 480 0 445.6 0 403.2zM281 209l-31 31 31 31c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-48-48c-9.4-9.4-9.4-24.6 0-33.9l48-48c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9zM393 175l48 48c9.4 9.4 9.4 24.6 0 33.9l-48 48c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l31-31-31-31c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z"></path></svg> Coding!</h1>
 
