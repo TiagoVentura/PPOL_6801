@@ -28,6 +28,13 @@
     "text": "Week 3, September 15\n\nTopics: vector space model, comparing documents, textual complexity.\nLecture: Week 3 - Descriptive Inference\nCoding Materials:  Week 3 - Descriptive Inference"
   },
   {
+    "objectID": "schedule.html#week-4-september-22",
+    "href": "schedule.html#week-4-september-22",
+    "title": "Weekly Materials & Readings",
+    "section": "Week 4: September 22",
+    "text": "Week 4: September 22\n\nTopics: Dictionaries, Pros and Cons, and Using Off-the-Shelf Models\nLecture: Week 4 - Dictionaries and Off-the-Shelf Classifiers\nCoding Materials:\n\n Week 4 - Dictionaries and Off-the-Shelf Classifiers\n Week 4 - Transformers Based Classifiers \n\nData: Dropbox link here"
+  },
+  {
     "objectID": "data/Week_11_GPT_Models.html",
     "href": "data/Week_11_GPT_Models.html",
     "title": "Using OpenAI’s ChatGPT",
@@ -49,340 +56,249 @@
     "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
-    "objectID": "slides/week_03.html#housekeeping",
-    "href": "slides/week_03.html#housekeeping",
+    "objectID": "slides/week_04.html#housekeeping",
+    "href": "slides/week_04.html#housekeeping",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Housekeeping",
+    "text": "Housekeeping\nYour first problem set will be assigned today! Some important information:\n\nYou will receive and submit your assignment using Github!\n\nGithub Classroom: Creates automatically a repo for the assignment. You and I are owner of the repo.\nCome to my office hours if you don’t know how to work with GitHub\n\nDeadline: EOD next Monday, September 29th.\nPlease use an .RMD/.QMD/.ipynb file to submit your assignment.\nAny questions?"
+  },
+  {
+    "objectID": "slides/week_04.html#where-are-we",
+    "href": "slides/week_04.html#where-are-we",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Where are we?",
+    "text": "Where are we?\nAfter learning how to process and represent text as numbers, we started digging in on how to use text on a research pipeline.\n\nDescriptive inference:\n\n\nCounting words (Ban’s Paper)\nComparing document similarity using vector space model\nMeasures of lexical diversity and readability"
+  },
+  {
+    "objectID": "slides/week_04.html#plans-for-today",
+    "href": "slides/week_04.html#plans-for-today",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Plans for today",
+    "text": "Plans for today\nFor the next two weeks, we will talk about measurement and classification:\n\nToday:\n\nDictionary Methods\n\nDiscuss some well-known dictionaries\n\nOff-the-Shelf Classifiers\n\nPerspective API\nHugging Face (only see as a off-the-shelf machines, LMMs later in this course)\n\n\n\n\n\nNext week: training our own machine learning models"
+  },
+  {
+    "objectID": "slides/week_04.html#connecting-machine-learning-with-tad",
+    "href": "slides/week_04.html#connecting-machine-learning-with-tad",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Connecting Machine Learning with TAD",
+    "text": "Connecting Machine Learning with TAD\nIn the machine learning tradition, we are introduced to two core families of models:\n\n\nUnsupervised Models: learning (hidden or latent) structure in unlabeled data.\n\nTopic Models to cluster documents and words\n\n\n\n\n\nSupervised Models: learning relationship between inputs and a labeled set of outputs.\n\nSentiment Analysis, classify if a tweet contains misinformation, etc..\n\n\n\n\n\nIn TAD, we mostly use unsupervised techniques for discovery and supervised for measurement of concepts."
+  },
+  {
+    "objectID": "slides/week_04.html#measurement",
+    "href": "slides/week_04.html#measurement",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Measurement",
+    "text": "Measurement\n\nDef: Instantiation of concepts within our theory in order to facilitate quantification\n\n\n\nDocuments come from certain classes and how we can use statistical assumptions to measure these classes"
+  },
+  {
+    "objectID": "slides/week_04.html#principles-of-a-good-measurement-ch.-15",
+    "href": "slides/week_04.html#principles-of-a-good-measurement-ch.-15",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Principles of a Good Measurement (Ch. 15)",
+    "text": "Principles of a Good Measurement (Ch. 15)\n\n\n\nMeasures should have clear goals\n\n\nSource material should always be identified and ideally made public\n\n\nCoding should be explainable and reproducible\n\n\nValidate!\n\n\nLimitations should be explored, documented, and communicated\n\nPlus: Develop the measure in a training set → Apply the measure in the test set"
+  },
+  {
+    "objectID": "slides/week_04.html#measurementsupervised-learning-pipeline",
+    "href": "slides/week_04.html#measurementsupervised-learning-pipeline",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Measurement/Supervised Learning Pipeline",
+    "text": "Measurement/Supervised Learning Pipeline\n\n\nStep 0: identify a dataset and a concept you would like to measure\n\nSentiment of tweets about politics\n\nStep 1: label some examples of the concept of we want to measure\n\nsome tweets are positive, some are neutral and some are negative\n\nStep 2: train a statistical model on these set of labelled data using the document-feature matrix as input.\n\nchoose a model (transformation function) that gives higher out-of-sample accuracy\n\nStep 3: use the classifier - some f(x) - to predict unseen documents.\n\nuse the model to predict sentiment on new tweets\n\nStep 4: use the measure + metadata to learn something new about the world.\n\nThis is where social science happens!"
+  },
+  {
+    "objectID": "slides/week_04.html#back-to-the-future-exercise",
+    "href": "slides/week_04.html#back-to-the-future-exercise",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Back to the Future Exercise",
+    "text": "Back to the Future Exercise\n\n\n\n\n\nvia GIPHY\n\n\nAssume you can travel back twenty years ago, you want to run a simple sentiment analysis in a corpus of news articles.\n\nWhich challenges would you face?\nHow could you solve it?\nPlease consider all four steps described before"
+  },
+  {
+    "objectID": "slides/week_04.html#overview-of-dictionaries",
+    "href": "slides/week_04.html#overview-of-dictionaries",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Overview of Dictionaries",
+    "text": "Overview of Dictionaries\n\n\nUse a set of pre-defined words that allow us to classify documents automatically, quickly and accurately.\nInstead of optimizing a transformation function using statistical assumption and seen data, in dictionaries we have a pre-assumed recipe for the transformation function.\nA dictionary contains:\n\na list of words that corresponds to each category\n\npositive and negative for sentiment\nSexism, homophobia, xenophobia, racism for hate speech\n\n\nWeights given to each word\n\nsame for all words\nsome continuous variation."
+  },
+  {
+    "objectID": "slides/week_04.html#more-specifically",
+    "href": "slides/week_04.html#more-specifically",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "More specifically…",
+    "text": "More specifically…\nWe have a set of key words with weights,\n\ne.g. for sentiment analysis: horrible is scored as \\(-1\\) and beautiful as \\(+1\\)\nthe relative rate of occurrence of these terms tells us about the overall tone or category that the document should be placed in.\n\n\nFor document \\(i\\) and words \\(m=1,\\ldots, M\\) in the dictionary,\n\\[\\text{tone of document $i$}= \\sum^M_{m=1} \\frac{s_m w_{im}}{N_i}\\]\nWhere:\n\n\\(s_m\\) is the score of word \\(m\\)\n\\(w_{im}\\) is the number of occurrences of the \\(m_{th}\\) dictionary word in the document \\(i\\)\n\\(N_i\\) is the total number of all dictionary words in the document"
+  },
+  {
+    "objectID": "slides/week_04.html#example-review-red-rising",
+    "href": "slides/week_04.html#example-review-red-rising",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Example: Review Red Rising",
+    "text": "Example: Review Red Rising\n\nGlowing reviews from me. A truly magnificent read with a plot ever so deep, characters that you grow incredibly fond of in books to follow, and writing that just flows carrying you through the page after page. Needless to say, I could not put it down and they only get better from book to book. I’ve just finished the third in the series and am beginning the forth. I’m absolutely hooked on this brilliant authors work. Long live the Reaper!! Howlers unite!"
+  },
+  {
+    "objectID": "slides/week_04.html#section",
+    "href": "slides/week_04.html#section",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "",
-    "text": "You have your pairs for the replication exercise.\nNext steps:\n\nSelect the paper you wish to replicate (until lecture day next week)\nPost on Slack\nTalk to me if you have any issues"
+    "text": "Glowing reviews from me. A truly magnificent read with a plot ever so deep, characters that you grow incredibly fond of in books to follow, and writing that just flows carrying you through the page after page. Needless to say, I could not put it down and they only get better from book to book. I am very anxious waiting for the next book I’ve just finished the third in the series and am beginning the forth. I’m absolutely hooked on this brilliant authors work. Long live the Reaper!! Howlers unite!\n\n\npositive words: 7, negative: 1; sentiment = \\(\\frac{7*1 + 1*(-1)}{8} = 0.875\\)"
   },
   {
-    "objectID": "slides/week_03.html#where-are-we",
-    "href": "slides/week_03.html#where-are-we",
+    "objectID": "slides/week_04.html#advantages-of-dictionaries",
+    "href": "slides/week_04.html#advantages-of-dictionaries",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Advantages of dictionaries",
+    "text": "Advantages of dictionaries\n\n\nLow cost and computationally efficient ~ especially using a dictionary developed and validated by others\nA hybrid procedure between qualitative and quantitative models\nDictionary construction involves a lot of contextual interpretation and qualitative judgment\nTransparency: no black-box model behind the classification task"
+  },
+  {
+    "objectID": "slides/week_04.html#dict-i-general-inquirer-stone-et-al-1966",
+    "href": "slides/week_04.html#dict-i-general-inquirer-stone-et-al-1966",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Dict I: General Inquirer (Stone et al 1966)",
+    "text": "Dict I: General Inquirer (Stone et al 1966)\n\nIt combines several dictionaries to make total of 182 categories:\n\nthe “Harvard IV-4” dictionary: psychology, themes, topics\nthe “Lasswell” dictionary, five categories based on the social cognition work of Semin and Fiedler\n\n“self references”, containing mostly pronouns;\n“negatives”, the largest category with 2291 entries"
+  },
+  {
+    "objectID": "slides/week_04.html#dict-ii-linquistic-inquiry-and-word-count",
+    "href": "slides/week_04.html#dict-ii-linquistic-inquiry-and-word-count",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Dict II: Linquistic Inquiry and Word Count",
+    "text": "Dict II: Linquistic Inquiry and Word Count\nCreated by Pennebaker et al — see http://www.liwc.net\n\nLarge dictionary with around 4,500 words and words steams\n90 categories\nCategories are organized hierarchically\n\nAll anger words, by definition, will be categorized as negative emotion and overall emotion words.\n\nWords are in one or more categories\n\nthe word cried is part of five word categories: sadness, negative emotion, overall affect, verb, and past tense verb.\n\nYou can buy it here: http://www.liwc.net/descriptiontable1.php"
+  },
+  {
+    "objectID": "slides/week_04.html#heavily-used-in-academia",
+    "href": "slides/week_04.html#heavily-used-in-academia",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Heavily used in academia!",
+    "text": "Heavily used in academia!\n\n\n\n\n\n\n\nPennebaker et al, 2009"
+  },
+  {
+    "objectID": "slides/week_04.html#dict-iii-vader---an-open-source-alternative-to-liwc",
+    "href": "slides/week_04.html#dict-iii-vader---an-open-source-alternative-to-liwc",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Dict III: VADER - an open-source alternative to LIWC",
+    "text": "Dict III: VADER - an open-source alternative to LIWC\nValence Aware Dictionary and sEntiment Reasoner:\n\nTuned for social media text; open source and free.\nCapture polarity and intensity\n\nSentiment Lexicon: this is a list of known words and their associated sentiment scores.\nSentiment Intensity Scores: Each word in the lexicon is assigned a score that ranges from -4 (extremely negative) to +4 (extremely positive).\nFive Heuristic-based rules: exclamation points, caps lock, intensifiers, negation, tri-grams"
+  },
+  {
+    "objectID": "slides/week_04.html#section-1",
+    "href": "slides/week_04.html#section-1",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "",
-    "text": "Last week:\n\nPre-processing text + bag of words ~&gt; reduces greatly text complexity (dimensions)\nText representation using vectors of numbers ~&gt; document feature matrix (text to numbers)\nExample of counting words to make inference"
+    "text": "Vader Heuristic rules to signal intensity or polarity shift:\n\nPunctuation: ! → increased intensity\nPunctuation: ALL-CAPS → increased intensity\nDegree modifiers (intensifiers, i.e. ”extremely good”) → increased intensity\nConjunction “but” signals a shift in sentiment polarity\nTri-gram preceding a sentiment-laden lexical feature → catch nearly 90% of cases where negation flips the polarity of the text\n\n“The food here isn’t really all that great”\n\nPython and R libraries: https://github.com/cjhutto/vaderSentiment\nArticle: https://ojs.aaai.org/index.php/ICWSM/article/view/14550/14399"
   },
   {
-    "objectID": "slides/week_03.html#plans-for-today",
-    "href": "slides/week_03.html#plans-for-today",
+    "objectID": "slides/week_04.html#dict-iv---young-sarokas-lexicoder-sentiment-dictionary",
+    "href": "slides/week_04.html#dict-iv---young-sarokas-lexicoder-sentiment-dictionary",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "",
-    "text": "We will start thinking about latent outcomes from text. Our first approach will focus on descriptive inference based on documents:\n\nComparing documents\nUsing similarity to measure text-reuse\n\nQuick linear algebra review\n\nEvaluating complexity in text\nWeighting (TF-iDF)"
+    "section": "Dict IV - Young & Saroka’s Lexicoder Sentiment Dictionary",
+    "text": "Dict IV - Young & Saroka’s Lexicoder Sentiment Dictionary\nCreate Lexicoder Sentiment dictionary specifically for political communication (i.e. sentiment in news coverage, legislative speech and other text)\n\nCombines:\n\nGeneral Inquirer;\nRoget’s Thesaurus and\nRegressive Imagery Dictionary\n\nEach words pertains to a single class\nPlus\n\nHand coding\nKeyword in context for disambiguation"
   },
   {
-    "objectID": "slides/week_03.html#recall-vector-space-model",
-    "href": "slides/week_03.html#recall-vector-space-model",
+    "objectID": "slides/week_04.html#performance",
+    "href": "slides/week_04.html#performance",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "",
-    "text": "To represent documents as numbers, we use the vector space model representation:\n\n\nA document \\(D_i\\) is represented as a collection of features \\(W\\) (words, tokens, n-grams, etc…)\nEach feature \\(w_i\\) can be placed in a real line\nA document \\(D_i\\) is a point in a \\(\\mathbb{R}^W\\)\n\nEach document is now a vector,\nEach entry represents the frequency of a particular token or feature.\nStacking those vectors on top of each other gives the document feature matrix (DFM)."
+    "section": "Performance",
+    "text": "Performance\n\n\n\n\n\n\n\nLSD results assign 74% to the positive category and just 12% to the negative category. Of the 495 articles that are categorized as negative by at least two coders, LSD results assign 53% to the negative category and 32% to the positive category ~ 69% of accuracy"
   },
   {
-    "objectID": "slides/week_03.html#document-feature-matrix-fundamental-unit-of-tad",
-    "href": "slides/week_03.html#document-feature-matrix-fundamental-unit-of-tad",
+    "objectID": "slides/week_04.html#dictionary-vi-moral-foundations-dictionary",
+    "href": "slides/week_04.html#dictionary-vi-moral-foundations-dictionary",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "",
-    "text": "Source: Arthur Spirling TAD Class"
+    "section": "Dictionary VI: Moral Foundations Dictionary",
+    "text": "Dictionary VI: Moral Foundations Dictionary\n\nMoral foundations: dimensions of difference that explain human moral reasoning\nMeasures the proportions of virtue and vice words for each foundation:\n\nCare/Harm\nFairness/Cheating\nLoyalty/Betrayal\nAuthority/Subversion\nPurity/Degradation\n\nLink to dictionary: https://moralfoundations.org/other-materials/"
   },
   {
-    "objectID": "slides/week_03.html#in-a-two-dimensional-space",
-    "href": "slides/week_03.html#in-a-two-dimensional-space",
+    "objectID": "slides/week_04.html#advantages",
+    "href": "slides/week_04.html#advantages",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "",
-    "text": "Documents, W=2\n\n\n\nDocument 1 = “yes yes yes no no no”\nDocument 2 = “yes yes yes yes yes yes”\n\n\n\n\nWarning: package 'ggplot' is not available for this version of R\n\nA version of this package for your version of R might be available elsewhere,\nsee the ideas at\nhttps://cran.r-project.org/doc/manuals/r-patched/R-admin.html#Installing-packages\n\n\nWarning: 'BiocManager' not available.  Could not check Bioconductor.\n\nPlease use `install.packages('BiocManager')` and then retry.\n\n\nWarning in p_install(package, character.only = TRUE, ...):\n\n\nWarning in library(package, lib.loc = lib.loc, character.only = TRUE,\nlogical.return = TRUE, : there is no package called 'ggplot'\n\n\nWarning in pacman::p_load(ggplot, tidyverse): Failed to install/load:\nggplot\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead."
+    "section": "Advantages",
+    "text": "Advantages\nWe already discussed some of the advantages:\n\nlow-cost when working with open sourced dictionaries\n\nrelatively easy to build/expand on new dictionaries\n\nbridge qualitative and quantitative\neasy to validate\n\ndictionaries are transparent and reliable.\n\ntransfer well across languages."
   },
   {
-    "objectID": "slides/week_03.html#how-far-is-document-a-from-document-b",
-    "href": "slides/week_03.html#how-far-is-document-a-from-document-b",
+    "objectID": "slides/week_04.html#disadvantage-context-specific",
+    "href": "slides/week_04.html#disadvantage-context-specific",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "How `far’ is document a from document b?",
-    "text": "How `far’ is document a from document b?\nUsing the vector space, we can use notions of geometry to build well-defined comparisons between the documents.\n\n\nin multiple dimensions!!"
+    "section": "Disadvantage: Context specific",
+    "text": "Disadvantage: Context specific\n\n\n\n\n\n\n\nSource: Gonzalez-Bailon et al"
   },
   {
-    "objectID": "slides/week_03.html#euclidean-distance",
-    "href": "slides/week_03.html#euclidean-distance",
+    "objectID": "slides/week_04.html#disadvantage-performance",
+    "href": "slides/week_04.html#disadvantage-performance",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Euclidean Distance",
-    "text": "Euclidean Distance\nThe ordinary, straight line distance between two points in space. Using document vectors \\(y_a\\) and \\(y_b\\) with \\(j\\) dimensions\n\n\n\n\n\n\nEuclidean Distance\n\n\n\n\\[\n||U - V|| = \\sqrt{\\sum^{i}(U_{i} - {V_i})^2}\n\\]\n\n\n\nCan be performed for any number of features J\n\nNo negative distances\nDistance between documents is zero when documents are identical\nDistance between documents is symmetric\nSatisfy triangle inequality: \\(s_{ik} \\leq s_{ij} + s_{jk}\\)"
+    "section": "Disadvantage: Performance",
+    "text": "Disadvantage: Performance\n\n\n\n\n\n\n\nMuddiman et al, 2019 - Reclaiming our Expertise"
   },
   {
-    "objectID": "slides/week_03.html#euclidean-distance-w2",
-    "href": "slides/week_03.html#euclidean-distance-w2",
+    "objectID": "slides/week_04.html#rathje-et.-al-2020-pnas-out-group-animosity",
+    "href": "slides/week_04.html#rathje-et.-al-2020-pnas-out-group-animosity",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Euclidean Distance, w=2",
-    "text": "Euclidean Distance, w=2\n\n\n\n\n\n\nEuclidean Distance\n\n\n\n\\[\n||U - V|| = \\sqrt{\\sum^{i}(u_{i} - v_{i})^2}\n\\]\n\n\n\n\\(U\\) = [0, 2.51, 3.6, 0] and \\(yV\\) = [0, 2.3, 3.1, 9.2]\n\\(\\sum^{i}(U_{i} - y_{V_i})^2\\) = \\((0-0)^2 + (2.51-2.3)^2 + (3.6-3.1)^2 + (9-0)^2\\) = \\(84.9341\\)\n\\(\\sqrt{\\sum_{j=1}^j (y_a - y_b)^2}\\) = 9.21"
+    "section": "Rathje et. al 2020, PNAS, Out-group animosity",
+    "text": "Rathje et. al 2020, PNAS, Out-group animosity\n\nRQ:\nTheory:\nData:\nMethod:\nWhich year and where this paper was published?"
   },
   {
-    "objectID": "slides/week_03.html#exercise",
-    "href": "slides/week_03.html#exercise",
+    "objectID": "slides/week_04.html#rathje-et.-al-2020-pnas-out-group-animosity-2",
+    "href": "slides/week_04.html#rathje-et.-al-2020-pnas-out-group-animosity-2",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Exercise",
-    "text": "Exercise\n\n\n\n\n\n\nDocuments, W=2 {yes, no}\n\n\n\nDocument 1 = “yes yes yes no no no” (3, 3)\nDocument 2 = “yes yes yes yes yes yes” (6,0)\nDocument 3= “yes yes yes no no no yes yes yes no no no yes yes yes no no no yes yes yes no no no” (12, 12)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhich documents will the euclidean distance place closer together?\nDoes it look like a good measure for similarity?\n\nDoc C = Doc A * 3"
+    "section": "Rathje et. al 2020, PNAS, Out-group animosity",
+    "text": "Rathje et. al 2020, PNAS, Out-group animosity\n\nWe used the R package quanteda to analyze Twitter and Facebook text. During text preprocessing, we removed punctuation, URLs, and numbers. To classify whether a specific post was referring to a liberal or a conservative, we adapted previously used dictionaries that referred to words associated with liberals or conservatives. Specifically, these dictionaries included 1) a list of the top 100 most famous Democratic and Republican politicians according to YouGov, along with their Twitter handles (or Facebook page names for the Facebook datasets) (e.g., “Trump,” “Pete Buttigieg,” “@realDonaldTrump”); 2) a list of the current Democratic and Republican (but not independent) US Congressional members (532 total) along with their Twitter and Facebook names (e.g., “Amy Klobuchar,” “Tom Cotton”); and 3) a list of about 10 terms associated with Democratic (e.g., “liberal,” “democrat,” or “leftist”) or Republican identity (e.g., “conservative,” “republican,” or “ring-wing”)."
   },
   {
-    "objectID": "slides/week_03.html#cosine-similarity",
-    "href": "slides/week_03.html#cosine-similarity",
+    "objectID": "slides/week_04.html#rathje-et.-al-2020-pnas-out-group-animosity-3",
+    "href": "slides/week_04.html#rathje-et.-al-2020-pnas-out-group-animosity-3",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Cosine Similarity",
-    "text": "Cosine Similarity\nEuclidean distance rewards magnitude, rather than direction\n\\[\n\\text{cosine similarity}(\\mathbf{U}, \\mathbf{V}) = \\frac{\\mathbf{U} \\cdot \\mathbf{V}}{\\|\\mathbf{U}\\| \\|\\mathbf{V}\\|}\n\\]"
+    "section": "Rathje et. al 2020, PNAS, Out-group animosity",
+    "text": "Rathje et. al 2020, PNAS, Out-group animosity\n\nWe then assigned each tweet a count for words that matched our Republican and Democrat dictionaries (for instance, if a tweet mentioned two words in the “Republican” dictionary, it would receive a score of “2” in that category). We also used previously validated dictionaries that counted the number of positive and negative affect words per post and the number of moral-emotional words per post (LIWC)."
   },
   {
-    "objectID": "slides/week_03.html#vectors",
-    "href": "slides/week_03.html#vectors",
+    "objectID": "slides/week_04.html#rathje-et.-al-2020-pnas-out-group-animosity-4",
+    "href": "slides/week_04.html#rathje-et.-al-2020-pnas-out-group-animosity-4",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Vectors",
-    "text": "Vectors\n\nVector: an ordered list of numbers in a space with well-defined addition and scalar multiplication operations\nIt is defined as an object with both magnitude and direction\nMagnitude: how long it is\nDirection: where it points"
+    "section": "Rathje et. al 2020, PNAS, Out-group animosity",
+    "text": "Rathje et. al 2020, PNAS, Out-group animosity"
   },
   {
-    "objectID": "slides/week_03.html#vectors-1",
-    "href": "slides/week_03.html#vectors-1",
+    "objectID": "slides/week_04.html#supervised-learning-vs.-dictionaries",
+    "href": "slides/week_04.html#supervised-learning-vs.-dictionaries",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Vectors",
-    "text": "Vectors\n\nThe dimensionality of a vector is the number of elements it has\nFor example, [1, 2, 3, ] has dimensionality 3\nIn other words, it is a vector in 3D space\nThe vector [3,5] is 2D"
+    "section": "Supervised Learning vs. Dictionaries",
+    "text": "Supervised Learning vs. Dictionaries\nDictionary Methods:\n\nAdvantage: Not corpus-specific, easy to apply to a new corpus\nDisadvantage: Performance on a new corpus is unknown (domain shift)\n\nSupervised Learning:\n\nGeneralizes dictionary methods\nFeatures associated with categories (and their relative weight) are learned from the data\nBy construction, ML will outperform dictionary methods in classification tasks (if the training sample is large enough)"
   },
   {
-    "objectID": "slides/week_03.html#scalar-multiplication-of-vectors",
-    "href": "slides/week_03.html#scalar-multiplication-of-vectors",
+    "objectID": "slides/week_04.html#off-the-shelf-deep-learning-models",
+    "href": "slides/week_04.html#off-the-shelf-deep-learning-models",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Scalar Multiplication of Vectors",
-    "text": "Scalar Multiplication of Vectors\nGiven a vector U and a scalar constant k, we can multiply a vector.\n\\[\nU*k = [k*u_1, k*u_2, k*u_3 ... k*u_n]\n\\]\n\n\nincreases the length/magnitude\ndoes not change the direction"
+    "section": "Off-the-shelf Deep Learning Models",
+    "text": "Off-the-shelf Deep Learning Models\n\nDefinition: Pre-trained models designed for general-purpose classification tasks\n\nIn general those are models built on TONS of data and optimized for a particular task\n\nKey Features:\n\nReady to use\nLow to zero cost\nDeep ML architectures ~ High accuracy\nCan be re-trained for your specific task"
   },
   {
-    "objectID": "slides/week_03.html#magnitude-of-a-vector",
-    "href": "slides/week_03.html#magnitude-of-a-vector",
+    "objectID": "slides/week_04.html#off-the-shelf-i-perspective-api",
+    "href": "slides/week_04.html#off-the-shelf-i-perspective-api",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Magnitude of a vector",
-    "text": "Magnitude of a vector\nThe denominator of the cosine similarity formula gives you the magnitude or length of a vector.\n\nMagnitude: Use L2 Norm, Euclidean distance from origin point (0,0)\nIt converts a vector to a scalar representing the size of a vector\n\n\n\\[\n||\\mathbf{U}|| = \\sqrt(u1*u1 + u2*u2 ... u_n*u_n) = \\sqrt(\\sum^i u_i^2)\n\\]"
+    "section": "Off-the-shelf I: Perspective API",
+    "text": "Off-the-shelf I: Perspective API\nDef: Machine learning tool developed by Jigsaw (Google) to analyze text for harmful or toxic language:\n\nTrained on large datasets of annotated online comments\nOutputs scores between 0 and 1, representing the likelihood that a comment falls into a specific category (e.g., toxicity)\n\n\nWhy?\n\nUseful for analyzing public discourse, particularly around sensitive topics like policy or social issues\nHelps moderate comments in online platforms\n\n\n\nLimitations:\n\nLimited to specific tasks like toxicity detection\nOperates as a black-box service with no access to underlying model or fine-tuning\nRequires data to be sent to an external server, which can pose privacy concerns"
   },
   {
-    "objectID": "slides/week_03.html#vector-multiplication-dot-product",
-    "href": "slides/week_03.html#vector-multiplication-dot-product",
+    "objectID": "slides/week_04.html#application-ventura-et.-al.-2021",
+    "href": "slides/week_04.html#application-ventura-et.-al.-2021",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Vector Multiplication: Dot Product",
-    "text": "Vector Multiplication: Dot Product\nThe numerator of the cosine similarity is called ‘dot product’ between two vectors. Or a multiplication between two vectors.\nFormula:\n\\[\n\\mathbf{U} \\cdot \\mathbf{V}= u_1*v_1 + u_2*v_2 + u_n*v_n = \\sum^i u_i*v_i\n\\]\nNotice: the dot product maps two vectors to real numbers."
+    "section": "Application: Ventura et. al. 2021",
+    "text": "Application: Ventura et. al. 2021\n\nRQ: Characterize streaming chats during political debates leading up to the 2020 U.S. presidential election\nTheory: From passive consumer to active co-creator; changing the (online) channel changes the viewing experience\nData/method: Facebook livestream chats on NBC News, ABC News, and Fox News during 2020 US Presidential debate\nOutcomes: Length, speed, toxicity of comments"
   },
   {
-    "objectID": "slides/week_03.html#dot-product-visually",
-    "href": "slides/week_03.html#dot-product-visually",
+    "objectID": "slides/week_04.html#application-ventura-et.-al.-2021-1",
+    "href": "slides/week_04.html#application-ventura-et.-al.-2021-1",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Dot Product Visually",
-    "text": "Dot Product Visually"
+    "section": "Application: Ventura et. al. 2021",
+    "text": "Application: Ventura et. al. 2021\n\n\n\n\n\n\n\nSee article: Ventura et al. 2021, Connective Effervescence and Streaming Chat"
   },
   {
-    "objectID": "slides/week_03.html#dot-product-formula-again",
-    "href": "slides/week_03.html#dot-product-formula-again",
+    "objectID": "slides/week_04.html#off-the-shelf-models-ii-transformers",
+    "href": "slides/week_04.html#off-the-shelf-models-ii-transformers",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Dot Product Formula Again",
-    "text": "Dot Product Formula Again\nAnother way to see the dot product is by multiplying the vector magnitudes by the cosine of the angle between them\n\\[\n\\mathbf{U} \\cdot \\mathbf{V}= ||U|| \\cdot ||V|| \\cdot cos(\\theta)\n\\]\nMore interestingly\n\\[\n||Proj(U)_v ||= ||U|| cos(\\theta)\n\\]\nYet another formula\n\\[\n\\mathbf{U} \\cdot \\mathbf{V} = ||Proj(U)_v || ||V||\n\\]"
+    "section": "Off-the-shelf models II: Transformers",
+    "text": "Off-the-shelf models II: Transformers\nHugging Face’s Model Hub: centralized repository for sharing and discovering pre-trained models [https://huggingface.co]"
   },
   {
-    "objectID": "slides/week_03.html#back-to-the-cosine-similarity",
-    "href": "slides/week_03.html#back-to-the-cosine-similarity",
+    "objectID": "slides/week_04.html#off-the-shelf-models-iii-llms",
+    "href": "slides/week_04.html#off-the-shelf-models-iii-llms",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Back to the Cosine Similarity",
-    "text": "Back to the Cosine Similarity\n\\[\n\\text{cosine similarity}(\\mathbf{U}, \\mathbf{V}) = \\frac{\\mathbf{U} \\cdot \\mathbf{V}}{\\|\\mathbf{U}\\| \\|\\mathbf{V}\\|}\n\\]\n\n\\(U \\cdot V\\) ~ dot product between vectors\n\nit is a projection of one vector into another\nWorks as a measure of similarity\nBut rewards magnitude\n\n\\(||\\mathbf{U}||\\) ~ vector magnitude, length ~ \\(\\sqrt{\\sum{u_{i}^2}}\\)\n\nnormalizes a vector projection of documents’ by their lengths\n\ncosine similarity captures some notion of relative direction controlling for different magnitudes."
-  },
-  {
-    "objectID": "slides/week_03.html#cosine-similarity-1",
-    "href": "slides/week_03.html#cosine-similarity-1",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Cosine Similarity",
-    "text": "Cosine Similarity\nCosine function has a range between -1 and 1.\n\nConsider: cos (0) = 1, cos (90) = 0, cos (180) = -1\n\n\n\nWarning: package 'ggplot' is not available for this version of R\n\nA version of this package for your version of R might be available elsewhere,\nsee the ideas at\nhttps://cran.r-project.org/doc/manuals/r-patched/R-admin.html#Installing-packages\n\n\nWarning: 'BiocManager' not available.  Could not check Bioconductor.\n\nPlease use `install.packages('BiocManager')` and then retry.\n\n\nWarning in p_install(package, character.only = TRUE, ...):\n\n\nWarning in library(package, lib.loc = lib.loc, character.only = TRUE,\nlogical.return = TRUE, : there is no package called 'ggplot'\n\n\nWarning in pacman::p_load(ggplot, tidyverse): Failed to install/load:\nggplot\n\n\nWarning in acos(dot_product/magnitudes): NaNs produced"
-  },
-  {
-    "objectID": "slides/week_03.html#exercise-1",
-    "href": "slides/week_03.html#exercise-1",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Exercise",
-    "text": "Exercise\nThe cosine function can range from [-1, 1]. When thinking about document vectors, cosine similarity is actually constrained to vary only from 0 - 1.\n\nWhy does cosine similarity for document vectors can never be lower than zero? Think about the vector representation and the document feature matrix."
-  },
-  {
-    "objectID": "slides/week_03.html#applications-think-tank-reports",
-    "href": "slides/week_03.html#applications-think-tank-reports",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Applications: Think Tank Reports",
-    "text": "Applications: Think Tank Reports\n\nCompiled a dataset of 36,603 episodes from 79 prominent political podcasters\nPre-processed text transcripts\nCalculated the cosine similarity between podcast transcripts and fact-checked claims (PolitiFact and Snopes)\nSet a cosine similarity threshold (e.g., 0.5) to filter significant matches\nOnce a claim was detected in a transcript, the analysis moved to determine how the claim was presented (manual review, sentiment analysis)\nQuantified the prevalence of unsubstantiated and false claims across the podcast episodes"
-  },
-  {
-    "objectID": "slides/week_03.html#more-metrics",
-    "href": "slides/week_03.html#more-metrics",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "More Metrics",
-    "text": "More Metrics"
-  },
-  {
-    "objectID": "slides/week_03.html#how-to-decide",
-    "href": "slides/week_03.html#how-to-decide",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "How to decide",
-    "text": "How to decide\n\nMagnitude? Euclidean or Manhattan Distance if total size/frequency of terms is important.\nProportions? Cosine Similarity if relative distribution of terms matters more than document length.\nOverlap? Jaccard Similarity if interested in shared terms regardless of frequency.\nTrends? Pearson Correlation to compare patterns in term distributions across documents.\nSparse, high-dimensional text data? Cosine similarity because it emphasizes proportional relationships and ignores document length.\nDense data with similar distribution? Euclidean distance because length are likely the same"
-  },
-  {
-    "objectID": "slides/week_03.html#lexical-diversity",
-    "href": "slides/week_03.html#lexical-diversity",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Lexical Diversity",
-    "text": "Lexical Diversity\n\nLength refers to the size in terms of: characters, words, lines, sentences, paragraphs, pages, sections, chapters, etc.\nTokens are generally words ~ useful semantic unit for processing\nTypes are unique tokens.\nTypically \\(N_{tokens}\\) &gt;&gt;&gt;&gt; \\(N_{types}\\)\n\n\nType-to-Token ratio\n\\[\nTTR:\\frac{\\text{total type}}{\\text{total tokens}}\n\\]\n\nauthors with limited vocabularies will have a low lexical diversity"
-  },
-  {
-    "objectID": "slides/week_03.html#issues-with-ttr-and-extensions",
-    "href": "slides/week_03.html#issues-with-ttr-and-extensions",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Issues with TTR and Extensions",
-    "text": "Issues with TTR and Extensions\n\nTTR is very sensitive to overall document length,\n\nShorter texts may exhibit fewer word repetitions\n\nLength also correlates with topic variation ~ more types being added to the document"
-  },
-  {
-    "objectID": "slides/week_03.html#readability",
-    "href": "slides/week_03.html#readability",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Readability",
-    "text": "Readability\nReadability: ease with which reader (especially of given education) can comprehend a text\n\n\nCombines both difficulty (text) and sophistication (reader)\n\nAverage sentence length (based on the number of words) and average word length (based on the number of syllables) to indicate difficulty\nHuman inputs to built parameters about the readers\n\nHundred years of literature on the measurement of ‘readability’. The general issue was assigning school texts to students of different ages and abilities.\n\nExample: Flesch-Kincaid readability index"
-  },
-  {
-    "objectID": "slides/week_03.html#flesch-kincaid-readability-index",
-    "href": "slides/week_03.html#flesch-kincaid-readability-index",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Flesch-Kincaid readability index",
-    "text": "Flesch-Kincaid readability index\n\n\n\n\n\n\nFlesch Reading Ease (FRE)\n\n\n\n\\[\nFRE = 206.835 - 1.015\\left(\\frac{\\mbox{total words}}{\\mbox{total sentences}}\\right)-84.6\\left(\\frac{\\mbox{total syllables}}{\\mbox{total words}}\\right)\n\\]\n\n\n\n\n\n\n\n\nFlesch-Kincaid (Rescaled to US Educational Grade Levels)\n\n\n\n\\[\nFRE = 15.59 - 0.39\\left(\\frac{\\mbox{total words}}{\\mbox{total sentences}}\\right)- 11.8\\left(\\frac{\\mbox{total syllables}}{\\mbox{total words}}\\right)\n\\]\n\n\nInterpretation: 0-30: university level; 60-70: understandable by 13-15 year olds; and 90-100 easily understood by an 11-year old student."
-  },
-  {
-    "objectID": "slides/week_03.html#spirling-2016.-the-effects-of-the-second-reform-act",
-    "href": "slides/week_03.html#spirling-2016.-the-effects-of-the-second-reform-act",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Spirling, 2016. The effects of the Second Reform Act",
-    "text": "Spirling, 2016. The effects of the Second Reform Act\nResearch Question: How did suffrage extension affected the behavior of members of parliament (MPs) relative to ministers during the Victorian period?\nData: House of Commons (1832-1915) speeches\nMethod: FRE scores"
-  },
-  {
-    "objectID": "slides/week_03.html#your-turn-results",
-    "href": "slides/week_03.html#your-turn-results",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Your turn: Results",
-    "text": "Your turn: Results"
-  },
-  {
-    "objectID": "slides/week_03.html#how-much-can-we-trust-on-fre-discussion-of-benoit-et.-al.",
-    "href": "slides/week_03.html#how-much-can-we-trust-on-fre-discussion-of-benoit-et.-al.",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "How much can we trust on FRE? Discussion of Benoit et. al.",
-    "text": "How much can we trust on FRE? Discussion of Benoit et. al."
-  },
-  {
-    "objectID": "slides/week_03.html#benoit-et-al.-2019-political-sophistication.",
-    "href": "slides/week_03.html#benoit-et-al.-2019-political-sophistication.",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Benoit et al., 2019, Political Sophistication.",
-    "text": "Benoit et al., 2019, Political Sophistication.\n\nApproach\n\nGet human judgments of relative textual easiness for specifically political texts.\nUse a logit model to estimate latent “easiness” as equivalent to the “ability” parameter in the Bradley-Terry framework.\nUse these as training data for a tree-based model. Pick most important parameters\nRe-estimate the models using these covariates (Logit + covariates)\nUsing these parameters, one can “predict” the easiness parameter for a given new text\n\nNice plus ~ add uncertainty to model-based estimates via bootstrapping"
-  },
-  {
-    "objectID": "slides/week_03.html#benoit-et-al.-2019-political-sophistication",
-    "href": "slides/week_03.html#benoit-et-al.-2019-political-sophistication",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Benoit et al., 2019, Political Sophistication",
-    "text": "Benoit et al., 2019, Political Sophistication"
-  },
-  {
-    "objectID": "slides/week_03.html#can-we-do-better-than-just-using-frequencies",
-    "href": "slides/week_03.html#can-we-do-better-than-just-using-frequencies",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Can we do better than just using frequencies?",
-    "text": "Can we do better than just using frequencies?\nSo far our inputs for the vector representation of documents have relied simply the word frequencies.\nCan we do better?\n\nOne option: weighting\nWeighting function:\n\nReward words more unique;\nPunish words that appear in most documents"
-  },
-  {
-    "objectID": "slides/week_03.html#tf-idf-term-frequency---inverse-document-frequency",
-    "href": "slides/week_03.html#tf-idf-term-frequency---inverse-document-frequency",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "TF-IDF = Term Frequency - Inverse Document Frequency",
-    "text": "TF-IDF = Term Frequency - Inverse Document Frequency\n\\[\n\\text{TF-IDF}(t, d) = \\text{TF} \\times \\text{IDF}\n\\]\n\\[\n\\text{TF}(t, d) = \\frac{\\text{Number of times term } t \\text{ appears in document } d}{\\text{Total number of terms in document } d}\n\\]\n\\[\n\\text{IDF}(t) = \\log \\left( \\frac{\\text{Total number of documents}}{\\text{Number of documents with term } t \\text{ in them}} \\right)\n\\]"
-  },
-  {
-    "objectID": "slides/week_03.html#federalist-papers",
-    "href": "slides/week_03.html#federalist-papers",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Federalist Papers",
-    "text": "Federalist Papers"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "PPOL 6801: Text as Data - Computational Linguistics",
-    "section": "",
-    "text": "This course introduces students to the quantitative analysis of text as data. With the increasing availability of large-scale textual data – from government documents and political speeches to social media and online news – the potential to extract meaningful insights from text has expanded dramatically. In this course, students will learn to transform text into data and apply it to social science questions and theories. The focus is on understanding the real-world use of text as data, through a large collection of recent academic articles, rather than just the mathematical and computational theory behind it, which we will definitely cover.\nThe class content can be broadly split into two parts. First, we start with traditional approaches that model text as data using a bag-of-words assumption. Here, we’ll cover various methods, including building and utilizing dictionaries, understanding sentiment in text, scaling texts on ideological and policy dimensions, and applying machine learning to classify text. In the second half of the class, we will focus on state-of-the-art models that move beyond bag-of-words and sparse representations of text, and model text based on embeddings/dense representations of words. Here, we begin with an overview of how to represent text as data, from sparse representations via bag-of-words models to dense representations using word embeddings. We then discuss the use of deep learning models for text representation and downstream classification tasks. From here, we will discuss the foundation of the state-of-the-art machine learning models for text analysis: transformer models. Lastly, we will discuss several applications of large language models in social science tasks.\nThe course includes hands-on exercises using real-world data to reinforce lecture content. By the end, students will have a toolkit for text analysis that is useful in roles such as policy experts and computational social scientists. Students should have completed at least an introductory statistics course and have a basic understanding of probability, distributions, hypothesis testing, and linear models. Students are also expected to have experience working with R, the programming language and software environment used in this course, and Python for the LLM components of the course."
-  },
-  {
-    "objectID": "index.html#course-description",
-    "href": "index.html#course-description",
-    "title": "PPOL 6801: Text as Data - Computational Linguistics",
-    "section": "",
-    "text": "This course introduces students to the quantitative analysis of text as data. With the increasing availability of large-scale textual data – from government documents and political speeches to social media and online news – the potential to extract meaningful insights from text has expanded dramatically. In this course, students will learn to transform text into data and apply it to social science questions and theories. The focus is on understanding the real-world use of text as data, through a large collection of recent academic articles, rather than just the mathematical and computational theory behind it, which we will definitely cover.\nThe class content can be broadly split into two parts. First, we start with traditional approaches that model text as data using a bag-of-words assumption. Here, we’ll cover various methods, including building and utilizing dictionaries, understanding sentiment in text, scaling texts on ideological and policy dimensions, and applying machine learning to classify text. In the second half of the class, we will focus on state-of-the-art models that move beyond bag-of-words and sparse representations of text, and model text based on embeddings/dense representations of words. Here, we begin with an overview of how to represent text as data, from sparse representations via bag-of-words models to dense representations using word embeddings. We then discuss the use of deep learning models for text representation and downstream classification tasks. From here, we will discuss the foundation of the state-of-the-art machine learning models for text analysis: transformer models. Lastly, we will discuss several applications of large language models in social science tasks.\nThe course includes hands-on exercises using real-world data to reinforce lecture content. By the end, students will have a toolkit for text analysis that is useful in roles such as policy experts and computational social scientists. Students should have completed at least an introductory statistics course and have a basic understanding of probability, distributions, hypothesis testing, and linear models. Students are also expected to have experience working with R, the programming language and software environment used in this course, and Python for the LLM components of the course."
-  },
-  {
-    "objectID": "index.html#class-website",
-    "href": "index.html#class-website",
-    "title": "PPOL 6801: Text as Data - Computational Linguistics",
-    "section": "Class Website",
-    "text": "Class Website\nhttps://tiagoventura.github.io/PPOL_6801/"
-  },
-  {
-    "objectID": "index.html#instructor",
-    "href": "index.html#instructor",
-    "title": "PPOL 6801: Text as Data - Computational Linguistics",
-    "section": "Instructor",
-    "text": "Instructor\nProfessor Tiago Ventura\n\nPronouns: He/Him\nEmail: tv186@georgetown.edu\nLectures: Every Monday, 9:30am - 12pm\nOffice Hours: Every Tuesday, 3pm - 4pm\n\nLocation: McCourt Building, 766"
-  },
-  {
-    "objectID": "index.html#office-hours",
-    "href": "index.html#office-hours",
-    "title": "PPOL 6801: Text as Data - Computational Linguistics",
-    "section": "Office Hours",
-    "text": "Office Hours\nYou are all welcome to the office hours. You can come to the office hours to:\n\nDrink some coffee;\nAsk what I am doing research at;\nTell me about your research;\nAsk any question about our class;\nOr just talk about soccer.\n\nAll are valid options! And no need to schedule time with me!"
-  },
-  {
-    "objectID": "index.html#course-infra-structure",
-    "href": "index.html#course-infra-structure",
-    "title": "PPOL 6801: Text as Data - Computational Linguistics",
-    "section": "Course Infra-structure",
-    "text": "Course Infra-structure\nClass Website: This class website will be used throughout the course and should be checked on a regular basis for lecture materials and required readings.\nClass Slack Channel: The class also has a dedicated slack channel. The channel serves as an open forum to discuss, collaborate, pose problems/questions, and offer solutions. Students are encouraged to pose any questions they have there as this will provide the professor the means of answering the question so that all can see the response. If you’re unfamiliar with, please consult the following start-up tutorial https://get.slack.help/hc/en-us/articles/218080037-Getting-started-for-new-members. Please follow the invite link to be added to the Slack channel.\nCanvas: A Canvas site http://canvas.georgetown.edu will be used throughout the course and should be checked on a regular basis for announcements. Materials will be posted here, and not on canvas, or distributed in class or by e-mail. Support for Canvas is available at (202) 687-4949"
-  },
-  {
-    "objectID": "index.html#credits",
-    "href": "index.html#credits",
-    "title": "PPOL 6801: Text as Data - Computational Linguistics",
-    "section": "Credits",
-    "text": "Credits\nTo build this course, I used materials from Arthur Spirling Text-as-Data Class at NYU, and lab materials from various TA’s for his course (Elisa Wirsching, Lucia Motolinia, Pedro L. Rodriguez, Kevin Munger, Patrick Chester, Leslie Huang), Pablo Barbera’s Computational Social Science Seminar seminar, Brandon Stewart, Alex Siegel, Chris Bail, Sebastian Vallejo, among others. Their lessons and inspiration are spread throughout all the materials of the course. Thanks!"
-  },
-  {
-    "objectID": "finalproject.html",
-    "href": "finalproject.html",
-    "title": "Instructions for PPOL 6801 - Final Project",
-    "section": "",
-    "text": "Data science is an applied field and the DSPP is particularly geared towards providing students the tools to make policy and substantive contributions using data and recent computational developments.\nIn this sense, it is fundamental that you understand how to conduct a complete analysis from collecting data, to cleaning and analyzing it, to presenting your findings.\nFor this reason, a considerable part of your grade (40%) will come from a an independent data science project, applying concepts learned throughout the course.\nThe project is composed of three parts:\n\na 2 page project proposal: (which should be discussed and approved by me)\nan in-class presentation,\nA 10-page project report.\n\nDue dates and breakdowns for the project are as follows:\n\n\n\n\n\n\n\n\n\nRequirement\nDue\nLength\nPercentage\n\n\n\n\nProject Proposal\nEOD Friday Week 9\n2 pages\n5%\n\n\nPresentation\nWeek 14\n10-15 minutes\n10%\n\n\nProject Report\nWednesday Week 15\n10 pages\n25%"
-  },
-  {
-    "objectID": "finalproject.html#general-instructions",
-    "href": "finalproject.html#general-instructions",
-    "title": "Instructions for PPOL 6801 - Final Project",
-    "section": "",
-    "text": "Data science is an applied field and the DSPP is particularly geared towards providing students the tools to make policy and substantive contributions using data and recent computational developments.\nIn this sense, it is fundamental that you understand how to conduct a complete analysis from collecting data, to cleaning and analyzing it, to presenting your findings.\nFor this reason, a considerable part of your grade (40%) will come from a an independent data science project, applying concepts learned throughout the course.\nThe project is composed of three parts:\n\na 2 page project proposal: (which should be discussed and approved by me)\nan in-class presentation,\nA 10-page project report.\n\nDue dates and breakdowns for the project are as follows:\n\n\n\n\n\n\n\n\n\nRequirement\nDue\nLength\nPercentage\n\n\n\n\nProject Proposal\nEOD Friday Week 9\n2 pages\n5%\n\n\nPresentation\nWeek 14\n10-15 minutes\n10%\n\n\nProject Report\nWednesday Week 15\n10 pages\n25%"
-  },
-  {
-    "objectID": "finalproject.html#all-components-of-the-project",
-    "href": "finalproject.html#all-components-of-the-project",
-    "title": "Instructions for PPOL 6801 - Final Project",
-    "section": "All components of the project:",
-    "text": "All components of the project:\n\nProject Proposal\nThe project proposal asks that you sketch out a general 2 page (single-spaced; 12pt font) project proposal. The proposal should offer the following information:\n\nA high-level statement of the problem you intend to address or the analysis you aim to generate\nThe data source(s) you intend to use\nYour plan to obtain that data\nThe text as data method you plan to use.\nA definition for what “success” means with respect to your project.\n\nIn your words, what would a successful project look like? What is the results you want to show? What would be a surprising finding for you?\n\n\n\n\nPresentation\nYou will have the opportunity to present you final project in class. As a Data scientists, your presentation skills are as important as your data skills. You should prepare a 10-12 minutes presentation. It should cover:\n\nMotivation or problem statement\nData collection\nMethods\nResults\nLessons learned and next steps\n\n\n\nProject Report\nThe report is a complete description of the project’s analysis and results. The report should be a 10 page in length (single-spaced; 12pt font) and cover the points presented below. Citations and Front page will not be considered in the 10 page.\nBelow I’ve outlined points that one should aim to discuss in each section. Note that paper should read as a cohesive report:\n\nIntroduction\n\nsummarize your motivation, present some previous work related to your question\npresent your research question\nsummarize your report\n\nData and Methods\n\nWhere does the data come from? – What is the unit of observation? – What are the variables of interest? – What steps did you take to wrangle the data?\n\nAnalysis\n\nDescribe the methods/tools you explored in your project.\n\nResults\n\nGive a detailed summary of your results. – Present your results clearly and concisely. – Please use visualizations instead of tables whenever possible.\n\nDiscussion\n\nRe-introduce your main results\nState your contributions\nWhere do you want take this project next?\n\n\nIMPORTANT: There is not literature review section. You can use the literature to motivate your work. But you don’t need to have a full section on literature review. Read for example, papers at main general interest journals, like here, here and here. All these super accomplished articles do not have long literature reviews."
-  },
-  {
-    "objectID": "finalproject.html#submission-of-the-final-project",
-    "href": "finalproject.html#submission-of-the-final-project",
-    "title": "Instructions for PPOL 6801 - Final Project",
-    "section": "Submission of the Final Project",
-    "text": "Submission of the Final Project\nThe end product should be a github repository that contains:\n\nThe raw source data you used for the project. If the data is too large for GitHub, talk with me, and we will find a solution\nYour proposal\nA README for the repository that, for each file, describes in detail:\n\nInputs to the file: e.g., raw data; a file containing credentials needed to access an API\nWhat the file does: describe major transformations.\nOutput: if the file produces any outputs (e.g., a cleaned dataset; a figure or graph).\nA set of code files that transform that data into a form usable to answer the question you have posed in your descriptive research proposal.\nYour final 10 pages report (I will share a template later in the semester)\n\n\nOf course, no commits after the due date will be considered in the assessment."
-  },
-  {
-    "objectID": "finalproject.html#templates-for-writing",
-    "href": "finalproject.html#templates-for-writing",
-    "title": "Instructions for PPOL 6801 - Final Project",
-    "section": "Templates for writing",
-    "text": "Templates for writing\nHere, I suggest you with a few templates for writing your reports. In my experience, writing data science reports using LaTeX is an gain in productivity in the long-run.\nIf you want to experiment with LaTeX via overleaf, you should use this template from PNAS (Just remember to switch to a one-column template):\n\nPNAS Template\n\nYou can also use the Journal of Quantitative Description templates in Word Doc or LaTeX:\n\nJQD Word\nJQD LaTeX\n\nOr, you can use templates from Quarto and write you entire project using quarto or markdown files"
+    "section": "Off-the-shelf models III: LLMs",
+    "text": "Off-the-shelf models III: LLMs\nGenAI Models (with zero-shot prompting) can also be used to replace dictionaries\n\n\n\n\n\n\n\nPaper: https://www.pnas.org/doi/10.1073/pnas.2308950121"
   },
   {
     "objectID": "slides/week_02.html#outline",
@@ -628,6 +544,363 @@
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Things you like about this paper…",
     "text": "Things you like about this paper…"
+  },
+  {
+    "objectID": "finalproject.html",
+    "href": "finalproject.html",
+    "title": "Instructions for PPOL 6801 - Final Project",
+    "section": "",
+    "text": "Data science is an applied field and the DSPP is particularly geared towards providing students the tools to make policy and substantive contributions using data and recent computational developments.\nIn this sense, it is fundamental that you understand how to conduct a complete analysis from collecting data, to cleaning and analyzing it, to presenting your findings.\nFor this reason, a considerable part of your grade (40%) will come from a an independent data science project, applying concepts learned throughout the course.\nThe project is composed of three parts:\n\na 2 page project proposal: (which should be discussed and approved by me)\nan in-class presentation,\nA 10-page project report.\n\nDue dates and breakdowns for the project are as follows:\n\n\n\n\n\n\n\n\n\nRequirement\nDue\nLength\nPercentage\n\n\n\n\nProject Proposal\nEOD Friday Week 9\n2 pages\n5%\n\n\nPresentation\nWeek 14\n10-15 minutes\n10%\n\n\nProject Report\nWednesday Week 15\n10 pages\n25%"
+  },
+  {
+    "objectID": "finalproject.html#general-instructions",
+    "href": "finalproject.html#general-instructions",
+    "title": "Instructions for PPOL 6801 - Final Project",
+    "section": "",
+    "text": "Data science is an applied field and the DSPP is particularly geared towards providing students the tools to make policy and substantive contributions using data and recent computational developments.\nIn this sense, it is fundamental that you understand how to conduct a complete analysis from collecting data, to cleaning and analyzing it, to presenting your findings.\nFor this reason, a considerable part of your grade (40%) will come from a an independent data science project, applying concepts learned throughout the course.\nThe project is composed of three parts:\n\na 2 page project proposal: (which should be discussed and approved by me)\nan in-class presentation,\nA 10-page project report.\n\nDue dates and breakdowns for the project are as follows:\n\n\n\n\n\n\n\n\n\nRequirement\nDue\nLength\nPercentage\n\n\n\n\nProject Proposal\nEOD Friday Week 9\n2 pages\n5%\n\n\nPresentation\nWeek 14\n10-15 minutes\n10%\n\n\nProject Report\nWednesday Week 15\n10 pages\n25%"
+  },
+  {
+    "objectID": "finalproject.html#all-components-of-the-project",
+    "href": "finalproject.html#all-components-of-the-project",
+    "title": "Instructions for PPOL 6801 - Final Project",
+    "section": "All components of the project:",
+    "text": "All components of the project:\n\nProject Proposal\nThe project proposal asks that you sketch out a general 2 page (single-spaced; 12pt font) project proposal. The proposal should offer the following information:\n\nA high-level statement of the problem you intend to address or the analysis you aim to generate\nThe data source(s) you intend to use\nYour plan to obtain that data\nThe text as data method you plan to use.\nA definition for what “success” means with respect to your project.\n\nIn your words, what would a successful project look like? What is the results you want to show? What would be a surprising finding for you?\n\n\n\n\nPresentation\nYou will have the opportunity to present you final project in class. As a Data scientists, your presentation skills are as important as your data skills. You should prepare a 10-12 minutes presentation. It should cover:\n\nMotivation or problem statement\nData collection\nMethods\nResults\nLessons learned and next steps\n\n\n\nProject Report\nThe report is a complete description of the project’s analysis and results. The report should be a 10 page in length (single-spaced; 12pt font) and cover the points presented below. Citations and Front page will not be considered in the 10 page.\nBelow I’ve outlined points that one should aim to discuss in each section. Note that paper should read as a cohesive report:\n\nIntroduction\n\nsummarize your motivation, present some previous work related to your question\npresent your research question\nsummarize your report\n\nData and Methods\n\nWhere does the data come from? – What is the unit of observation? – What are the variables of interest? – What steps did you take to wrangle the data?\n\nAnalysis\n\nDescribe the methods/tools you explored in your project.\n\nResults\n\nGive a detailed summary of your results. – Present your results clearly and concisely. – Please use visualizations instead of tables whenever possible.\n\nDiscussion\n\nRe-introduce your main results\nState your contributions\nWhere do you want take this project next?\n\n\nIMPORTANT: There is not literature review section. You can use the literature to motivate your work. But you don’t need to have a full section on literature review. Read for example, papers at main general interest journals, like here, here and here. All these super accomplished articles do not have long literature reviews."
+  },
+  {
+    "objectID": "finalproject.html#submission-of-the-final-project",
+    "href": "finalproject.html#submission-of-the-final-project",
+    "title": "Instructions for PPOL 6801 - Final Project",
+    "section": "Submission of the Final Project",
+    "text": "Submission of the Final Project\nThe end product should be a github repository that contains:\n\nThe raw source data you used for the project. If the data is too large for GitHub, talk with me, and we will find a solution\nYour proposal\nA README for the repository that, for each file, describes in detail:\n\nInputs to the file: e.g., raw data; a file containing credentials needed to access an API\nWhat the file does: describe major transformations.\nOutput: if the file produces any outputs (e.g., a cleaned dataset; a figure or graph).\nA set of code files that transform that data into a form usable to answer the question you have posed in your descriptive research proposal.\nYour final 10 pages report (I will share a template later in the semester)\n\n\nOf course, no commits after the due date will be considered in the assessment."
+  },
+  {
+    "objectID": "finalproject.html#templates-for-writing",
+    "href": "finalproject.html#templates-for-writing",
+    "title": "Instructions for PPOL 6801 - Final Project",
+    "section": "Templates for writing",
+    "text": "Templates for writing\nHere, I suggest you with a few templates for writing your reports. In my experience, writing data science reports using LaTeX is an gain in productivity in the long-run.\nIf you want to experiment with LaTeX via overleaf, you should use this template from PNAS (Just remember to switch to a one-column template):\n\nPNAS Template\n\nYou can also use the Journal of Quantitative Description templates in Word Doc or LaTeX:\n\nJQD Word\nJQD LaTeX\n\nOr, you can use templates from Quarto and write you entire project using quarto or markdown files"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "PPOL 6801: Text as Data - Computational Linguistics",
+    "section": "",
+    "text": "This course introduces students to the quantitative analysis of text as data. With the increasing availability of large-scale textual data – from government documents and political speeches to social media and online news – the potential to extract meaningful insights from text has expanded dramatically. In this course, students will learn to transform text into data and apply it to social science questions and theories. The focus is on understanding the real-world use of text as data, through a large collection of recent academic articles, rather than just the mathematical and computational theory behind it, which we will definitely cover.\nThe class content can be broadly split into two parts. First, we start with traditional approaches that model text as data using a bag-of-words assumption. Here, we’ll cover various methods, including building and utilizing dictionaries, understanding sentiment in text, scaling texts on ideological and policy dimensions, and applying machine learning to classify text. In the second half of the class, we will focus on state-of-the-art models that move beyond bag-of-words and sparse representations of text, and model text based on embeddings/dense representations of words. Here, we begin with an overview of how to represent text as data, from sparse representations via bag-of-words models to dense representations using word embeddings. We then discuss the use of deep learning models for text representation and downstream classification tasks. From here, we will discuss the foundation of the state-of-the-art machine learning models for text analysis: transformer models. Lastly, we will discuss several applications of large language models in social science tasks.\nThe course includes hands-on exercises using real-world data to reinforce lecture content. By the end, students will have a toolkit for text analysis that is useful in roles such as policy experts and computational social scientists. Students should have completed at least an introductory statistics course and have a basic understanding of probability, distributions, hypothesis testing, and linear models. Students are also expected to have experience working with R, the programming language and software environment used in this course, and Python for the LLM components of the course."
+  },
+  {
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "PPOL 6801: Text as Data - Computational Linguistics",
+    "section": "",
+    "text": "This course introduces students to the quantitative analysis of text as data. With the increasing availability of large-scale textual data – from government documents and political speeches to social media and online news – the potential to extract meaningful insights from text has expanded dramatically. In this course, students will learn to transform text into data and apply it to social science questions and theories. The focus is on understanding the real-world use of text as data, through a large collection of recent academic articles, rather than just the mathematical and computational theory behind it, which we will definitely cover.\nThe class content can be broadly split into two parts. First, we start with traditional approaches that model text as data using a bag-of-words assumption. Here, we’ll cover various methods, including building and utilizing dictionaries, understanding sentiment in text, scaling texts on ideological and policy dimensions, and applying machine learning to classify text. In the second half of the class, we will focus on state-of-the-art models that move beyond bag-of-words and sparse representations of text, and model text based on embeddings/dense representations of words. Here, we begin with an overview of how to represent text as data, from sparse representations via bag-of-words models to dense representations using word embeddings. We then discuss the use of deep learning models for text representation and downstream classification tasks. From here, we will discuss the foundation of the state-of-the-art machine learning models for text analysis: transformer models. Lastly, we will discuss several applications of large language models in social science tasks.\nThe course includes hands-on exercises using real-world data to reinforce lecture content. By the end, students will have a toolkit for text analysis that is useful in roles such as policy experts and computational social scientists. Students should have completed at least an introductory statistics course and have a basic understanding of probability, distributions, hypothesis testing, and linear models. Students are also expected to have experience working with R, the programming language and software environment used in this course, and Python for the LLM components of the course."
+  },
+  {
+    "objectID": "index.html#class-website",
+    "href": "index.html#class-website",
+    "title": "PPOL 6801: Text as Data - Computational Linguistics",
+    "section": "Class Website",
+    "text": "Class Website\nhttps://tiagoventura.github.io/PPOL_6801/"
+  },
+  {
+    "objectID": "index.html#instructor",
+    "href": "index.html#instructor",
+    "title": "PPOL 6801: Text as Data - Computational Linguistics",
+    "section": "Instructor",
+    "text": "Instructor\nProfessor Tiago Ventura\n\nPronouns: He/Him\nEmail: tv186@georgetown.edu\nLectures: Every Monday, 9:30am - 12pm\nOffice Hours: Every Tuesday, 3pm - 4pm\n\nLocation: McCourt Building, 766"
+  },
+  {
+    "objectID": "index.html#office-hours",
+    "href": "index.html#office-hours",
+    "title": "PPOL 6801: Text as Data - Computational Linguistics",
+    "section": "Office Hours",
+    "text": "Office Hours\nYou are all welcome to the office hours. You can come to the office hours to:\n\nDrink some coffee;\nAsk what I am doing research at;\nTell me about your research;\nAsk any question about our class;\nOr just talk about soccer.\n\nAll are valid options! And no need to schedule time with me!"
+  },
+  {
+    "objectID": "index.html#course-infra-structure",
+    "href": "index.html#course-infra-structure",
+    "title": "PPOL 6801: Text as Data - Computational Linguistics",
+    "section": "Course Infra-structure",
+    "text": "Course Infra-structure\nClass Website: This class website will be used throughout the course and should be checked on a regular basis for lecture materials and required readings.\nClass Slack Channel: The class also has a dedicated slack channel. The channel serves as an open forum to discuss, collaborate, pose problems/questions, and offer solutions. Students are encouraged to pose any questions they have there as this will provide the professor the means of answering the question so that all can see the response. If you’re unfamiliar with, please consult the following start-up tutorial https://get.slack.help/hc/en-us/articles/218080037-Getting-started-for-new-members. Please follow the invite link to be added to the Slack channel.\nCanvas: A Canvas site http://canvas.georgetown.edu will be used throughout the course and should be checked on a regular basis for announcements. Materials will be posted here, and not on canvas, or distributed in class or by e-mail. Support for Canvas is available at (202) 687-4949"
+  },
+  {
+    "objectID": "index.html#credits",
+    "href": "index.html#credits",
+    "title": "PPOL 6801: Text as Data - Computational Linguistics",
+    "section": "Credits",
+    "text": "Credits\nTo build this course, I used materials from Arthur Spirling Text-as-Data Class at NYU, and lab materials from various TA’s for his course (Elisa Wirsching, Lucia Motolinia, Pedro L. Rodriguez, Kevin Munger, Patrick Chester, Leslie Huang), Pablo Barbera’s Computational Social Science Seminar seminar, Brandon Stewart, Alex Siegel, Chris Bail, Sebastian Vallejo, among others. Their lessons and inspiration are spread throughout all the materials of the course. Thanks!"
+  },
+  {
+    "objectID": "slides/week_03.html#housekeeping",
+    "href": "slides/week_03.html#housekeeping",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Housekeeping",
+    "text": "Housekeeping\n\nYou have your pairs for the replication exercise.\nNext steps:\n\nSelect the paper you wish to replicate (until lecture day next week)\nPost on Slack\nTalk to me if you have any issues"
+  },
+  {
+    "objectID": "slides/week_03.html#where-are-we",
+    "href": "slides/week_03.html#where-are-we",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Where are we?",
+    "text": "Where are we?\nLast week:\n\nPre-processing text + bag of words ~&gt; reduces greatly text complexity (dimensions)\nText representation using vectors of numbers ~&gt; document feature matrix (text to numbers)\nExample of counting words to make inference"
+  },
+  {
+    "objectID": "slides/week_03.html#plans-for-today",
+    "href": "slides/week_03.html#plans-for-today",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Plans for today",
+    "text": "Plans for today\nWe will start thinking about latent outcomes from text. Our first approach will focus on descriptive inference based on documents:\n\nComparing documents\nUsing similarity to measure text-reuse\n\nQuick linear algebra review\n\nEvaluating complexity in text\nWeighting (TF-iDF)"
+  },
+  {
+    "objectID": "slides/week_03.html#recall-vector-space-model",
+    "href": "slides/week_03.html#recall-vector-space-model",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Recall: Vector space model",
+    "text": "Recall: Vector space model\nTo represent documents as numbers, we use the vector space model representation:\n\n\nA document \\(D_i\\) is represented as a collection of features \\(W\\) (words, tokens, n-grams, etc…)\nEach feature \\(w_i\\) can be placed in a real line\nA document \\(D_i\\) is a point in a \\(\\mathbb{R}^W\\)\n\nEach document is now a vector,\nEach entry represents the frequency of a particular token or feature.\nStacking those vectors on top of each other gives the document feature matrix (DFM)."
+  },
+  {
+    "objectID": "slides/week_03.html#document-feature-matrix-fundamental-unit-of-tad",
+    "href": "slides/week_03.html#document-feature-matrix-fundamental-unit-of-tad",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Document-Feature Matrix: fundamental unit of TAD",
+    "text": "Document-Feature Matrix: fundamental unit of TAD\n\n\n\n\n\n\n\n\n\n\n\nSource: Arthur Spirling TAD Class"
+  },
+  {
+    "objectID": "slides/week_03.html#in-a-two-dimensional-space",
+    "href": "slides/week_03.html#in-a-two-dimensional-space",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "In a two dimensional space",
+    "text": "In a two dimensional space\n\n\n\nDocuments, W=2\n\n\nDocument 1 = “yes yes yes no no no”\nDocument 2 = “yes yes yes yes yes yes”"
+  },
+  {
+    "objectID": "slides/week_03.html#how-far-is-document-a-from-document-b",
+    "href": "slides/week_03.html#how-far-is-document-a-from-document-b",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "How `far’ is document a from document b?",
+    "text": "How `far’ is document a from document b?\nUsing the vector space, we can use notions of geometry to build well-defined comparisons between the documents.\n\n\nin multiple dimensions!!"
+  },
+  {
+    "objectID": "slides/week_03.html#euclidean-distance",
+    "href": "slides/week_03.html#euclidean-distance",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Euclidean Distance",
+    "text": "Euclidean Distance\nThe ordinary, straight line distance between two points in space. Using document vectors \\(y_a\\) and \\(y_b\\) with \\(j\\) dimensions\n\n\n\nEuclidean Distance\n\n\n\\[\n||U - V|| = \\sqrt{\\sum^{i}(U_{i} - {V_i})^2}\n\\]\n\n\n\nCan be performed for any number of features J\n\nNo negative distances\nDistance between documents is zero when documents are identical\nDistance between documents is symmetric\nSatisfy triangle inequality: \\(s_{ik} \\leq s_{ij} + s_{jk}\\)"
+  },
+  {
+    "objectID": "slides/week_03.html#euclidean-distance-w2",
+    "href": "slides/week_03.html#euclidean-distance-w2",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Euclidean Distance, w=2",
+    "text": "Euclidean Distance, w=2\n\n\n\nEuclidean Distance\n\n\n\\[\n||U - V|| = \\sqrt{\\sum^{i}(u_{i} - v_{i})^2}\n\\]\n\n\n\n\n\\(U\\) = [0, 2.51, 3.6, 0] and \\(yV\\) = [0, 2.3, 3.1, 9.2]\n\\(\\sum^{i}(U_{i} - y_{V_i})^2\\) = \\((0-0)^2 + (2.51-2.3)^2 + (3.6-3.1)^2 + (9-0)^2\\) = \\(84.9341\\)\n\\(\\sqrt{\\sum_{j=1}^j (y_a - y_b)^2}\\) = 9.21"
+  },
+  {
+    "objectID": "slides/week_03.html#exercise",
+    "href": "slides/week_03.html#exercise",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Exercise",
+    "text": "Exercise\n\n\n\nDocuments, W=2 {yes, no}\n\n\nDocument 1 = “yes yes yes no no no” (3, 3)\nDocument 2 = “yes yes yes yes yes yes” (6,0)\nDocument 3= “yes yes yes no no no yes yes yes no no no yes yes yes no no no yes yes yes no no no” (12, 12)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhich documents will the euclidean distance place closer together?\nDoes it look like a good measure for similarity?\n\nDoc C = Doc A * 3"
+  },
+  {
+    "objectID": "slides/week_03.html#cosine-similarity",
+    "href": "slides/week_03.html#cosine-similarity",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Cosine Similarity",
+    "text": "Cosine Similarity\nEuclidean distance rewards magnitude, rather than direction\n\\[\n\\text{cosine similarity}(\\mathbf{U}, \\mathbf{V}) = \\frac{\\mathbf{U} \\cdot \\mathbf{V}}{\\|\\mathbf{U}\\| \\|\\mathbf{V}\\|}\n\\]"
+  },
+  {
+    "objectID": "slides/week_03.html#vectors",
+    "href": "slides/week_03.html#vectors",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Vectors",
+    "text": "Vectors\n\nVector: an ordered list of numbers in a space with well-defined addition and scalar multiplication operations\nIt is defined as an object with both magnitude and direction\nMagnitude: how long it is\nDirection: where it points"
+  },
+  {
+    "objectID": "slides/week_03.html#vectors-1",
+    "href": "slides/week_03.html#vectors-1",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Vectors",
+    "text": "Vectors\n\nThe dimensionality of a vector is the number of elements it has\nFor example, [1, 2, 3, ] has dimensionality 3\nIn other words, it is a vector in 3D space\nThe vector [3,5] is 2D"
+  },
+  {
+    "objectID": "slides/week_03.html#scalar-multiplication-of-vectors",
+    "href": "slides/week_03.html#scalar-multiplication-of-vectors",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Scalar Multiplication of Vectors",
+    "text": "Scalar Multiplication of Vectors\nGiven a vector U and a scalar constant k, we can multiply a vector.\n\\[\nU*k = [k*u_1, k*u_2, k*u_3 ... k*u_n]\n\\]\n\n\nincreases the length/magnitude\ndoes not change the direction"
+  },
+  {
+    "objectID": "slides/week_03.html#magnitude-of-a-vector",
+    "href": "slides/week_03.html#magnitude-of-a-vector",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Magnitude of a vector",
+    "text": "Magnitude of a vector\nThe denominator of the cosine similarity formula gives you the magnitude or length of a vector.\n\nMagnitude: Use L2 Norm, Euclidean distance from origin point (0,0)\nIt converts a vector to a scalar representing the size of a vector\n\n\n\\[\n||\\mathbf{U}|| = \\sqrt(u1*u1 + u2*u2 ... u_n*u_n) = \\sqrt(\\sum^i u_i^2)\n\\]"
+  },
+  {
+    "objectID": "slides/week_03.html#vector-multiplication-dot-inner-product",
+    "href": "slides/week_03.html#vector-multiplication-dot-inner-product",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Vector Multiplication: Dot (Inner) Product",
+    "text": "Vector Multiplication: Dot (Inner) Product\nThe numerator of the cosine similarity is called ‘dot product’ between two vectors. This a multiplication between two vectors.\n\\[\n\\mathbf{U} \\cdot \\mathbf{V}= u_1*v_1 + u_2*v_2 + u_n*v_n = \\sum^i u_i*v_i\n\\]\n\nNotice: the dot product maps two vectors to real numbers."
+  },
+  {
+    "objectID": "slides/week_03.html#dot-product-geometric-intuition",
+    "href": "slides/week_03.html#dot-product-geometric-intuition",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Dot Product: Geometric Intuition",
+    "text": "Dot Product: Geometric Intuition\nIntuition:\n\n“the product of two vectors a and b is the projection of a onto b times the length of b (it is symmetric, so equivalently the projection of b onto a times the length of a).” (GMB, pp71)\n\nYou can see this by considering the geometric formula for the dot product:\n\\[\n\\mathbf{U} \\cdot \\mathbf{V}= ||U|| \\cdot ||V|| \\cdot cos(\\theta)\n\\]"
+  },
+  {
+    "objectID": "slides/week_03.html#section",
+    "href": "slides/week_03.html#section",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "",
+    "text": "More interestingly:\n\\[\n||Proj(U)_v ||= ||U|| cos(\\theta)\n\\]\nYet another formula\n\\[\n\\mathbf{U} \\cdot \\mathbf{V} = ||Proj(U)_v || ||V||\n\\]"
+  },
+  {
+    "objectID": "slides/week_03.html#dot-product-visually",
+    "href": "slides/week_03.html#dot-product-visually",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Dot Product Visually",
+    "text": "Dot Product Visually"
+  },
+  {
+    "objectID": "slides/week_03.html#section-1",
+    "href": "slides/week_03.html#section-1",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "",
+    "text": "“the product of two vectors a and b is the projection of a onto b times the length of b (it is symmetric, so equivalently the projection of b onto a times the length of a).” (GMB, pp71)"
+  },
+  {
+    "objectID": "slides/week_03.html#back-to-the-cosine-similarity",
+    "href": "slides/week_03.html#back-to-the-cosine-similarity",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Back to the Cosine Similarity",
+    "text": "Back to the Cosine Similarity\n\\[\n\\text{cosine similarity}(\\mathbf{U}, \\mathbf{V}) = \\frac{\\mathbf{U} \\cdot \\mathbf{V}}{\\|\\mathbf{U}\\| \\|\\mathbf{V}\\|}\n\\]\n\n\\(U \\cdot V\\) ~ dot product between vectors\n\nit is a projection of one vector into another\nWorks as a measure of similarity\nBut rewards magnitude\n\n\\(||\\mathbf{U}||\\) ~ vector magnitude, length ~ \\(\\sqrt{\\sum{u_{i}^2}}\\)\n\nnormalizes a vector projection of documents’ by their lengths\n\ncosine similarity captures some notion of relative direction controlling for different magnitudes."
+  },
+  {
+    "objectID": "slides/week_03.html#cosine-similarity-1",
+    "href": "slides/week_03.html#cosine-similarity-1",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Cosine Similarity",
+    "text": "Cosine Similarity\nCosine function has a range between -1 and 1.\n\nConsider: cos (0) = 1, cos (90) = 0, cos (180) = -1"
+  },
+  {
+    "objectID": "slides/week_03.html#exercise-1",
+    "href": "slides/week_03.html#exercise-1",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Exercise",
+    "text": "Exercise\nThe cosine function can range from [-1, 1]. When thinking about document vectors, cosine similarity is actually constrained to vary only from 0 - 1.\n\nWhy does cosine similarity for document vectors can never be lower than zero? Think about the vector representation and the document feature matrix."
+  },
+  {
+    "objectID": "slides/week_03.html#applications-think-tank-reports",
+    "href": "slides/week_03.html#applications-think-tank-reports",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Applications: Think Tank Reports",
+    "text": "Applications: Think Tank Reports\n\nCompiled a dataset of 36,603 episodes from 79 prominent political podcasters\nPre-processed text transcripts\nCalculated the cosine similarity between podcast transcripts and fact-checked claims (PolitiFact and Snopes)\nSet a cosine similarity threshold (e.g., 0.5) to filter significant matches\nOnce a claim was detected in a transcript, the analysis moved to determine how the claim was presented (manual review, sentiment analysis)\nQuantified the prevalence of unsubstantiated and false claims across the podcast episodes"
+  },
+  {
+    "objectID": "slides/week_03.html#more-metrics",
+    "href": "slides/week_03.html#more-metrics",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "More Metrics",
+    "text": "More Metrics"
+  },
+  {
+    "objectID": "slides/week_03.html#how-to-decide",
+    "href": "slides/week_03.html#how-to-decide",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "How to decide",
+    "text": "How to decide\n\nMagnitude? Euclidean or Manhattan Distance if total size/frequency of terms is important.\nProportions? Cosine Similarity if relative distribution of terms matters more than document length.\nOverlap? Jaccard Similarity if interested in shared terms regardless of frequency.\nTrends? Pearson Correlation to compare patterns in term distributions across documents.\nSparse, high-dimensional text data? Cosine similarity because it emphasizes proportional relationships and ignores document length.\nDense data with similar distribution? Euclidean distance because length are likely the same"
+  },
+  {
+    "objectID": "slides/week_03.html#section-2",
+    "href": "slides/week_03.html#section-2",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "",
+    "text": "We saw how to compare documents… now let’s move to other features of documents description. Let’s talk about:\n\nLexical Diversity\nReadability\nPolitical Sophistication"
+  },
+  {
+    "objectID": "slides/week_03.html#lexical-diversity",
+    "href": "slides/week_03.html#lexical-diversity",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Lexical Diversity",
+    "text": "Lexical Diversity\n\nLength refers to the size in terms of: characters, words, lines, sentences, paragraphs, pages, sections, chapters, etc.\nTokens are generally words ~ useful semantic unit for processing\nTypes are unique tokens.\nTypically \\(N_{tokens}\\) &gt;&gt;&gt;&gt; \\(N_{types}\\)\n\n\nType-to-Token ratio\n\\[\nTTR:\\frac{\\text{total type}}{\\text{total tokens}}\n\\]\n\nauthors with limited vocabularies will have a low lexical diversity"
+  },
+  {
+    "objectID": "slides/week_03.html#issues-with-ttr-and-extensions",
+    "href": "slides/week_03.html#issues-with-ttr-and-extensions",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Issues with TTR and Extensions",
+    "text": "Issues with TTR and Extensions\n\nTTR is very sensitive to overall document length,\n\nShorter texts may exhibit fewer word repetitions\n\nLength also correlates with topic variation ~ more types being added to the document"
+  },
+  {
+    "objectID": "slides/week_03.html#readability",
+    "href": "slides/week_03.html#readability",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Readability",
+    "text": "Readability\nReadability: ease with which reader (especially of given education) can comprehend a text\n\n\nCombines both difficulty (text) and sophistication (reader)\n\nAverage sentence length (based on the number of words) and average word length (based on the number of syllables) to indicate difficulty\nHuman inputs to built parameters about the readers\n\nHundred years of literature on the measurement of ‘readability’. The general issue was assigning school texts to students of different ages and abilities.\n\nExample: Flesch-Kincaid readability index"
+  },
+  {
+    "objectID": "slides/week_03.html#flesch-kincaid-readability-index",
+    "href": "slides/week_03.html#flesch-kincaid-readability-index",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Flesch-Kincaid readability index",
+    "text": "Flesch-Kincaid readability index\n\n\n\nFlesch Reading Ease (FRE)\n\n\n\\[\nFRE = 206.835 - 1.015\\left(\\frac{\\mbox{total words}}{\\mbox{total sentences}}\\right)-84.6\\left(\\frac{\\mbox{total syllables}}{\\mbox{total words}}\\right)\n\\]\n\n\n\n\n\n\nFlesch-Kincaid (Rescaled to US Educational Grade Levels)\n\n\n\\[\nFRE = 15.59 - 0.39\\left(\\frac{\\mbox{total words}}{\\mbox{total sentences}}\\right)- 11.8\\left(\\frac{\\mbox{total syllables}}{\\mbox{total words}}\\right)\n\\]\n\n\n\nInterpretation: 0-30: university level; 60-70: understandable by 13-15 year olds; and 90-100 easily understood by an 11-year old student."
+  },
+  {
+    "objectID": "slides/week_03.html#spirling-2016.-the-effects-of-the-second-reform-act",
+    "href": "slides/week_03.html#spirling-2016.-the-effects-of-the-second-reform-act",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Spirling, 2016. The effects of the Second Reform Act",
+    "text": "Spirling, 2016. The effects of the Second Reform Act\nResearch Question: How did suffrage extension affected the behavior of members of parliament (MPs) relative to ministers during the Victorian period?\nData: House of Commons (1832-1915) speeches\nMethod: FRE scores"
+  },
+  {
+    "objectID": "slides/week_03.html#your-turn-results",
+    "href": "slides/week_03.html#your-turn-results",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Your turn: Results",
+    "text": "Your turn: Results"
+  },
+  {
+    "objectID": "slides/week_03.html#how-much-can-we-trust-on-fre-discussion-of-benoit-et.-al.",
+    "href": "slides/week_03.html#how-much-can-we-trust-on-fre-discussion-of-benoit-et.-al.",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "How much can we trust on FRE? Discussion of Benoit et. al.",
+    "text": "How much can we trust on FRE? Discussion of Benoit et. al."
+  },
+  {
+    "objectID": "slides/week_03.html#benoit-et-al.-2019-political-sophistication.",
+    "href": "slides/week_03.html#benoit-et-al.-2019-political-sophistication.",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Benoit et al., 2019, Political Sophistication.",
+    "text": "Benoit et al., 2019, Political Sophistication.\nApproach\n\nGet human judgments of relative textual easiness for specifically political texts.\nUse a logit model to estimate latent “easiness” as equivalent to the “ability” parameter in the Bradley-Terry framework.\nUse these as training data for a tree-based model. Pick most important parameters\nRe-estimate the models using these covariates (Logit + covariates)\nUsing these parameters, one can “predict” the easiness parameter for a given new text\n\nNice plus ~ add uncertainty to model-based estimates via bootstrapping"
+  },
+  {
+    "objectID": "slides/week_03.html#benoit-et-al.-2019-political-sophistication",
+    "href": "slides/week_03.html#benoit-et-al.-2019-political-sophistication",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Benoit et al., 2019, Political Sophistication",
+    "text": "Benoit et al., 2019, Political Sophistication"
+  },
+  {
+    "objectID": "slides/week_03.html#can-we-do-better-than-just-using-frequencies",
+    "href": "slides/week_03.html#can-we-do-better-than-just-using-frequencies",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Can we do better than just using frequencies?",
+    "text": "Can we do better than just using frequencies?\nSo far our inputs for the vector representation of documents have relied simply the word frequencies.\nCan we do better?\n\nOne option: weighting\nWeighting function:\n\nReward words more unique;\nPunish words that appear in most documents"
+  },
+  {
+    "objectID": "slides/week_03.html#tf-idf-term-frequency---inverse-document-frequency",
+    "href": "slides/week_03.html#tf-idf-term-frequency---inverse-document-frequency",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "TF-IDF = Term Frequency - Inverse Document Frequency",
+    "text": "TF-IDF = Term Frequency - Inverse Document Frequency\n\\[\n\\text{TF-IDF}(t, d) = \\text{TF} \\times \\text{IDF}\n\\]\n\\[\n\\text{TF}(t, d) = \\frac{\\text{Number of times term } t \\text{ appears in document } d}{\\text{Total number of terms in document } d}\n\\]\n\\[\n\\text{IDF}(t) = \\log \\left( \\frac{\\text{Total number of documents}}{\\text{Number of documents with term } t \\text{ in them}} \\right)\n\\]"
+  },
+  {
+    "objectID": "slides/week_03.html#federalist-papers",
+    "href": "slides/week_03.html#federalist-papers",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Federalist Papers",
+    "text": "Federalist Papers"
   },
   {
     "objectID": "slides/week_01_intro.html#outline",
@@ -901,383 +1174,5 @@
     "title": "PPOL-6801",
     "section": "",
     "text": "This is a skeleton example of running pairwise comparisons of the senators of the 116th. I will send along the complete file as well with the final scores, so you can show what the final product looks like.\nLet me know if you also want the Bradley-Terry model code. That is in R, not Python, which makes it a little tougher. To the best of my knowledge, there is no optimized code to run the Bradley-Terry model within Python.\nThis code won’t run without an OpenAI key.\n\n!pip install openai\n\nCollecting openai\n  Downloading openai-0.28.1-py3-none-any.whl (76 kB)\n     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.0/77.0 kB ? eta -:--:--     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━ 61.4/77.0 kB 1.8 MB/s eta 0:00:01     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 77.0/77.0 kB 1.7 MB/s eta 0:00:00\nRequirement already satisfied: requests&gt;=2.20 in /usr/local/lib/python3.10/dist-packages (from openai) (2.31.0)\nRequirement already satisfied: tqdm in /usr/local/lib/python3.10/dist-packages (from openai) (4.66.1)\nRequirement already satisfied: aiohttp in /usr/local/lib/python3.10/dist-packages (from openai) (3.8.6)\nRequirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /usr/local/lib/python3.10/dist-packages (from requests&gt;=2.20-&gt;openai) (3.3.1)\nRequirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/local/lib/python3.10/dist-packages (from requests&gt;=2.20-&gt;openai) (3.4)\nRequirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /usr/local/lib/python3.10/dist-packages (from requests&gt;=2.20-&gt;openai) (2.0.7)\nRequirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.10/dist-packages (from requests&gt;=2.20-&gt;openai) (2023.7.22)\nRequirement already satisfied: attrs&gt;=17.3.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp-&gt;openai) (23.1.0)\nRequirement already satisfied: multidict&lt;7.0,&gt;=4.5 in /usr/local/lib/python3.10/dist-packages (from aiohttp-&gt;openai) (6.0.4)\nRequirement already satisfied: async-timeout&lt;5.0,&gt;=4.0.0a3 in /usr/local/lib/python3.10/dist-packages (from aiohttp-&gt;openai) (4.0.3)\nRequirement already satisfied: yarl&lt;2.0,&gt;=1.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp-&gt;openai) (1.9.2)\nRequirement already satisfied: frozenlist&gt;=1.1.1 in /usr/local/lib/python3.10/dist-packages (from aiohttp-&gt;openai) (1.4.0)\nRequirement already satisfied: aiosignal&gt;=1.1.2 in /usr/local/lib/python3.10/dist-packages (from aiohttp-&gt;openai) (1.3.1)\nInstalling collected packages: openai\nERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\nllmx 0.0.15a0 requires cohere, which is not installed.\nllmx 0.0.15a0 requires tiktoken, which is not installed.\nSuccessfully installed openai-0.28.1\n\n\n\nimport pandas as pd\nimport numpy as np\nimport os\nimport time\nimport openai\nfrom itertools import combinations\nfrom random import sample, choices\nimport random\nimport re\nfrom tqdm import tqdm\nfrom joblib import delayed, Parallel\n\n\nopenai.api_key = 'OPEN_AI_KEY_HERE'\n\n\n'''\np: the prompt\nsystem_prompt: the system prompt. The default is what is used on the ChatGPT's web interface.\ntemp: temperature parameter. 1.0 is the default (for GPT-3.5, temperature ranges from 0 to 2.0)\nrequest_timeout: the amount of time, in seconds, to timeout the function.\n'''\ndef prompting_openai_comparison(p,\n                                system_prompt='You are ChatGPT, a large language model trained by OpenAI, based on the GPT-3.5 architecture.\\nKnowledge cutoff: 2021-09\\nCurrent date: 2023-10-28',\n                                temp=1.0,\n                                request_timeout=5):\n  # times used to sleep; these values approximate exponential backoff\n  sleepy_times = [1, 1, 1, 1, 2, 2, 2, 2, 4, 4, 4, 4, 8, 8, 8, 8, 16, 16, 16, 16, 32, 32, 32, 32, 64, 64, 64, 64, 128, 128, 128, 128, 256, 256, 256, 256]\n\n\n  for i in range(len(sleepy_times)):\n    try:\n      response = openai.ChatCompletion.create(model=\"gpt-3.5-turbo\",\n                                              messages=[{\"role\": \"system\", \"content\": system_prompt},\n                                                        {\"role\": \"user\", \"content\": p}],\n                                              temperature=temp,\n                                              request_timeout=request_timeout)\n      break\n    except:\n      # if OpenAI's API returns an error, this lets you know and backs off for the set time, determined using the sleepy_times list\n      print('uh oh, ' + str(sleepy_times[i]))\n      time.sleep(sleepy_times[i])\n\n  return response\n\nDownload the name of the senators for the 116th Congress using Voteview. We can use wget to download it directly.\n\n!wget https://voteview.com/static/data/out/members/S116_members.csv\n\n--2023-10-28 20:48:50--  https://voteview.com/static/data/out/members/S116_members.csv\nResolving voteview.com (voteview.com)... 128.97.229.84\nConnecting to voteview.com (voteview.com)|128.97.229.84|:443... connected.\nHTTP request sent, awaiting response... 200 OK\nLength: 12590 (12K) [application/octet-stream]\nSaving to: ‘S116_members.csv’\n\nS116_members.csv      0%[                    ]       0  --.-KB/s               S116_members.csv    100%[===================&gt;]  12.29K  --.-KB/s    in 0s      \n\n2023-10-28 20:48:50 (291 MB/s) - ‘S116_members.csv’ saved [12590/12590]\n\n\n\n\ndf = pd.read_csv('S116_members.csv')\n\n\n# Add \"ordinary\" versions of senators' names\ndf['bioname_ordinary'] = ['Donald Trump',\n'Doug Jones',\n'Richard Shelby',\n'Lisa Murkowski',\n'Dan Sullivan',\n'Kyrsten Sinema',\n'Martha McSally',\n'Mark Kelly',\n'John Boozman',\n'Tom Cotton',\n'Kamala Harris',\n'Dianne Feinstein',\n'Cory Gardner',\n'Michael Bennet',\n'Chris Murphy',\n'Richard Blumenthal',\n'Tom Carper',\n'Chris Coons',\n'Marco Rubio',\n'Rick Scott',\n'Johnny Isakson',\n'David Perdue',\n'Kelly Loeffler',\n'Mazie Hirono',\n'Brian Schatz',\n'Mike Crapo',\n'James Risch',\n'Dick Durbin',\n'Tammy Duckworth',\n'Todd Young',\n'Mike Braun',\n'Chuck Grassley',\n'Joni Ernst',\n'Pat Roberts',\n'Jerry Moran',\n'Mitch McConnell',\n'Rand Paul',\n'Bill Cassidy',\n'John Kennedy',\n'Angus King',\n'Susan Collins',\n'Ben Cardin',\n'Chris Van Hollen',\n'Ed Markey',\n'Elizabeth Warren',\n'Gary Peters',\n'Debbie Stabenow',\n'Amy Klobuchar',\n'Tina Smith',\n'Roger Wicker',\n'Cindy Hyde-Smith',\n'Roy Blunt',\n'Josh Hawley',\n'Steve Daines',\n'Jon Tester',\n'Deb Fischer',\n'Ben Sasse',\n'Jacky Rosen',\n'Catherine Cortez Masto',\n'Jeanne Shaheen',\n'Maggie Hassan',\n'Bob Menendez',\n'Cory Booker',\n'Martin Heinrich',\n'Tom Udall',\n'Chuck Schumer',\n'Kirsten Gillibrand',\n'Richard Burr',\n'Thom Tillis',\n'Kevin Cramer',\n'John Hoeven',\n'Rob Portman',\n'Sherrod Brown',\n'Jim Inhofe',\n'James Lankford',\n'Ron Wyden',\n'Jeff Merkley',\n'Pat Toomey',\n'Bob Casey',\n'Jack Reed',\n'Sheldon Whitehouse',\n'Tim Scott',\n'Lindsey Graham',\n'John Thune',\n'Mike Rounds',\n'Marsha Blackburn',\n'Lamar Alexander',\n'John Cornyn',\n'Ted Cruz',\n'Mike Lee',\n'Mitt Romney',\n'Patrick Leahy',\n'Bernie Sanders',\n'Mark Warner',\n'Tim Kaine',\n'Maria Cantwell',\n'Patty Murray',\n'Shelley Moore Capito',\n'Joe Manchin',\n'Tammy Baldwin',\n'Ron Johnson',\n'John Barrasso',\n'Mike Enzi']\n\n\n# Delete Donald Trump\ndf = df.iloc[1:,]\n\nThen get dictionaries that obtain the party and state for each senator by name\n\nnames = list(df['bioname_ordinary'])\nstate = list(df['state_abbrev'])\nparty = ['R' if j==200 else 'D' if j==100 else 'I' for j in list(df['party_code'])]\n\nname_party_dict = {n: p for n,p in zip(names,party)}\nname_state_dict = {n: s for n,s in zip(names,state)}\n\nI don’t think you want to run all 5151 comparisons in class. So let’s sample 3 comparisons per senator. This is not going to give great results, but it shows what it can do.\n\n# this function samples a total number of matchups per senator. this does not mean that each senator is limited to a max of sample_size matchups\n# it means each senator will appear in at least sample_size matchups\ndef generate_pairwise_matchups(items, sample_size=20, seed_value=42):\n  random.seed(seed_value)\n\n  if sample_size &gt;= len(items) or sample_size &lt; 1:\n    raise ValueError(\"Sample size must be between 1 and one less than the total number of tweet IDs\")\n\n  all_matchups = []\n\n  # Generate all possible pairings\n  all_combinations = list(combinations(items, 2))\n\n  for i in items:\n    # Filter matchups containing the current tweet ID\n    relevant_matchups = [pair for pair in all_combinations if i in pair]\n\n    # Shuffle the matchups\n    random.shuffle(relevant_matchups)\n\n    # Sample from these matchups up to the specified sample size\n    all_matchups.extend(relevant_matchups[:sample_size])\n\n  return all_matchups\n\n\nmatchups = generate_pairwise_matchups(names, sample_size=3, seed_value=42)\n\n\nlen(matchups)\n\n306\n\n\nHere, we note the direction of comparison. We have to use liberal and conservative differently in these prompts because, when comparing two Republicans, if I prompt ChatGPT with “who is more liberal,” it will often fail to answer this and reply that both senators are conservative.\n\nprompts = []\ncomparison_direction = []\n\nfor j in matchups:\n    # D vs. D\n    if (name_party_dict[j[0]]=='D' or name_party_dict[j[0]]=='I') and (name_party_dict[j[1]]=='D' or name_party_dict[j[1]]=='I'):\n        sent = 'Based on past voting records and statements, which senator is more liberal: ' + j[0] + ' (' + name_party_dict[j[0]] + '-' + name_state_dict[j[0]] + ') or ' + j[1] + ' (' + name_party_dict[j[1]] + '-' + name_state_dict[j[1]] + ')?'\n        comparison_direction.append('liberal')\n    # D vs. R\n    elif (name_party_dict[j[0]]=='D' or name_party_dict[j[0]]=='I') and (name_party_dict[j[1]]=='R'):\n        sent = 'Based on past voting records and statements, which senator is more liberal: ' + j[0] + ' (' + name_party_dict[j[0]] + '-' + name_state_dict[j[0]] + ') or ' + j[1] + ' (' + name_party_dict[j[1]] + '-' + name_state_dict[j[1]] + ')?'\n        comparison_direction.append('liberal')\n    # R vs. D\n    elif (name_party_dict[j[0]]=='R') and (name_party_dict[j[1]]=='D' or name_party_dict[j[1]]=='I'):\n        sent = 'Based on past voting records and statements, which senator is more liberal: ' + j[0] + ' (' + name_party_dict[j[0]] + '-' + name_state_dict[j[0]] + ') or ' + j[1] + ' (' + name_party_dict[j[1]] + '-' + name_state_dict[j[1]] + ')?'\n        comparison_direction.append('liberal')\n    # R vs. R\n    elif (name_party_dict[j[0]]=='R') and (name_party_dict[j[1]]=='R'):\n        sent = 'Based on past voting records and statements, which senator is more conservative: ' + j[0] + ' (' + name_party_dict[j[0]] + '-' + name_state_dict[j[0]] + ') or ' + j[1] + ' (' + name_party_dict[j[1]] + '-' + name_state_dict[j[1]] + ')?'\n        comparison_direction.append('conservative')\n    else:\n        print('OH NO!')\n        break\n    prompts.append(sent)\n\nSet the system prompt for the pairwise comparison. I find that using the default actually works really well, and hallucinates the least.\n\nsystem_prompt = 'You are ChatGPT, a large language model trained by OpenAI, based on the GPT-3.5 architecture.\\nKnowledge cutoff: 2021-09\\nCurrent date: 2023-09-11'\n\nLet’s peak at the what the prompts look like\n\nprint(prompts[0:10])\n\n['Based on past voting records and statements, which senator is more liberal: Doug Jones (D-AL) or Debbie Stabenow (D-MI)?', 'Based on past voting records and statements, which senator is more liberal: Doug Jones (D-AL) or Jerry Moran (R-KS)?', 'Based on past voting records and statements, which senator is more liberal: Doug Jones (D-AL) or Chuck Schumer (D-NY)?', 'Based on past voting records and statements, which senator is more conservative: Richard Shelby (R-AL) or Roger Wicker (R-MS)?', 'Based on past voting records and statements, which senator is more liberal: Richard Shelby (R-AL) or Sheldon Whitehouse (D-RI)?', 'Based on past voting records and statements, which senator is more liberal: Richard Shelby (R-AL) or Mark Kelly (D-AZ)?', 'Based on past voting records and statements, which senator is more conservative: Lisa Murkowski (R-AK) or Jerry Moran (R-KS)?', 'Based on past voting records and statements, which senator is more conservative: Lisa Murkowski (R-AK) or Cory Gardner (R-CO)?', 'Based on past voting records and statements, which senator is more conservative: Lisa Murkowski (R-AK) or Jim Inhofe (R-OK)?', 'Based on past voting records and statements, which senator is more liberal: Dan Sullivan (R-AK) or Catherine Cortez Masto (D-NV)?']\n\n\nNow we’re finally ready to run the pairwise comparisons. We run it in parallel because it takes a very long time to run if you iterate one prompt at a time.\n\n# this is technical code needed to run things in parallel\ndef chunked_data(data, chunk_size):\n    \"\"\"Yield successive chunk_size chunks from data.\"\"\"\n    for i in range(0, len(data), chunk_size):\n        yield data[i:i+chunk_size]\n\n\ncomparison_results = []\n\nchunk_size = 10 # this will run 10 comparisons at once. Make sure you have at least 10 cores.\n\nfor data_chunk in tqdm(chunked_data(prompts, chunk_size), total=len(prompts)//chunk_size):\n    results = Parallel(n_jobs=chunk_size, backend='threading')(delayed(prompting_openai_comparison)(p, system_prompt, 1.0, 20) for p in data_chunk)\n    comparison_results.extend(results)\n\n  3%|▎         | 1/30 [00:06&lt;03:17,  6.83s/it] 70%|███████   | 21/30 [02:30&lt;00:56,  6.26s/it] 83%|████████▎ | 25/30 [03:12&lt;00:39,  7.83s/it]31it [04:05,  7.93s/it]\n\n\nuh oh, 1\nuh oh, 1\nuh oh, 1\n\n\n\n# Extract the text answer from ChatGPT responses\ndef get_text_from_chatgpt(responses):\n  return [responses[i]['choices'][0]['message']['content'] for i in range(len(responses))]\n\n\ncomparisons_text = get_text_from_chatgpt(comparison_results)\n\nThis is what a pairwise comparison looks like.\n\nprint(comparisons_text[0])\n\nBased on past voting records and statements, Debbie Stabenow (D-MI) is generally considered to be more liberal than Doug Jones (D-AL). \n\nDebbie Stabenow, as a senator representing Michigan, has consistently held progressive positions on various issues. She has supported measures to expand access to healthcare, increase funding for education, protect the environment, and advocate for workers' rights. Stabenow has been vocal in her support for women's reproductive rights and has opposed restrictions on abortion. As a member of the Senate Agriculture Committee, she has also championed policies to support farmers and promote sustainable agriculture.\n\nOn the other hand, Doug Jones, who previously represented Alabama in the Senate from 2018 to 2021, held more moderate positions compared to some of his Democratic colleagues. While he was known for his work on civil rights issues and his prosecution of two Ku Klux Klan members involved in the 1963 Birmingham church bombing, his overall record leaned more towards the center. Jones was notably more conservative on certain issues like gun control, where he expressed support for Second Amendment rights but also backed some regulations, such as background checks.\n\nIt's important to note that political ideologies can vary within a party, and senators may have different levels of liberalism across different issues. Moreover, individual positions can evolve over time based on changing circumstances and priorities. Therefore, it's always helpful to review the most up-to-date information and statements made by the senators to gain a comprehensive understanding of their current stances.\n\n\nNow we need to extract the answers from our comparisons. We’ll append our answers from before and ask ChatGPT to extract the answer.\n\nextracting_answer_prompt = []\n\nfor i in range(len(comparisons_text)):\n    if comparison_direction[i]=='liberal':\n        sent = 'Text: \"' + comparisons_text[i] + '\"\\n\\nIn the above Text, who is described to be the more liberal, more progressive, or less conservative senator: ' + matchups[i][0] + ' or ' + matchups[i][1] + '? Return only the full name without party affiliation or state information. If one senator is described as more conservative, return the other senator\\'s name. If one senator is described as more moderate, return the other senator\\'s name. If neither senators are described to be more liberal, more progressive, less conservative, more conservative, or more moderate, reply with \"Tie.\"'\n    elif comparison_direction[i]=='conservative':\n        sent = 'Text: \"' + comparisons_text[i] + '\"\\n\\nIn the above Text, who is described to be the more conservative or less liberal senator: ' + matchups[i][0] + ' or ' + matchups[i][1] + '? Return only the full name without party affiliation or state information. If one senator is described as more liberal, return the other senator\\'s name. If one senator is described as more moderate, return the other senator\\'s name. If neither senators are described to be more conservative, less liberal, more liberal, or more moderate, reply with \"Tie.\"'\n    extracting_answer_prompt.append(sent)\n\n\nsystem_prompt_extraction = 'You are reading a Text and extracting information from it according to the prompt. Follow the directions exactly.'\n\nAgain, we parallelize this procedure. Notice that we set the temperature to 0.0. We don’t want GPT to be very creative with this task.\n\nchunk_size = 10  # Or whatever size you want for your batches\n\nextraction = []\n\nfor data_chunk in tqdm(chunked_data(extracting_answer_prompt, chunk_size), total=len(extracting_answer_prompt)//chunk_size):\n    results = Parallel(n_jobs=chunk_size, backend='threading')(delayed(prompting_openai_comparison)(p, system_prompt_extraction, 0.0, 10) for p in data_chunk)\n    extraction.extend(results)\n\n31it [00:56,  1.84s/it]\n\n\n\nextraction_text = get_text_from_chatgpt(extraction)\n\nWe introduce a few functions to clean up the results\n\n# this function simply removes the period at the sentences\ndef remove_period(sentence):\n    if sentence.endswith('.'):\n        sentence = sentence[:-1]\n    return sentence\n\n# this function simply removes the 'Senator ' prefix. For example, it returns \"Dianne Feinstein\" if the input text is \"Senator Dianne Feinstein\"\ndef remove_senator_prefix(input_string):\n    if input_string.startswith(\"Senator \"):\n        return input_string[8:]\n    else:\n        return input_string\n\n\nextraction_text = [remove_period(t) for t in extraction_text]\nextraction_text = [remove_senator_prefix(t) for t in extraction_text]\n\n\nprint(extraction_text[0])\n\nDebbie Stabenow\n\n\nWe then use a function to check that every extraction was correct. Sometimes it will still not correctly extract the answer, which means we have to step in and manually fix it. If the function prints nothing, great!\n\ndef check_extraction_text(extraction_text, matchups):\n    for i in range(len(extraction_text)):\n        if extraction_text[i] != matchups[i][0] and extraction_text[i] != matchups[i][1] and extraction_text[i] != 'Tie':\n            print(i)\n            print(extraction_text[i])\n            print(comparisons_text[i])\n\n\ncheck_extraction_text(extraction_text, matchups)\n\nThis step will make the final dataframe with the resultant matchups.\n\ndef make_final_df(matchups, chatgpt_answers, final_answers, comparison_direction):\n    sen1 = [j[0] for j in matchups]\n    sen2 = [j[1] for j in matchups]\n\n    matchup_results = pd.DataFrame({'matchup': matchups,\n                                    'senator1': sen1,\n                                    'senator2': sen2,\n                                    'chatgpt_response': chatgpt_answers,\n                                    'final_answers': final_answers,\n                                    'comparison_direction': comparison_direction})\n\n    opposite = []\n    sen1_win = []\n    sen2_win = []\n\n    for i in range(len(matchup_results['matchup'])):\n        if matchup_results['comparison_direction'][i]=='liberal':\n            if matchup_results['final_answers'][i]==matchup_results['senator1'][i]:\n                sen1_win.append(0.0)\n                sen2_win.append(1.0)\n            elif matchup_results['final_answers'][i]==matchup_results['senator2'][i]:\n                sen1_win.append(1.0)\n                sen2_win.append(0.0)\n            elif matchup_results['final_answers'][i]=='Tie':\n                sen1_win.append(0.5)\n                sen2_win.append(0.5)\n        elif matchup_results['comparison_direction'][i]=='conservative':\n            if matchup_results['final_answers'][i]==matchup_results['senator1'][i]:\n                sen1_win.append(1.0)\n                sen2_win.append(0.0)\n            elif matchup_results['final_answers'][i]==matchup_results['senator2'][i]:\n                sen1_win.append(0.0)\n                sen2_win.append(1.0)\n            elif matchup_results['final_answers'][i]=='Tie':\n                sen1_win.append(0.5)\n                sen2_win.append(0.5)\n        else:\n            print(str(i) + ' is a defective outcome')\n\n    matchup_results['win1'] = sen1_win\n    matchup_results['win2'] = sen2_win\n\n    return matchup_results\n\n\nfinal_df = make_final_df(matchups=matchups,\n                         chatgpt_answers=comparisons_text,\n                         final_answers=extraction_text,\n                         comparison_direction=comparison_direction)\n\n\nfinal_df\n\n\n  \n    \n\n\n\n\n\n\nmatchup\nsenator1\nsenator2\nchatgpt_response\nfinal_answers\ncomparison_direction\nwin1\nwin2\n\n\n\n\n0\n(Doug Jones, Debbie Stabenow)\nDoug Jones\nDebbie Stabenow\nBased on past voting records and statements, D...\nDebbie Stabenow\nliberal\n1.0\n0.0\n\n\n1\n(Doug Jones, Jerry Moran)\nDoug Jones\nJerry Moran\nBased on past voting records and party affilia...\nDoug Jones\nliberal\n0.0\n1.0\n\n\n2\n(Doug Jones, Chuck Schumer)\nDoug Jones\nChuck Schumer\nBased on past voting records and statements, C...\nChuck Schumer\nliberal\n1.0\n0.0\n\n\n3\n(Richard Shelby, Roger Wicker)\nRichard Shelby\nRoger Wicker\nBased on the available information up until Se...\nRichard Shelby\nconservative\n1.0\n0.0\n\n\n4\n(Richard Shelby, Sheldon Whitehouse)\nRichard Shelby\nSheldon Whitehouse\nBased on past voting records and statements, S...\nSheldon Whitehouse\nliberal\n1.0\n0.0\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n301\n(Tina Smith, John Barrasso)\nTina Smith\nJohn Barrasso\nBased on past voting records and statements, T...\nTina Smith\nliberal\n0.0\n1.0\n\n\n302\n(Steve Daines, John Barrasso)\nSteve Daines\nJohn Barrasso\nBoth Steve Daines (R-MT) and John Barrasso (R-...\nSteve Daines\nconservative\n1.0\n0.0\n\n\n303\n(Amy Klobuchar, Mike Enzi)\nAmy Klobuchar\nMike Enzi\nBased on past voting records and statements, A...\nAmy Klobuchar\nliberal\n0.0\n1.0\n\n\n304\n(Marsha Blackburn, Mike Enzi)\nMarsha Blackburn\nMike Enzi\nBased on past voting records and statements, M...\nMarsha Blackburn\nconservative\n1.0\n0.0\n\n\n305\n(Debbie Stabenow, Mike Enzi)\nDebbie Stabenow\nMike Enzi\nBased on past voting records and party affilia...\nDebbie Stabenow\nliberal\n0.0\n1.0\n\n\n\n\n\n306 rows × 8 columns\n\n    \n\n  \n    \n\n  \n    \n  \n    \n\n  \n\n    \n  \n\n\n\n  \n\n\n    \n        \n    \n\n  \n\n\n\n  \n\n    \n  \n\n\nYou can now take this and use it with your favorite Bradley-Terry model function!\n\nfinal_df.to_csv('senator_3matchups_results.csv', index=False)"
-  },
-  {
-    "objectID": "slides/week_03.html#dot-product-geometric-intuition",
-    "href": "slides/week_03.html#dot-product-geometric-intuition",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Dot Product: Geometric Intuition",
-    "text": "Dot Product: Geometric Intuition\nIntuition:\n\n“the product of two vectors a and b is the projection of a onto b times the length of b (it is symmetric, so equivalently the projection of b onto a times the length of a).” (GMB, pp71)\n\nYou can see this by considering the geometric formula for the dot product:\n\\[\n\\mathbf{U} \\cdot \\mathbf{V}= ||U|| \\cdot ||V|| \\cdot cos(\\theta)\n\\]"
-  },
-  {
-    "objectID": "slides/week_03.html#section",
-    "href": "slides/week_03.html#section",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "",
-    "text": "More interestingly:\n\\[\n||Proj(U)_v ||= ||U|| cos(\\theta)\n\\]\nYet another formula\n\\[\n\\mathbf{U} \\cdot \\mathbf{V} = ||Proj(U)_v || ||V||\n\\]"
-  },
-  {
-    "objectID": "slides/week_03.html#vector-multiplication-dot-inner-product",
-    "href": "slides/week_03.html#vector-multiplication-dot-inner-product",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Vector Multiplication: Dot (Inner) Product",
-    "text": "Vector Multiplication: Dot (Inner) Product\nThe numerator of the cosine similarity is called ‘dot product’ between two vectors. This a multiplication between two vectors.\n\\[\n\\mathbf{U} \\cdot \\mathbf{V}= u_1*v_1 + u_2*v_2 + u_n*v_n = \\sum^i u_i*v_i\n\\]\n\nNotice: the dot product maps two vectors to real numbers."
-  },
-  {
-    "objectID": "slides/week_03.html#section-1",
-    "href": "slides/week_03.html#section-1",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "",
-    "text": "“the product of two vectors a and b is the projection of a onto b times the length of b (it is symmetric, so equivalently the projection of b onto a times the length of a).” (GMB, pp71)"
-  },
-  {
-    "objectID": "slides/week_03.html#section-2",
-    "href": "slides/week_03.html#section-2",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "",
-    "text": "We saw how to compare documents… now let’s move to other features of documents description. Let’s talk about:\n\nLexical Diversity\nReadability\nPolitical Sophistication"
-  },
-  {
-    "objectID": "slides/week_04.html#housekeeping",
-    "href": "slides/week_04.html#housekeeping",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Housekeeping",
-    "text": "Housekeeping\nYour first problem set will be assigned today! Some important information:\n\nYou will receive and submit your assignment using Github!\n\nGithub Clasroom: Creates automatically a repo for the assignment. You and I are owner of the repo.\nCome to my office hours if you don’t know how to work wirh GitHub\n\nDeadline: EOD next Monday, September 29th.\nPlease use an .RMD/.QMD/.ipynb file to submit your assignment.\nAny questions?"
-  },
-  {
-    "objectID": "slides/week_04.html#where-are-we",
-    "href": "slides/week_04.html#where-are-we",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Where are we?",
-    "text": "Where are we?\nAfter learning how to process and represent text as numbers, we started digging in on how to use text on a research pipeline.\n\nDescriptive inference:\n\n\nCounting words (Ban’s Paper)\nComparing document similarity using vector space model\nMeasures of lexical diversity and readability"
-  },
-  {
-    "objectID": "slides/week_04.html#plans-for-today",
-    "href": "slides/week_04.html#plans-for-today",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Plans for today",
-    "text": "Plans for today\nFor the next two weeks, we will talk about measurement and classification:\n\nToday:\n\nDictionary Methods\n\nDiscuss some well-known dictionaries\n\nOff-the-Shelf Classifiers\n\nPerspective API\nHugging Face (only see as a off-the-shelf machines, LMMs later in this course)\n\n\n\n\n\nNext week: training our own machine learning models"
-  },
-  {
-    "objectID": "slides/week_04.html#connecting-machine-learning-with-tad",
-    "href": "slides/week_04.html#connecting-machine-learning-with-tad",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Connecting Machine Learning with TAD",
-    "text": "Connecting Machine Learning with TAD\nIn the machine learning tradition, we are introduced to two core families of models:\n\n\nUnsupervised Models: learning (hidden or latent) structure in unlabeled data.\n\nTopic Models to cluster documents and words\n\n\n\n\n\nSupervised Models: learning relationship between inputs and a labeled set of outputs.\n\nSentiment Analysis, classify if a tweet contains misinformation, etc..\n\n\n\n\n\nIn TAD, we mostly use unsupervised techniques for discovery and supervised for measurement of concepts."
-  },
-  {
-    "objectID": "slides/week_04.html#supervised-learning-pipeline-for-tad",
-    "href": "slides/week_04.html#supervised-learning-pipeline-for-tad",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Supervised Learning Pipeline for TAD",
-    "text": "Supervised Learning Pipeline for TAD\n\n\nStep 0: identify a dataset and a concept you would like to measure\n\nSentiment of tweets about politics\n\nStep 1: label some examples of the concept of we want to measure\n\nsome tweets are positive, some are neutral and some are negative\n\nStep 2: train a statistical model on these set of labelled data using the document-feature matrix as input.\n\nchoose a model (transformation function) that gives higher out-of-sample accuracy\n\nStep 3: use the classifier - some f(x) - to predict unseen documents.\n\nuse the model to predict sentiment on new tweets\n\nStep 4: use the measure + metadata to learn something new about the world.\n\nThis is where social science happens!"
-  },
-  {
-    "objectID": "slides/week_04.html#back-to-the-future-exercise",
-    "href": "slides/week_04.html#back-to-the-future-exercise",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Back to the Future Exercise",
-    "text": "Back to the Future Exercise\n\n\n\n\n\nvia GIPHY\n\n\nAssume you can travel back twenty years ago, you want to run a simple sentiment analysis in a corpus of news articles.\n\nWhich challenges would you face?\nHow could you solve it?\nPlease consider all four steps described before"
-  },
-  {
-    "objectID": "slides/week_04.html#overview-of-dictionaries",
-    "href": "slides/week_04.html#overview-of-dictionaries",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Overview of Dictionaries",
-    "text": "Overview of Dictionaries\n\n\nUse a set of pre-defined words that allow us to classify documents automatically, quickly and accurately.\nInstead of optimizing a transformation function using statistical assumption and seen data, in dictionaries we have a pre-assumed recipe for the transformation function.\nA dictionary contains:\n\na list of words that corresponds to each category\n\npositive and negative for sentiment\nSexism, homophobia, xenophobia, racism for hate speech\n\n\nWeights given to each word\n\nsame for all words\nsome continuous variation."
-  },
-  {
-    "objectID": "slides/week_04.html#more-specifically",
-    "href": "slides/week_04.html#more-specifically",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "More specifically…",
-    "text": "More specifically…\nWe have a set of key words with weights,\n\ne.g. for sentiment analysis: horrible is scored as \\(-1\\) and beautiful as \\(+1\\)\nthe relative rate of occurrence of these terms tells us about the overall tone or category that the document should be placed in.\n\n\nFor document \\(i\\) and words \\(m=1,\\ldots, M\\) in the dictionary,\n\\[\\text{tone of document $i$}= \\sum^M_{m=1} \\frac{s_m w_{im}}{N_i}\\]\nWhere:\n\n\\(s_m\\) is the score of word \\(m\\)\n\\(w_{im}\\) is the number of occurrences of the \\(m_{th}\\) dictionary word in the document \\(i\\)\n\\(N_i\\) is the total number of all dictionary words in the document"
-  },
-  {
-    "objectID": "slides/week_04.html#example-review-red-rising",
-    "href": "slides/week_04.html#example-review-red-rising",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Example: Review Red Rising",
-    "text": "Example: Review Red Rising\n\n\nGlowing reviews from me. A truly magnificent read with a plot ever so deep, characters that you grow incredibly fond of in books to follow, and writing that just flows carrying you through the page after page. Needless to say, I could not put it down and they only get better from book to book. I’ve just finished the third in the series and am beginning the forth. I’m absolutely hooked on this brilliant authors work. Long live the Reaper!! Howlers unite!"
-  },
-  {
-    "objectID": "slides/week_04.html#section",
-    "href": "slides/week_04.html#section",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "",
-    "text": "Glowing reviews from me. A truly magnificent read with a plot ever so deep, characters that you grow incredibly fond of in books to follow, and writing that just flows carrying you through the page after page. Needless to say, I could not put it down and they only get better from book to book. I am very anxious waiting for the next book I’ve just finished the third in the series and am beginning the forth. I’m absolutely hooked on this brilliant authors work. Long live the Reaper!! Howlers unite!\n\n\npositive words: 7, negative: 1; sentiment = \\(\\frac{7*1 + 1*(-1)}{8} = 0.875\\)"
-  },
-  {
-    "objectID": "slides/week_04.html#why-dictionaries",
-    "href": "slides/week_04.html#why-dictionaries",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Why Dictionaries?",
-    "text": "Why Dictionaries?\n\n\nLow cost and computationally efficient ~ if using a dictionary developed and validated by others\nA hybrid procedure between qualitative and quantitative classification at the fully automated end of the text analysis spectrum\nDictionary construction involves a lot of contextual interpretation and qualitative judgment\nTransparency: no black-box model behind the classification task"
-  },
-  {
-    "objectID": "slides/week_04.html#general-inquirer-stone-et-al-1966",
-    "href": "slides/week_04.html#general-inquirer-stone-et-al-1966",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "General Inquirer (Stone et al 1966)",
-    "text": "General Inquirer (Stone et al 1966)\n\n\nIt combines several dictionaries to make total of 182 categories:\n\nthe “Harvard IV-4” dictionary: psychology, themes, topics\nthe “Lasswell” dictionary, five categories based on the social cognition work of Semin and Fiedler\n\n“self references”, containing mostly pronouns;\n“negatives”, the largest category with 2291 entries"
-  },
-  {
-    "objectID": "slides/week_04.html#linquistic-inquiry-and-word-count",
-    "href": "slides/week_04.html#linquistic-inquiry-and-word-count",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Linquistic Inquiry and Word Count",
-    "text": "Linquistic Inquiry and Word Count\nCreated by Pennebaker et al — see http://www.liwc.net\n\nLarge dictionary with around 4,500 words and words steams\n90 categories\nCategories are organized hierarchically\n\nAll anger words, by definition, will be categorized as negative emotion and overall emotion words.\n\nWords are in one or more categories\n\nthe word cried is part of five word categories: sadness, negative emotion, overall affect, verb, and past tense verb.\n\nYou can buy it here: http://www.liwc.net/descriptiontable1.php"
-  },
-  {
-    "objectID": "slides/week_04.html#heavily-used-in-academia",
-    "href": "slides/week_04.html#heavily-used-in-academia",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Heavily used in academia!",
-    "text": "Heavily used in academia!\n\n\n\n\n\n\n\nPennebaker et al, 2009"
-  },
-  {
-    "objectID": "slides/week_04.html#vader-an-open-source-alternative-to-liwc",
-    "href": "slides/week_04.html#vader-an-open-source-alternative-to-liwc",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "VADER: an open-source alternative to LIWC",
-    "text": "VADER: an open-source alternative to LIWC\nValence Aware Dictionary and sEntiment Reasoner:\n\nTuned for social media text\nCapture polarity and intensity\n\nSentiment Lexicon: This is a list of known words and their associated sentiment scores.\nSentiment Intensity Scores: Each word in the lexicon is assigned a score that ranges from -4 (extremely negative) to +4 (extremely positive).\nFive Heuristic-based rules: exclamation points, caps lock, intensifiers, negation, tri-grams\n\nPython and R libraries: https://github.com/cjhutto/vaderSentiment\nArticle: https://ojs.aaai.org/index.php/ICWSM/article/view/14550/14399"
-  },
-  {
-    "objectID": "slides/week_04.html#young-sarokas-lexicoder-sentiment-dictionary",
-    "href": "slides/week_04.html#young-sarokas-lexicoder-sentiment-dictionary",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Young & Saroka’s Lexicoder Sentiment Dictionary",
-    "text": "Young & Saroka’s Lexicoder Sentiment Dictionary\n\nCreate dictionary specifically for political communication\nCombines:\n\nGeneral Inquirer;\nRoget’s Thesaurus and\nRegressive Imagery Dictionary\n\nEach words pertains to a single class\nPlus\n\nHand coding\nKeyword in context dos disambiguation"
-  },
-  {
-    "objectID": "slides/week_04.html#performance",
-    "href": "slides/week_04.html#performance",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Performance",
-    "text": "Performance\n\n\n\n\n\n\n\nLSD results assign 74% to the positive category and just 12% to the negative category. Of the 495 articles that are categorized as negative by at least two coders, LSD results assign 53% to the negative category and 32% to the positive category ~ 69% of accuracy"
-  },
-  {
-    "objectID": "slides/week_04.html#laver-and-garry-2000",
-    "href": "slides/week_04.html#laver-and-garry-2000",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Laver and Garry, 2000",
-    "text": "Laver and Garry, 2000\nA hierarchical set of categories to distinguish policy domains and policy positions on party manifestos\n\nFive Domains:\n\neconomy\npolitical system\nsocial system\nexternal relations\n\nLookes for word occurrences within “word strings with an average length of ten words”\nArticle: Estimating Policy Positions from Political Texts"
-  },
-  {
-    "objectID": "slides/week_04.html#laver-and-garry-2000-1",
-    "href": "slides/week_04.html#laver-and-garry-2000-1",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Laver and Garry, 2000",
-    "text": "Laver and Garry, 2000"
-  },
-  {
-    "objectID": "slides/week_04.html#rathje-et.-al-2020-pnas-out-group-animosity",
-    "href": "slides/week_04.html#rathje-et.-al-2020-pnas-out-group-animosity",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Rathje et. al 2020, PNAS, Out-group animosity",
-    "text": "Rathje et. al 2020, PNAS, Out-group animosity\n\nRQ:\nTheory:\nData:\nMethod:\nWhich year and where this paper was published?"
-  },
-  {
-    "objectID": "slides/week_04.html#rathje-et.-al-2020-pnas-out-group-animosity-1",
-    "href": "slides/week_04.html#rathje-et.-al-2020-pnas-out-group-animosity-1",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Rathje et. al 2020, PNAS, Out-group animosity",
-    "text": "Rathje et. al 2020, PNAS, Out-group animosity\n\nRQ: What drives engagement on social media?\nTheory: Role of social media in exacerbating political polarization\nData: Large datasets of tweets + Facebook posts news media accounts and US congressional members\nMethod:\n\n\nCategorize posts using dictionaries of negative affect, positive affect, and moral-emotional language\n\n\nFit regression models to examine how out-group/in-group/affective language predicted retweets and Facebook shares"
-  },
-  {
-    "objectID": "slides/week_04.html#rathje-et.-al-2020-pnas-out-group-animosity-2",
-    "href": "slides/week_04.html#rathje-et.-al-2020-pnas-out-group-animosity-2",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Rathje et. al 2020, PNAS, Out-group animosity",
-    "text": "Rathje et. al 2020, PNAS, Out-group animosity\n\nWe used the R package quanteda to analyze Twitter and Facebook text. During text preprocessing, we removed punctuation, URLs, and numbers. To classify whether a specific post was referring to a liberal or a conservative, we adapted previously used dictionaries that referred to words associated with liberals or conservatives. Specifically, these dictionaries included 1) a list of the top 100 most famous Democratic and Republican politicians according to YouGov, along with their Twitter handles (or Facebook page names for the Facebook datasets) (e.g., “Trump,” “Pete Buttigieg,” “@realDonaldTrump”); 2) a list of the current Democratic and Republican (but not independent) US Congressional members (532 total) along with their Twitter and Facebook names (e.g., “Amy Klobuchar,” “Tom Cotton”); and 3) a list of about 10 terms associated with Democratic (e.g., “liberal,” “democrat,” or “leftist”) or Republican identity (e.g., “conservative,” “republican,” or “ring-wing”)."
-  },
-  {
-    "objectID": "slides/week_04.html#advantages",
-    "href": "slides/week_04.html#advantages",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Advantages",
-    "text": "Advantages\nWe already discussed some of the advantages:\n\nlow-cost when working with open sourced dictionaries\n\nrelatively easy to build/expand on new dictionaries\n\nbridge qualitative and quantitative\neasy to validate\n\ndictionaries are transparent and reliable.\n\ntransfer well across languages."
-  },
-  {
-    "objectID": "slides/week_04.html#disadvantage-context-specific",
-    "href": "slides/week_04.html#disadvantage-context-specific",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Disadvantage: Context specific",
-    "text": "Disadvantage: Context specific\n\n\n\n\n\n\n\nSource: Gonzalez-Bailon et al"
-  },
-  {
-    "objectID": "slides/week_04.html#disadvantage-performance",
-    "href": "slides/week_04.html#disadvantage-performance",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Disadvantage: Performance",
-    "text": "Disadvantage: Performance\n\n\n\n\n\n\n\nMuddiman et al, 2019 - Reclaiming our Expertise"
-  },
-  {
-    "objectID": "slides/week_04.html#off-the-shelf-models-ventura-et.-al.-2021.",
-    "href": "slides/week_04.html#off-the-shelf-models-ventura-et.-al.-2021.",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Off-the-shelf models: Ventura et. al. 2021.",
-    "text": "Off-the-shelf models: Ventura et. al. 2021.\n\n\n\n\n\n\n\nSee article: Ventura et al. 2021, Connective Effervescence and Streaming Chat"
-  },
-  {
-    "objectID": "slides/week_04.html#off-the-shelf-deep-learning-models",
-    "href": "slides/week_04.html#off-the-shelf-deep-learning-models",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Off-the-shelf Deep Learning Models",
-    "text": "Off-the-shelf Deep Learning Models\n\nDefinition: Pre-trained models designed for general-purpose classification tasks\n\nIn general those are models built on TONS of data and optimized for a particular task\n\nKey Features:\n\nReady to use\nLow to zero cost\nDeep ML architectures ~ High accuracy\nCan be re-trained for your specific task"
-  },
-  {
-    "objectID": "slides/week_04.html#transformers",
-    "href": "slides/week_04.html#transformers",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Transformers",
-    "text": "Transformers"
-  },
-  {
-    "objectID": "slides/week_04.html#dict-i-general-inquirer-stone-et-al-1966",
-    "href": "slides/week_04.html#dict-i-general-inquirer-stone-et-al-1966",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Dict I: General Inquirer (Stone et al 1966)",
-    "text": "Dict I: General Inquirer (Stone et al 1966)\n\nIt combines several dictionaries to make total of 182 categories:\n\nthe “Harvard IV-4” dictionary: psychology, themes, topics\nthe “Lasswell” dictionary, five categories based on the social cognition work of Semin and Fiedler\n\n“self references”, containing mostly pronouns;\n“negatives”, the largest category with 2291 entries"
-  },
-  {
-    "objectID": "slides/week_04.html#dict-ii-linquistic-inquiry-and-word-count",
-    "href": "slides/week_04.html#dict-ii-linquistic-inquiry-and-word-count",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Dict II: Linquistic Inquiry and Word Count",
-    "text": "Dict II: Linquistic Inquiry and Word Count\nCreated by Pennebaker et al — see http://www.liwc.net\n\nLarge dictionary with around 4,500 words and words steams\n90 categories\nCategories are organized hierarchically\n\nAll anger words, by definition, will be categorized as negative emotion and overall emotion words.\n\nWords are in one or more categories\n\nthe word cried is part of five word categories: sadness, negative emotion, overall affect, verb, and past tense verb.\n\nYou can buy it here: http://www.liwc.net/descriptiontable1.php"
-  },
-  {
-    "objectID": "slides/week_04.html#dict-iii-vader---an-open-source-alternative-to-liwc",
-    "href": "slides/week_04.html#dict-iii-vader---an-open-source-alternative-to-liwc",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Dict III: VADER - an open-source alternative to LIWC",
-    "text": "Dict III: VADER - an open-source alternative to LIWC\nValence Aware Dictionary and sEntiment Reasoner:\n\nTuned for social media text; open source and free.\nCapture polarity and intensity\n\nSentiment Lexicon: this is a list of known words and their associated sentiment scores.\nSentiment Intensity Scores: Each word in the lexicon is assigned a score that ranges from -4 (extremely negative) to +4 (extremely positive).\nFive Heuristic-based rules: exclamation points, caps lock, intensifiers, negation, tri-grams"
-  },
-  {
-    "objectID": "slides/week_04.html#vader",
-    "href": "slides/week_04.html#vader",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "VADER",
-    "text": "VADER\nHeuristic rules to signal intensity or polarity shift:\n\nPunctuation: ! → increased intensity\nPunctuation: ALL-CAPS → increased intensity\nDegree modifiers (intensifiers, i.e. ”extremely good”) → increased intensity\nConjunction “but” signals a shift in sentiment polarity\nTri-gram preceding a sentiment-laden lexical feature → catch nearly 90% of cases where negation flips the polarity of the text\n\n“The food here isn’t really all that great”\n\nPython and R libraries: https://github.com/cjhutto/vaderSentiment\nArticle: &lt;https://ojs.aaai.org/index.php/ICWSM/article/view/14550/14399"
-  },
-  {
-    "objectID": "slides/week_04.html#dict-iv---young-sarokas-lexicoder-sentiment-dictionary",
-    "href": "slides/week_04.html#dict-iv---young-sarokas-lexicoder-sentiment-dictionary",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Dict IV - Young & Saroka’s Lexicoder Sentiment Dictionary",
-    "text": "Dict IV - Young & Saroka’s Lexicoder Sentiment Dictionary\nCreate Lexicoder Sentiment dictionary specifically for political communication (i.e. sentiment in news coverage, legislative speech and other text)\n\nCombines:\n\nGeneral Inquirer;\nRoget’s Thesaurus and\nRegressive Imagery Dictionary\n\nEach words pertains to a single class\nPlus\n\nHand coding\nKeyword in context for disambiguation"
-  },
-  {
-    "objectID": "slides/week_04.html#dictionary-vi-moral-foundations-dictionary",
-    "href": "slides/week_04.html#dictionary-vi-moral-foundations-dictionary",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Dictionary VI: Moral Foundations Dictionary",
-    "text": "Dictionary VI: Moral Foundations Dictionary\n\nMoral foundations: dimensions of difference that explain human moral reasoning\nMeasures the proportions of virtue and vice words for each foundation:\n\nCare/Harm\nFairness/Cheating\nLoyalty/Betrayal\nAuthority/Subversion\nPurity/Degradation\n\nLink to dictionary: https://moralfoundations.org/other-materials/"
-  },
-  {
-    "objectID": "slides/week_04.html#supervised-learning-vs.-dictionaries",
-    "href": "slides/week_04.html#supervised-learning-vs.-dictionaries",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Supervised Learning vs. Dictionaries",
-    "text": "Supervised Learning vs. Dictionaries\nDictionary Methods:\n\nAdvantage: Not corpus-specific, easy to apply to a new corpus\nDisadvantage: Performance on a new corpus is unknown (domain shift)\n\nSupervised Learning:\n\nGeneralizes dictionary methods\nFeatures associated with categories (and their relative weight) are learned from the data\nBy construction, ML will outperform dictionary methods in classification tasks (if the training sample is large enough)"
-  },
-  {
-    "objectID": "slides/week_04.html#off-the-shelf-i-perspective-api",
-    "href": "slides/week_04.html#off-the-shelf-i-perspective-api",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Off-the-shelf I: Perspective API",
-    "text": "Off-the-shelf I: Perspective API\nDef: Machine learning tool developed by Jigsaw (Google) to analyze text for harmful or toxic language:\n\nTrained on large datasets of annotated online comments\nOutputs scores between 0 and 1, representing the likelihood that a comment falls into a specific category (e.g., toxicity)\n\n\nWhy?\n\nUseful for analyzing public discourse, particularly around sensitive topics like policy or social issues\nHelps moderate comments in online platforms\n\n\n\nLimitations:\n\nLimited to specific tasks like toxicity detection\nOperates as a black-box service with no access to underlying model or fine-tuning\nRequires data to be sent to an external server, which can pose privacy concerns"
-  },
-  {
-    "objectID": "slides/week_04.html#off-the-shelf-models-ii-transformers",
-    "href": "slides/week_04.html#off-the-shelf-models-ii-transformers",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Off-the-shelf models II: Transformers",
-    "text": "Off-the-shelf models II: Transformers\nHugging Face’s Model Hub: centralized repository for sharing and discovering pre-trained models [https://huggingface.co]"
-  },
-  {
-    "objectID": "schedule.html#week-4-september-22",
-    "href": "schedule.html#week-4-september-22",
-    "title": "Weekly Materials & Readings",
-    "section": "Week 4: September 22",
-    "text": "Week 4: September 22\n\nTopics: Dictionaries, Pros and Cons, and Using Off-the-Shelf Models\nLecture: Week 4 - Dictionaries and Off-the-Shelf Classifiers\nCoding Materials:\n\n Week 4 - Dictionaries and Off-the-Shelf Classifiers\n Week 4 - Transformers Based Classifiers"
-  },
-  {
-    "objectID": "slides/week_03.html",
-    "href": "slides/week_03.html",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "",
-    "text": "You have your pairs for the replication exercise.\nNext steps:\n\nSelect the paper you wish to replicate (until lecture day next week)\nPost on Slack\nTalk to me if you have any issues\n\n\n\n\n\nLast week:\n\nPre-processing text + bag of words ~&gt; reduces greatly text complexity (dimensions)\nText representation using vectors of numbers ~&gt; document feature matrix (text to numbers)\nExample of counting words to make inference\n\n\n\n\nWe will start thinking about latent outcomes from text. Our first approach will focus on descriptive inference based on documents:\n\nComparing documents\nUsing similarity to measure text-reuse\n\nQuick linear algebra review\n\nEvaluating complexity in text\nWeighting (TF-iDF)\n\n\n\n\nTo represent documents as numbers, we use the vector space model representation:\n\n\nA document \\(D_i\\) is represented as a collection of features \\(W\\) (words, tokens, n-grams, etc…)\nEach feature \\(w_i\\) can be placed in a real line\nA document \\(D_i\\) is a point in a \\(\\mathbb{R}^W\\)\n\nEach document is now a vector,\nEach entry represents the frequency of a particular token or feature.\nStacking those vectors on top of each other gives the document feature matrix (DFM).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: Arthur Spirling TAD Class\n\n\n\n\n\n\n\n\n\nDocuments, W=2\n\n\n\nDocument 1 = “yes yes yes no no no”\nDocument 2 = “yes yes yes yes yes yes”\n\n\n\n\nWarning: package 'ggplot' is not available for this version of R\n\nA version of this package for your version of R might be available elsewhere,\nsee the ideas at\nhttps://cran.r-project.org/doc/manuals/r-patched/R-admin.html#Installing-packages\n\n\nWarning: 'BiocManager' not available.  Could not check Bioconductor.\n\nPlease use `install.packages('BiocManager')` and then retry.\n\n\nWarning in p_install(package, character.only = TRUE, ...):\n\n\nWarning in library(package, lib.loc = lib.loc, character.only = TRUE,\nlogical.return = TRUE, : there is no package called 'ggplot'\n\n\nWarning in pacman::p_load(ggplot, tidyverse): Failed to install/load:\nggplot\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead."
-  },
-  {
-    "objectID": "slides/week_04.html#advantages-of-dictionaries",
-    "href": "slides/week_04.html#advantages-of-dictionaries",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Advantages of dictionaries",
-    "text": "Advantages of dictionaries\n\n\nLow cost and computationally efficient ~ especially using a dictionary developed and validated by others\nA hybrid procedure between qualitative and quantitative models\nDictionary construction involves a lot of contextual interpretation and qualitative judgment\nTransparency: no black-box model behind the classification task"
-  },
-  {
-    "objectID": "slides/week_04.html#section-1",
-    "href": "slides/week_04.html#section-1",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "",
-    "text": "Vader Heuristic rules to signal intensity or polarity shift:\n\nPunctuation: ! → increased intensity\nPunctuation: ALL-CAPS → increased intensity\nDegree modifiers (intensifiers, i.e. ”extremely good”) → increased intensity\nConjunction “but” signals a shift in sentiment polarity\nTri-gram preceding a sentiment-laden lexical feature → catch nearly 90% of cases where negation flips the polarity of the text\n\n“The food here isn’t really all that great”\n\nPython and R libraries: https://github.com/cjhutto/vaderSentiment\nArticle: https://ojs.aaai.org/index.php/ICWSM/article/view/14550/14399"
-  },
-  {
-    "objectID": "slides/week_04.html#rathje-et.-al-2020-pnas-out-group-animosity-3",
-    "href": "slides/week_04.html#rathje-et.-al-2020-pnas-out-group-animosity-3",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Rathje et. al 2020, PNAS, Out-group animosity",
-    "text": "Rathje et. al 2020, PNAS, Out-group animosity\n\nWe then assigned each tweet a count for words that matched our Republican and Democrat dictionaries (for instance, if a tweet mentioned two words in the “Republican” dictionary, it would receive a score of “2” in that category). We also used previously validated dictionaries that counted the number of positive and negative affect words per post and the number of moral-emotional words per post (LIWC)."
-  },
-  {
-    "objectID": "slides/week_04.html#rathje-et.-al-2020-pnas-out-group-animosity-4",
-    "href": "slides/week_04.html#rathje-et.-al-2020-pnas-out-group-animosity-4",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Rathje et. al 2020, PNAS, Out-group animosity",
-    "text": "Rathje et. al 2020, PNAS, Out-group animosity"
-  },
-  {
-    "objectID": "slides/week_04.html#application-ventura-et.-al.-2021",
-    "href": "slides/week_04.html#application-ventura-et.-al.-2021",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Application: Ventura et. al. 2021",
-    "text": "Application: Ventura et. al. 2021\n\nRQ: Characterize streaming chats during political debates leading up to the 2020 U.S. presidential election\nTheory: From passive consumer to active co-creator; changing the (online) channel changes the viewing experience\nData/method: Facebook livestream chats on NBC News, ABC News, and Fox News during 2020 US Presidential debate\nOutcomes: Length, speed, toxicity of comments"
-  },
-  {
-    "objectID": "slides/week_04.html#application-ventura-et.-al.-2021-1",
-    "href": "slides/week_04.html#application-ventura-et.-al.-2021-1",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Application: Ventura et. al. 2021",
-    "text": "Application: Ventura et. al. 2021\n\n\n\n\n\n\n\nSee article: Ventura et al. 2021, Connective Effervescence and Streaming Chat"
-  },
-  {
-    "objectID": "slides/week_04.html#off-the-shelf-models-iii-llms",
-    "href": "slides/week_04.html#off-the-shelf-models-iii-llms",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Off-the-shelf models III: LLMs",
-    "text": "Off-the-shelf models III: LLMs\nGenAI Models (with zero-shot prompting) can also be used to replace dictionaries\n\n\n\n\n\n\n\nPaper: https://www.pnas.org/doi/10.1073/pnas.2308950121"
-  },
-  {
-    "objectID": "slides/week_04.html#measurement",
-    "href": "slides/week_04.html#measurement",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Measurement",
-    "text": "Measurement\n\nDef: Instantiation of concepts within our theory in order to facilitate quantification\n\n\n\nDocuments come from certain classes and how we can use statistical assumptions to measure these classes"
-  },
-  {
-    "objectID": "slides/week_04.html#principles-of-a-good-measurement-ch.-15",
-    "href": "slides/week_04.html#principles-of-a-good-measurement-ch.-15",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Principles of a Good Measurement (Ch. 15)",
-    "text": "Principles of a Good Measurement (Ch. 15)\n\n\nMeasures should have clear goals\n\n\nSource material should always be identified and ideally made public\n\n\nCoding should be explainable and reproducible\n\n\nValidate!\n\n\nLimitations should be explored, documented, and communicated\n\nPlus: Develop the measure in a training set → Apply the measure in the test set"
-  },
-  {
-    "objectID": "slides/week_04.html#measurementsupervised-learning-pipeline",
-    "href": "slides/week_04.html#measurementsupervised-learning-pipeline",
-    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Measurement/Supervised Learning Pipeline",
-    "text": "Measurement/Supervised Learning Pipeline\n\n\nStep 0: identify a dataset and a concept you would like to measure\n\nSentiment of tweets about politics\n\nStep 1: label some examples of the concept of we want to measure\n\nsome tweets are positive, some are neutral and some are negative\n\nStep 2: train a statistical model on these set of labelled data using the document-feature matrix as input.\n\nchoose a model (transformation function) that gives higher out-of-sample accuracy\n\nStep 3: use the classifier - some f(x) - to predict unseen documents.\n\nuse the model to predict sentiment on new tweets\n\nStep 4: use the measure + metadata to learn something new about the world.\n\nThis is where social science happens!"
   }
 ]

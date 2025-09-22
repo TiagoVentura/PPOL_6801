@@ -335,7 +335,7 @@ library(reticulate)
 reticulate::conda_list()
 
 # create conda environment
-reticulate::conda_create("ppol6801")
+#reticulate::conda_create("ppol6801")
 
 # activate my conda envinroment
 reticulate::use_condaenv("ppol6801")
@@ -347,8 +347,8 @@ Sys.setenv(RETICULATE_PYTHON ="/Users/tb186/anaconda3/envs/ppol6801/bin/python")
 Sys.setenv(SPACY_PYTHON = "/Users/tb186/anaconda3/envs/ppol6801/")
 
 # install spacy
-spacyr::spacy_install()
-spacyr::spacy_initialize()
+#spacyr::spacy_install()
+#spacyr::spacy_initialize()
 
 # install sophistication
 #devtools::install_github("kbenoit/sophistication")

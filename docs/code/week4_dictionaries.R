@@ -26,7 +26,7 @@ pacman::p_load(tidyverse, quanteda, quanteda.corpora, quanteda.textstats)
 
 # today, we will work with the streamming chats comments from my article that we read in class. 
 
-## download here: https://www.dropbox.com/scl/fi/hodfhmfkuf80skutg8qo0/comments_facebook_presidental_elections.csv?rlkey=q5cw84hfp9sx3ordxrf5261ej&dl=0
+## download here: https://www.dropbox.com/scl/fi/efgllmfeyo5rhnvblq9ki/comments_facebook_presidental_elections.csv?rlkey=aqebsrcf5sb63txetovb9nnkc&dl=0
 
 d <- read_csv("data/comments_facebook_presidental_elections.csv")
 
@@ -83,7 +83,7 @@ d_corpus <- d %>%
 
 # 1.1.1 textstats_polarity -----------------------------------
 
-# let's undertand the function first
+# let's understand the function first
 # look at fun argument = it outputs the log of pos/neg words
 ?textstat_polarity
 
@@ -174,7 +174,7 @@ d %>%
 # in R, you need to use a specific package to do so. 
 
 # installation
-install.packages("vader")
+#install.packages("vader")
 library(vader)
 
 # main function: get_vader
@@ -204,11 +204,9 @@ for(i in 1:1000){
 vader_outputs[[i]] =  get_vader_tidy(d$comments[[i]]) 
 print(i)
 }
-toc()
-
 
 # unnest
-d$vader_output <- vader_outputs
+d <- d %>% slice(1:1000) %>% mutate(vader_output=vader_outputs)
 
 # unnest
 d %>% unnest(vader_output) %>% filter(outcomes=="compound") %>%
@@ -242,8 +240,6 @@ d %>% unnest(vader_output) %>% filter(outcomes=="compound") %>%
 ## We are actually working here with the streamming chats comments
 ## from my article that we read in class. 
 
-## download here: https://www.dropbox.com/scl/fi/hodfhmfkuf80skutg8qo0/comments_facebook_presidental_elections.csv?rlkey=q5cw84hfp9sx3ordxrf5261ej&dl=0
-
 d <- read_csv("data/comments_facebook_presidental_elections.csv")
 
 d_for_tox <- d %>%
@@ -254,27 +250,27 @@ d_for_tox <- d %>%
 ## 3.2 Query the API -------------------------------------------------------------------------------------
 
 # install wrapper
-#devtools::install_github("favstats/peRspective")
+devtools::install_github("favstats/peRspective")
 
 # call the package
 library(peRspective)
+# see package here: https://github.com/favstats/peRspective/
 
 # Read here how to get an api key: https://developers.perspectiveapi.com/s/docs-get-started?language=en_US
-#usethis::edit_r_environ()
+usethis::edit_r_environ()
 
 #
 # Query the api
-outputs <- prsp_stream(d_for_tox %>% slice(1:10), text=comments, text_id=unique_id,
-                          score_model =  peRspective::prsp_models,
+outputs <- prsp_stream(d_for_tox %>% slice(1:10), 
+                       text=comments, 
+                       text_id=unique_id,
+                        score_model =  peRspective::prsp_models,
                           safe_output = T, verbose = T)
 
-outputs
-
-# load data with all the comments
+# load data with all the comments. This is just after I run the model in the entire data
 toxicity <- read_csv("data/outputs_tox.csv")
 
-# make it long
-
+# make it long format
 toxicity <- toxicity %>%
   pivot_longer(cols=-c("text_id", "error"),
                names_to="variables",
@@ -282,13 +278,11 @@ toxicity <- toxicity %>%
 
 
 # Merge
-
 toxicity <- left_join(toxicity, d_for_tox, by=c("text_id"="unique_id"))
 
 
 
 ## Clean the data
-
 toxicity <- toxicity %>%
   mutate(label=str_replace_all(debate, "_", " "),
          label=str_to_title(label),
@@ -336,5 +330,6 @@ ggplot(av, aes(y=m, x=fct_rev(label), fill=fct_rev(Attribute))) +
   labs(y="Average Scores", x="") +
   theme(plot.margin = margin(1, 1, 1, 1, "cm"))
 
+# perfect replication!!
 
 
