@@ -107,8 +107,7 @@ In the machine learning tradition, we are introduced to two core families of mod
 
 ## Principles of a Good Measurement (Ch. 15)
 
-
-1. Measures should have clear goals
+1.  Measures should have clear goals
 
 2.  Source material should always be identified and ideally made public
 
@@ -119,9 +118,6 @@ In the machine learning tradition, we are introduced to two core families of mod
 5.  Limitations should be explored, documented, and communicated
 
 **Plus:** Develop the measure in a training set → Apply the measure in the test set
-
-
-
 
 ## Measurement/Supervised Learning Pipeline
 
