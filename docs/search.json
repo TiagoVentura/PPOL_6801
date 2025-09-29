@@ -123,7 +123,7 @@
     "href": "slides/week_05.html#supervised-learning-in-tad",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Supervised Learning in TaD",
-    "text": "Supervised Learning in TaD\nConsider this task: “Predicting sentiment of news about the economy in the US”.\nInference or Prediction?\n\n\n\n\n\n\n\n\n\nComponent\nDefinition\nExample in This Case\n\n\n\n\nInput Features (x)\n\n\n\n\nLabel (y)\n\n\n\n\nPrediction (ŷ)"
+    "text": "Supervised Learning in TaD\nConsider this task: “Predicting sentiment of news about the economy in the US”.\nInference or Prediction?\n\n\n\n\nComponent\nDefinition\nExample in This Case\n\n\n\n\nInput Features (x)\n\n\n\n\nLabel (y)\n\n\n\n\nPrediction (ŷ)"
   },
   {
     "objectID": "slides/week_05.html#section",
@@ -256,7 +256,7 @@
     "href": "slides/week_05.html#evaluating-the-performance",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Evaluating the Performance",
-    "text": "Evaluating the Performance\n\n\n\n\n\n\n\n\n\n\n\n\nPredicted\n\n\n\n\n\n\n\n\nJ\n¬J\nTotal\n\n\nActual\nJ\na (True Positive)\nb (False Negative)\na+b\n\n\n\n¬J\nc (False Positive)\nd (True Negative)\nc+d\n\n\n\nTotal\na+c\nb+d\nN\n\n\n\n\n\nAccuracy: number correctly classified/total number of cases = (a+d)/(a+b+c+d)\nPrecision : number of TP / (number of TP+number of FP) = a/(a+c) .\n\nFraction of the documents predicted to be J, that were in fact J.\nThink as a measure for the estimator (Very precise estimate)\n\nRecall: (number of TP) / (number of TP + number of FN) = a /(a+b)\n\nFraction of the documents that were in fact J, that method predicted were J.\nThink as a measure for the data (Covers most of the cases in the data)\n\nF : 2 precision*recall / precision+recall\n\nHarmonic mean of precision and recall."
+    "text": "Evaluating the Performance\n\n\n\n\n\nPredicted\n\n\n\n\n\n\n\n\nJ\n¬J\nTotal\n\n\nActual\nJ\na (True Positive)\nb (False Negative)\na+b\n\n\n\n¬J\nc (False Positive)\nd (True Negative)\nc+d\n\n\n\nTotal\na+c\nb+d\nN\n\n\n\n\n\nAccuracy: number correctly classified/total number of cases = (a+d)/(a+b+c+d)\nPrecision : number of TP / (number of TP+number of FP) = a/(a+c) .\n\nFraction of the documents predicted to be J, that were in fact J.\nThink as a measure for the estimator (Very precise estimate)\n\nRecall: (number of TP) / (number of TP + number of FN) = a /(a+b)\n\nFraction of the documents that were in fact J, that method predicted were J.\nThink as a measure for the data (Covers most of the cases in the data)\n\nF : 2 precision*recall / precision+recall\n\nHarmonic mean of precision and recall."
   },
   {
     "objectID": "slides/week_05.html#quizz",

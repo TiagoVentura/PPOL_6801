@@ -11,8 +11,8 @@ format:
     transition: slide
     background-transition: fade
     code-line-numbers: false
-    width: 1200
-    height: 800
+    width: 1400
+    height: 900
     center: true
     slide-number: true
     incremental: false
@@ -30,7 +30,6 @@ editor_options:
 Today is your [deadline]{.red} for the problem set 1. Questions?
 
 ## Coding
-
 
 ## Replication {visibility="hidden"}
 
@@ -64,33 +63,29 @@ Last week, we started measurement and classification:
 -   Off-the-Shelf Classifiers
     -   Perspective API
     -   Hugging Face (only see as a off-the-shelf machines, LMMs later in this course)
-
-- **Today:** Supervised Learning
+-   **Today:** Supervised Learning
 :::
-
 
 ## From dictionaries to supervised learning
 
-How can we systematically classify text into meaningful categories (e.g.,
-positive/negative, hate vs. non-hate speech, spam vs. non-spam)?
+How can we systematically classify text into meaningful categories (e.g., positive/negative, hate vs. non-hate speech, spam vs. non-spam)?
 
-- Goal: Learn a **function f** that maps text **inputs x** to category **outputs y**
+-   Goal: Learn a **function f** that maps text **inputs x** to category **outputs y**
 
-- **Dictionaries:** Mapping function is explicitly defined by the researcher using predefined word lists
+-   **Dictionaries:** Mapping function is explicitly defined by the researcher using predefined word lists
 
-- **Supervised Classification**: Mapping function is **learned** from the data by training an algorithm to predict categories based on labeled documents
+-   **Supervised Classification**: Mapping function is **learned** from the data by training an algorithm to predict categories based on labeled documents
 
 ## What is Supervised Learning?
 
 **Def:** machine learning algorithm type that requires **labeled input** data to understandcthe mapping function from the input to the output
 
-:::fragment
+::: fragment
 **SUPERVISED:** The true labels y act as a “supervisor” for the learning process
 
-- Model predicts ˆy for each input x
-- Compare predictions ˆy to true labels y
-- Adjust model to minimize errors
-
+-   Model predicts ˆy for each input x
+-   Compare predictions ˆy to true labels y
+-   Adjust model to minimize errors
 
 **LEARNING:** the process by which a machine/model improves its performance on a specific task
 :::
@@ -161,28 +156,25 @@ $$ y_i = \hat{f}(X) + \sigma_i $$
 
 ## Supervised Learning in TaD
 
-Consider this task: "Predicting sentiment of news about the economy in the US". 
+Consider this task: "Predicting sentiment of news about the economy in the US".
 
 **Inference or Prediction?**
 
-:::fragment
-| Component          | Definition                                   | Example in This Case                                                                 |
-|--------------------|----------------------------------------------|--------------------------------------------------------------------------------------|
-| **Input Features (x)** |   |           |
-| **Label (y)**         |  |      |
-| **Prediction (ŷ)**    |                   | |
+::: fragment
+| Component              | Definition | Example in This Case |
+|------------------------|------------|----------------------|
+| **Input Features (x)** |            |                      |
+| **Label (y)**          |            |                      |
+| **Prediction (ŷ)**     |            |                      |
 :::
 
 ## 
 
-
-
-| Component          | Definition                                   | Example in This Case                                                                 |
-|--------------------|----------------------------------------------|--------------------------------------------------------------------------------------|
-| **Input Features (x)** | Textual data (e.g. DFM)                      | Sentiment scores from news            |
-| **Label (y)**         | True category or outcome we want to predict   | hand-coded sentiment on a small set of news      |
-| **Prediction (ŷ)**    | Model’s estimated prediction                  | Predicted sentiment |
-
+| Component | Definition | Example in This Case |
+|----|----|----|
+| **Input Features (x)** | Textual data (e.g. DFM) | Sentiment scores from news |
+| **Label (y)** | True category or outcome we want to predict | hand-coded sentiment on a small set of news |
+| **Prediction (ŷ)** | Model’s estimated prediction | Predicted sentiment |
 
 ## Supervised Learning Pipeline
 
@@ -194,13 +186,11 @@ Consider this task: "Predicting sentiment of news about the economy in the US".
 
 -   [Step 4:]{.red} use the classifier - some f(x) - to predict unseen documents.
 
-
 ## 
 
 ```{r echo=FALSE, out.width = "80%"}
 knitr::include_graphics("./week5_figs/ml.png") 
 ```
-
 
 # Start with your target: Building a training dataset.
 
@@ -213,7 +203,7 @@ knitr::include_graphics("./week5_figs/ml.png")
     -   Metadata from text
     -   Manifestos from Parties with well-developed dictionaries
 
--   **Expert annotation:** 
+-   **Expert annotation:**
 
     -   mostly undergrads \~ that you train to be experts
 
@@ -221,7 +211,6 @@ knitr::include_graphics("./week5_figs/ml.png")
 
     -   [Wisdom of Crowds:]{.red} the idea that large groups of non-expert people are collectively smarter than individual experts when it comes to problem-solving
 :::
-
 
 ## Crowdsourcing as a research tool for ML
 
@@ -258,7 +247,7 @@ Source: [Benoit et al, 2016](https://www.cambridge.org/core/journals/american-po
 knitr::include_graphics("./week5_figs/crows_performance.png") 
 ```
 
-## How many workers?{visibility="hidden"}
+## How many workers? {visibility="hidden"}
 
 ```{r echo=FALSE, out.width = "100%"}
 knitr::include_graphics("./week5_figs/crowd_std.png") 
@@ -274,12 +263,11 @@ knitr::include_graphics("./week5_figs/crowd_tweet.png")
 Source: Pablo Barbera's CSS Seminar
 :::
 
-
-# Training an statistical model. 
+# Training an statistical model.
 
 ## Classifier Selection
 
-- **Def:** A classifier is an statistical model that assigns data points to a range of categories or classes. 
+-   **Def:** A classifier is an statistical model that assigns data points to a range of categories or classes.
 
 ::: fragment
 -   in text as data, often your DFM has [Features \> Documents]{.red}
@@ -298,14 +286,12 @@ Source: Pablo Barbera's CSS Seminar
 ::: fragment
 -   Many models:
 
-    -   Naive Bayes,  Regularized regressionm, SVM,  k-nearest neighbors, tree-based methods, Ensemble methods + DL
-    
-:::
-::: fragment
-- **Differences:** loss function they minimize, model assumptions, regularization control (balance bias vs. variance), computational complexity
-    
+    -   Naive Bayes, Regularized regressionm, SVM, k-nearest neighbors, tree-based methods, Ensemble methods + DL
 :::
 
+::: fragment
+-   **Differences:** loss function they minimize, model assumptions, regularization control (balance bias vs. variance), computational complexity
+:::
 
 ## Regularized OLS Regression
 
@@ -325,23 +311,21 @@ $$
 \text{RSS} = \sum_{i=1}^{N} \left( y_i - \beta_0 - \sum_{j=1}^{J} \beta_j x_{ij} \right)^2 + \lambda \sum_{j=1}^{J} \beta_j^2 \rightarrow \text{ridge regression}
 $$
 
-- Penalizes large coefficients.
+-   Penalizes large coefficients.
 
-- Shrinks all coefficients towards zero, but none are exactly zero.
-
+-   Shrinks all coefficients towards zero, but none are exactly zero.
 
 ## OLS + Penalty (Lasso)
-
 
 $$
 \text{RSS} = \sum_{i=1}^{N} \left( y_i - \beta_0 - \sum_{j=1}^{J} \beta_j x_{ij} \right)^2 + \lambda \sum_{j=1}^{J} |\beta_j| \rightarrow \text{lasso regression}
 $$
 
-- Penalizes absolute size of coefficients.
+-   Penalizes absolute size of coefficients.
 
-- Many coefficients shrink to exactly zero → automatic variable selection.
+-   Many coefficients shrink to exactly zero → automatic variable selection.
 
-- VERY USEFUL FOR SPARSE MATRIX!!
+-   VERY USEFUL FOR SPARSE MATRIX!!
 
 ## Many Models
 
@@ -349,9 +333,7 @@ $$
 knitr::include_graphics("./week5_figs/ml_models.png") 
 ```
 
-- Differences: loss function they minimize, model assumptions, regularization
-control (balance bias vs. variance), computational complexity
-
+-   Differences: loss function they minimize, model assumptions, regularization control (balance bias vs. variance), computational complexity
 
 ## How to select a model?
 
@@ -359,7 +341,7 @@ The purpose of training the model is to **capture signal** and **ignore noise**.
 
 To do so:
 
--   Define a accuracy metric: reduce this metric as much as possible. Simplest form: how many errors I am making with the predictions? 
+-   Define a accuracy metric: reduce this metric as much as possible. Simplest form: how many errors I am making with the predictions?
 
 -   Train-Test Split
 
@@ -371,45 +353,40 @@ To do so:
 
 -   Select the model based on smaller **out of sample predictive accuracy**, using **UNSEEN** data.
 
-
 # What can go wrong?
 
 ## Bias and Variance Trade-off
 
-Expected prediction error for a data point: 
+Expected prediction error for a data point:
 
 $$
 E\big[(\hat{y} - y)^2\big] = (\text{Bias}^2) + \text{Variance} + \text{Irreducible Error}
 $$
 
-
-:::fragment
+::: fragment
 **Bias:** Difference between the expected prediction of the model and the true value.
 
 $$\text{Bias}(\hat{f}(x)) = E[\hat{f}(x)] - f(x)$$
-
 :::
 
-:::fragment
-
+::: fragment
 **Variance:** How much do the model’s predictions fluctuate for different training sets?
 
 $$ \text{Var}(\hat{f}(x)) = E\Big[\big(\hat{f}(x) - E[\hat{f}(x)]\big)^2\Big]$$
 :::
 
-:::fragment
-
+::: fragment
 **Bias and Variance Tradeoff:**
 
-- Can fit a very complicated model to our training set perfectly
-   
-    - **Bias ↓, Variance ↑**
+-   Can fit a very complicated model to our training set perfectly
+
+    -   **Bias ↓, Variance ↑**
 :::
 
 ::: fragment
-- Can be more relaxed about the performance in the training set  
-    
-    - **Bias ↑, Variance ↓**
+-   Can be more relaxed about the performance in the training set
+
+    -   **Bias ↑, Variance ↓**
 :::
 
 ## Bias and Variance Tradeoff
@@ -420,30 +397,24 @@ knitr::include_graphics("./week5_figs/bias_variance.png")
 
 ## Train-Validation-Test
 
-:::fragment
+::: fragment
 Training Set
 
-- Largest portion (60-80% of the data)
-- To train the model
-
+-   Largest portion (60-80% of the data)
+-   To train the model
 :::
 
 ::: fragment
 Validation Set
 
-- Smaller portion (10-20% of data)
-- Check different models
-- To tune hyperparameters and evaluate model during training
-- Parameters that we set before training begins (e.g. learning rate,
-number of neural networks layers, strength of regularization)
+-   Smaller portion (10-20% of data)
+-   Check different models
+-   To tune hyperparameters and evaluate model during training
+-   Parameters that we set before training begins (e.g. learning rate, number of neural networks layers, strength of regularization)
 :::
 
-
-:::fragment
-Test Set
--  Smaller portion (10-20% of data)
--  To assess final model performance
-
+::: fragment
+Test Set - Smaller portion (10-20% of data) - To assess final model performance
 :::
 
 ## Or Cross Validation
@@ -454,26 +425,26 @@ Test Set
 knitr::include_graphics("./week5_figs/xval.png") 
 ```
 
-## Summary: how to choose a classifier? 
+## Summary: how to choose a classifier?
 
-| Factor                  | Recommended Classifiers                                      |
-|--------------------------|--------------------------------------------------------------|
-| **Task Type**            | Classification: Logistic Regression, Random Forest, SVM <br> Regression: Linear Regression, Random Forest Regressor |
-| **Data Size**            | Small datasets: Logistic Regression, Naive Bayes <br> Large datasets: Neural Networks, Gradient Boosting |
+| Factor | Recommended Classifiers |
+|----|----|
+| **Task Type** | Classification: Logistic Regression, Random Forest, SVM <br> Regression: Linear Regression, Random Forest Regressor |
+| **Data Size** | Small datasets: Logistic Regression, Naive Bayes <br> Large datasets: Neural Networks, Gradient Boosting |
 | **Feature Characteristics** | Sparse features (e.g., text data): Naive Bayes, SVM <br> Non-linear relationships: Random Forest, Gradient Boosting |
-| **Interpretability**     | High interpretability: Logistic Regression, Decision Trees <br> Performance focus: Neural Networks, Gradient Boosting |
+| **Interpretability** | High interpretability: Logistic Regression, Decision Trees <br> Performance focus: Neural Networks, Gradient Boosting |
 | **Computational Resources** | Low resources: Naive Bayes, Logistic Regression <br> High resources: Neural Networks, Gradient Boosting |
 
 # Measures of Accuracy
 
 ## Evaluating the Performance
 
-|            |       | Predicted |        |       |
-|------------|-------|:---------:|:------:|------:|
-|            |       |     J     |   ¬J   | Total |
-| **Actual** | J     |  a (True Positive)   | b (False Negative) |   a+b |
-|            | ¬J    |  c (False Positive)   | d (True Negative) |   c+d |
-|            | Total |    a+c    |  b+d   |     N |
+|            |       |     Predicted      |                    |       |
+|------------|-------|:------------------:|:------------------:|------:|
+|            |       |         J          |         ¬J         | Total |
+| **Actual** | J     | a (True Positive)  | b (False Negative) |   a+b |
+|            | ¬J    | c (False Positive) | d (True Negative)  |   c+d |
+|            | Total |        a+c         |        b+d         |     N |
 
 ::: incremental
 -   **Accuracy**: number correctly classified/total number of cases = (a+d)/(a+b+c+d)
@@ -495,16 +466,13 @@ knitr::include_graphics("./week5_figs/xval.png")
 
 ## Quizz
 
-You are working for the FBI, looking for emails that pertain to terrorist
-attacks. Fortunately, such emails are very, very rare (0.0001% of all emails).
+You are working for the FBI, looking for emails that pertain to terrorist attacks. Fortunately, such emails are very, very rare (0.0001% of all emails).
 
-- For such tasks, there’s a trade-off between precision and recall.
-Explain why.
+-   For such tasks, there’s a trade-off between precision and recall. Explain why.
 
--  We may be skeptical of using accuracy as a performance indicator
-in this case. Explain why.
+-   We may be skeptical of using accuracy as a performance indicator in this case. Explain why.
 
-:::notes
+::: notes
 If the FBI uses a very strict filter (only flags emails that look very suspicious), precision will be high (almost everything flagged is truly relevant) but recall will be low (many relevant emails missed).
 
 If the FBI uses a lenient filter (flags lots of emails), recall will be high (most relevant ones are caught), but precision will drop (many false alarms).

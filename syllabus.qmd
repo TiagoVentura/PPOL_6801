@@ -359,7 +359,7 @@ You will work in pairs for this assignment. Your partner will be randomly assign
 
 -   **Step 4**: Replication Repository
 
-    -   By Friday EOD of each replication week, you should share with me and all your colleagues your replication report. The replication report should be:
+    -   By Friday EOD of the replication week, you should share with me and all your colleagues your replication report. The replication report should be:
         -   a github repo with a well-detailed readme. See a model here: <https://github.com/TiagoVentura/winning_plosone>
         -   your presentation as a pdf
         -   the code used in the replication as a notebook (Markdown or Jupyter)
