@@ -32,7 +32,7 @@
     "href": "schedule.html#week-4-september-22",
     "title": "Weekly Materials & Readings",
     "section": "Week 4: September 22",
-    "text": "Week 4: September 22\n\nTopics: Dictionaries, Pros and Cons, and Using Off-the-Shelf Models\nLecture: Week 4 - Dictionaries and Off-the-Shelf Classifiers\nCoding Materials:\n\n Week 4 - Dictionaries and Off-the-Shelf Classifiers\n Week 4 - Transformers Based Classifiers \n Week 4 - Transformers Based Classifiers in R \n\nData: Streamming Chat Comments"
+    "text": "Week 4: September 22\n\nTopics: Dictionaries, Pros and Cons, and Using Off-the-Shelf Models\nLecture: Week 4 - Dictionaries and Off-the-Shelf Classifiers\nCoding Materials:\n\n Week 4 - Dictionaries and Off-the-Shelf Classifiers\n Week 4 - Transformers Based Classifiers \n Week 4 - Transformers Based Classifiers in R , html here\n\nData: Streamming Chat Comments"
   },
   {
     "objectID": "schedule.html#week-5-september-29",
@@ -81,7 +81,7 @@
     "href": "slides/week_05.html#where-are-we",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Where are we?",
-    "text": "Where are we?\nWe started from pre-processing text as data, representing text as numbers, and describing features of the text.\nLast week, we started learning how to measure concepts in text:\n\n\nDocuments pertaining to certain classes and how we can use statistical assumptions to measure these classes\n\n\n\n\nDictionary Methods\n\nDiscuss some well-known dictionaries\n\nOff-the-Shelf Classifiers\n\nPerspective API\nHugging Face (only see as a off-the-shelf machines, LMMs later in this course)\n\nToday: Supervised Learning"
+    "text": "Where are we?\nWe started from pre-processing text as data, representing text as numbers, and describing features of the text.\nLast week, we started measurement and classification:\n\n\nDictionary Methods\n\nDiscuss some well-known dictionaries\n\nOff-the-Shelf Classifiers\n\nPerspective API\nHugging Face (only see as a off-the-shelf machines, LMMs later in this course)\n\nToday: Supervised Learning"
   },
   {
     "objectID": "slides/week_05.html#from-dictionaries-to-supervised-learning",

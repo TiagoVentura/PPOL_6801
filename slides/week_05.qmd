@@ -56,11 +56,7 @@ Today is your [deadline]{.red} for the problem set 1. Questions?
 
 We started from [pre-processing text]{.red} as data, [representing]{.red} text as numbers, and [describing features]{.red} of the text.
 
-Last week, we started learning how to measure concepts in text:
-
-::: fragment
-> *Documents pertaining to certain [classes]{.red} and how we can use statistical assumptions to [measure]{.red} these classes*
-:::
+Last week, we started measurement and classification:
 
 ::: fragment
 -   Dictionary Methods

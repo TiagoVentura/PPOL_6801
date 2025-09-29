@@ -49,6 +49,11 @@ d <- d %>% rowid_to_column()
 # call
 pacman::p_load("quanteda.dictionaries", "quanteda.sentiment")
 
+# check dictionaries
+ls("package:quanteda.dictionaries")
+
+# see some tutorial here: https://github.com/quanteda/quanteda.sentiment
+
 
 # Let's start working with the Lexicoder Sentiment Dictionary (from Young and Soroka)
 
@@ -86,6 +91,7 @@ d_corpus <- d %>%
 # let's understand the function first
 # look at fun argument = it outputs the log of pos/neg words
 ?textstat_polarity
+?textstat_valence
 
 # apply
 lsd_results <- d_corpus %>% 
@@ -141,7 +147,7 @@ d <- d %>%
 # what is the average sentiment score?
 mean(d$score)
 
-# what is the top-5 positive and most negative comment?
+# what are the top-5 positive and most negative comment?
 
 # positive
 d %>% 
@@ -231,7 +237,6 @@ d %>% unnest(vader_output) %>% filter(outcomes=="compound") %>%
 
 ## https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0281475
 
-
 ## Google provides an API that allows you to query the model and get results
 
 
@@ -264,8 +269,8 @@ library(peRspective)
 outputs <- prsp_stream(d_for_tox %>% slice(1:10), 
                        text=comments, 
                        text_id=unique_id,
-                        score_model =  peRspective::prsp_models,
-                          safe_output = T, verbose = T)
+                       score_model =  peRspective::prsp_models,
+                       safe_output = T, verbose = T)
 
 # load data with all the comments. This is just after I run the model in the entire data. 
 # you can download this data here: https://www.dropbox.com/scl/fi/t6ak44pq9kahi1c77vuqy/outputs_tox.csv?rlkey=hssx3z65r2diwavpl61nxgg0r&dl=0

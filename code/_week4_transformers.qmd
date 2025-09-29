@@ -7,11 +7,11 @@ editor_options:
 
 # Using Python via R
 
-Python is the best language for you to work with transformer and more advanced machine learning models. But, if you do not want to learn another language, there are a few ways for you to use python via R. 
+Python is the best language for you to work with transformer and more advanced machine learning models. But, if you do not want to learn another language, there are a few ways for you to use python via R.
 
-Here, we will do via the package [reticulate](https://rstudio.github.io/reticulate/). The reticulate package provides a comprehensive set of tools for interoperability between Python and R. Among its functions, it allows you to call Python on a .qmd notebook, as we will do here. 
+Here, we will do via the package [reticulate](https://rstudio.github.io/reticulate/). The reticulate package provides a comprehensive set of tools for interoperability between Python and R. Among its functions, it allows you to call Python on a .qmd notebook, as we will do here.
 
-## Setting up. 
+## Setting up
 
 Here a code chuck to set up your Python connection
 
@@ -37,8 +37,7 @@ reticulate::py_config()
 
 ```
 
-
-The chunk above should give you the basics you need to run Python in this notebook. You can alwats do directly via Jupyter. 
+The chunk above should give you the basics you need to run Python in this notebook. You can alwats do directly via Jupyter.
 
 ```{python}
 # check which python you are running
@@ -57,28 +56,28 @@ import numpy as np
 
 ## Supervised Learning with Text
 
-To practice with supervised learning with text data, we will perform some classic sentiment analysis classification task. Sentiment analysis natural language processing technique that given a textual input (tweets, movie reviews, comments on a website chatbox, etc... ) identifies the polarity of the text. 
+To practice with supervised learning with text data, we will perform some classic sentiment analysis classification task. Sentiment analysis natural language processing technique that given a textual input (tweets, movie reviews, comments on a website chatbox, etc... ) identifies the polarity of the text.
 
-There are different flavors of sentiment analysis, but one of the most widely used techniques labels data into positive, negative and neutral. Other options are classifying text according to the levels of toxicity, which I did in the paper I asked you to read, or more fine-graine measures of sentiments. 
+There are different flavors of sentiment analysis, but one of the most widely used techniques labels data into positive, negative and neutral. Other options are classifying text according to the levels of toxicity, which I did in the paper I asked you to read, or more fine-graine measures of sentiments.
 
-Sentiment analysis is just one of many types of classification tasks that can be done with text. For any type of task in which you need to identify if the input pertains to a certain category, you can use a similar set of tools as we will see for sentiment analysis. For example, these are some classification tasks I have used in my work before: 
+Sentiment analysis is just one of many types of classification tasks that can be done with text. For any type of task in which you need to identify if the input pertains to a certain category, you can use a similar set of tools as we will see for sentiment analysis. For example, these are some classification tasks I have used in my work before:
 
-- Classify the levels of toxicity in social media live-streaming comments.
-- Analyze the sentiment of tweets.
-- Classify if the user is a Republican or Democrat  given the their Twitter bios. 
-- Identify if a particular social media post contains misinformation. 
+-   Classify the levels of toxicity in social media live-streaming comments.
+-   Analyze the sentiment of tweets.
+-   Classify if the user is a Republican or Democrat given the their Twitter bios.
+-   Identify if a particular social media post contains misinformation.
 
-For all these tasks, you need: 
+For all these tasks, you need:
 
-- some type of labelled data (which you and your research team will do), 
-- build/or use a pre-trained machine learning models to make the prediction
-- evaluate the performance of the models
+-   some type of labelled data (which you and your research team will do),
+-   build/or use a pre-trained machine learning models to make the prediction
+-   evaluate the performance of the models
 
 Here, we will work with data that was alread labelled for us. We will analyze the sentiment on IMDB dataset of reviews
 
 ### IMDB Dataset
 
-For the rest of this notebook, we will IMDB dataset provided by [Hugging Face](https://huggingface.co/datasets/imdb). The IMDB dataset contains 25,000 movie reviews labeled by sentiment for training a model and 25,000 movie reviews for testing it. 
+For the rest of this notebook, we will IMDB dataset provided by [Hugging Face](https://huggingface.co/datasets/imdb). The IMDB dataset contains 25,000 movie reviews labeled by sentiment for training a model and 25,000 movie reviews for testing it.
 
 We will talk more about the Hugging Face project later in this notebook. For now, just download their main transformers library, and import the IMDB Review Dataset
 
@@ -88,7 +87,6 @@ We will talk more about the Hugging Face project later in this notebook. For now
 from datasets import load_dataset
 imdb = load_dataset("imdb")
 ```
-
 
 Now, separate the dataset in training and testing
 
@@ -106,32 +104,31 @@ pd_train.head()
 
 ```
 
-
 ## Pre-Trained Large Language Models: Hugging Face
 
-In the past few years, the field of natural language processing  has undergone through a major revolution. As we first saw, the early generation of NLP models was based on the idea of converting text to numbers through the use of document-feature matrix relying on the bag-of-words assumptions. 
+In the past few years, the field of natural language processing has undergone through a major revolution. As we first saw, the early generation of NLP models was based on the idea of converting text to numbers through the use of document-feature matrix relying on the bag-of-words assumptions.
 
-In the past ten-years, we have seen the emergence of a new paradigm using deep-learning and neural networks models to improve on the representation of text as numbers. These new models move away from the idea of a bag-of-words towards a more refined representation of text capturing the contextual meaning of words and sentences. This is achieved by training models with billions of parameters on text-sequencing tasks, using as inputs a dense representation of words. These are the famous word embeddings. 
+In the past ten-years, we have seen the emergence of a new paradigm using deep-learning and neural networks models to improve on the representation of text as numbers. These new models move away from the idea of a bag-of-words towards a more refined representation of text capturing the contextual meaning of words and sentences. This is achieved by training models with billions of parameters on text-sequencing tasks, using as inputs a dense representation of words. These are the famous word embeddings.
 
 The most recent innovation on this revolution has been the Transformers Models. These models use multiple embeddings (matrices) to represent word, in which each matrix can capture different contextual representations of words. This dynamic representation allow for higher predictive power on downstream tasks in which these matrices form the foundation of the entire machine learning architecture. For example, Transformers are the the core of the language models like Open AI's GPTs and Meta's LLaMa.
 
-The Transformers use a sophisticated architecture that requires a huge amount of data and computational power to be trained. However, several of these models are open-sourced and are made available for us on the web through a platform called [Hugging Face](https://huggingface.co/). Those are what we call **pre-trained large language models**. At this point, there are thousands of pre-trained models based on the transformers framework available at hugging face. 
+The Transformers use a sophisticated architecture that requires a huge amount of data and computational power to be trained. However, several of these models are open-sourced and are made available for us on the web through a platform called [Hugging Face](https://huggingface.co/). Those are what we call **pre-trained large language models**. At this point, there are thousands of pre-trained models based on the transformers framework available at hugging face.
 
-Once you find a model that fits your task, you have two options: 
+Once you find a model that fits your task, you have two options:
 
-- **Use the model architecture: access the model through the transformers library, and use it in you predictive tasks.** 
+-   **Use the model architecture: access the model through the transformers library, and use it in you predictive tasks.**
 
-- **Fine-Tunning:** this is the most traditional way. You will get the model, give some data, re-train the model slightly so that the model will learn patterns from your data, and use on your predictive task. By fine-tuning a Transformers-based model for our own application, we can improve contextual understanding and therefore task-specific performance
+-   **Fine-Tunning:** this is the most traditional way. You will get the model, give some data, re-train the model slightly so that the model will learn patterns from your data, and use on your predictive task. By fine-tuning a Transformers-based model for our own application, we can improve contextual understanding and therefore task-specific performance
 
-We will see example of the first for sentiment analysis. If you were to do build a full pipeline for classification, you would probably need to fine-tune the model. To learn more about fine-tunning, I suggest you to read: 
+We will see example of the first for sentiment analysis. If you were to do build a full pipeline for classification, you would probably need to fine-tune the model. To learn more about fine-tunning, I suggest you to read:
 
-- here on hugging face: https://huggingface.co/blog/sentiment-analysis-python
+-   here on hugging face: https://huggingface.co/blog/sentiment-analysis-python
 
-- and this forthcoming paper for political science applications:https://joantimoneda.netlify.app/files/Timoneda%20Vallejo%20V%20JOP.pdf
+-   and this forthcoming paper for political science applications:https://joantimoneda.netlify.app/files/Timoneda%20Vallejo%20V%20JOP.pdf
 
 ### Transformers Library
 
-To use a model available on hugging face, you only need a few lines of code. 
+To use a model available on hugging face, you only need a few lines of code.
 
 ### Authorize Hugging Face
 
@@ -141,7 +138,7 @@ from huggingface_hub import login
 
 ```
 
-#### Use the pipeline class to access the model. 
+#### Use the pipeline class to access the model.
 
 The pipeline function will give you the default model for this task, that in this case is a Bert-Based Model, see here: https://huggingface.co/distilbert-base-uncased-finetuned-sst-2-english?text=I+like+you.+I+love+you
 
@@ -183,7 +180,6 @@ pd_test["bert_class"]=pd_test["bert_scores"].apply(lambda x: np.where(x[0]["labe
 pd_test.head()
 ```
 
-
 We can easily use this model to make predictions on our entire dataset
 
 ```{python}
@@ -200,7 +196,7 @@ Without any fine-tunning, we are already doing much, much better than dictionari
 
 ### Use contextual knowledge: Model Trained on Amazon Reviews
 
-We will go in-depth in the process of fine-tunning your model in the week 12 of the course. While we don't  do that, let's see if there are models on Hugging Face that were actually trained on a similar task: predicting reviews. 
+We will go in-depth in the process of fine-tunning your model in the week 12 of the course. While we don't do that, let's see if there are models on Hugging Face that were actually trained on a similar task: predicting reviews.
 
 Actually, there are many. See here: https://huggingface.co/models?sort=trending&search=sentiment+reviews
 
@@ -218,7 +214,6 @@ tokenizer = AutoTokenizer.from_pretrained("MICADEE/autonlp-imdb-sentiment-analys
 sentiment_pipeline = pipeline("sentiment-analysis", model=model, tokenizer=tokenizer)
 ```
 
-
 ```{python}
 # Run in the dataframe
 pd_test["imdb_scores"]=pd_test["text"].apply(sentiment_pipeline, truncation=True, max_length=512)
@@ -227,7 +222,6 @@ pd_test["imdb_scores"]=pd_test["text"].apply(sentiment_pipeline, truncation=True
 pd_test["imdb_class"]=pd_test["imdb_scores"].apply(lambda x: np.where(x[0]["label"]=="positive", 1, 0))
 
 ```
-
 
 ```{python}
 ## accuracy
@@ -239,6 +233,5 @@ accuracy = accuracy_score(pd_test['label'], pd_test['imdb_class'])
 print(accuracy)
 
 ```
-
 
 ### Who still needs a dictionary?!?!
