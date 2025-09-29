@@ -45,7 +45,7 @@ subtitle: "Data Science and Public Policy, McCourt School for Public Polcy, Geor
 
     -   <a href="/code/_week4_transformers.ipynb" download> Week 4 - Transformers Based Classifiers </a>
 
-    -   <a href="/code/_week4_transformers.qmd" download> Week 4 - Transformers Based Classifiers in R </a>, [html here](/code/_week4_transformers.html)
+    -   <a href="/code/week4_transformers.qmd" download> Week 4 - Transformers Based Classifiers in R </a>, [html here](/code/week4_transformers.html)
 
 -   **Data:** [Streamming Chat Comments](https://www.dropbox.com/scl/fi/efgllmfeyo5rhnvblq9ki/comments_facebook_presidental_elections.csv?rlkey=aqebsrcf5sb63txetovb9nnkc&dl=0)
 
