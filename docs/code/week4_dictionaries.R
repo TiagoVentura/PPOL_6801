@@ -9,7 +9,7 @@
 
 # 0 -  Introduction -------------------------------------------------------------
 
-## This script provides covers topics related toÇ 
+## This script provides covers topics related to:
 
 ## 1- dictionaries for supervised classification
 
@@ -250,14 +250,14 @@ d_for_tox <- d %>%
 ## 3.2 Query the API -------------------------------------------------------------------------------------
 
 # install wrapper
-devtools::install_github("favstats/peRspective")
+#devtools::install_github("favstats/peRspective")
 
 # call the package
 library(peRspective)
 # see package here: https://github.com/favstats/peRspective/
 
 # Read here how to get an api key: https://developers.perspectiveapi.com/s/docs-get-started?language=en_US
-usethis::edit_r_environ()
+#usethis::edit_r_environ()
 
 #
 # Query the api
@@ -267,7 +267,8 @@ outputs <- prsp_stream(d_for_tox %>% slice(1:10),
                         score_model =  peRspective::prsp_models,
                           safe_output = T, verbose = T)
 
-# load data with all the comments. This is just after I run the model in the entire data
+# load data with all the comments. This is just after I run the model in the entire data. 
+# you can download this data here: https://www.dropbox.com/scl/fi/t6ak44pq9kahi1c77vuqy/outputs_tox.csv?rlkey=hssx3z65r2diwavpl61nxgg0r&dl=0
 toxicity <- read_csv("data/outputs_tox.csv")
 
 # make it long format

@@ -317,11 +317,7 @@ The assignments will be graded in accuracy and quality of the programming style.
 
 -   
 
-    (iii) Commentary, responses, and/or solutions should all be written in Markdown and explain sufficiently the outpus.
-
--   
-
-    (v) All solutions must be completed in Python.
+    (iii) Commentary, responses, and/or solutions should all be written in Markdown and explain sufficiently the outputs.
 
 The follow schedule lays out when each assignment will be assigned.
 

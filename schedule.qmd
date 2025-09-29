@@ -44,16 +44,15 @@ subtitle: "Data Science and Public Policy, McCourt School for Public Polcy, Geor
     -   <a href="/code/week4_dictionaries.R" download> Week 4 - Dictionaries and Off-the-Shelf Classifiers</a>
 
     -   <a href="/code/_week4_transformers.ipynb" download> Week 4 - Transformers Based Classifiers </a>
-    
+
     -   <a href="/code/_week4_transformers.qmd" download> Week 4 - Transformers Based Classifiers in R </a>
 
 -   **Data:** [Streamming Chat Comments](https://www.dropbox.com/scl/fi/efgllmfeyo5rhnvblq9ki/comments_facebook_presidental_elections.csv?rlkey=aqebsrcf5sb63txetovb9nnkc&dl=0)
 
-
 ## Week 5: September 29
 
-- **Topics**: supervised learning with text. 
+-   **Topics**: Building a training data, regularization, model selection, and model evaluation.
 
-- **Lecture**: [Week 5 - Supervised Learning](/slides/week_05.html)
+-   **Lecture**: [Week 5 - Supervised Learning](/slides/week_05.html)
 
-- **Coding Materials**: <a href="/code/week5_supervised_learning.R" download> Week 5 - Supervised Learning: Training your own classifiers</a>
+-   **Coding Materials**: <a href="/code/week5_supervised_learning.R" download> Week 5 - Supervised Learning: Training your own classifiers</a>

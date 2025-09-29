@@ -1,13 +1,11 @@
 ---
 title: "Instructions for PPOL 6801 - Final Project"
-subtitle: "Data Science and Public Policy, McCourt School for Public Polcy, Georgetown University"
+subtitle: "McCourt School for Public Polcy, Georgetown University"
 ---
 
 ## General Instructions
 
-Data science is an applied field and the DSPP is particularly geared towards providing students the tools to make policy and substantive contributions using data and recent computational developments.
-
-In this sense, it is fundamental that you understand how to conduct a complete analysis from collecting data, to cleaning and analyzing it, to presenting your findings.
+Data science is an applied field. For this reason,  it is fundamental that you understand how to conduct a complete analysis from collecting data, to cleaning and analyzing it, to presenting your findings.
 
 For this reason, a considerable part of your grade (40%) will come from a an independent data science project, *applying concepts learned throughout the course*.
 
@@ -21,7 +19,7 @@ Due dates and breakdowns for the project are as follows:
 
 | **Requirement**  | **Due**           | **Length**    | **Percentage** |
 |------------------|-------------------|---------------|----------------|
-| Project Proposal | EOD Friday Week 9 | 2 pages       | 5%             |
+| Project Proposal | EOD Friday Week 8 | 2 pages       | 5%             |
 | Presentation     | Week 14           | 10-15 minutes | 10%            |
 | Project Report   | Wednesday Week 15 | 10 pages      | 25%            |
 
