@@ -1,4 +1,4 @@
-# PPOL 6801 
+# PPOL 6801
 
 Repository for Georgetown McCourt's School of Public Policy's Text as Data (PPOL 6801)
 

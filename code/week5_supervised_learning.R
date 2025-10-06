@@ -1,6 +1,5 @@
 ##############################################################################
 # File-Name: week5_supervised_learning.r
-# Date: February 14, 2024
 # author: Tiago Ventura
 # course: PPOL 6801 - text as data
 # topics: supervised learning
@@ -17,10 +16,6 @@
 
 pacman::p_load(tidyverse, quanteda, quanteda.corpora, quanteda.textstats, quanteda.textmodels, 
                rjson)
-
-## IMPORTANT: You should have seen these models in DS II and how to train them in Python
-## In my opinion, the sklearn actually provides a more intuitive framework to run ML models
-## that's all to say, you can implement these and more using the code you have at hand already
 
 
 # 1 - Dataset ----------------------------------------------------
@@ -42,9 +37,9 @@ news_data
 
 # 2 - Naive Bayes ------------------------------------------
 
-# In class, we did not discuss Naive Bayes at length. But you have seen the model in DS 2
-# Naive Bayes is the simplest text classifier you can build. Intuitively, NB uses training data
-# to build prototypes of classes based on the words frequency.
+# In class, we did not discuss Naive Bayes at length. 
+# Naive Bayes is the simplest text classifier you can build. 
+# Intuitively, NB uses training data  to build prototypes of classes based on the words frequency.
 # The naive assumption is that features occur independently conditional on the class.
 
 # subset data and keep relevant variables
@@ -70,9 +65,13 @@ set.seed(1310)
 
 prop_train <- 0.8
 ids <- 1:nrow(news_samp)
+
+# get training data
 ids_train <- sample(ids, ceiling(prop_train*length(ids)), replace = FALSE)
-ids_test <- ids[-ids_train]
 train_set <- news_samp[ids_train,]
+
+# get test data
+ids_test <- ids[-ids_train]
 test_set <- news_samp[ids_test,]
 
 # get dfm for each set
@@ -88,10 +87,11 @@ test_dfm <- tokens(test_set$text, remove_punct = TRUE) %>%
 
 # how does this look?
 as.matrix(train_dfm)[1:5,1:5]
+featnames(train_dfm)
 
 # Are the features of these two DFMs necessarily the same? Yes/No Why?
 # match test set dfm to train set dfm features
-#?dfm_match
+?dfm_match
 test_dfm <- dfm_match(test_dfm, features = featnames(train_dfm))
 
 
@@ -168,7 +168,8 @@ posterior %>% arrange(-post_SPORTS) %>% head(10)
 posterior %>% arrange(-post_CRIME) %>% head(10)
 
 # what does smoothing do? 
-# avoids zeros on your terms. This is an issue for naive bayes likelihood function. 
+# avoids zeros on your terms. 
+# This is an issue for naive bayes likelihood function. 
 
 # how many terms get zero probabilities in the model with no smoothing?
 sum(nb_model$param[1,]==0)
@@ -200,12 +201,10 @@ lasso <- cv.glmnet(x=train_dfm,
 	                 family="binomial", 
                    alpha=1, # l-1 lasso
                    nfolds=5,
-	intercept=TRUE,	type.measure="class")
+	intercept=TRUE,	
+	type.measure="class")
 
-summary(lasso)
-str(lasso)
-
-# see the values for the lambda parameter
+# see the values for the lambda parameter used in the regularization
 plot(lasso)
 
 # We can now compute the performance metrics on the test set.
@@ -225,7 +224,6 @@ print_cmat <- function(confusion_matrix){
 
 # print
 print_cmat(lasso_cmat)
-
 
 # With LASSO, it is interesting to look at the actual estimated coefficients and
 # see which of these have the highest or lowest values:
@@ -269,8 +267,120 @@ ridge_cmat<-confusionMatrix(tabclass_ridge, mode = "everything")
 # print
 print_cmat(ridge_cmat)
 
+# 4 - Tidy Models ---------
 
-# 4 - Where to learn more?  -----------------------------------------------
+## Some R developers have been working on a unified approach for ML in R called `tidymodels`
+## It basically incorporates principles of the tidyverse package into ML in R
+## read here: https://www.tidymodels.org/
+
+## Let me show one example using the tidymodels approach
+## Because of the tidy approach, you need to convert the matrix to a DF
+
+
+#install.packages("tidymodels")
+library(tidymodels)
+set.seed(123)
+
+# Convert dfm to sparse matrix
+train_mat <- as.matrix(train_dfm)  
+test_mat  <- as.matrix(test_dfm)
+
+# Combine into tibble with outcome
+train_data <- as_tibble(train_mat) %>%
+  mutate(sports = train_set$sports)
+
+test_data <- as_tibble(test_mat) %>%
+  mutate(sports = test_set$sports)
+
+# Split data
+data_split <- initial_split(train_data , prop = 0.8, strata="sports")
+train_data <- training(data_split)
+test_data  <- testing(data_split)
+
+# Cross-validation
+folds <- vfold_cv(train_data, v = 5, strata = sports)
+
+# Recipe: you can add steps for text/numeric preprocessing here
+rec <- recipe(sports ~ ., data = train_data)
+
+# elastic net (as we saw with glmnet)
+
+## build model
+el_net <- logistic_reg(penalty = tune()) %>%
+  set_engine("glmnet")
+
+## build workflow
+el_net_wf <- workflow() %>%
+  add_recipe(rec) %>%
+  add_model(el_net)
+
+## train the model
+el_net_tuned <- tune_grid(el_net_wf,
+                        resamples = folds,
+                        grid = 5, 
+                        metrics = metric_set(accuracy, precision, recall))
+
+## Get metrics
+best_metric = el_net_tuned %>%
+  select_best(metric = "accuracy")
+
+##  finalize the model
+final_wf <- 
+  el_net_wf   %>% 
+  finalize_workflow(best_metric)
+
+## fit in the test set
+##  last_fit() with our finalized model;
+## this function fits the finalized model on the full 
+## training data set and evaluates the finalized model on the testing data.
+## I AM NOT A FAN OF THIS!!
+el_net_fit <- 
+  final_wf %>%
+  last_fit(data_split) 
+
+##
+el_net_fit %>%
+  collect_metrics()
+
+## Notice it is from here, quite easy to use other other models. 
+## Let's see with tree based models
+
+## build model
+tree_net <- decision_tree(cost_complexity = tune(), tree_depth = tune()) %>%
+  set_engine("rpart") %>%
+  set_mode("classification")
+
+## build workflow
+tree_net_wf <- workflow() %>%
+  add_recipe(rec) %>%
+  add_model(tree_net)
+
+## train the model
+tree_net_tuned <- tune_grid(tree_net_wf,
+                          resamples = folds,
+                          grid = 5, 
+                          metrics = metric_set(accuracy, precision, recall))
+
+## Get metrics
+best_metric = tree_net_tuned %>%
+  select_best(metric = "accuracy")
+
+##  finalize the model
+tree_final_wf <- 
+  tree_net_wf   %>% 
+  finalize_workflow(best_metric)
+
+## fit in the test set
+tree_fit <- 
+  tree_final_wf %>%
+  last_fit(data_split) 
+
+##
+tree_fit %>%
+  collect_metrics()
+
+
+# 5 - Where to learn more?  -----------------------------------------------
 
 # This is a brief intro to supervised learning. After you get the idea, 
 # switching between models is easy. 
@@ -284,4 +394,4 @@ print_cmat(ridge_cmat)
 # Here if you want to explore a tidy approach for ML in R: https://smltar.com/
 ## strongly recommend this last book. It provides a more integrative pipeline for ML in R
 
-
+# and this book for ML:https://www.statlearning.com/

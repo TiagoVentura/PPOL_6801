@@ -103,7 +103,8 @@ lsd_results
 # let's merge back with the original data
 
 # get vars back
-df_sent <- docvars(d_corpus) %>% mutate(doc_id=docnames(d_corpus)) %>% 
+df_sent <- docvars(d_corpus) %>% 
+  mutate(doc_id=docnames(d_corpus)) %>% 
   left_join(lsd_results) %>%
   glimpse()
 

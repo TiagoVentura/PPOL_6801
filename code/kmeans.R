@@ -57,12 +57,11 @@ plot_kmeans <- function(data, centroids, title) {
 
 # Initial assignment
 data <- assign_points_to_centroids(data, centroids)
-plot_kmeans(data, centroids %>% mutate(cluster=c(1, 2, 3)), "Step 1: Initial Assignment")
-ggsave(here("slides", "week6_figs", "kmeansfinal.png"))
+plot_kmeans(data, centroids %>% mutate(cluster=c(1, 2, 3)), "Step 5: Final")
+ggsave(here("slides", "week6_figs", "kmeans5.png"))
 
 
 # Iterate through the k-means steps
-
 i=3
 for(i in 1:10) {
   old_centroids <- centroids

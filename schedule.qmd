@@ -56,3 +56,11 @@ subtitle: "Data Science and Public Policy, McCourt School for Public Polcy, Geor
 -   **Lecture**: [Week 5 - Supervised Learning](/slides/week_05.html)
 
 -   **Coding Materials**: <a href="/code/week5_supervised_learning.R" download> Week 5 - Supervised Learning: Training your own classifiers</a>
+
+## Week 6: October 6
+
+-   **Topics**: Unsupervised learning, topic models, and clustering
+
+-   **Lecture**: [Week 6 - Unsupervised Learning](/slides/week_06.html)
+
+-   **Coding Materials**: <a href="/code/week6_unsupervised_learning.R" download> Week 7 - Unsupervised Learning: Topic Models</a>

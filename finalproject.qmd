@@ -5,7 +5,7 @@ subtitle: "McCourt School for Public Polcy, Georgetown University"
 
 ## General Instructions
 
-Data science is an applied field. For this reason,  it is fundamental that you understand how to conduct a complete analysis from collecting data, to cleaning and analyzing it, to presenting your findings.
+Data science is an applied field. For this reason, it is fundamental that you understand how to conduct a complete analysis from collecting data, to cleaning and analyzing it, to presenting your findings.
 
 For this reason, a considerable part of your grade (40%) will come from a an independent data science project, *applying concepts learned throughout the course*.
 
