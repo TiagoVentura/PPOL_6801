@@ -312,56 +312,56 @@
     "href": "slides/week_06.html#housekeeping",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Housekeeping",
-    "text": "Housekeeping\nLet’s quickly review your future assignments:\n\n\nProblem Set 1\n\nRead instructions: Submit your qmd compiled.\nIssues with GitHub: update of PAT. You probably do not have permission to post on a forked repo.\nGrades to be posted soon\n\nProblem Set 2\n\nComing soon ~ In two weeks, no class next week.\n\nProject Proposal\n\nEOD Friday Week 8 ~ Oct 31\n\nyou have to meet with me before submitting your proposal\nSend me a draft of the proposal before the meeting"
+    "text": "Housekeeping\nLet’s quickly review your future assignments:\n\n\nProblem Set 1\n\nRead instructions: Submit your qmd compiled.\nIssues with GitHub: update your PAT. You probably do not have permission to post on a org repo.\nGrades to be posted soon (just have a few more to go through)\n\nProblem Set 2\n\nComing soon ~ In two weeks, no class next week.\n\nProject Proposal\n\nEOD Friday Week 8 ~ Oct 31\n\nyou have to meet with me before submitting your proposal\nSend me a draft of the proposal before the meeting"
   },
   {
     "objectID": "slides/week_06.html#where-are-we",
     "href": "slides/week_06.html#where-are-we",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Where are we?",
-    "text": "Where are we?\nWe started from pre-processing text as data, representing text as numbers, describing features of the tex, and learned how to measure concepts in text:\n\n\nLast Week: Supervised learning ~ Training your models\n\nCrowdsourcing label classification\nFull pipeline for model training\nRegularized regressions\nEvaluating Performance\n\nThis week: unsupervised learning\n\nBegin to take a purely inductive approach\nDiscovery\nLook for things we don’t know about in the text."
+    "text": "Where are we?\nWe started from pre-processing text as data, representing text as numbers, describing features of the tex, and learned how to measure concepts in text:\n\n\nLast Week: Supervised learning ~ Training your models\n\nCrowdsourcing label classification\nFull pipeline for model training\nRegularized regressions\nEvaluating Performance\n\nThis week: unsupervised learning"
   },
   {
     "objectID": "slides/week_06.html#overview-unsupervised-learning",
     "href": "slides/week_06.html#overview-unsupervised-learning",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Overview: Unsupervised Learning",
-    "text": "Overview: Unsupervised Learning\n\nData: humans, documents, votes, etc. are not pre-labelled in terms of some underlying concept.\n\nThink about congressional speeches, we know the author, their party, other metadata, but:\n\nwe don’t yet know what that speech ‘represents’ in terms of its latent properties, what ‘kind’ of speech it is, what ‘topics’ it covers, what speeches it is similar to conceptually, etc.\n\n\nGoal: take the observations and find hidden structure and meaning in them\n\nsimilarity\ngroups\ntopics\nassociation between word, etc…\n\nMain Models\n\nClustering\nTopic Models"
+    "text": "Overview: Unsupervised Learning\n\nData: humans, documents, votes, etc. are not pre-labelled in terms of some underlying concept.\n\nThink about congressional speeches, we know the author, their party, other metadata, but:\n\nWe don’t yet know what that speech ‘represents’ in terms of its latent properties, what ‘kind’ of speech it is, what ‘topics’ it covers, what speeches it is similar to conceptually, etc.\n\n\nGoal: take the observations and find hidden structure and meaning in them\n\nsimilarity\ngroups\ntopics\nassociation between word, etc…\n\nMain models we will learn:\n\nClustering Models\nTopic Models"
   },
   {
     "objectID": "slides/week_06.html#main-challenges-of-unsupervised-learning",
     "href": "slides/week_06.html#main-challenges-of-unsupervised-learning",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Main challenges of Unsupervised Learning",
-    "text": "Main challenges of Unsupervised Learning\n\n\nHard to get it right\n\n\nunsupervised learning requires several ad-hoc decisions and these decisions matter for quality of your results\n\nnumber of clusters\nnumber of topics\npre-processing steps\n\nDomain knowledge (and honestly a bit of randomness) guides a lot of these decisions"
+    "text": "Main challenges of Unsupervised Learning\n\n\nHard to get it right\n\n\nUnsupervised learning requires several ad-hoc decisions and these decisions matter for quality of your results\n\nnumber of clusters\nnumber of topics\npre-processing steps\n\nDomain knowledge (and honestly a bit of randomness) guides a lot of these decisions"
   },
   {
     "objectID": "slides/week_06.html#section",
     "href": "slides/week_06.html#section",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "",
-    "text": "Hard to know if you are doing right!\n\n\nin contrast to supervised approaches, we won’t know ‘how correct’ the output is in a simple statistical sense\nuse statistical measures of fit/unfit of different modeling decisions\n\nbut in general, it will involve a hugely amount of qualitative assessment.\n\nNo easy measure of accuracy, recall and precision."
+    "text": "Hard to know if you are doing right!\n\n\nIn contrast to supervised approaches, we won’t know ‘how correct’ the output\nUse statistical measures of fit/unfit of different modeling decisions\n\nbut in general, it will involve a hugely amount of qualitative assessment.\n\nNo easy measure of accuracy, recall and precision."
   },
   {
     "objectID": "slides/week_06.html#problem",
     "href": "slides/week_06.html#problem",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Problem",
-    "text": "Problem\nPurpose: look for ‘groups’ in data explicitly.\n\nInput: text + number of clusters\nOutput: documents ~&gt; clusters\n\nClusters: group of data points that are all nearby to each other and far away from other clusters.\nResearch Questions? How can we categorize these news articles or policy bills? How can we group these legislators based on their speeches?"
+    "text": "Problem\n\nPurpose: look for ‘groups’ in data explicitly.\n\n\nInput: text + number of clusters\nOutput: documents ~&gt; clusters\n\n\n\n\nClusters: group of data points that are all nearby to each other and far away from other clusters.\n\n\nResearch Questions? How can we categorize these news articles or policy bills? How can we group these legislators based on their speeches?"
   },
   {
     "objectID": "slides/week_06.html#k-means-clustering",
     "href": "slides/week_06.html#k-means-clustering",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "K-means clustering",
-    "text": "K-means clustering\nK-Means clustering: partition the docs into a set of K categories where docs with similar rates of word usage are assigned to the same cluster and dissimilar docs are assigned to different categories\n\n\nPre-specify cluster numbers\n\n\nAlgorithm puts observations into clusters which minimize the within-cluster sum of squares (i.e., sum of squared Euclidean distances between each data point and its assigned cluster centroid)\n\n\nObjective function to minimize"
+    "text": "K-means clustering\nK-Means clustering: partition the docs into a set of K categories where docs with similar rates of word usage are assigned to the same cluster and dissimilar docs are assigned to different categories\n\nPre-specify cluster numbers\nAlgorithm puts observations into clusters which minimize the within-cluster sum of squares (i.e., sum of squared Euclidean distances between each data point and its assigned cluster centroid)\nObjective function to minimize"
   },
   {
     "objectID": "slides/week_06.html#k-means-steps",
     "href": "slides/week_06.html#k-means-steps",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "K-Means Steps",
-    "text": "K-Means Steps\n\n\nInitialize Clusters centroids randomly (\\(\\mu_k\\))\nAssign Documents to nearest centroid clusters using euclidean distance.\nCalculate loss function between points and their clusters\n\n\\[\nJ = \\sum_{i=1}^{n} \\sum_{k=1}^{K} r_{ik} \\, \\| x_i - \\mu_k \\|^2\n\\]\n\nUpdate centroids\n\n\\[\n\\mu_k = \\frac{\\sum_{i=1}^{n} r_{ik} \\, x_i}{\\sum_{i=1}^{n} r_{ik}}\n\\]\n\nRepeat (from bullet point 2) until convergence."
+    "text": "K-Means Steps\n\nInitialize Clusters centroids randomly (\\(\\mu_k\\))\nAssign Documents to nearest centroid clusters using euclidean distance.\nCalculate loss function between points and their clusters\n\n\n\\[\nJ = \\sum_{i=1}^{n} \\sum_{k=1}^{K} r_{ik} \\, \\| x_i - \\mu_k \\|^2\n\\]\n\n\nUpdate centroids\n\n\n\\[\n\\mu_k = \\frac{\\sum_{i=1}^{n} r_{ik} \\, x_i}{\\sum_{i=1}^{n} r_{ik}}\n\\]\n\n\nRepeat (from bullet point 2) until convergence."
   },
   {
     "objectID": "slides/week_06.html#visually",
@@ -424,7 +424,7 @@
     "href": "slides/week_06.html#topic-models-intuition",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Topic Models: Intuition",
-    "text": "Topic Models: Intuition\n\nProblem: Once we start with docs, we do not know what topics exist, what words belong to which topics, what topic proportions each document has\nProbabilistic Model: Make assumptions about how language work, and how topics emerge:\n\nAssign these words a probability of being part of a cluster (topic).\nAssign documents a probability of being associated of these clusters.\n\nDocuments: formed from probability distribution of topics\n\na speech can be 40% about trade, 30% about sports, 10% about health, and 20% spread across topics you don’t think make much sense\n\nTopics: formed from probability distribution over words\n\nthe topic health will have words like hospital, clinic, dr., sick, cancer"
+    "text": "Topic Models: Intuition\n\nProblem: Once we start with docs, we do not know what topics exist, what words belong to which topics, what topic proportions each document has\nProbabilistic Model: Make assumptions about how language work, and how topics emerge:\nDocuments: formed from probability distribution of topics\n\na speech can be 40% about trade, 30% about sports, 10% about health, and 20% spread across topics you don’t think make much sense\n\nTopics: formed from probability distribution over words\n\nthe topic health will have words like hospital, clinic, dr., sick, cancer"
   },
   {
     "objectID": "slides/week_06.html#latent-dirichlet-allocation-lda",
@@ -445,7 +445,7 @@
     "href": "slides/week_06.html#step-1-and-2-or-what-a-multinomial-distribution-looks-like",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Step 1 and 2: or what a multinomial distribution looks like",
-    "text": "Step 1 and 2: or what a multinomial distribution looks like\nFor each document (and then topic) ~ Randomly choose a distribution from a multinomal distribution"
+    "text": "Step 1 and 2: or what a multinomial distribution looks like\nFor each document (and then topic) ~ Randomly choose a distribution from many multinomal distributions"
   },
   {
     "objectID": "slides/week_06.html#step-2-sampling-words",

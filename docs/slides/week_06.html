@@ -348,8 +348,8 @@
 <li><p><span class="red">Problem Set 1</span></p>
 <ul>
 <li>Read instructions: Submit your qmd compiled.</li>
-<li>Issues with GitHub: update of PAT. You probably do not have permission to post on a forked repo.</li>
-<li>Grades to be posted soon</li>
+<li>Issues with GitHub: update your PAT. You probably do not have permission to post on a org repo.</li>
+<li>Grades to be posted soon (just have a few more to go through)</li>
 </ul></li>
 <li><p><span class="red">Problem Set 2</span></p>
 <ul>
@@ -366,6 +366,11 @@
 </ul>
 </div>
 </section>
+<section>
+<section id="coding-supervised-learning" class="title-slide slide level1 center">
+<h1>Coding: Supervised Learning</h1>
+
+</section>
 <section id="where-are-we" class="slide level2 center">
 <h2>Where are we?</h2>
 <p>We started from <span class="red">pre-processing text</span> as data, <span class="red">representing</span> text as numbers, <span class="red">describing features</span> of the tex, and learned how to <span class="red">measure</span> concepts in text:</p>
@@ -378,13 +383,7 @@
 <li class="fragment">Regularized regressions</li>
 <li class="fragment">Evaluating Performance</li>
 </ul></li>
-<li class="fragment">This week: <strong>unsupervised learning</strong>
-<ul>
-<li class="fragment">Begin to take a purely inductive approach</li>
-<li class="fragment"><span class="red">Discovery</span></li>
-<li class="fragment">Look for things we don’t know about in the text.<br>
-</li>
-</ul></li>
+<li class="fragment">This week: <strong>unsupervised learning</strong></li>
 </ul>
 </div>
 </section>
@@ -395,7 +394,7 @@
 <ul>
 <li class="fragment">Think about congressional speeches, we know the author, their party, other metadata, but:
 <ul>
-<li class="fragment"><span class="midgray">we don’t yet know what that speech ‘represents’ in terms of its latent properties, what ‘kind’ of speech it is, what ‘topics’ it covers, what speeches it is similar to conceptually, etc.</span></li>
+<li class="fragment">We don’t yet know what that speech ‘represents’ in terms of its latent properties, what ‘kind’ of speech it is, what ‘topics’ it covers, what speeches it is similar to conceptually, etc.</li>
 </ul></li>
 </ul></li>
 <li class="fragment"><p><span class="red">Goal:</span> take the observations and find <span class="red">hidden structure</span> and meaning in them</p>
@@ -405,9 +404,9 @@
 <li class="fragment">topics</li>
 <li class="fragment">association between word, etc…</li>
 </ul></li>
-<li class="fragment"><p><strong>Main Models</strong></p>
+<li class="fragment"><p><strong>Main models we will learn:</strong></p>
 <ul>
-<li class="fragment"><p>Clustering</p></li>
+<li class="fragment"><p>Clustering Models</p></li>
 <li class="fragment"><p>Topic Models</p></li>
 </ul></li>
 </ul>
@@ -419,7 +418,7 @@
 <h3 id="hard-to-get-it-right">Hard to get it right</h3>
 <div>
 <ul>
-<li><p>unsupervised learning requires several <strong>ad-hoc</strong> decisions and these decisions matter for quality of your results</p>
+<li><p>Unsupervised learning requires several <strong>ad-hoc</strong> decisions and these decisions matter for quality of your results</p>
 <ul>
 <li>number of clusters</li>
 <li>number of topics</li>
@@ -435,15 +434,15 @@
 <h3 id="hard-to-know-if-you-are-doing-right">Hard to know if you are doing right!</h3>
 <div>
 <ul>
-<li><p>in contrast to supervised approaches, we won’t know ‘how correct’ the output is in a simple statistical sense</p></li>
-<li><p>use statistical measures of fit/unfit of different modeling decisions</p>
+<li><p>In contrast to supervised approaches, we won’t know ‘how correct’ the output</p></li>
+<li><p>Use statistical measures of fit/unfit of different modeling decisions</p>
 <ul>
 <li>but in general, it will involve a hugely amount of qualitative assessment.</li>
 </ul></li>
 <li><p>No easy measure of accuracy, recall and precision.</p></li>
 </ul>
 </div>
-</section>
+</section></section>
 <section>
 <section id="clustering-methods" class="title-slide slide level1 center">
 <h1>Clustering Methods</h1>
@@ -451,50 +450,54 @@
 </section>
 <section id="problem" class="slide level2 center">
 <h2>Problem</h2>
+<div class="fragment">
 <p><strong>Purpose</strong>: look for ‘groups’ in data explicitly.</p>
+<div>
 <ul>
-<li class="fragment">Input: text + number of clusters</li>
-<li class="fragment">Output: documents ~&gt; clusters</li>
+<li>Input: text + number of clusters</li>
+<li>Output: documents ~&gt; clusters</li>
 </ul>
+</div>
+</div>
+<div class="fragment">
 <p><strong>Clusters:</strong> group of data points that are all nearby to each other and far away from other clusters.</p>
+</div>
+<div class="fragment">
 <p><strong>Research Questions?</strong> How can we categorize these news articles or policy bills? How can we group these legislators based on their speeches?</p>
+</div>
 </section>
 <section id="k-means-clustering" class="slide level2 center">
 <h2>K-means clustering</h2>
 <p><strong>K-Means clustering:</strong> partition the docs into a set of K categories where docs with similar rates of word usage are assigned to the same cluster and dissimilar docs are assigned to different categories</p>
-<ul>
-<li class="fragment"><ol type="1">
-<li class="fragment">Pre-specify cluster numbers</li>
-</ol></li>
-<li class="fragment"><ol start="2" type="1">
-<li class="fragment">Algorithm puts observations into clusters which minimize the within-cluster sum of squares (i.e., sum of squared Euclidean distances between each data point and its assigned cluster centroid)</li>
-</ol></li>
-<li class="fragment"><ol start="3" type="1">
-<li class="fragment">Objective function to minimize</li>
-</ol></li>
-</ul>
+<ol type="1">
+<li class="fragment"><p>Pre-specify cluster numbers</p></li>
+<li class="fragment"><p>Algorithm puts observations into clusters which minimize the within-cluster sum of squares (i.e., sum of squared Euclidean distances between each data point and its assigned cluster centroid)</p></li>
+<li class="fragment"><p>Objective function to minimize</p></li>
+</ol>
 </section>
 <section id="k-means-steps" class="slide level2 center">
 <h2>K-Means Steps</h2>
-<div>
 <ul>
-<li><p>Initialize Clusters centroids randomly (<span class="math inline">\(\mu_k\)</span>)</p></li>
-<li><p>Assign Documents to nearest centroid clusters using euclidean distance.</p></li>
-<li><p>Calculate loss function between points and their clusters</p></li>
+<li class="fragment"><p>Initialize Clusters centroids randomly (<span class="math inline">\(\mu_k\)</span>)</p></li>
+<li class="fragment"><p>Assign Documents to nearest centroid clusters using euclidean distance.</p></li>
+<li class="fragment"><p>Calculate loss function between points and their clusters</p></li>
 </ul>
+<div class="fragment">
 <p><span class="math display">\[
 J = \sum_{i=1}^{n} \sum_{k=1}^{K} r_{ik} \, \| x_i - \mu_k \|^2
 \]</span></p>
+</div>
 <ul>
-<li>Update centroids</li>
+<li class="fragment">Update centroids</li>
 </ul>
+<div class="fragment">
 <p><span class="math display">\[
 \mu_k = \frac{\sum_{i=1}^{n} r_{ik} \, x_i}{\sum_{i=1}^{n} r_{ik}}
 \]</span></p>
-<ul>
-<li>Repeat (from bullet point 2) until convergence.</li>
-</ul>
 </div>
+<ul>
+<li class="fragment">Repeat (from bullet point 2) until convergence.</li>
+</ul>
 </section>
 <section id="visually" class="slide level2 center">
 <h2>Visually</h2>
@@ -518,7 +521,7 @@ J = \sum_{i=1}^{n} \sum_{k=1}^{K} r_{ik} \, \| x_i - \mu_k \|^2
 <img data-src="week6_figs/kmeans.png" style="width:80.0%" class="r-stretch"></section>
 <section id="clustering-vs-topic-models" class="slide level2 center">
 <h2>Clustering vs Topic Models</h2>
-<h4 id="topics-models-can-be-thought-as-a-probabilistic-generalization-of-clustering-methods">Topics models can be thought as a probabilistic generalization of clustering methods</h4>
+<h3 id="topics-models-can-be-thought-as-a-probabilistic-generalization-of-clustering-methods">Topics models can be thought as a probabilistic generalization of clustering methods</h3>
 </section>
 <section id="algorithmic-vs-probabilistic-models" class="slide level2 center">
 <h2>Algorithmic vs Probabilistic Models</h2>
@@ -573,11 +576,7 @@ J = \sum_{i=1}^{n} \sum_{k=1}^{K} r_{ik} \, \| x_i - \mu_k \|^2
 <h2>Topic Models: Intuition</h2>
 <ul>
 <li class="fragment"><p><strong>Problem:</strong> Once we start with docs, we do not know what topics exist, what words belong to which topics, what topic proportions each document has</p></li>
-<li class="fragment"><p><strong>Probabilistic Model:</strong> Make assumptions about how language work, and how topics emerge:</p>
-<ul>
-<li class="fragment"><p>Assign these words a probability of being part of a cluster (topic).</p></li>
-<li class="fragment"><p>Assign documents a probability of being associated of these clusters.</p></li>
-</ul></li>
+<li class="fragment"><p><strong>Probabilistic Model:</strong> Make assumptions about how language work, and how topics emerge:</p></li>
 <li class="fragment"><p><strong>Documents:</strong> formed from probability distribution of topics</p>
 <ul>
 <li class="fragment"><span class="midgray">a speech can be 40% about trade, 30% about sports, 10% about health, and 20% spread across topics you don’t think make much sense</span></li>
@@ -612,7 +611,7 @@ J = \sum_{i=1}^{n} \sum_{k=1}^{K} r_{ik} \, \| x_i - \mu_k \|^2
 </section>
 <section id="step-1-and-2-or-what-a-multinomial-distribution-looks-like" class="slide level2 center">
 <h2>Step 1 and 2: or what a multinomial distribution looks like</h2>
-<p>For each document (and then topic) ~ Randomly choose a distribution from a multinomal distribution</p>
+<p>For each document (and then topic) ~ Randomly choose a distribution from many multinomal distributions</p>
 
 <img data-src="./week6_figs/topic_distns.png" style="width:80.0%" class="r-stretch"></section>
 <section id="step-2-sampling-words" class="slide level2 center">
@@ -992,7 +991,7 @@ p(\beta_{1:K}, \theta_{1:D}, z_{1:D}|w_{1:D})=\frac{p(\beta_{1:K}, \theta_{1:D},
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1400,
+        width: 1300,
 
         height: 900,
 

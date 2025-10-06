@@ -11,7 +11,7 @@ format:
     transition: slide
     background-transition: fade
     code-line-numbers: false
-    width: 1400
+    width: 1300
     height: 900
     center: true
     slide-number: true
@@ -32,10 +32,9 @@ Let's quickly review your future assignments:
 ::: nonincremental
 -   [Problem Set 1]{.red}
 
-    -   Read instructions: Submit your qmd compiled. 
-    -   Issues with GitHub: update of PAT. You probably do not have permission to post on a forked repo. 
-    -   Grades to be posted soon
-    
+    -   Read instructions: Submit your qmd compiled.
+    -   Issues with GitHub: update your PAT. You probably do not have permission to post on a org repo.
+    -   Grades to be posted soon (just have a few more to go through)
 
 -   [Problem Set 2]{.red}
 
@@ -48,6 +47,8 @@ Let's quickly review your future assignments:
         -   Send me a draft of the proposal before the meeting
 :::
 
+# Coding: Supervised Learning
+
 ## Where are we?
 
 We started from [pre-processing text]{.red} as data, [representing]{.red} text as numbers, [describing features]{.red} of the tex, and learned how to [measure]{.red} concepts in text:
@@ -59,9 +60,6 @@ We started from [pre-processing text]{.red} as data, [representing]{.red} text a
     -   Regularized regressions
     -   Evaluating Performance
 -   This week: **unsupervised learning**
-    -   Begin to take a purely inductive approach
-    -   [Discovery]{.red}
-    -   Look for things we don't know about in the text.\
 :::
 
 ## Overview: Unsupervised Learning
@@ -69,7 +67,7 @@ We started from [pre-processing text]{.red} as data, [representing]{.red} text a
 -   [Data:]{.red} humans, documents, votes, etc. are [not]{.red} pre-labelled in terms of some underlying concept.
 
     -   Think about congressional speeches, we know the author, their party, other metadata, but:
-        -   [we don't yet know what that speech 'represents' in terms of its latent properties, what 'kind' of speech it is, what 'topics' it covers, what speeches it is similar to conceptually, etc.]{.midgray}
+        -   We don't yet know what that speech 'represents' in terms of its latent properties, what 'kind' of speech it is, what 'topics' it covers, what speeches it is similar to conceptually, etc.
 
 -   [Goal:]{.red} take the observations and find [hidden structure]{.red} and meaning in them
 
@@ -78,9 +76,9 @@ We started from [pre-processing text]{.red} as data, [representing]{.red} text a
     -   topics
     -   association between word, etc...
 
--   **Main Models**
+-   **Main models we will learn:**
 
-    -   Clustering
+    -   Clustering Models
 
     -   Topic Models
 
@@ -90,7 +88,7 @@ We started from [pre-processing text]{.red} as data, [representing]{.red} text a
 ### Hard to get it right
 
 ::: nonincremental
--   unsupervised learning requires several **ad-hoc** decisions and these decisions matter for quality of your results
+-   Unsupervised learning requires several **ad-hoc** decisions and these decisions matter for quality of your results
 
     -   number of clusters
     -   number of topics
@@ -105,9 +103,9 @@ We started from [pre-processing text]{.red} as data, [representing]{.red} text a
 ### Hard to know if you are doing right!
 
 ::: nonincremental
--   in contrast to supervised approaches, we won't know 'how correct' the output is in a simple statistical sense
+-   In contrast to supervised approaches, we won't know 'how correct' the output
 
--   use statistical measures of fit/unfit of different modeling decisions
+-   Use statistical measures of fit/unfit of different modeling decisions
 
     -   but in general, it will involve a hugely amount of qualitative assessment.
 
@@ -118,52 +116,65 @@ We started from [pre-processing text]{.red} as data, [representing]{.red} text a
 
 ## Problem
 
+:::fragment
 **Purpose**: look for 'groups' in data explicitly.
 
+:::nonincremental
 -   Input: text + number of clusters
 -   Output: documents \~\> clusters
+:::
+:::
+:::fragment
 
 **Clusters:** group of data points that are all nearby to each other and far away from other clusters.
+:::
+
+:::fragment
 
 **Research Questions?** How can we categorize these news articles or policy bills? How can we group these legislators based on their speeches?
+:::
+
 
 ## K-means clustering
 
 **K-Means clustering:** partition the docs into a set of K categories where docs with similar rates of word usage are assigned to the same cluster and dissimilar docs are assigned to different categories
 
--   
 
-    1.  Pre-specify cluster numbers
 
--   
+1.  Pre-specify cluster numbers
 
-    2.  Algorithm puts observations into clusters which minimize the within-cluster sum of squares (i.e., sum of squared Euclidean distances between each data point and its assigned cluster centroid)
+   
 
--   
+2.  Algorithm puts observations into clusters which minimize the within-cluster sum of squares (i.e., sum of squared Euclidean distances between each data point and its assigned cluster centroid)
 
-    3.  Objective function to minimize
+   
+
+3.  Objective function to minimize
 
 ## K-Means Steps
 
-::: nonincremental
 -   Initialize Clusters centroids randomly ($\mu_k$)
 
 -   Assign Documents to nearest centroid clusters using euclidean distance.
 
 -   Calculate loss function between points and their clusters
 
+:::fragment
 $$
 J = \sum_{i=1}^{n} \sum_{k=1}^{K} r_{ik} \, \| x_i - \mu_k \|^2
 $$
+:::
 
 -   Update centroids
 
+:::fragment
 $$
 \mu_k = \frac{\sum_{i=1}^{n} r_{ik} \, x_i}{\sum_{i=1}^{n} r_{ik}}
 $$
+:::
 
 -   Repeat (from bullet point 2) until convergence.
-:::
+
 
 ## Visually
 
@@ -207,7 +218,7 @@ knitr::include_graphics("week6_figs/kmeans.png")
 
 ## Clustering vs Topic Models
 
-#### Topics models can be thought as a probabilistic generalization of clustering methods
+### Topics models can be thought as a probabilistic generalization of clustering methods
 
 ## Algorithmic vs Probabilistic Models
 
@@ -236,10 +247,6 @@ knitr::include_graphics("week6_figs/kmeans.png")
 -   **Problem:** Once we start with docs, we do not know what topics exist, what words belong to which topics, what topic proportions each document has
 
 -   **Probabilistic Model:** Make assumptions about how language work, and how topics emerge:
-
-    -   Assign these words a probability of being part of a cluster (topic).
-
-    -   Assign documents a probability of being associated of these clusters.
 
 -   **Documents:** formed from probability distribution of topics
 
@@ -273,7 +280,7 @@ knitr::include_graphics("./week6_figs/blei_fig.png")
 
 ## Step 1 and 2: or what a multinomial distribution looks like
 
-For each document (and then topic) \~ Randomly choose a distribution from a multinomal distribution
+For each document (and then topic) \~ Randomly choose a distribution from many multinomal distributions
 
 ```{r echo=FALSE, out.width = "80%"}
 knitr::include_graphics("./week6_figs/topic_distns.png") 
