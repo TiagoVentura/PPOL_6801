@@ -27,7 +27,7 @@ Due dates and breakdowns for the project are as follows:
 
 ### Project Proposal
 
-The project proposal asks that you sketch out a general 2 page (single-spaced; 12pt font) project proposal. The proposal should offer the following information:
+The project proposal asks that you ske`tch out a general 2 page (single-spaced; 12pt font) project proposal. The proposal should offer the following information:
 
 -   A high-level statement of the problem you intend to address or the analysis you aim to generate
 

@@ -74,8 +74,7 @@ For many years, social scientists have used text in their empirical analysis:
 -   And even powerful computational models (that do not fit in your laptop) became easily accessible.
 :::
 
-# Examples of Textual Data 
-
+# Examples of Textual Data
 
 ## Official Documents: Congressional Speeches, Bills, Press Releases, Transcripts, from all over the world!!
 
@@ -110,13 +109,12 @@ knitr::include_graphics("https://diplo-media.s3.eu-central-1.amazonaws.com/2025/
     -   Computational methods to process and analyze text at scale ([Data Science/NLP Tools]{.red})
 
     -   Many applications showing how we can use text to answer social science problems and test social science theories. ([Applied Social Science]{.red})
-    
-    - Bridge the gap between cutting-edge NLP and meaningful, interpretable
-research
+
+    -   Bridge the gap between cutting-edge NLP and meaningful, interpretable research
 
 # Do I need an entire course for this? Aren't my stats/DS classed enough?
 
-## {background-image="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExODJhdmI1dzNrb2k5c2cybnJ0ZjNhdzF1ZWU2YXRobnN1bXloNnV1eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eKrgVyZ7zLvJrgZNZn/giphy.gif"}
+##  {background-image="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExODJhdmI1dzNrb2k5c2cybnJ0ZjNhdzF1ZWU2YXRobnN1bXloNnV1eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eKrgVyZ7zLvJrgZNZn/giphy.gif"}
 
 ## Challenges I: Text is an unstructure data source
 
@@ -133,7 +131,7 @@ From [Gentzkow et al 2017](https://web.stanford.edu/~gentzkow/research/text-as-d
 -   The unique representation of each document has dimension $n_{V}^{n_L}$ .
 
     -   e.g., a sample of 30-word ($n_L$) Twitter messages using only the one thousand most common words in the English language
-    -   Unique Representation: 1000^30 (1000 * 1000 * ..... * 1000)
+    -   Unique Representation: 1000\^30 (1000 \* 1000 \* ..... \* 1000)
     -   As a simplified matrix: $M^{1000}_{30}$
     -   And this matrix will be really sparse!
 
@@ -182,8 +180,8 @@ In text, we only observe the words. Much harder to identify the latent concepts.
 ## What this class in not about it...
 
 -   Data acquisition: [no scrapping in class]{.red}. Assume you have learned already.
-   
-    - I can share code for those who haven't. 
+
+    -   I can share code for those who haven't.
 
 -   Regular expressions and basic text manipulation.
 
@@ -199,8 +197,8 @@ In text, we only observe the words. Much harder to identify the latent concepts.
 # Introductions
 
 ## 
-::: nonincremental
 
+:::::: nonincremental
 ::: fragment
 **Professor Tiago Ventura (he/him)**
 
@@ -223,8 +221,7 @@ In text, we only observe the words. Much harder to identify the latent concepts.
 ::: fragment
 **Outside of work, I enjoy [watching soccer, reading sci-fi and running]{.red}**
 :::
-
-:::
+::::::
 
 ## Your turn!
 
@@ -264,10 +261,10 @@ countdown(minutes = 10, seconds = 0,
 
 # Class Logistics
 
-## Weekly Schedule{style="font-size: .8em;"}
+## Weekly Schedule {style="font-size: .8em;"}
 
 | Week | Date | Topic |
-|------------|------------|-------------------------------------------------|
+|---------------|---------------|-------------------------------------------|
 | 1 | Sept 2 | Introductions and Course Overview |
 | 2 | Sept 8 | From Text to Matrices: Representing Text as Data |
 | 3 | Sept 15 | Text Similarity, Text Re-use, and Complexity |

@@ -116,38 +116,30 @@ We started from [pre-processing text]{.red} as data, [representing]{.red} text a
 
 ## Problem
 
-:::fragment
+:::: fragment
 **Purpose**: look for 'groups' in data explicitly.
 
-:::nonincremental
+::: nonincremental
 -   Input: text + number of clusters
 -   Output: documents \~\> clusters
 :::
-:::
-:::fragment
+::::
 
+::: fragment
 **Clusters:** group of data points that are all nearby to each other and far away from other clusters.
 :::
 
-:::fragment
-
+::: fragment
 **Research Questions?** How can we categorize these news articles or policy bills? How can we group these legislators based on their speeches?
 :::
-
 
 ## K-means clustering
 
 **K-Means clustering:** partition the docs into a set of K categories where docs with similar rates of word usage are assigned to the same cluster and dissimilar docs are assigned to different categories
 
-
-
 1.  Pre-specify cluster numbers
 
-   
-
 2.  Algorithm puts observations into clusters which minimize the within-cluster sum of squares (i.e., sum of squared Euclidean distances between each data point and its assigned cluster centroid)
-
-   
 
 3.  Objective function to minimize
 
@@ -159,7 +151,7 @@ We started from [pre-processing text]{.red} as data, [representing]{.red} text a
 
 -   Calculate loss function between points and their clusters
 
-:::fragment
+::: fragment
 $$
 J = \sum_{i=1}^{n} \sum_{k=1}^{K} r_{ik} \, \| x_i - \mu_k \|^2
 $$
@@ -167,14 +159,13 @@ $$
 
 -   Update centroids
 
-:::fragment
+::: fragment
 $$
 \mu_k = \frac{\sum_{i=1}^{n} r_{ik} \, x_i}{\sum_{i=1}^{n} r_{ik}}
 $$
 :::
 
 -   Repeat (from bullet point 2) until convergence.
-
 
 ## Visually
 
@@ -414,7 +405,7 @@ $$
 p(\beta_{1:K}, \theta_{1:D}, z_{1:D}|w_{1:D})=\frac{p(\beta_{1:K}, \theta_{1:D}, z_{1:D}, w_{1:D})}{p(w_{1:D})}
 $$
 
-The denominator is hard complicate to be estimate (requires integration for every word for every topic):
+The denominator is hard to be estimated (requires integration for every word for every topic):
 
 -   Simulate with Gibbs Sampling or Variational Inference (Bayesian stats)
 

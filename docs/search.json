@@ -480,7 +480,7 @@
     "href": "slides/week_06.html#inference-how-to-estimate-all-these-parameters",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Inference: How to estimate all these parameters?",
-    "text": "Inference: How to estimate all these parameters?\nInference: Use the observed data, the words, to make an inference about the latent parameters: the \\(\\beta\\)s, and the \\(\\theta\\)s.\nWe start with the joint distribution implied by our language model (Blei, 2012):\n\\[\np(\\beta_{1:K}, \\theta_{1:D}, z_{1:D}, w_{1:D})= \\prod_{K}^{i=1}p(\\beta_i)\\prod_{D}^{d=1}p(\\theta_d)(\\prod_{N}^{n=1}p(z_{d,n}|\\theta_d)p(w_{d,n}|\\beta_{1:K},z_{d,n})\n\\]\nTo get to the conditional:\n\\[\np(\\beta_{1:K}, \\theta_{1:D}, z_{1:D}|w_{1:D})=\\frac{p(\\beta_{1:K}, \\theta_{1:D}, z_{1:D}, w_{1:D})}{p(w_{1:D})}\n\\]\nThe denominator is hard complicate to be estimate (requires integration for every word for every topic):\n\nSimulate with Gibbs Sampling or Variational Inference (Bayesian stats)"
+    "text": "Inference: How to estimate all these parameters?\nInference: Use the observed data, the words, to make an inference about the latent parameters: the \\(\\beta\\)s, and the \\(\\theta\\)s.\nWe start with the joint distribution implied by our language model (Blei, 2012):\n\\[\np(\\beta_{1:K}, \\theta_{1:D}, z_{1:D}, w_{1:D})= \\prod_{K}^{i=1}p(\\beta_i)\\prod_{D}^{d=1}p(\\theta_d)(\\prod_{N}^{n=1}p(z_{d,n}|\\theta_d)p(w_{d,n}|\\beta_{1:K},z_{d,n})\n\\]\nTo get to the conditional:\n\\[\np(\\beta_{1:K}, \\theta_{1:D}, z_{1:D}|w_{1:D})=\\frac{p(\\beta_{1:K}, \\theta_{1:D}, z_{1:D}, w_{1:D})}{p(w_{1:D})}\n\\]\nThe denominator is hard to be estimated (requires integration for every word for every topic):\n\nSimulate with Gibbs Sampling or Variational Inference (Bayesian stats)"
   },
   {
     "objectID": "slides/week_06.html#show-me-results",
@@ -802,7 +802,7 @@
     "href": "finalproject.html#all-components-of-the-project",
     "title": "Instructions for PPOL 6801 - Final Project",
     "section": "All components of the project:",
-    "text": "All components of the project:\n\nProject Proposal\nThe project proposal asks that you sketch out a general 2 page (single-spaced; 12pt font) project proposal. The proposal should offer the following information:\n\nA high-level statement of the problem you intend to address or the analysis you aim to generate\nThe data source(s) you intend to use\nYour plan to obtain that data\nThe text as data method you plan to use.\nA definition for what “success” means with respect to your project.\n\nIn your words, what would a successful project look like? What is the results you want to show? What would be a surprising finding for you?\n\n\n\n\nPresentation\nYou will have the opportunity to present you final project in class. As a Data scientists, your presentation skills are as important as your data skills. You should prepare a 10-12 minutes presentation. It should cover:\n\nMotivation or problem statement\nData collection\nMethods\nResults\nLessons learned and next steps\n\n\n\nProject Report\nThe report is a complete description of the project’s analysis and results. The report should be a 10 page in length (single-spaced; 12pt font) and cover the points presented below. Citations and Front page will not be considered in the 10 page.\nBelow I’ve outlined points that one should aim to discuss in each section. Note that paper should read as a cohesive report:\n\nIntroduction\n\nsummarize your motivation, present some previous work related to your question\npresent your research question\nsummarize your report\n\nData and Methods\n\nWhere does the data come from? – What is the unit of observation? – What are the variables of interest? – What steps did you take to wrangle the data?\n\nAnalysis\n\nDescribe the methods/tools you explored in your project.\n\nResults\n\nGive a detailed summary of your results. – Present your results clearly and concisely. – Please use visualizations instead of tables whenever possible.\n\nDiscussion\n\nRe-introduce your main results\nState your contributions\nWhere do you want take this project next?\n\n\nIMPORTANT: There is not literature review section. You can use the literature to motivate your work. But you don’t need to have a full section on literature review. Read for example, papers at main general interest journals, like here, here and here. All these super accomplished articles do not have long literature reviews."
+    "text": "All components of the project:\n\nProject Proposal\nThe project proposal asks that you ske`tch out a general 2 page (single-spaced; 12pt font) project proposal. The proposal should offer the following information:\n\nA high-level statement of the problem you intend to address or the analysis you aim to generate\nThe data source(s) you intend to use\nYour plan to obtain that data\nThe text as data method you plan to use.\nA definition for what “success” means with respect to your project.\n\nIn your words, what would a successful project look like? What is the results you want to show? What would be a surprising finding for you?\n\n\n\n\nPresentation\nYou will have the opportunity to present you final project in class. As a Data scientists, your presentation skills are as important as your data skills. You should prepare a 10-12 minutes presentation. It should cover:\n\nMotivation or problem statement\nData collection\nMethods\nResults\nLessons learned and next steps\n\n\n\nProject Report\nThe report is a complete description of the project’s analysis and results. The report should be a 10 page in length (single-spaced; 12pt font) and cover the points presented below. Citations and Front page will not be considered in the 10 page.\nBelow I’ve outlined points that one should aim to discuss in each section. Note that paper should read as a cohesive report:\n\nIntroduction\n\nsummarize your motivation, present some previous work related to your question\npresent your research question\nsummarize your report\n\nData and Methods\n\nWhere does the data come from? – What is the unit of observation? – What are the variables of interest? – What steps did you take to wrangle the data?\n\nAnalysis\n\nDescribe the methods/tools you explored in your project.\n\nResults\n\nGive a detailed summary of your results. – Present your results clearly and concisely. – Please use visualizations instead of tables whenever possible.\n\nDiscussion\n\nRe-introduce your main results\nState your contributions\nWhere do you want take this project next?\n\n\nIMPORTANT: There is not literature review section. You can use the literature to motivate your work. But you don’t need to have a full section on literature review. Read for example, papers at main general interest journals, like here, here and here. All these super accomplished articles do not have long literature reviews."
   },
   {
     "objectID": "finalproject.html#submission-of-the-final-project",
@@ -1144,8 +1144,8 @@
     "objectID": "slides/week_04.html#housekeeping",
     "href": "slides/week_04.html#housekeeping",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Housekeeping",
-    "text": "Housekeeping\nYour first problem set will be assigned today! Some important information:\n\nYou will receive and submit your assignment using Github!\n\nGithub Classroom: Creates automatically a repo for the assignment. You and I are owner of the repo.\nCome to my office hours if you don’t know how to work with GitHub\n\nDeadline: EOD next Monday, September 29th.\nPlease use an .RMD/.QMD/.ipynb file to submit your assignment.\nAny questions?"
+    "section": "",
+    "text": "Your first problem set will be assigned today! Some important information:\n\nYou will receive and submit your assignment using Github!\n\nGithub Classroom: Creates automatically a repo for the assignment. You and I are owner of the repo.\nCome to my office hours if you don’t know how to work with GitHub\n\nDeadline: EOD next Monday, September 29th.\nPlease use an .RMD/.QMD/.ipynb file to submit your assignment.\nAny questions?"
   },
   {
     "objectID": "slides/week_04.html#where-are-we",
@@ -1389,8 +1389,8 @@
     "objectID": "slides/week_01_intro.html#outline",
     "href": "slides/week_01_intro.html#outline",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Outline",
-    "text": "Outline\n\n\nMotivation for Computational Linguistics\n\nDigital information age\nPrinciples of Computational Linguistics.\nWhat this course is not.\nExamples of models and applications for this course\n\nIntroductions\nClass Logistics ( + 10 min for you to read through the syllabus)\nQ&A\nIntroduction to R/RStudio"
+    "section": "",
+    "text": "Motivation for Computational Linguistics\n\nDigital information age\nPrinciples of Computational Linguistics.\nWhat this course is not.\nExamples of models and applications for this course\n\nIntroductions\nClass Logistics ( + 10 min for you to read through the syllabus)\nQ&A\nIntroduction to R/RStudio"
   },
   {
     "objectID": "slides/week_01_intro.html#section",
@@ -1657,5 +1657,257 @@
     "title": "PPOL-6801",
     "section": "",
     "text": "This is a skeleton example of running pairwise comparisons of the senators of the 116th. I will send along the complete file as well with the final scores, so you can show what the final product looks like.\nLet me know if you also want the Bradley-Terry model code. That is in R, not Python, which makes it a little tougher. To the best of my knowledge, there is no optimized code to run the Bradley-Terry model within Python.\nThis code won’t run without an OpenAI key.\n\n!pip install openai\n\nCollecting openai\n  Downloading openai-0.28.1-py3-none-any.whl (76 kB)\n     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0.0/77.0 kB ? eta -:--:--     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━ 61.4/77.0 kB 1.8 MB/s eta 0:00:01     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 77.0/77.0 kB 1.7 MB/s eta 0:00:00\nRequirement already satisfied: requests&gt;=2.20 in /usr/local/lib/python3.10/dist-packages (from openai) (2.31.0)\nRequirement already satisfied: tqdm in /usr/local/lib/python3.10/dist-packages (from openai) (4.66.1)\nRequirement already satisfied: aiohttp in /usr/local/lib/python3.10/dist-packages (from openai) (3.8.6)\nRequirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /usr/local/lib/python3.10/dist-packages (from requests&gt;=2.20-&gt;openai) (3.3.1)\nRequirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/local/lib/python3.10/dist-packages (from requests&gt;=2.20-&gt;openai) (3.4)\nRequirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /usr/local/lib/python3.10/dist-packages (from requests&gt;=2.20-&gt;openai) (2.0.7)\nRequirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.10/dist-packages (from requests&gt;=2.20-&gt;openai) (2023.7.22)\nRequirement already satisfied: attrs&gt;=17.3.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp-&gt;openai) (23.1.0)\nRequirement already satisfied: multidict&lt;7.0,&gt;=4.5 in /usr/local/lib/python3.10/dist-packages (from aiohttp-&gt;openai) (6.0.4)\nRequirement already satisfied: async-timeout&lt;5.0,&gt;=4.0.0a3 in /usr/local/lib/python3.10/dist-packages (from aiohttp-&gt;openai) (4.0.3)\nRequirement already satisfied: yarl&lt;2.0,&gt;=1.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp-&gt;openai) (1.9.2)\nRequirement already satisfied: frozenlist&gt;=1.1.1 in /usr/local/lib/python3.10/dist-packages (from aiohttp-&gt;openai) (1.4.0)\nRequirement already satisfied: aiosignal&gt;=1.1.2 in /usr/local/lib/python3.10/dist-packages (from aiohttp-&gt;openai) (1.3.1)\nInstalling collected packages: openai\nERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\nllmx 0.0.15a0 requires cohere, which is not installed.\nllmx 0.0.15a0 requires tiktoken, which is not installed.\nSuccessfully installed openai-0.28.1\n\n\n\nimport pandas as pd\nimport numpy as np\nimport os\nimport time\nimport openai\nfrom itertools import combinations\nfrom random import sample, choices\nimport random\nimport re\nfrom tqdm import tqdm\nfrom joblib import delayed, Parallel\n\n\nopenai.api_key = 'OPEN_AI_KEY_HERE'\n\n\n'''\np: the prompt\nsystem_prompt: the system prompt. The default is what is used on the ChatGPT's web interface.\ntemp: temperature parameter. 1.0 is the default (for GPT-3.5, temperature ranges from 0 to 2.0)\nrequest_timeout: the amount of time, in seconds, to timeout the function.\n'''\ndef prompting_openai_comparison(p,\n                                system_prompt='You are ChatGPT, a large language model trained by OpenAI, based on the GPT-3.5 architecture.\\nKnowledge cutoff: 2021-09\\nCurrent date: 2023-10-28',\n                                temp=1.0,\n                                request_timeout=5):\n  # times used to sleep; these values approximate exponential backoff\n  sleepy_times = [1, 1, 1, 1, 2, 2, 2, 2, 4, 4, 4, 4, 8, 8, 8, 8, 16, 16, 16, 16, 32, 32, 32, 32, 64, 64, 64, 64, 128, 128, 128, 128, 256, 256, 256, 256]\n\n\n  for i in range(len(sleepy_times)):\n    try:\n      response = openai.ChatCompletion.create(model=\"gpt-3.5-turbo\",\n                                              messages=[{\"role\": \"system\", \"content\": system_prompt},\n                                                        {\"role\": \"user\", \"content\": p}],\n                                              temperature=temp,\n                                              request_timeout=request_timeout)\n      break\n    except:\n      # if OpenAI's API returns an error, this lets you know and backs off for the set time, determined using the sleepy_times list\n      print('uh oh, ' + str(sleepy_times[i]))\n      time.sleep(sleepy_times[i])\n\n  return response\n\nDownload the name of the senators for the 116th Congress using Voteview. We can use wget to download it directly.\n\n!wget https://voteview.com/static/data/out/members/S116_members.csv\n\n--2023-10-28 20:48:50--  https://voteview.com/static/data/out/members/S116_members.csv\nResolving voteview.com (voteview.com)... 128.97.229.84\nConnecting to voteview.com (voteview.com)|128.97.229.84|:443... connected.\nHTTP request sent, awaiting response... 200 OK\nLength: 12590 (12K) [application/octet-stream]\nSaving to: ‘S116_members.csv’\n\nS116_members.csv      0%[                    ]       0  --.-KB/s               S116_members.csv    100%[===================&gt;]  12.29K  --.-KB/s    in 0s      \n\n2023-10-28 20:48:50 (291 MB/s) - ‘S116_members.csv’ saved [12590/12590]\n\n\n\n\ndf = pd.read_csv('S116_members.csv')\n\n\n# Add \"ordinary\" versions of senators' names\ndf['bioname_ordinary'] = ['Donald Trump',\n'Doug Jones',\n'Richard Shelby',\n'Lisa Murkowski',\n'Dan Sullivan',\n'Kyrsten Sinema',\n'Martha McSally',\n'Mark Kelly',\n'John Boozman',\n'Tom Cotton',\n'Kamala Harris',\n'Dianne Feinstein',\n'Cory Gardner',\n'Michael Bennet',\n'Chris Murphy',\n'Richard Blumenthal',\n'Tom Carper',\n'Chris Coons',\n'Marco Rubio',\n'Rick Scott',\n'Johnny Isakson',\n'David Perdue',\n'Kelly Loeffler',\n'Mazie Hirono',\n'Brian Schatz',\n'Mike Crapo',\n'James Risch',\n'Dick Durbin',\n'Tammy Duckworth',\n'Todd Young',\n'Mike Braun',\n'Chuck Grassley',\n'Joni Ernst',\n'Pat Roberts',\n'Jerry Moran',\n'Mitch McConnell',\n'Rand Paul',\n'Bill Cassidy',\n'John Kennedy',\n'Angus King',\n'Susan Collins',\n'Ben Cardin',\n'Chris Van Hollen',\n'Ed Markey',\n'Elizabeth Warren',\n'Gary Peters',\n'Debbie Stabenow',\n'Amy Klobuchar',\n'Tina Smith',\n'Roger Wicker',\n'Cindy Hyde-Smith',\n'Roy Blunt',\n'Josh Hawley',\n'Steve Daines',\n'Jon Tester',\n'Deb Fischer',\n'Ben Sasse',\n'Jacky Rosen',\n'Catherine Cortez Masto',\n'Jeanne Shaheen',\n'Maggie Hassan',\n'Bob Menendez',\n'Cory Booker',\n'Martin Heinrich',\n'Tom Udall',\n'Chuck Schumer',\n'Kirsten Gillibrand',\n'Richard Burr',\n'Thom Tillis',\n'Kevin Cramer',\n'John Hoeven',\n'Rob Portman',\n'Sherrod Brown',\n'Jim Inhofe',\n'James Lankford',\n'Ron Wyden',\n'Jeff Merkley',\n'Pat Toomey',\n'Bob Casey',\n'Jack Reed',\n'Sheldon Whitehouse',\n'Tim Scott',\n'Lindsey Graham',\n'John Thune',\n'Mike Rounds',\n'Marsha Blackburn',\n'Lamar Alexander',\n'John Cornyn',\n'Ted Cruz',\n'Mike Lee',\n'Mitt Romney',\n'Patrick Leahy',\n'Bernie Sanders',\n'Mark Warner',\n'Tim Kaine',\n'Maria Cantwell',\n'Patty Murray',\n'Shelley Moore Capito',\n'Joe Manchin',\n'Tammy Baldwin',\n'Ron Johnson',\n'John Barrasso',\n'Mike Enzi']\n\n\n# Delete Donald Trump\ndf = df.iloc[1:,]\n\nThen get dictionaries that obtain the party and state for each senator by name\n\nnames = list(df['bioname_ordinary'])\nstate = list(df['state_abbrev'])\nparty = ['R' if j==200 else 'D' if j==100 else 'I' for j in list(df['party_code'])]\n\nname_party_dict = {n: p for n,p in zip(names,party)}\nname_state_dict = {n: s for n,s in zip(names,state)}\n\nI don’t think you want to run all 5151 comparisons in class. So let’s sample 3 comparisons per senator. This is not going to give great results, but it shows what it can do.\n\n# this function samples a total number of matchups per senator. this does not mean that each senator is limited to a max of sample_size matchups\n# it means each senator will appear in at least sample_size matchups\ndef generate_pairwise_matchups(items, sample_size=20, seed_value=42):\n  random.seed(seed_value)\n\n  if sample_size &gt;= len(items) or sample_size &lt; 1:\n    raise ValueError(\"Sample size must be between 1 and one less than the total number of tweet IDs\")\n\n  all_matchups = []\n\n  # Generate all possible pairings\n  all_combinations = list(combinations(items, 2))\n\n  for i in items:\n    # Filter matchups containing the current tweet ID\n    relevant_matchups = [pair for pair in all_combinations if i in pair]\n\n    # Shuffle the matchups\n    random.shuffle(relevant_matchups)\n\n    # Sample from these matchups up to the specified sample size\n    all_matchups.extend(relevant_matchups[:sample_size])\n\n  return all_matchups\n\n\nmatchups = generate_pairwise_matchups(names, sample_size=3, seed_value=42)\n\n\nlen(matchups)\n\n306\n\n\nHere, we note the direction of comparison. We have to use liberal and conservative differently in these prompts because, when comparing two Republicans, if I prompt ChatGPT with “who is more liberal,” it will often fail to answer this and reply that both senators are conservative.\n\nprompts = []\ncomparison_direction = []\n\nfor j in matchups:\n    # D vs. D\n    if (name_party_dict[j[0]]=='D' or name_party_dict[j[0]]=='I') and (name_party_dict[j[1]]=='D' or name_party_dict[j[1]]=='I'):\n        sent = 'Based on past voting records and statements, which senator is more liberal: ' + j[0] + ' (' + name_party_dict[j[0]] + '-' + name_state_dict[j[0]] + ') or ' + j[1] + ' (' + name_party_dict[j[1]] + '-' + name_state_dict[j[1]] + ')?'\n        comparison_direction.append('liberal')\n    # D vs. R\n    elif (name_party_dict[j[0]]=='D' or name_party_dict[j[0]]=='I') and (name_party_dict[j[1]]=='R'):\n        sent = 'Based on past voting records and statements, which senator is more liberal: ' + j[0] + ' (' + name_party_dict[j[0]] + '-' + name_state_dict[j[0]] + ') or ' + j[1] + ' (' + name_party_dict[j[1]] + '-' + name_state_dict[j[1]] + ')?'\n        comparison_direction.append('liberal')\n    # R vs. D\n    elif (name_party_dict[j[0]]=='R') and (name_party_dict[j[1]]=='D' or name_party_dict[j[1]]=='I'):\n        sent = 'Based on past voting records and statements, which senator is more liberal: ' + j[0] + ' (' + name_party_dict[j[0]] + '-' + name_state_dict[j[0]] + ') or ' + j[1] + ' (' + name_party_dict[j[1]] + '-' + name_state_dict[j[1]] + ')?'\n        comparison_direction.append('liberal')\n    # R vs. R\n    elif (name_party_dict[j[0]]=='R') and (name_party_dict[j[1]]=='R'):\n        sent = 'Based on past voting records and statements, which senator is more conservative: ' + j[0] + ' (' + name_party_dict[j[0]] + '-' + name_state_dict[j[0]] + ') or ' + j[1] + ' (' + name_party_dict[j[1]] + '-' + name_state_dict[j[1]] + ')?'\n        comparison_direction.append('conservative')\n    else:\n        print('OH NO!')\n        break\n    prompts.append(sent)\n\nSet the system prompt for the pairwise comparison. I find that using the default actually works really well, and hallucinates the least.\n\nsystem_prompt = 'You are ChatGPT, a large language model trained by OpenAI, based on the GPT-3.5 architecture.\\nKnowledge cutoff: 2021-09\\nCurrent date: 2023-09-11'\n\nLet’s peak at the what the prompts look like\n\nprint(prompts[0:10])\n\n['Based on past voting records and statements, which senator is more liberal: Doug Jones (D-AL) or Debbie Stabenow (D-MI)?', 'Based on past voting records and statements, which senator is more liberal: Doug Jones (D-AL) or Jerry Moran (R-KS)?', 'Based on past voting records and statements, which senator is more liberal: Doug Jones (D-AL) or Chuck Schumer (D-NY)?', 'Based on past voting records and statements, which senator is more conservative: Richard Shelby (R-AL) or Roger Wicker (R-MS)?', 'Based on past voting records and statements, which senator is more liberal: Richard Shelby (R-AL) or Sheldon Whitehouse (D-RI)?', 'Based on past voting records and statements, which senator is more liberal: Richard Shelby (R-AL) or Mark Kelly (D-AZ)?', 'Based on past voting records and statements, which senator is more conservative: Lisa Murkowski (R-AK) or Jerry Moran (R-KS)?', 'Based on past voting records and statements, which senator is more conservative: Lisa Murkowski (R-AK) or Cory Gardner (R-CO)?', 'Based on past voting records and statements, which senator is more conservative: Lisa Murkowski (R-AK) or Jim Inhofe (R-OK)?', 'Based on past voting records and statements, which senator is more liberal: Dan Sullivan (R-AK) or Catherine Cortez Masto (D-NV)?']\n\n\nNow we’re finally ready to run the pairwise comparisons. We run it in parallel because it takes a very long time to run if you iterate one prompt at a time.\n\n# this is technical code needed to run things in parallel\ndef chunked_data(data, chunk_size):\n    \"\"\"Yield successive chunk_size chunks from data.\"\"\"\n    for i in range(0, len(data), chunk_size):\n        yield data[i:i+chunk_size]\n\n\ncomparison_results = []\n\nchunk_size = 10 # this will run 10 comparisons at once. Make sure you have at least 10 cores.\n\nfor data_chunk in tqdm(chunked_data(prompts, chunk_size), total=len(prompts)//chunk_size):\n    results = Parallel(n_jobs=chunk_size, backend='threading')(delayed(prompting_openai_comparison)(p, system_prompt, 1.0, 20) for p in data_chunk)\n    comparison_results.extend(results)\n\n  3%|▎         | 1/30 [00:06&lt;03:17,  6.83s/it] 70%|███████   | 21/30 [02:30&lt;00:56,  6.26s/it] 83%|████████▎ | 25/30 [03:12&lt;00:39,  7.83s/it]31it [04:05,  7.93s/it]\n\n\nuh oh, 1\nuh oh, 1\nuh oh, 1\n\n\n\n# Extract the text answer from ChatGPT responses\ndef get_text_from_chatgpt(responses):\n  return [responses[i]['choices'][0]['message']['content'] for i in range(len(responses))]\n\n\ncomparisons_text = get_text_from_chatgpt(comparison_results)\n\nThis is what a pairwise comparison looks like.\n\nprint(comparisons_text[0])\n\nBased on past voting records and statements, Debbie Stabenow (D-MI) is generally considered to be more liberal than Doug Jones (D-AL). \n\nDebbie Stabenow, as a senator representing Michigan, has consistently held progressive positions on various issues. She has supported measures to expand access to healthcare, increase funding for education, protect the environment, and advocate for workers' rights. Stabenow has been vocal in her support for women's reproductive rights and has opposed restrictions on abortion. As a member of the Senate Agriculture Committee, she has also championed policies to support farmers and promote sustainable agriculture.\n\nOn the other hand, Doug Jones, who previously represented Alabama in the Senate from 2018 to 2021, held more moderate positions compared to some of his Democratic colleagues. While he was known for his work on civil rights issues and his prosecution of two Ku Klux Klan members involved in the 1963 Birmingham church bombing, his overall record leaned more towards the center. Jones was notably more conservative on certain issues like gun control, where he expressed support for Second Amendment rights but also backed some regulations, such as background checks.\n\nIt's important to note that political ideologies can vary within a party, and senators may have different levels of liberalism across different issues. Moreover, individual positions can evolve over time based on changing circumstances and priorities. Therefore, it's always helpful to review the most up-to-date information and statements made by the senators to gain a comprehensive understanding of their current stances.\n\n\nNow we need to extract the answers from our comparisons. We’ll append our answers from before and ask ChatGPT to extract the answer.\n\nextracting_answer_prompt = []\n\nfor i in range(len(comparisons_text)):\n    if comparison_direction[i]=='liberal':\n        sent = 'Text: \"' + comparisons_text[i] + '\"\\n\\nIn the above Text, who is described to be the more liberal, more progressive, or less conservative senator: ' + matchups[i][0] + ' or ' + matchups[i][1] + '? Return only the full name without party affiliation or state information. If one senator is described as more conservative, return the other senator\\'s name. If one senator is described as more moderate, return the other senator\\'s name. If neither senators are described to be more liberal, more progressive, less conservative, more conservative, or more moderate, reply with \"Tie.\"'\n    elif comparison_direction[i]=='conservative':\n        sent = 'Text: \"' + comparisons_text[i] + '\"\\n\\nIn the above Text, who is described to be the more conservative or less liberal senator: ' + matchups[i][0] + ' or ' + matchups[i][1] + '? Return only the full name without party affiliation or state information. If one senator is described as more liberal, return the other senator\\'s name. If one senator is described as more moderate, return the other senator\\'s name. If neither senators are described to be more conservative, less liberal, more liberal, or more moderate, reply with \"Tie.\"'\n    extracting_answer_prompt.append(sent)\n\n\nsystem_prompt_extraction = 'You are reading a Text and extracting information from it according to the prompt. Follow the directions exactly.'\n\nAgain, we parallelize this procedure. Notice that we set the temperature to 0.0. We don’t want GPT to be very creative with this task.\n\nchunk_size = 10  # Or whatever size you want for your batches\n\nextraction = []\n\nfor data_chunk in tqdm(chunked_data(extracting_answer_prompt, chunk_size), total=len(extracting_answer_prompt)//chunk_size):\n    results = Parallel(n_jobs=chunk_size, backend='threading')(delayed(prompting_openai_comparison)(p, system_prompt_extraction, 0.0, 10) for p in data_chunk)\n    extraction.extend(results)\n\n31it [00:56,  1.84s/it]\n\n\n\nextraction_text = get_text_from_chatgpt(extraction)\n\nWe introduce a few functions to clean up the results\n\n# this function simply removes the period at the sentences\ndef remove_period(sentence):\n    if sentence.endswith('.'):\n        sentence = sentence[:-1]\n    return sentence\n\n# this function simply removes the 'Senator ' prefix. For example, it returns \"Dianne Feinstein\" if the input text is \"Senator Dianne Feinstein\"\ndef remove_senator_prefix(input_string):\n    if input_string.startswith(\"Senator \"):\n        return input_string[8:]\n    else:\n        return input_string\n\n\nextraction_text = [remove_period(t) for t in extraction_text]\nextraction_text = [remove_senator_prefix(t) for t in extraction_text]\n\n\nprint(extraction_text[0])\n\nDebbie Stabenow\n\n\nWe then use a function to check that every extraction was correct. Sometimes it will still not correctly extract the answer, which means we have to step in and manually fix it. If the function prints nothing, great!\n\ndef check_extraction_text(extraction_text, matchups):\n    for i in range(len(extraction_text)):\n        if extraction_text[i] != matchups[i][0] and extraction_text[i] != matchups[i][1] and extraction_text[i] != 'Tie':\n            print(i)\n            print(extraction_text[i])\n            print(comparisons_text[i])\n\n\ncheck_extraction_text(extraction_text, matchups)\n\nThis step will make the final dataframe with the resultant matchups.\n\ndef make_final_df(matchups, chatgpt_answers, final_answers, comparison_direction):\n    sen1 = [j[0] for j in matchups]\n    sen2 = [j[1] for j in matchups]\n\n    matchup_results = pd.DataFrame({'matchup': matchups,\n                                    'senator1': sen1,\n                                    'senator2': sen2,\n                                    'chatgpt_response': chatgpt_answers,\n                                    'final_answers': final_answers,\n                                    'comparison_direction': comparison_direction})\n\n    opposite = []\n    sen1_win = []\n    sen2_win = []\n\n    for i in range(len(matchup_results['matchup'])):\n        if matchup_results['comparison_direction'][i]=='liberal':\n            if matchup_results['final_answers'][i]==matchup_results['senator1'][i]:\n                sen1_win.append(0.0)\n                sen2_win.append(1.0)\n            elif matchup_results['final_answers'][i]==matchup_results['senator2'][i]:\n                sen1_win.append(1.0)\n                sen2_win.append(0.0)\n            elif matchup_results['final_answers'][i]=='Tie':\n                sen1_win.append(0.5)\n                sen2_win.append(0.5)\n        elif matchup_results['comparison_direction'][i]=='conservative':\n            if matchup_results['final_answers'][i]==matchup_results['senator1'][i]:\n                sen1_win.append(1.0)\n                sen2_win.append(0.0)\n            elif matchup_results['final_answers'][i]==matchup_results['senator2'][i]:\n                sen1_win.append(0.0)\n                sen2_win.append(1.0)\n            elif matchup_results['final_answers'][i]=='Tie':\n                sen1_win.append(0.5)\n                sen2_win.append(0.5)\n        else:\n            print(str(i) + ' is a defective outcome')\n\n    matchup_results['win1'] = sen1_win\n    matchup_results['win2'] = sen2_win\n\n    return matchup_results\n\n\nfinal_df = make_final_df(matchups=matchups,\n                         chatgpt_answers=comparisons_text,\n                         final_answers=extraction_text,\n                         comparison_direction=comparison_direction)\n\n\nfinal_df\n\n\n  \n    \n\n\n\n\n\n\nmatchup\nsenator1\nsenator2\nchatgpt_response\nfinal_answers\ncomparison_direction\nwin1\nwin2\n\n\n\n\n0\n(Doug Jones, Debbie Stabenow)\nDoug Jones\nDebbie Stabenow\nBased on past voting records and statements, D...\nDebbie Stabenow\nliberal\n1.0\n0.0\n\n\n1\n(Doug Jones, Jerry Moran)\nDoug Jones\nJerry Moran\nBased on past voting records and party affilia...\nDoug Jones\nliberal\n0.0\n1.0\n\n\n2\n(Doug Jones, Chuck Schumer)\nDoug Jones\nChuck Schumer\nBased on past voting records and statements, C...\nChuck Schumer\nliberal\n1.0\n0.0\n\n\n3\n(Richard Shelby, Roger Wicker)\nRichard Shelby\nRoger Wicker\nBased on the available information up until Se...\nRichard Shelby\nconservative\n1.0\n0.0\n\n\n4\n(Richard Shelby, Sheldon Whitehouse)\nRichard Shelby\nSheldon Whitehouse\nBased on past voting records and statements, S...\nSheldon Whitehouse\nliberal\n1.0\n0.0\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n301\n(Tina Smith, John Barrasso)\nTina Smith\nJohn Barrasso\nBased on past voting records and statements, T...\nTina Smith\nliberal\n0.0\n1.0\n\n\n302\n(Steve Daines, John Barrasso)\nSteve Daines\nJohn Barrasso\nBoth Steve Daines (R-MT) and John Barrasso (R-...\nSteve Daines\nconservative\n1.0\n0.0\n\n\n303\n(Amy Klobuchar, Mike Enzi)\nAmy Klobuchar\nMike Enzi\nBased on past voting records and statements, A...\nAmy Klobuchar\nliberal\n0.0\n1.0\n\n\n304\n(Marsha Blackburn, Mike Enzi)\nMarsha Blackburn\nMike Enzi\nBased on past voting records and statements, M...\nMarsha Blackburn\nconservative\n1.0\n0.0\n\n\n305\n(Debbie Stabenow, Mike Enzi)\nDebbie Stabenow\nMike Enzi\nBased on past voting records and party affilia...\nDebbie Stabenow\nliberal\n0.0\n1.0\n\n\n\n\n\n306 rows × 8 columns\n\n    \n\n  \n    \n\n  \n    \n  \n    \n\n  \n\n    \n  \n\n\n\n  \n\n\n    \n        \n    \n\n  \n\n\n\n  \n\n    \n  \n\n\nYou can now take this and use it with your favorite Bradley-Terry model function!\n\nfinal_df.to_csv('senator_3matchups_results.csv', index=False)"
+  },
+  {
+    "objectID": "slides/week_10.html#plans-for-today",
+    "href": "slides/week_10.html#plans-for-today",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Plans for Today:",
+    "text": "Plans for Today:\n\nFinal Project + Mid-Semester Review\nFinish Topic Models + Code\nOverview of scaling models\nScaling models using text\n\nsupervised models: wordscore\nunsupervised models: wordfish"
+  },
+  {
+    "objectID": "slides/week_10.html#final-project",
+    "href": "slides/week_10.html#final-project",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Final Project",
+    "text": "Final Project\n\n\n\n\n\n\n\n\n\nRequirement\nDue\nLength\nPercentage\n\n\n\n\nProject Proposal\nEOD Friday Week 8\n2 pages\n5%\n\n\nPresentation\nWeek 14\n10-15 minutes\n10%\n\n\nProject Report\nWednesday Week 15\n10 pages\n25%\n\n\n\nFor the project proposal:\n\nyou need to schedule a 30min with me at least a week before the due date.\nFor this meeting, I expect you to send me a draft of your ideas."
+  },
+  {
+    "objectID": "slides/week_10.html#project-proposal",
+    "href": "slides/week_10.html#project-proposal",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Project Proposal",
+    "text": "Project Proposal\nThe project proposal asks that you sketch out a general 2 page (single-spaced; 12pt font) project proposal.\n\nA high-level statement of the problem you intend to address or the analysis you aim to generate\nThe data source(s) you intend to use\nYour plan to obtain that data\nThe text as data method you plan to use.\nA definition for what “success” means with respect to your project."
+  },
+  {
+    "objectID": "slides/week_10.html#intuition-language-model",
+    "href": "slides/week_10.html#intuition-language-model",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Intuition: Language Model",
+    "text": "Intuition: Language Model\n\nStep 1: For each document:\n\nRandomly choose a distribution over topics. That is, choose one of many multinomial distributions, each which mixes the topics in different proportions.\n\nStep 2: For each topic\n\nRandomly choose a distribution of words, also from one of many multinomial distributions., each with mixes words in different proportions\n\nStep 3: Then, for every word in the document\n\nRandomly choose a topic from the distribution over topics from step 1.\nRandomly choose a word from the distribution over the vocabulary that the topic implies."
+  },
+  {
+    "objectID": "slides/week_10.html#mathematical-model-lda-topic-model",
+    "href": "slides/week_10.html#mathematical-model-lda-topic-model",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Mathematical Model: LDA Topic Model",
+    "text": "Mathematical Model: LDA Topic Model\nTo estimate the model, we need to assume some known mathematical distributions for this data generating process:\n\nFor every topic: Each topic k has a word distribution \\(\\beta_k\\) , drawn from a Dirichlet prior:\n\n\\(\\beta_k \\sim \\text{Dirichlet}(\\tau)\\)\n\nFor every document: Each document d has a topic distribution \\(\\theta_d\\) , drawn from a Dirichlet prior\n\n\\(\\theta_d \\sim \\text{Dirichlet}(\\alpha)\\),\n\nFor every word:\n\nFor each word wdn in document d, choose a topic \\(z_{dn}\\) based on the document’s topic distribution, a topic \\(z_{dn} \\sim \\text{Multinomial}(\\theta_d)\\).\nChoose a word \\(w_{dn}\\) from the topic’s word distribution: \\(w_{dn} \\sim \\text{Multinomial}(\\beta_{z_{dn}})\\)\n\nwhere:\n\n\\(\\alpha\\) and \\(\\tau\\) are hyperparameter of the Dirichlet priors\n\\(\\beta_k\\) is drawn from a Dirichlet for per-topic word distribution\n\\(\\theta_d\\) is drawn from a Dirichlet for the topic distribution for documents - \\(K\\) topics\n\\(D\\) documents in the corpus\n\\(dn\\) word position in document \\(d\\)"
+  },
+  {
+    "objectID": "slides/week_10.html#parameters",
+    "href": "slides/week_10.html#parameters",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Parameters",
+    "text": "Parameters"
+  },
+  {
+    "objectID": "slides/week_10.html#choosing-the-number-of-topics",
+    "href": "slides/week_10.html#choosing-the-number-of-topics",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Choosing the number of topics",
+    "text": "Choosing the number of topics\n\n\nChoosing K is “one of the most difficult questions in unsupervised learning” (Grimmer and Stewart, 2013, p.19)\nCommon approach: decide based on cross-validated statistical measures of model fit or other measures of topic quality.\n\n(Heldout) Log-likelihood: How well the model explains the observed data. Higher (closer to 0) is better\nSemantic coherence: How often top words in a topic appear together, indicating topic interpretability.\nResiduals: Checks how well the model explains the word co-occurrence patterns in the data.\nExclusivity: Measures distinctiveness of topics — how unique their top words are."
+  },
+  {
+    "objectID": "slides/week_10.html#validation-of-topics",
+    "href": "slides/week_10.html#validation-of-topics",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Validation of topics",
+    "text": "Validation of topics\n\nWorking with topic models require a lot of back-and-forth and humans in the loop.\nHow to measure the quality of the topics?\n\n\n\n\nCrowdsourcing for:\n\nwhether a topic has (human-identifiable) semantic coherence: word intrusion, asking subjects to identify a spurious word inserted into a topic\nwhether the association between a document and a topic makes sense: topic intrusion, asking subjects to identify a topic that was not associated with the document by the model\nSee Ying et al, 2022, Political Analysis.\n\n\n\n\nContextual Knowledge, reading the topics, and showing it has face-validity."
+  },
+  {
+    "objectID": "slides/week_10.html#barbera-et-al-american-political-science-review-2020.",
+    "href": "slides/week_10.html#barbera-et-al-american-political-science-review-2020.",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Barbera et al, American Political Science Review, 2020.",
+    "text": "Barbera et al, American Political Science Review, 2020.\n\n\nData: tweets sent by US legislators, samples of the public, and media outlets.\nLDA with K = 100 topics\nTopic predictions are used to understand agenda-setting dynamics (who leads? who follows?)\nConclusion: Legislators are more likely to follow, than to lead, discussion of public issues,"
+  },
+  {
+    "objectID": "slides/week_10.html#motolinia-american-political-science-review-2021",
+    "href": "slides/week_10.html#motolinia-american-political-science-review-2021",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Motolinia, American Political Science Review, 2021",
+    "text": "Motolinia, American Political Science Review, 2021\n\n\nData: transcripts of legislative sessions in Mexican states\nCorrelated Topic model to identify “particularistic” legislation; i.e. laws with clear benefits to voters\nEach topic is then classified into particularistic or not\nValidation: correlation with spending\nUse exogenous electoral reform that allowed legislators to be re-elected"
+  },
+  {
+    "objectID": "slides/week_10.html#exercise",
+    "href": "slides/week_10.html#exercise",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Exercise",
+    "text": "Exercise\n\n\nTake 5-min to read the methods sections of these papers\nList to me some of the decisions the authors need to make to get the topic models to work.\nDo you think these make sense? What would you do different?"
+  },
+  {
+    "objectID": "slides/week_10.html#extensions-many-more-beyond-lda",
+    "href": "slides/week_10.html#extensions-many-more-beyond-lda",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Extensions: Many more beyond LDA",
+    "text": "Extensions: Many more beyond LDA\n\n\nStructural topic model: allow (1) topic prevalence, (2) topic content to vary as a function of document-level covariates (e.g., how do topics vary over time or documents produced in 1990 talk about something differently than documents produced in 2020?); implemented in stm in R (Roberts, Stewart, Tingley, Benoit)\nCorrelated topic model: way to explore between-topic relationships (Blei and Lafferty, 2017); implemented in topicmodels in R; possibly somewhere in Python as well!\nKeyword-assisted topic model: seed topic model with keywords to try to increase the face validity of topics to what you’re trying to measure; implemented in keyATM in R (Eshima, Imai, Sasaki, 2019)\nBertTopic: BERTopic is a topic modeling technique that leverages transformers and TF-IDF to create dense clusters of words."
+  },
+  {
+    "objectID": "slides/week_10.html#stm-adding-structure-to-the-lda",
+    "href": "slides/week_10.html#stm-adding-structure-to-the-lda",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "STM: Adding Structure to the LDA",
+    "text": "STM: Adding Structure to the LDA\n\n\n\n\n\n\n\n\n  \n\n\nPrevalence: Prior on the mixture over topics is now document-specific, and can be a function of covariates.\nContent: distribution over words is now document-specific and can be a function of covariates.\n\nSee Roberts et al 2014"
+  },
+  {
+    "objectID": "slides/week_10.html#many-questions-depends-on-policy-positions",
+    "href": "slides/week_10.html#many-questions-depends-on-policy-positions",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Many questions depends on policy positions",
+    "text": "Many questions depends on policy positions\nMany substantive questions in policy and politics depends on estimating ideological preferences:\n\nIs polarization increasing over time?\n\nare parties moving together over time?\n\nDo governments/coalitions last longer conditional on:\n\nhow homogeneous coalition is?\ndistance between coalition and congress ideal points?\ndistance between coalition and median voter?\n\nDoes ideology affect policy decisions?\n\nEconomic cycles and elections?\nGlobalization and the social welfare state?\n\nDoes motivated reasoning affects beliefs/sharing of online misinformation?\n\nMany more examples …."
+  },
+  {
+    "objectID": "slides/week_10.html#surveys",
+    "href": "slides/week_10.html#surveys",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Surveys",
+    "text": "Surveys\n\nAsk elites or regular voters about policy preference, and scale them in some sort of political continuum. Methods as: factor analysis, singula value decomposition, PCA, etc…\nChallenges:\n\nExpensive\nSources of bias: non-response, social desirability, strategic responses, to name a few\nCannot be used for historical data"
+  },
+  {
+    "objectID": "slides/week_10.html#behavioral-data-for-example-roll-call-voting",
+    "href": "slides/week_10.html#behavioral-data-for-example-roll-call-voting",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Behavioral data (for example, roll-call voting):",
+    "text": "Behavioral data (for example, roll-call voting):\n\nPoliticians vote on proposals (or judges make decisions) that are close to their ideal points\n\nUse statistical methods (mostly matrix factorization) to estimate orthogonal dimensions\nNominate Scores\nChallenge\n\nMost times politicians vote for many things other than ideology\nFace-Validity: AOC for example often place as a centrist (not always voting with democrats)"
+  },
+  {
+    "objectID": "slides/week_10.html#content-analysis-using-text",
+    "href": "slides/week_10.html#content-analysis-using-text",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Content Analysis using Text",
+    "text": "Content Analysis using Text\n\nManually label content of political manifestos (Comparative Manifestos Project) and place them in ideological scales\nChallenges:\n\nReally expensive\nCostly to translate to other languages\nHeavily dependent on substantive knowledge"
+  },
+  {
+    "objectID": "slides/week_10.html#scaling-models-with-computational-text-analysis",
+    "href": "slides/week_10.html#scaling-models-with-computational-text-analysis",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Scaling models with computational text analysis",
+    "text": "Scaling models with computational text analysis\nIn the past 20 years, computational text analysis has been widely used for building scaling models.\n\nAdvantages: fast, reliable, deals with large volumes of text, and easy to translate to other domains/language.\nWordscore: supervised approach, mimic naive bayes models, start with reference, and score virgin texts.\nWordfish: unsupervised approach, learn word occurrence from the documents using a ideal-points model."
+  },
+  {
+    "objectID": "slides/week_10.html#wordscore-laver-benoit-garry-2003-apsr",
+    "href": "slides/week_10.html#wordscore-laver-benoit-garry-2003-apsr",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Wordscore (Laver, Benoit, Garry, 2003, APSR)",
+    "text": "Wordscore (Laver, Benoit, Garry, 2003, APSR)\n\nDef: supervised approach, similar to naive bayes models, learn association between words and reference text, and score virgin text.\n\n\nStep 1: Begin with a reference set (training set) of texts that have known positions.\n\nGet speeches by AOC , give it -1 score.\nGet speeches by MTG, give it a +1 score.\n\n\n\nStep 2: Generate word scores from these reference texts\n\nPretty much like the naive bayes, but the class becomes a number (-1 or +1)\n\n\n\nStep 3: Score the virgin texts (test set) of texts using those word scores\n\nscale virgin score to the same original metric (-1 to +1)"
+  },
+  {
+    "objectID": "slides/week_10.html#wordscore-calculation",
+    "href": "slides/week_10.html#wordscore-calculation",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "WordScore Calculation",
+    "text": "WordScore Calculation\n\n\nLearning Words\n\\[ P_{wr} = \\frac{F_{wr}}{\\sum_r F_{wr}}\\] - \\(P_{wr}\\): Given a set of reference texts, the probability that an occurrence of word \\(w\\) implies that we are reading text \\(r\\) is\n\n\\(F_{wr}\\): Frequency of word \\(w\\) in reference text \\(r\\)\n\n\n\n\nScoring Words\n\\[S_{wd} = \\sum_r (P_{wr} \\cdot A_{rd}) \\]\n\n\\(S_{wd}\\): Score of word \\(w\\) in dimension \\(d\\)\n\\(A_{rd}\\): Pre-defined position of reference text \\(r\\) in dimension \\(d\\)\n\\(A_{rd}\\) will be -1 for AOC and +1 for MGT documents, for example."
+  },
+  {
+    "objectID": "slides/week_10.html#scoring-virgin-texts",
+    "href": "slides/week_10.html#scoring-virgin-texts",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Scoring virgin texts",
+    "text": "Scoring virgin texts\n\\[ S_{vd} = \\sum_w (F_{wv} · S_{wd}) \\] - \\(S_{vd}\\) weighted average of the scores by word frequency."
+  },
+  {
+    "objectID": "slides/week_10.html#example",
+    "href": "slides/week_10.html#example",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Example",
+    "text": "Example\nRepublican manifesto uses `wall’ 830 times in 1000 words, while Democrat use it only 160 times. Assume 1 for republican and -1 for democrat\n\\[P_{wr} = 830/(830+160)\\]\n\\[P_{wl} =  160/(830+160) \\] \\[ S_w = 0.83*1 + -1*.16 = 0.66\\]\n\nVirgin text 1 mentions wall 200 times in 1000 words ~ \\(0.2 * 0.66 = 0.132\\)\nVirgin text 2 mentions wall 1 times in 1000 words ~ \\(0.001 * 0:66 = 0.0066\\)\nRepeat for all words!"
+  },
+  {
+    "objectID": "slides/week_10.html#results",
+    "href": "slides/week_10.html#results",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Results",
+    "text": "Results"
+  },
+  {
+    "objectID": "slides/week_10.html#wordfish-slapin-and-proksch-2008-ajps",
+    "href": "slides/week_10.html#wordfish-slapin-and-proksch-2008-ajps",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Wordfish (Slapin and Proksch, 2008, AJPS)",
+    "text": "Wordfish (Slapin and Proksch, 2008, AJPS)\nSame assumptions as in Wordscore (word usage provides information about policy placement), but in an unsupervised setting and with fully specified language model.\n\n\nThe count of word \\(j\\) from party \\(i\\) , in year \\(t\\):\n\\[ y_{ijt}   \\sim  Pois(\\lambda)\\]\n\\[ \\lambda_{ijt}=\\exp({\\alpha_{it} + \\psi_j + \\beta_j\\times\\omega_{it}}) \\]\n\n\\(\\alpha_{it}\\): fixed effect(s) for party \\(i\\) in time \\(t\\) ~ deal with parties that write too much\n\\(\\psi_j\\): word fixed effect: some parties just use certain words more (e.g. their own name)\n\\(\\beta_j\\): word specific weights (discrimination parameter, adds more information than simple usage)\n\\(\\omega_{it}\\) estimate of party’s position in a given year."
+  },
+  {
+    "objectID": "slides/week_10.html#estimation",
+    "href": "slides/week_10.html#estimation",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Estimation",
+    "text": "Estimation\n\\[ \\lambda_{ijt}=\\exp({\\alpha_{it} + \\psi_j + \\beta_j\\times\\omega_{it}}) \\]\nNothing on RHS is known: everything needs to be estimated.\n\nUse Expectation Maximization (EM) algorithm (same as we could use for topic models):\n\nInitialize values based on counts of words and length of party manifestors a in the data\nE-Step: run a poisson regression holding word parameters fixed (word verbose and word discrimination), and estimating the party parameters (party verbose and party position) based on counts of each word j in document it\nM-Step: run a Poisson regression holding party parameters fixed, and estimating the word parameters based on counts of each word j in document it\nIterate until convergence\n\nOther option: Bayesian Estimation with Gibbs sampling."
+  },
+  {
+    "objectID": "slides/week_10.html#results-i",
+    "href": "slides/week_10.html#results-i",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Results I",
+    "text": "Results I"
+  },
+  {
+    "objectID": "slides/week_10.html#results-ii",
+    "href": "slides/week_10.html#results-ii",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Results II",
+    "text": "Results II"
+  },
+  {
+    "objectID": "slides/week_10.html#section-1",
+    "href": "slides/week_10.html#section-1",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "",
+    "text": "Many substantive questions in policy and politics depends on estimating ideological preferences:\n\nIs polarization increasing over time?\n\nare parties moving together over time?\n\nDo governments/coalitions last longer conditional on:\n\nhow homogeneous coalition is?\ndistance between coalition and congress ideal points?\ndistance between coalition and median voter?\n\nDoes ideology affect policy decisions?\n\nEconomic cycles and elections?\nGlobalization and the social welfare state?\n\nDoes motivated reasoning affects beliefs/sharing of online misinformation?\n\nMany more examples …."
+  },
+  {
+    "objectID": "slides/week_10.html#wnominate",
+    "href": "slides/week_10.html#wnominate",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "WNominate",
+    "text": "WNominate"
+  },
+  {
+    "objectID": "slides/week_10.html#scaling-with-without-computational-text-analysis",
+    "href": "slides/week_10.html#scaling-with-without-computational-text-analysis",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Scaling with without computational text analysis",
+    "text": "Scaling with without computational text analysis\n\n\n\nSurveys\n\nAsk elites or regular voters about policy preference, and scale them in some sort of political continuum. Methods as: factor analysis, singula value decomposition, PCA, etc…\n\n\n\n\n\nBehavioral data (for example, roll-call voting):\n\nPoliticians vote on proposals (or judges make decisions) that are close to their ideal points\n\nUse statistical methods (mostly matrix factorization) to estimate orthogonal dimensions ~ Nominate Scores\n\n\n\n\n\n\nContent Analysis using Text\n\nManually label content of political manifestos (Comparative Manifestos Project) and place them in ideological scales"
+  },
+  {
+    "objectID": "slides/week_10.html#grimmer-vs-wordfish",
+    "href": "slides/week_10.html#grimmer-vs-wordfish",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Grimmer vs Wordfish",
+    "text": "Grimmer vs Wordfish\n\n\n\nText-as-Data"
+  },
+  {
+    "objectID": "slides/week_10.html#assumption",
+    "href": "slides/week_10.html#assumption",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Assumption",
+    "text": "Assumption\nAll scaling models (either supervised or unsupervised) make a strong assumption of ideological dominance assumption\n\nthe primary distinguishing feature of the language of the political actors is ideology.\n\n\nWhen the assumption holds: the model will reliably capture ideological differences\nWhen the assumption doesn’t hold: the models will capture other dimension that separates language use, not exactly policy scaling."
+  },
+  {
+    "objectID": "schedule.html#week-7-october-20",
+    "href": "schedule.html#week-7-october-20",
+    "title": "Weekly Materials & Readings",
+    "section": "Week 7: October 20",
+    "text": "Week 7: October 20\n\nTopics: Unsupervised learning + Scaling\nLecture: Week 7 - Scaling\nCoding Materials:  Week 10 - Scaling"
+  },
+  {
+    "objectID": "slides/week_04.html",
+    "href": "slides/week_04.html",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "",
+    "text": "Your first problem set will be assigned today! Some important information:\n\nYou will receive and submit your assignment using Github!\n\nGithub Classroom: Creates automatically a repo for the assignment. You and I are owner of the repo.\nCome to my office hours if you don’t know how to work with GitHub\n\nDeadline: EOD next Monday, September 29th.\nPlease use an .RMD/.QMD/.ipynb file to submit your assignment.\nAny questions?"
+  },
+  {
+    "objectID": "slides/week_04.html#rathje-et.-al-2020-pnas-out-group-animosity-1",
+    "href": "slides/week_04.html#rathje-et.-al-2020-pnas-out-group-animosity-1",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Rathje et. al 2020, PNAS, Out-group animosity",
+    "text": "Rathje et. al 2020, PNAS, Out-group animosity\n\nRQ: What drives engagement on social media?\nTheory: Role of social media in exacerbating political polarization\nData: Large datasets of tweets + Facebook posts news media accounts and US congressional members\nMethod:\n\n\nCategorize posts using dictionaries of negative affect, positive affect, and moral-emotional language\n\n\nFit regression models to examine how out-group/in-group/affective language predicted retweets and Facebook shares\n\n\n\n:::"
+  },
+  {
+    "objectID": "slides/week_01_intro.html",
+    "href": "slides/week_01_intro.html",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "",
+    "text": "Motivation for Computational Linguistics\n\nDigital information age\nPrinciples of Computational Linguistics.\nWhat this course is not.\nExamples of models and applications for this course\n\nIntroductions\nClass Logistics ( + 10 min for you to read through the syllabus)\nQ&A\nIntroduction to R/RStudio"
   }
 ]

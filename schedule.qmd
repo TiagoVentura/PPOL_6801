@@ -64,3 +64,11 @@ subtitle: "Data Science and Public Policy, McCourt School for Public Polcy, Geor
 -   **Lecture**: [Week 6 - Unsupervised Learning](/slides/week_06.html)
 
 -   **Coding Materials**: <a href="/code/week6_unsupervised_learning.R" download> Week 7 - Unsupervised Learning: Topic Models</a>
+
+## Week 7: October 20
+
+-   **Topics**: Unsupervised learning + Scaling
+
+-   **Lecture**: [Week 7 - Scaling](/slides/week_10.html)
+
+-   **Coding Materials**: <a href="/code/week10_scaling.R" download> Week 10 - Scaling</a>

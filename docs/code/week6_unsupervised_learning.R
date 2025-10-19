@@ -104,7 +104,7 @@ df_clusters$text <- news_data_$headline
 # see some cases from each cluster
 df_clusters %>% 
   group_by(cluster) %>%
-  sample_n(5) %>%
+  sample_n(3) %>%
   select(cluster, text) %>% 
   View()
 
@@ -153,11 +153,11 @@ K <- 30
 
 
 # estimate
-#lda <- LDA(dfm_news_non_na, 
-#           k = K, 
-#           method = "Gibbs",
-#           control = list(verbose=25L, seed = 123,
-#                          burnin = 100, iter = 500))
+lda <- LDA(dfm_news_non_na, 
+           k = K, 
+           method = "Gibbs",
+           control = list(verbose=25L, seed = 123,
+                          burnin = 100, iter = 500))
 
 
 ?LDA
@@ -259,7 +259,7 @@ stm_m <- stm(documents=dfm_stm$documents,
               init.type = "Spectral")
 
 #save(stm_m, file="data/stm_model.rdata")
-# download here: https://www.dropbox.com/scl/fi/29qmppum357oa0snnejyt/stm_model.rdata?rlkey=yjf548fvd6z4eoz0dmos3ezil&dl=0
+
 library(tidytext)
 
 load("data/stm_model.rdata")
@@ -274,8 +274,9 @@ labelTopics(stm_m)
 plot(stm_m)
 
 # finding documents
-thoughts3 <- findThoughts(stm_m, texts = dfm_stm$meta$text,
-                          n = 2, topics = 14)$docs[[1]]
+thoughts3 <- findThoughts(stm_m, 
+                          texts = dfm_stm$meta$text,
+                          n = 2, topics = 10)$docs
 
 # see main words
 labelTopics(stm_m, topics=14)

@@ -33,7 +33,9 @@ temp = readLines(json_file)
 news_data <- map(temp, ~ fromJSON(.x) %>% as_tibble()) %>% bind_rows() 
 
 # see the data
-news_data
+table(news_data$category)
+
+
 
 # 2 - Naive Bayes ------------------------------------------
 
@@ -110,6 +112,7 @@ nb_model <- textmodel_nb(train_dfm,
                          prior = "uniform")
 # summary
 summary(nb_model)
+?textmodel_nb
 
 # evaluate on test set
 predicted_class <- predict(nb_model, newdata = test_dfm)
@@ -139,7 +142,6 @@ cat(
 # another way to get the confusion matrix from caret package
 library(caret)
 confusionMatrix(tab_class, mode = "everything")
-
 
 
 # 2.1 - Naive Bayes WITH Smoothing parameters ------------------------------------------
@@ -320,6 +322,8 @@ el_net_tuned <- tune_grid(el_net_wf,
                         grid = 5, 
                         metrics = metric_set(accuracy, precision, recall))
 
+?tune_grid
+
 ## Get metrics
 best_metric = el_net_tuned %>%
   select_best(metric = "accuracy")
@@ -330,7 +334,7 @@ final_wf <-
   finalize_workflow(best_metric)
 
 ## fit in the test set
-##  last_fit() with our finalized model;
+## last_fit() with our finalized model;
 ## this function fits the finalized model on the full 
 ## training data set and evaluates the finalized model on the testing data.
 ## I AM NOT A FAN OF THIS!!
@@ -346,7 +350,8 @@ el_net_fit %>%
 ## Let's see with tree based models
 
 ## build model
-tree_net <- decision_tree(cost_complexity = tune(), tree_depth = tune()) %>%
+tree_net <- decision_tree(cost_complexity = tune(), 
+                          tree_depth = tune()) %>%
   set_engine("rpart") %>%
   set_mode("classification")
 
