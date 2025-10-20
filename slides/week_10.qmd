@@ -11,7 +11,7 @@ format:
     transition: slide
     background-transition: fade
     code-line-numbers: false
-    width: 1300
+    width: 1400
     height: 900
     center: true
     slide-number: true
@@ -67,7 +67,7 @@ The project proposal asks that you sketch out a general 2 page (single-spaced; 1
 
 -   A definition for what “success” means with respect to your project.
 
-# Mid-semester survey: [https://forms.gle/evAYeWPzgrzrWtpi9](https://forms.gle/evAYeWPzgrzrWtpi9)
+# Mid-semester survey: <https://forms.gle/evAYeWPzgrzrWtpi9>
 
 # Review: Topic Models
 
@@ -124,11 +124,10 @@ knitr::include_graphics("./week6_figs/topic_matrices.png")
 
 -   **Common approach**: decide based on cross-validated statistical measures of model fit or other measures of topic quality.
 
-    - (Heldout) Log-likelihood: How well the model explains the observed data. Higher (closer to 0) is better
-    - Semantic coherence: How often top words in a topic appear together, indicating topic interpretability.
-    - Residuals: Checks how well the model explains the word co-occurrence patterns in the data.
-    - Exclusivity: Measures distinctiveness of topics — how unique their top words are.
-    
+    -   (Heldout) Log-likelihood: How well the model explains the observed data. Higher (closer to 0) is better
+    -   Semantic coherence: How often top words in a topic appear together, indicating topic interpretability.
+    -   Residuals: Checks how well the model explains the word co-occurrence patterns in the data.
+    -   Exclusivity: Measures distinctiveness of topics — how unique their top words are.
 :::
 
 ## 
@@ -225,13 +224,11 @@ See [Roberts et al 2014](https://scholar.harvard.edu/files/dtingley/files/topicm
 
 # Coding
 
-
 # Scaling policy positions with Text
 
-##
+## 
 
-:::nonincremental
-
+::: nonincremental
 **Many substantive questions in policy and politics depends on estimating ideological preferences**:
 
 -   Is polarization increasing over time?
@@ -248,37 +245,34 @@ See [Roberts et al 2014](https://scholar.harvard.edu/files/dtingley/files/topicm
 Many more examples ....
 :::
 
-## WNominate 
+## WNominate
 
 ```{r echo=FALSE, out.width = "100%"}
 knitr::include_graphics("./week10_figs/plot_dw_example.png") 
 ```
 
-
 ## Scaling with without computational text analysis
 
-:::nonincremental
+:::::: nonincremental
+::: fragment
+-   Surveys
 
-:::fragment
-- Surveys 
-     
-     - Ask elites or regular voters about policy preference, and scale them in some sort of political continuum. Methods as: factor analysis, singula value decomposition, PCA, etc...
+    -   Ask elites or regular voters about policy preference, and scale them in some sort of political continuum. Methods as: factor analysis, singula value decomposition, PCA, etc...
 :::
 
-:::fragment
-- Behavioral data (for example, roll-call voting):
-    
+::: fragment
+-   Behavioral data (for example, roll-call voting):
+
     -   Politicians vote on proposals (or judges make decisions) that are close to their ideal points
-         -   Use statistical methods (mostly matrix factorization) to estimate orthogonal dimensions ~ Nominate Scores
+        -   Use statistical methods (mostly matrix factorization) to estimate orthogonal dimensions \~ Nominate Scores
 :::
 
-:::fragment
+::: fragment
+-   Content Analysis using Text
 
-- Content Analysis using Text
-   
-    - Manually label content of political manifestos (Comparative Manifestos Project) and place them in ideological scales
+    -   Manually label content of political manifestos (Comparative Manifestos Project) and place them in ideological scales
 :::
-:::
+::::::
 
 ## Scaling models with computational text analysis
 
@@ -292,14 +286,13 @@ In the past 20 years, computational text analysis has been widely used for build
 
 ## Wordscore (Laver, Benoit, Garry, 2003, APSR)
 
-- **Def:**  supervised approach, similar to naive bayes models, learn association between words and reference text, and score virgin text.
+-   **Def:** supervised approach, similar to naive bayes models, learn association between words and reference text, and score virgin text.
 
 ::: fragment
 [Step 1]{.red}: Begin with a reference set (training set) of texts that have known positions.
 
 -   Get speeches by AOC , give it -1 score.
 -   Get speeches by MTG, give it a +1 score.
-
 :::
 
 ::: fragment
@@ -312,7 +305,6 @@ In the past 20 years, computational text analysis has been widely used for build
 [Step 3]{.red}: Score the virgin texts (test set) of texts using those word scores
 
 -   scale virgin score to the same original metric (-1 to +1)
-
 :::
 
 ## WordScore Calculation
@@ -347,14 +339,13 @@ Republican manifesto uses \`wall' 830 times in 1000 words, while Democrat use it
 
 $$P_{wr} = 830/(830+160)$$
 
-$$P_{wl} =  160/(830+160) $$
- $$ S_w = 0.83*1 + -1*.16 = 0.66$$
+$$P_{wl} =  160/(830+160) $$ $$ S_w = 0.83*1 + -1*.16 = 0.66$$
 
 -   Virgin text 1 mentions wall 200 times in 1000 words \~ $0.2 * 0.66 = 0.132$
 
 -   Virgin text 2 mentions wall 1 times in 1000 words \~ $0.001 * 0:66 = 0.0066$
 
-- Repeat for all words!
+-   Repeat for all words!
 
 ## Results
 
@@ -416,16 +407,14 @@ knitr::include_graphics("./week10_figs/wordfish_ii.png")
 
 All scaling models (either supervised or unsupervised) make a strong assumption of **ideological dominance assumption**
 
-  > the primary distinguishing feature of the language of the political actors is ideology.
-  
-  
-- When the assumption holds: the model will reliably capture ideological differences  
+> the primary distinguishing feature of the language of the political actors is ideology.
 
-- When the assumption doesn't hold: the models will capture other dimension that separates language use, not exactly policy scaling. 
+-   When the assumption holds: the model will reliably capture ideological differences
+
+-   When the assumption doesn't hold: the models will capture other dimension that separates language use, not exactly policy scaling.
 
 ## Grimmer vs Wordfish
 
 ```{r echo=FALSE, out.width = "100%"}
 knitr::include_graphics("wordfish_grimmer.png") 
 ```
-
