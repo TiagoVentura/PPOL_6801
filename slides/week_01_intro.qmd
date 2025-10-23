@@ -264,7 +264,7 @@ countdown(minutes = 10, seconds = 0,
 ## Weekly Schedule {style="font-size: .8em;"}
 
 | Week | Date | Topic |
-|---------------|---------------|-------------------------------------------|
+|----------------|----------------|---------------------------------------|
 | 1 | Sept 2 | Introductions and Course Overview |
 | 2 | Sept 8 | From Text to Matrices: Representing Text as Data |
 | 3 | Sept 15 | Text Similarity, Text Re-use, and Complexity |

@@ -192,7 +192,7 @@ Or one of the three below:
 
 **Required Readings:**
 
--   [SLP: Chapter 7](https://stanford.edu/~jurafsky/slp3/7.pdf)
+-   [SLP: Chapter 6](https://stanford.edu/~jurafsky/slp3/6.pdf)
 
 -   [Lin, Gechun, and Christopher Lucas. "An Introduction to Neural Networks for the Social Sciences." (2023)](https://christopherlucas.org/files/PDFs/nn_chapter.pdf)
 

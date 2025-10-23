@@ -1,0 +1,325 @@
+---
+title: "Large Language Models: Off the Shelf Application for Content Analysis"
+author: "<span style = 'font-size: 200%;'> Professor: Tiago Ventura </span>"
+execute: 
+  echo: false
+  error: true
+  cache: true
+format:
+  revealjs: 
+    transition: slide
+    background-transition: fade
+    code-line-numbers: false
+    width: 1400
+    height: 900
+    center: true
+    slide-number: true
+    incremental: false
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    footer: "Text-as-Data"
+    theme: [simple, custom.scss]
+editor_options: 
+  chunk_output_type: console
+---
+
+## Motivation
+
+-   We are going through a unique technological revolution with the use of Artificial intelligence.
+
+-   Most of the recent changes come from the so called Large Langue Models
+
+    -   They are **everywhere** — ChatGPT, Claude, Gemini, Copilot, LLaMA.
+    -   Used for **writing, coding, summarizing, policy briefs, and internet search.**
+    -   They’re reshaping **education, research, and communication.**
+
+## 
+
+**Most importantly:** research tasks that until very recently required either **sophisticated ML models**, **heavy dictionaries** or a **lot of human inputs** can be performed with comparable performance by pre-trained LLMs models
+
+-   Classification Tasks (sentiment, political stance)
+
+-   Unsupervised task (topic modeling and clustering)
+
+-   Data generation (summarization, generation of synthetic text and images)
+
+-   Ideological scaling
+
+-   Image analysis, object identification, OCR...
+
+## Plans for Today:
+
+-   Early Language Models: N-Grams
+
+-   Large Language Models (LLMs)
+
+-   Outsourcing Content Analysis Tasks with GenAI LLMs
+
+-   Some coding applications
+
+    -   Text Classification
+
+    -   Synthetic Survey Responses
+    
+    -  If we have time, I can show you two other options and you can vote for: 
+        
+        - Analyzing open-ended survey questions
+        
+        - Image processing and detecting elements on images with LLMs
+
+
+::: aside
+*this lecture draws on materials from Patrick Wu [NLP Class](https://patrickywu.com/)*
+:::
+
+## Language model
+
+**Language Modeling** is the task of predicting what word comes next after a sequence of words
+
+-   the students opened their \_\_\_\_\_\_
+
+    -   books
+
+    -   laptop
+
+    -   exams
+
+    -   minds
+
+-   More formally, given a sequence of words $x_1$, $x_2$, $x_3$ ... compute of the probability of distribution of the next word $x_{t+1}$
+
+-   Where $x_{t+1}$ is any word in the vocabulary
+
+-   A system that does this is called a **Language Model**
+
+## Early Language Models: N-grams
+
+-   **Definition:** An n-gram is a chunk of n consecutive words.
+
+    -   unigrams: “the”, “students”, “opened”, ”their”
+    -   bigrams: “the students”, “students opened”, “opened their”
+    -   trigrams: “the students opened”, “students opened their”
+    -   four-grams: “the students opened their
+
+-   **Idea:** Collect statistics about how frequent different n-grams are and use these to predict next word.
+
+## A little bit of math...
+
+Starting from a simple conditional probability
+
+$$
+P(A|B)= \frac{P(A, B)}{P(B)}
+$$ 
+
+Suppose we are learning a 4-gram Language Model
+
+-   students opened their \_\_\_\_\_\_\_
+
+Assume A={"book"}, B={"the students opened their"},
+
+$$
+P(book|\text{the students opened their}) \sim \frac{ \text{counts}( \text{the students opened their book})}{\text{counts} (\text{the students opened their})}
+$$
+
+## 
+
+For example, suppose that in the corpus:
+
+-   “students opened their” occurred 1000 times
+
+-   “students opened their books” occurred 400 times
+
+    -   P(books \| students opened their) = 0.4
+
+-   “students opened their exams” occurred 100 times
+
+    -   P(exams \| students opened their) = 0.1
+
+## N-gram language models in practice
+
+> today the \_\_\_\_
+
+-   Get a probability distribution over words
+
+    -   company 0.153
+    -   bank 0.153
+    -   price 0.077 ....
+
+-   Sample a word
+
+## 
+
+>today *the company*
+
+-   Get a probability distribution over words
+
+    -   of 0.30
+    -   the 0.08
+    -   for 0.077 ....
+
+-   Sample a word... and repeat
+
+## Neural Language Models
+
+-   As you can imagine: N-grams are not great. Cannot memorize long distance, explodes with large text, knows nothing about meaning.
+
+-   In early 2000s, CS folks started improving language models with large models (**neural networks**) and large data (**the internet**)
+
+## Neural Networks - Transformers (2017)
+
+```{r echo=FALSE, out.width = "100%"}
+knitr::include_graphics("./week13_figs/transformers.png") 
+```
+
+## Large Language Models
+
+-   Same intuition of n-gram language models: word prediction.
+
+    -   But using:
+        -   Billions or trillions of parameters.
+        -   Trained on petabytes of text (the internet, books, code, websites, pretty much everything you can imagine)
+        - trained with masking
+
+- After training, these models learn word representation and language generation. 
+
+- There are two ways to use LLMs
+
+    -   **Out of the box**: refers to utilizing the model without any updating of the parameters of the model
+    -   **Finetune**: involves further training the model using gradient-based updates
+
+## Out of the Box LLMs with Prompts
+
+**Prompts:** instructions we give to a language model in natural language
+
+-   Basis of prompting is on **contextual generation**
+-   Given the prompt as context, the LLM will generate the next token based on its token probability, conditioned on the prompt:
+
+## Structure of a Prompt
+
+-   Instruction: a specific task or instruction you want the model to perform
+
+-   Context: additional information or context that can steer the model to better responses
+
+-   Input data: the input or question that we are interested in finding a response to
+
+-   Output indicator: the type or format of the output
+
+-   Of course, you don’t need all four elements, but prompts that have all four elements are often effective
+
+## Prompt Engineering Examples
+
+-   **Zero Shot:** Classify the sentiment of the following review:
+
+-   **Few Shot:** Given these examples, Classify the sentiment of the following review:
+
+-   **Role:** Acting as a crowdworker, classify the sentiment of following review:
+
+-   **Chain-of-thought:** prompting means guiding a language model through a series of connected logical steps or thoughts
+
+## Example:
+
+```{r echo=FALSE, out.width = "100%"}
+knitr::include_graphics("shots.png") 
+```
+
+::: aside
+Source: [Kojima et al. 2022](https://arxiv.org/pdf/2205.11916)
+:::
+
+## Usage
+
+All these applications are hard to do at scale via LLMs web-browser versions (as ChatGPT).
+
+Instead we will use access via API (programming call either through R and Python) to access and ask the models to perform certain tasks:
+
+-   OpenAI API: https://openai.com/api/
+
+-   Claude Antrophic: https://www.claude.com/platform/api
+
+-   https://ai.google.dev/
+
+# Examples of LLMs application
+
+## LLMs: Classification
+
+> **Rathje et. al. "GPT is an effective tool for multilingual psychological text analysis"**
+
+-   Use LLMs with zero-shot prompting for measure psycological concepts (sentiment classification).
+
+> “Is the sentiment of this text positive, neutral, or negative? Answer only with a number: 1 if positive, 2 if neutral, and 3 if negative. Here is the text: \[tweet, news headline or Reddit comment text\]”
+
+-   To see this as next work prediction, think about this example:
+
+    -   P(w=positive\|I love this class) \> P(w=neutral\|I love this class)
+        -   Is positive the most likely next word?
+            -   No... but it is more likely than the word negative
+            -   Or other negative words that are close to negative in the embedding space.
+
+## Results {visibility="hidden"}
+
+```{r echo=FALSE, out.width = "100%", fig.align="center"}
+knitr::include_graphics("./week13_figs/text_class.png") 
+```
+
+## LLMs: Scaling {visibility="hidden"}
+
+> **Wu et. al. "Large Language Models Can Be Used to Estimate the Latent Positions of Politicians"**
+
+-   Novel approach to measure ideal points for politicians using LLMs.
+
+-   Use ChatGPT-3.5 to pairwise compare the members of the congress in a pre-specific dimension.
+
+    -   similar task to the readability score using crowdworkers
+
+-   Use the Bradley-Terry Model to estimate a unidimensional scale measuring latent political positions of interest
+
+-   Estimate both ideological scaling, and issue specific scales (Gun Control and Abortion)
+
+#  {visibility="hidden"}
+
+> **Based on past voting records and statements, which senator is more liberal: \[senator 1\] (\[senator 1 party abbrev\]-\[senator 1 state abbrev\]) or \[senator 2\] (\[senator 2 party abbrev\]-\[senator 2 state abbrev\])?**
+
+## Results {visibility="hidden"}
+
+```{r echo=FALSE, out.width = "100%", fig.align="center"}
+knitr::include_graphics("./week13_figs/wu_1.png") 
+```
+
+## LLMs: Synthetic Survey Data
+
+> **Bisbee et. al. "Synthetic Replacements for Human Survey Data? The Perils of Large Language Models"**
+
+-   Can LLMs be leveraged for public opinion research? Can LLMs be used to generate synthetic survey responses?
+
+-   Prompt LLMs to:
+
+    -   First adopt various personas defined by demographic and political characteristics
+    -   Answer a battery of questions about feelings towards social and political groups
+    -   Features are taken from the American National Election Study
+
+## Prompts
+
+> “It is \[YEAR\]. You are a \[AGE\] year-old, \[MARST\], \[RACETH\] \[GENDER\] with \[EDUCATION\] making \[INCOME\] per year, living in the United States. You are \[IDEO\], \[REGIS\] \[PID\] who \[INTEREST\] pays attention to what’s going on in government and politics.”
+
+```{r echo=FALSE, out.width = "70%", fig.align="center"}
+knitr::include_graphics("./week13_figs/bisbee_prompt.png") 
+```
+
+## Results {visibility="hidden"}
+
+```{r echo=FALSE, out.width = "100%", fig.align="center"}
+knitr::include_graphics("./week13_figs/bisbee_average.png") 
+```
+
+## LLMs: Synthetic Browsing Data
+
+-   My own early stage work: using LLMs to augment browsing data
+
+    > System Prompt: This is text completion in English
+
+    > User Prompt: The url in triple quotations is a url that links to a news item. \[URL\] Without accessing the url in triple quotations, please provide a possible summary of the content of the url. Without going on the internet, produce the online news article based on this URL. Limit to three paragraphs, and return only the article. Please consider the domain, publication date, and keywords in the URL, when available.
+
+    > URL Example:https://www.bloomberg.com/news/articles/2024-09-21/chipmaker-qualcomm-is-said-to-explore-friendly-takeover-of-intel
+
+# Coding!

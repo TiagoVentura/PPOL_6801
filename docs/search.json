@@ -1628,7 +1628,7 @@
     "href": "syllabus.html#weekly-schedule-readings",
     "title": "Syllabus: PPOL 6801 - Text as Data: Computational Linguistics",
     "section": "Weekly Schedule & Readings",
-    "text": "Weekly Schedule & Readings\n\nWeek 1: Introductions and Course Overview (September 2)\nTopics: Review of the syllabus, class organization, and introduction to computational text analysis, and review/hands-on help with computational environment.\n\n[GMB] - Chapter 2.\n\nOr one of the three below:\n\nPolitical Science Perspective: Wilkerson, J. and Casas, A. (2017). Large-Scale Computerized Text Analysis in Political Science: Opportunities and Challenges. Annual Review of Political Science, 20, 529:544.\nEconomics Perspective: Gentzkow, Matthew, Bryan Kelly, and Matt Taddy. “Text as data.” Journal of Economic Literature 57, no. 3 (2019): 535-574.\nSociology Perspective: https://www.sciencedirect.com/science/article/pii/S0049089X22000904\n\n\n\nWeek 2: From Text to Matrices: Representing Text as Data (September 8)\nTopics: How to represent text as data? What is a Bag of Words? What are tokens? Why should we care about tokens?\nRequired Reading:\n\n[GMB] - Chapters 2-5\nApplied Papers:\n\nDenny, M. J., & Spirling, A. (2018). Text preprocessing for unsupervised learning: why it matters, when it misleads, and what to do about it. Political Analysis, 26(2): 168-189.\nBan, Pamela, Alexander Fouirnaies, Andrew B. Hall, and James M. Snyder. “How newspapers reveal political power.” Political Science Research and Methods 7, no. 4 (2019): 661-678.\n\n\nOptional Readings\n\nMichel, J.B., et al. 2011. “Quantitative Analysis of Culture Using Millions of Digitized Books.” Science 331 (6014): 176–82. https://doi.org/10.1126/science.1199644;\n\n\n\nWeek 3: Text Similarity, Text re-use and Complexity (September 15)\nTopics: How do we evaluate complexity in text? Why should we care about complexity in text? How do we evaluate similarity in text? Why is this useful?\nRequired Readings\n\n[GMB] - Chapter 7\nApplied Papers:\n\nWirtschafter, V. (2023). Audible reckoning: How top political podcasters spread unsubstantiated and false claims. Brookings Institute.\nSpirling, Arthur. 2016. “Democratization and Linguistic Complexity”, Journal of Politics.\nBenoit, K., Munger, K. and Spirling, A. 2017. Measuring and Explaining Political Sophistication Through Textual Complexity\n\n\nOptional Readings\n\nAdukia A. and Harrison E. (2024). Separation of Church and State Curricula? Examining Public and Religious Private School Textbooks. Working Paper.\nLinder, Fridolin, Bruce Desmarais, Matthew Burgess, and Eugenia Giraudy. “Text as policy: Measuring policy similarity through bill text reuse.” Policy Studies Journal 48, no. 2 (2020): 546-574.\n\n\n\nWeek 4: Supervised Learning I: Dictionary Methods and Out-of-Box Classifier Analysis (September 22)\nTopics: What are dictionaries? Why/when are they useful? What are their limitations? Can we use models trained by others?\nRequired Readings\n\n[GMB] - Chapters 15-16\nApplied Papers:\n\nLori Young and Stuart Soroka 2012 “Affective News: The Automated Coding of Sentiment in Political Texts.” Political Communication, 29:2, 205-231.\nRathje, Steve, Jay J. Van Bavel, and Sander Van Der Linden. “Out-group animosity drives engagement on social media.” Proceedings of the National Academy of Sciences 118, no. 26 (2021): e2024292118.\nVentura, Tiago, Kevin Munger, Katherine McCabe, and Keng-Chi Chang. “Connective effervescence and streaming chat during political debates.” Journal of Quantitative Description: Digital Media 1 (2021).\n\n\n\n\nWeek 5: Supervised Learning II: Training your own classifiers (September 29)\nTopics: We will study the framework to train our own supervised models, and when to use them.\nRequired Readings\n\n[GMB] - Chapters 17, 18, 19, and 20.\nBenoit, K., et al. (2016). Crowd-sourced text analysis: Reproducible and agile production of political data. American Political Science Review, 110(2), 278-295.\nBarberá, Pablo, Amber E. Boydstun, Suzanna Linn, Ryan McMahon, and Jonathan Nagler. “Automated text classification of news articles: A practical guide.” Political Analysis 29, no. 1 (2021): 19-42.\n\nOptional Readings\n\nSiegel, Alexandra, et al. “Trumping Hate on Twitter? Online Hate Speech in the 2016 US Election Campaign and its Aftermath.”\nTheocharis, Y., Barberá, P., Fazekas, Z., & Popa, S. A. (2020). The dynamics of political incivility on Twitter. Sage Open, 10(2), 2158244020919447.\nMitts, T., Phillips, G., & Walter, B. (2021). Studying the Impact of ISIS Propaganda Campaigns. Journal of Politics\n\n\n\nWeek 6: Unsupervised Learning: Topic Models (October 6)\nTopics: what if we do not have an outcome to predict? can we cluster the text in groups? what are topics?\nRequired Redings\n\n[GMB] - Chapters 12-14.\nDavid M. Blei . 2012. “Probabilistic Topic Models.” http://www.cs.columbia.edu/~blei/papers/ Blei2012.pdf\nRoberts, M.E., Stewart, B.M. and Tingley, D. (2019). STM: An R package for structural topic models. Journal of Statistical Software, 91(2)\nApplied Papers:\n\nMotolinia, Lucia. Electoral accountability and particularistic legislation: evidence from an electoral reform in Mexico. American Political Science Review 115, no. 1 (2021): 97-113.\nBarberá, P., Casas, A., Nagler, J., Egan, P. J., Bonneau, R., Jost, J. T., & Tucker, J. A. (2019). Who leads? Who follows? Measuring issue attention and agenda setting by legislators and the mass public using social media data. American Political Science Review, 113(4), 883-901.\n\n\nOptional:\n\nCatalinac, Amy. “From pork to policy: The rise of programmatic campaigning in Japanese elections.” The Journal of Politics 78.1 (2016): 1-18.\nEshima, Shusei, Kosuke Imai, and Tomoya Sasaki. “Keyword‐Assisted Topic Models.” American Journal of Political Science (2020).\n\n\n\nWeek 7: Using Text to Measure Ideology - Scaling (October 20)\nTopics: What are scaling models and what can they tell us? Can we represent politicians/users ideology using text?\nRequired Readings:\n\nApplied Papers:\n\nLaver, Michael, Kenneth Benoit, and John Garry. 2003. “Extracting Policy Positions from Political Texts Using Words as Data”. American Political Science Review. 97, 2, 311-331\nSlapin, Jonathan and Sven-Oliver Prokschk. 2008. “A Scaling Model for Estimating Time-Series Party Positions from Texts.” American Journal of Political Science. 52, 3 705-722\nAruguete, Natalia, Ernesto Calvo, and Tiago Ventura. “News by popular demand: Ideological congruence, issue salience, and media reputation in news sharing.” The International Journal of Press/Politics 28, no. 3 (2023): 558-579.\nIzumi, Mauricio Y., and Danilo B. Medeiros. “Government and opposition in legislative speechmaking: using text-as-data to estimate Brazilian political parties’ policy positions.” Latin American Politics and Society 63, no. 1 (2021): 145-164.\n\n\n\n\nWeek 8: Representation Learning & Introduction to Deep Learning (October 27)\nTopics: How can we capture the meaning of words? Using Deep Learning models to represent text.\nRequired Readings:\n\nSLP: Chapter 7\nLin, Gechun, and Christopher Lucas. “An Introduction to Neural Networks for the Social Sciences.” (2023)\n\n\n\nWeek 9: Word Embeddings: What they are and how to estimate? (November 3)\nTopics: What are word-embeddings? When and how can we use them? What? Topic models again? Is this still a bag of words?\nRequired Readings:\n\n[GMB] - Chapter 8.\n[SLP] Chapter 6, “Vector Semantics and Embeddings.”\nJay Alanmar, The Illustrated Word2vec\nSpirling and Rodriguez, Word Embeddings: What works, what doesn’t, and how to tell the difference for applied research.\n\n\n\nWeek 10: Word Embeddings: Social Science Applications (November 10)\nTopics: How can we use embeddings in social science applications? Let’s see several examples!\nRequired Readings:\n\nApplied Papers:\n\nRodman, E., 2020. A Timely Intervention: Tracking the Changing Meanings of Political Concepts with Word Vectors. Political Analysis, 28(1), pp.87-111.\nGennaro, Gloria, and Elliott Ash. “Emotion and reason in political language.” The Economic Journal 132, no. 643 (2022): 1037-1059.\nRheault, Ludovic, and Christopher Cochrane. “Word embeddings for the analysis of ideological placement in parliamentary corpora.” Political Analysis 28, no. 1 (2020): 112-133.\nAustin C. Kozlowski, Austin C., Matt Taddy, and James A. Evans. 2019. “The Geometry of Culture: Analyzing the Meanings of Class through Word Embeddings.” American Sociological Review 84, no. 5: 905–49. https://doi.org/10.1177/0003122419877135.\nGarg, Nikhil, Londa Schiebinger, Dan Jurafsky and James Zou. 2018. “Word embeddings quantify 100 years of gender and ethnic stereotypes.” Proceedings of the National Academy of Sciences 115(16):E3635–E3644.\n\n\n\n\nWeek 11: Replication Class: Students’ Presentation (November 17)\n\n\nWeek 12: Transformers (November 24)\nTopics: We will learn about the Transformers architecture, attention, and the encoder-decoder infrastructure.\nRequired Readings\n\n[SLP] - Chapter 9.\nJay Alammar. 2018. “The Illustrated Transformer.” https://jalammar.github.io/illustratedtransformer/\nVaswani, A., et al. (2017). Attention is all you need. Advances in neural information processing systems, 30;\nTimoneda and Vera, BERT, RoBERTa or DeBERTa? Comparing Performance Across Transformer Models in Political Science Text, The Journal of Politics 87, no. 1 (2025): 000-000.\n\n\n\nWeek 13: Large Language Models: Prompting, building chatbots, and social science applications. (Invited Speaker: Dr. Christopher Barrie, Professor Sociology New York University) (December 1)\n\nTopics: We will see some social science application of LLMs chatbots. We will also discuss a working paper on replicability of research using LLMs.\n\nRequired Readings:\n\n[SLP] - Chapter 10.\nHugging Face NLP Course, Ch. 2\nBarrie, Christopher, Alexis Palmer, and Arthur Spirling. “Replication for language models problems, principles, and best practice for political science.”\n\nOptional:\n\nRathje, Steve, Dan-Mircea Mirea, Ilia Sucholutsky, Raja Marjieh, Claire Robertson, and Jay J. Van Bavel. GPT is an effective tool for multilingual psychological text analysis. (2023).\nDavidson, Thomas: Start Generating: Harnessing Generative Artificial Intelligence for Sociological Research, PrePrint\nWu, Patrick Y., Joshua A. Tucker, Jonathan Nagler, and Solomon Messing. “Large language models can be used to estimate the ideologies of politicians in a zero-shot learning setting.” arXiv preprint arXiv:2303.12057 (2023).\nBisbee, James, Joshua Clinton, Cassy Dorff, Brenton Kenkel, and Jennifer Larson. 2023. “Synthetic Replacements for Human Survey Data? the Perils of Large Language Models.” SocArXiv. May 4.\nArgyle, L.P., Busby, E.C., Fulda, N., Gubler, J.R., Rytting, C. and Wingate, D., 2023. Out of one, many: Using language models to simulate human samples. Political Analysis, 31(3), pp.337-351.\n\n\n\nWeek 14: Final Projects: Students Presentation (December 8)"
+    "text": "Weekly Schedule & Readings\n\nWeek 1: Introductions and Course Overview (September 2)\nTopics: Review of the syllabus, class organization, and introduction to computational text analysis, and review/hands-on help with computational environment.\n\n[GMB] - Chapter 2.\n\nOr one of the three below:\n\nPolitical Science Perspective: Wilkerson, J. and Casas, A. (2017). Large-Scale Computerized Text Analysis in Political Science: Opportunities and Challenges. Annual Review of Political Science, 20, 529:544.\nEconomics Perspective: Gentzkow, Matthew, Bryan Kelly, and Matt Taddy. “Text as data.” Journal of Economic Literature 57, no. 3 (2019): 535-574.\nSociology Perspective: https://www.sciencedirect.com/science/article/pii/S0049089X22000904\n\n\n\nWeek 2: From Text to Matrices: Representing Text as Data (September 8)\nTopics: How to represent text as data? What is a Bag of Words? What are tokens? Why should we care about tokens?\nRequired Reading:\n\n[GMB] - Chapters 2-5\nApplied Papers:\n\nDenny, M. J., & Spirling, A. (2018). Text preprocessing for unsupervised learning: why it matters, when it misleads, and what to do about it. Political Analysis, 26(2): 168-189.\nBan, Pamela, Alexander Fouirnaies, Andrew B. Hall, and James M. Snyder. “How newspapers reveal political power.” Political Science Research and Methods 7, no. 4 (2019): 661-678.\n\n\nOptional Readings\n\nMichel, J.B., et al. 2011. “Quantitative Analysis of Culture Using Millions of Digitized Books.” Science 331 (6014): 176–82. https://doi.org/10.1126/science.1199644;\n\n\n\nWeek 3: Text Similarity, Text re-use and Complexity (September 15)\nTopics: How do we evaluate complexity in text? Why should we care about complexity in text? How do we evaluate similarity in text? Why is this useful?\nRequired Readings\n\n[GMB] - Chapter 7\nApplied Papers:\n\nWirtschafter, V. (2023). Audible reckoning: How top political podcasters spread unsubstantiated and false claims. Brookings Institute.\nSpirling, Arthur. 2016. “Democratization and Linguistic Complexity”, Journal of Politics.\nBenoit, K., Munger, K. and Spirling, A. 2017. Measuring and Explaining Political Sophistication Through Textual Complexity\n\n\nOptional Readings\n\nAdukia A. and Harrison E. (2024). Separation of Church and State Curricula? Examining Public and Religious Private School Textbooks. Working Paper.\nLinder, Fridolin, Bruce Desmarais, Matthew Burgess, and Eugenia Giraudy. “Text as policy: Measuring policy similarity through bill text reuse.” Policy Studies Journal 48, no. 2 (2020): 546-574.\n\n\n\nWeek 4: Supervised Learning I: Dictionary Methods and Out-of-Box Classifier Analysis (September 22)\nTopics: What are dictionaries? Why/when are they useful? What are their limitations? Can we use models trained by others?\nRequired Readings\n\n[GMB] - Chapters 15-16\nApplied Papers:\n\nLori Young and Stuart Soroka 2012 “Affective News: The Automated Coding of Sentiment in Political Texts.” Political Communication, 29:2, 205-231.\nRathje, Steve, Jay J. Van Bavel, and Sander Van Der Linden. “Out-group animosity drives engagement on social media.” Proceedings of the National Academy of Sciences 118, no. 26 (2021): e2024292118.\nVentura, Tiago, Kevin Munger, Katherine McCabe, and Keng-Chi Chang. “Connective effervescence and streaming chat during political debates.” Journal of Quantitative Description: Digital Media 1 (2021).\n\n\n\n\nWeek 5: Supervised Learning II: Training your own classifiers (September 29)\nTopics: We will study the framework to train our own supervised models, and when to use them.\nRequired Readings\n\n[GMB] - Chapters 17, 18, 19, and 20.\nBenoit, K., et al. (2016). Crowd-sourced text analysis: Reproducible and agile production of political data. American Political Science Review, 110(2), 278-295.\nBarberá, Pablo, Amber E. Boydstun, Suzanna Linn, Ryan McMahon, and Jonathan Nagler. “Automated text classification of news articles: A practical guide.” Political Analysis 29, no. 1 (2021): 19-42.\n\nOptional Readings\n\nSiegel, Alexandra, et al. “Trumping Hate on Twitter? Online Hate Speech in the 2016 US Election Campaign and its Aftermath.”\nTheocharis, Y., Barberá, P., Fazekas, Z., & Popa, S. A. (2020). The dynamics of political incivility on Twitter. Sage Open, 10(2), 2158244020919447.\nMitts, T., Phillips, G., & Walter, B. (2021). Studying the Impact of ISIS Propaganda Campaigns. Journal of Politics\n\n\n\nWeek 6: Unsupervised Learning: Topic Models (October 6)\nTopics: what if we do not have an outcome to predict? can we cluster the text in groups? what are topics?\nRequired Redings\n\n[GMB] - Chapters 12-14.\nDavid M. Blei . 2012. “Probabilistic Topic Models.” http://www.cs.columbia.edu/~blei/papers/ Blei2012.pdf\nRoberts, M.E., Stewart, B.M. and Tingley, D. (2019). STM: An R package for structural topic models. Journal of Statistical Software, 91(2)\nApplied Papers:\n\nMotolinia, Lucia. Electoral accountability and particularistic legislation: evidence from an electoral reform in Mexico. American Political Science Review 115, no. 1 (2021): 97-113.\nBarberá, P., Casas, A., Nagler, J., Egan, P. J., Bonneau, R., Jost, J. T., & Tucker, J. A. (2019). Who leads? Who follows? Measuring issue attention and agenda setting by legislators and the mass public using social media data. American Political Science Review, 113(4), 883-901.\n\n\nOptional:\n\nCatalinac, Amy. “From pork to policy: The rise of programmatic campaigning in Japanese elections.” The Journal of Politics 78.1 (2016): 1-18.\nEshima, Shusei, Kosuke Imai, and Tomoya Sasaki. “Keyword‐Assisted Topic Models.” American Journal of Political Science (2020).\n\n\n\nWeek 7: Using Text to Measure Ideology - Scaling (October 20)\nTopics: What are scaling models and what can they tell us? Can we represent politicians/users ideology using text?\nRequired Readings:\n\nApplied Papers:\n\nLaver, Michael, Kenneth Benoit, and John Garry. 2003. “Extracting Policy Positions from Political Texts Using Words as Data”. American Political Science Review. 97, 2, 311-331\nSlapin, Jonathan and Sven-Oliver Prokschk. 2008. “A Scaling Model for Estimating Time-Series Party Positions from Texts.” American Journal of Political Science. 52, 3 705-722\nAruguete, Natalia, Ernesto Calvo, and Tiago Ventura. “News by popular demand: Ideological congruence, issue salience, and media reputation in news sharing.” The International Journal of Press/Politics 28, no. 3 (2023): 558-579.\nIzumi, Mauricio Y., and Danilo B. Medeiros. “Government and opposition in legislative speechmaking: using text-as-data to estimate Brazilian political parties’ policy positions.” Latin American Politics and Society 63, no. 1 (2021): 145-164.\n\n\n\n\nWeek 8: Representation Learning & Introduction to Deep Learning (October 27)\nTopics: How can we capture the meaning of words? Using Deep Learning models to represent text.\nRequired Readings:\n\nSLP: Chapter 6\nLin, Gechun, and Christopher Lucas. “An Introduction to Neural Networks for the Social Sciences.” (2023)\n\n\n\nWeek 9: Word Embeddings: What they are and how to estimate? (November 3)\nTopics: What are word-embeddings? When and how can we use them? What? Topic models again? Is this still a bag of words?\nRequired Readings:\n\n[GMB] - Chapter 8.\n[SLP] Chapter 6, “Vector Semantics and Embeddings.”\nJay Alanmar, The Illustrated Word2vec\nSpirling and Rodriguez, Word Embeddings: What works, what doesn’t, and how to tell the difference for applied research.\n\n\n\nWeek 10: Word Embeddings: Social Science Applications (November 10)\nTopics: How can we use embeddings in social science applications? Let’s see several examples!\nRequired Readings:\n\nApplied Papers:\n\nRodman, E., 2020. A Timely Intervention: Tracking the Changing Meanings of Political Concepts with Word Vectors. Political Analysis, 28(1), pp.87-111.\nGennaro, Gloria, and Elliott Ash. “Emotion and reason in political language.” The Economic Journal 132, no. 643 (2022): 1037-1059.\nRheault, Ludovic, and Christopher Cochrane. “Word embeddings for the analysis of ideological placement in parliamentary corpora.” Political Analysis 28, no. 1 (2020): 112-133.\nAustin C. Kozlowski, Austin C., Matt Taddy, and James A. Evans. 2019. “The Geometry of Culture: Analyzing the Meanings of Class through Word Embeddings.” American Sociological Review 84, no. 5: 905–49. https://doi.org/10.1177/0003122419877135.\nGarg, Nikhil, Londa Schiebinger, Dan Jurafsky and James Zou. 2018. “Word embeddings quantify 100 years of gender and ethnic stereotypes.” Proceedings of the National Academy of Sciences 115(16):E3635–E3644.\n\n\n\n\nWeek 11: Replication Class: Students’ Presentation (November 17)\n\n\nWeek 12: Transformers (November 24)\nTopics: We will learn about the Transformers architecture, attention, and the encoder-decoder infrastructure.\nRequired Readings\n\n[SLP] - Chapter 9.\nJay Alammar. 2018. “The Illustrated Transformer.” https://jalammar.github.io/illustratedtransformer/\nVaswani, A., et al. (2017). Attention is all you need. Advances in neural information processing systems, 30;\nTimoneda and Vera, BERT, RoBERTa or DeBERTa? Comparing Performance Across Transformer Models in Political Science Text, The Journal of Politics 87, no. 1 (2025): 000-000.\n\n\n\nWeek 13: Large Language Models: Prompting, building chatbots, and social science applications. (Invited Speaker: Dr. Christopher Barrie, Professor Sociology New York University) (December 1)\n\nTopics: We will see some social science application of LLMs chatbots. We will also discuss a working paper on replicability of research using LLMs.\n\nRequired Readings:\n\n[SLP] - Chapter 10.\nHugging Face NLP Course, Ch. 2\nBarrie, Christopher, Alexis Palmer, and Arthur Spirling. “Replication for language models problems, principles, and best practice for political science.”\n\nOptional:\n\nRathje, Steve, Dan-Mircea Mirea, Ilia Sucholutsky, Raja Marjieh, Claire Robertson, and Jay J. Van Bavel. GPT is an effective tool for multilingual psychological text analysis. (2023).\nDavidson, Thomas: Start Generating: Harnessing Generative Artificial Intelligence for Sociological Research, PrePrint\nWu, Patrick Y., Joshua A. Tucker, Jonathan Nagler, and Solomon Messing. “Large language models can be used to estimate the ideologies of politicians in a zero-shot learning setting.” arXiv preprint arXiv:2303.12057 (2023).\nBisbee, James, Joshua Clinton, Cassy Dorff, Brenton Kenkel, and Jennifer Larson. 2023. “Synthetic Replacements for Human Survey Data? the Perils of Large Language Models.” SocArXiv. May 4.\nArgyle, L.P., Busby, E.C., Fulda, N., Gubler, J.R., Rytting, C. and Wingate, D., 2023. Out of one, many: Using language models to simulate human samples. Political Analysis, 31(3), pp.337-351.\n\n\n\nWeek 14: Final Projects: Students Presentation (December 8)"
   },
   {
     "objectID": "syllabus.html#course-requirements",
@@ -1909,5 +1909,222 @@
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "",
     "text": "Motivation for Computational Linguistics\n\nDigital information age\nPrinciples of Computational Linguistics.\nWhat this course is not.\nExamples of models and applications for this course\n\nIntroductions\nClass Logistics ( + 10 min for you to read through the syllabus)\nQ&A\nIntroduction to R/RStudio"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#motivation",
+    "href": "slides/week_llm_leticia.html#motivation",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "Motivation",
+    "text": "Motivation\n\nWe are going through a unique technological revolution with the use of Artificial intelligence.\nMost of the recent changes come from the so called Large Langue Models\n\nThey are everywhere — ChatGPT, Claude, Gemini, Copilot, LLaMA.\nUsed for writing, coding, summarizing, policy briefs, and internet search.\nThey’re reshaping education, research, and communication."
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#section",
+    "href": "slides/week_llm_leticia.html#section",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "",
+    "text": "Most importantly: research tasks that until very recently required either sophisticated ML models, heavy dictionaries or a lot of human inputs can be performed with comparable performance by pre-trained LLMs models\n\nClassification Tasks (sentiment, political stance)\nUnsupervised task (topic modeling and clustering)\nData generation (summarization, generation of synthetic text and images)\nIdeological scaling\nImage analysis, object identification, OCR…"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#plans-for-today",
+    "href": "slides/week_llm_leticia.html#plans-for-today",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "Plans for Today:",
+    "text": "Plans for Today:\n\nEarly Language Models: N-Grams\nLarge Language Models (LLMs)\nOutsourcing Content Analysis Tasks with GenAI LLMs\nSome coding applications\n\nText Classification\nSynthetic Survey Responses\nIf we have time, I can show you two other options and you can vote for:\n\nAnalyzing open-ended survey questions\nImage processing and detecting elements on images with LLMs\n\n\n\n\n\nthis lecture draws on materials from Patrick Wu NLP Class"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#language-model",
+    "href": "slides/week_llm_leticia.html#language-model",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "Language model",
+    "text": "Language model\nLanguage Modeling is the task of predicting what word comes next after a sequence of words\n\nthe students opened their ______\n\nbooks\nlaptop\nexams\nminds\n\nMore formally, given a sequence of words \\(x_1\\), \\(x_2\\), \\(x_3\\) … compute of the probability of distribution of the next word \\(x_{t+1}\\)\nWhere \\(x_{t+1}\\) is any word in the vocabulary\nA system that does this is called a Language Model"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#early-language-models-n-grams",
+    "href": "slides/week_llm_leticia.html#early-language-models-n-grams",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "Early Language Models: N-grams",
+    "text": "Early Language Models: N-grams\n\nDefinition: An n-gram is a chunk of n consecutive words.\n\nunigrams: “the”, “students”, “opened”, ”their”\nbigrams: “the students”, “students opened”, “opened their”\ntrigrams: “the students opened”, “students opened their”\nfour-grams: “the students opened their\n\nIdea: Collect statistics about how frequent different n-grams are and use these to predict next word."
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#a-little-bit-of-math",
+    "href": "slides/week_llm_leticia.html#a-little-bit-of-math",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "A little bit of math…",
+    "text": "A little bit of math…\nStarting from a simple conditional probability\n\\[\nP(A|B)= \\frac{P(A, B)}{P(B)}\n\\]\nSuppose we are learning a 4-gram Language Model\n\nstudents opened their _______\n\nAssume A={“book”}, B={“the students opened their”},\n\\[\nP(book|\\text{the students opened their}) \\sim \\frac{ \\text{counts}( \\text{the students opened their book})}{\\text{counts} (\\text{the students opened their})}\n\\]"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#section-1",
+    "href": "slides/week_llm_leticia.html#section-1",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "",
+    "text": "For example, suppose that in the corpus:\n\n“students opened their” occurred 1000 times\n“students opened their books” occurred 400 times\n\nP(books | students opened their) = 0.4\n\n“students opened their exams” occurred 100 times\n\nP(exams | students opened their) = 0.1"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#n-gram-language-models-in-practice",
+    "href": "slides/week_llm_leticia.html#n-gram-language-models-in-practice",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "N-gram language models in practice",
+    "text": "N-gram language models in practice\n\ntoday the ____\n\n\nGet a probability distribution over words\n\ncompany 0.153\nbank 0.153\nprice 0.077 ….\n\nSample a word"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#section-2",
+    "href": "slides/week_llm_leticia.html#section-2",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "",
+    "text": "today the company\n\n\nGet a probability distribution over words\n\nof 0.30\nthe 0.08\nfor 0.077 ….\n\nSample a word… and repeat"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#neural-language-models",
+    "href": "slides/week_llm_leticia.html#neural-language-models",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "Neural Language Models",
+    "text": "Neural Language Models\n\nAs you can imagine: N-grams are not great. Cannot memorize long distance, explodes with large text, knows nothing about meaning.\nIn early 2000s, CS folks started improving language models with large models (neural networks) and large data (the internet)"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#neural-networks---transformers",
+    "href": "slides/week_llm_leticia.html#neural-networks---transformers",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "Neural Networks - Transformers",
+    "text": "Neural Networks - Transformers"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#large-language-models",
+    "href": "slides/week_llm_leticia.html#large-language-models",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "Large Language Models",
+    "text": "Large Language Models\n\nSame intuition of n-gram language models: word prediction.\n\nBut using:\n\nBillions or trillions of parameters.\nTrained on petabytes of text (the internet, books, code, websites, pretty much everything you can imagine)\ntrained with masking\n\n\nAfter training, these models learn word representation and language generation.\nThere are two ways to use LLMs\n\nOut of the box: refers to utilizing the model without any updating of the parameters of the model\nFinetune: involves further training the model using gradient-based updates"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#outsourcing-content-analysis-with-llms---prompts",
+    "href": "slides/week_llm_leticia.html#outsourcing-content-analysis-with-llms---prompts",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "Outsourcing Content Analysis with LLMs - Prompts",
+    "text": "Outsourcing Content Analysis with LLMs - Prompts\nPrompts: instructions we give to a language model in natural language\n\nBasis of prompting is on contextual generation\nGiven the prompt as context, the LLM will generate the next token based on its token probability, conditioned on the prompt:"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#structure-of-a-prompt",
+    "href": "slides/week_llm_leticia.html#structure-of-a-prompt",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "Structure of a Prompt",
+    "text": "Structure of a Prompt\n\nInstruction: a specific task or instruction you want the model to perform\nContext: additional information or context that can steer the model to better responses\nInput data: the input or question that we are interested in finding a response to\nOutput indicator: the type or format of the output\nOf course, you don’t need all four elements, but prompts that have all four elements are often effective"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#llms-classification",
+    "href": "slides/week_llm_leticia.html#llms-classification",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "LLMs: Classification",
+    "text": "LLMs: Classification\n\nRathje et. al. “GPT is an effective tool for multilingual psychological text analysis”\n\n\nUse LLMs with zero-shot prompting for measure psycological concepts (sentiment classification).\n\n\n“Is the sentiment of this text positive, neutral, or negative? Answer only with a number: 1 if positive, 2 if neutral, and 3 if negative. Here is the text: [tweet, news headline or Reddit comment text]”\n\n\nTo see this as next work prediction, think about this example:\n\nP(w=positive|I love this class) &gt; P(w=neutral|I love this class)\n\nIs positive the most likely next word?\n\nNo… but it is more likely than the word negative\nOr other negative words that are close to negative in the embedding space."
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#how-does-it-work",
+    "href": "slides/week_llm_leticia.html#how-does-it-work",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "How does it work?",
+    "text": "How does it work?\n\n“Is the sentiment of this text positive, neutral, or negative? Answer only with a number: 1 if positive, 2 if neutral, and 3 if negative. Here is the text: [tweet, news headline or Reddit comment text]”\n\n\nTo think about this as next work prediction, think about this example:\n\nP(w=positive|I love this class) &gt; P(w=neutral|I love this class)\n\nIs this the most likely next work?\nNo… but it is more likely than the word negative\nOr other negative words that are close to negative in the embedding space."
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#results",
+    "href": "slides/week_llm_leticia.html#results",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "Results",
+    "text": "Results"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#llms-scaling",
+    "href": "slides/week_llm_leticia.html#llms-scaling",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "LLMs: Scaling",
+    "text": "LLMs: Scaling\n\nWu et. al. “Large Language Models Can Be Used to Estimate the Latent Positions of Politicians”\n\n\nNovel approach to measure ideal points for politicians using LLMs.\nUse ChatGPT-3.5 to pairwise compare the members of the congress in a pre-specific dimension.\n\nsimilar task to the readability score using crowdworkers\n\nUse the Bradley-Terry Model to estimate a unidimensional scale measuring latent political positions of interest\nEstimate both ideological scaling, and issue specific scales (Gun Control and Abortion)"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#results-1",
+    "href": "slides/week_llm_leticia.html#results-1",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "Results",
+    "text": "Results"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#llms-survey-responses-and-bias",
+    "href": "slides/week_llm_leticia.html#llms-survey-responses-and-bias",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "LLMs: Survey Responses and Bias",
+    "text": "LLMs: Survey Responses and Bias\n\nBisbee et. al. “Synthetic Replacements for Human Survey Data? The Perils of Large Language Models”\n\n\nPublic opinion polling is in crises ~ non-random non-repsonse + high costs to get it right\nCan LLMs be leveraged for public opinion research? Can LLMs be used to generate synthetic survey responses?\nPrompt ChatGPT to:\n\nFirst adopt various personas defined by demographic and political characteristics\nAnswer a battery of questions about feelings towards social and political groups\nFeatures are taken from the American National Election Study"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#prompts",
+    "href": "slides/week_llm_leticia.html#prompts",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "Prompts",
+    "text": "Prompts\n\n“It is [YEAR]. You are a [AGE] year-old, [MARST], [RACETH] [GENDER] with [EDUCATION] making [INCOME] per year, living in the United States. You are [IDEO], [REGIS] [PID] who [INTEREST] pays attention to what’s going on in government and politics.”"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#results-2",
+    "href": "slides/week_llm_leticia.html#results-2",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "Results",
+    "text": "Results"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#results-3",
+    "href": "slides/week_llm_leticia.html#results-3",
+    "title": "Large Language Models[^1]",
+    "section": "Results",
+    "text": "Results"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#results-4",
+    "href": "slides/week_llm_leticia.html#results-4",
+    "title": "Large Language Models[^1]",
+    "section": "Results",
+    "text": "Results"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#usage",
+    "href": "slides/week_llm_leticia.html#usage",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "Usage",
+    "text": "Usage\nAll these applications are hard to do at scale via LLMs web-browser versions (as ChatGPT).\nInstead we will use access via API (programming call either through R and Python) to access and ask the models to perform certain tasks:\n\nOpenAI API: https://openai.com/api/\nClaude Antrophic: https://www.claude.com/platform/api\nhttps://ai.google.dev/"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#out-of-the-box-llms-with-prompts",
+    "href": "slides/week_llm_leticia.html#out-of-the-box-llms-with-prompts",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "Out of the Box LLMs with Prompts",
+    "text": "Out of the Box LLMs with Prompts\nPrompts: instructions we give to a language model in natural language\n\nBasis of prompting is on contextual generation\nGiven the prompt as context, the LLM will generate the next token based on its token probability, conditioned on the prompt:"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#example",
+    "href": "slides/week_llm_leticia.html#example",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "Example:",
+    "text": "Example:\n\n\n\n\n\n\n\nSource: Kojima et al. 2022"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#llms-synthetic-survey-data",
+    "href": "slides/week_llm_leticia.html#llms-synthetic-survey-data",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "LLMs: Synthetic Survey Data",
+    "text": "LLMs: Synthetic Survey Data\n\nBisbee et. al. “Synthetic Replacements for Human Survey Data? The Perils of Large Language Models”\n\n\nCan LLMs be leveraged for public opinion research? Can LLMs be used to generate synthetic survey responses?\nPrompt LLMs to:\n\nFirst adopt various personas defined by demographic and political characteristics\nAnswer a battery of questions about feelings towards social and political groups\nFeatures are taken from the American National Election Study"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#llms-synthetic-browsing-data",
+    "href": "slides/week_llm_leticia.html#llms-synthetic-browsing-data",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "LLMs: Synthetic Browsing Data",
+    "text": "LLMs: Synthetic Browsing Data\n\nMy own early stage work: using LLMs to augment browsing data\n\nSystem Prompt: This is text completion in English\n\n\nUser Prompt: The url in triple quotations is a url that links to a news item. [URL] Without accessing the url in triple quotations, please provide a possible summary of the content of the url. Without going on the internet, produce the online news article based on this URL. Limit to three paragraphs, and return only the article. Please consider the domain, publication date, and keywords in the URL, when available.\n\n\nURL Example:https://www.bloomberg.com/news/articles/2024-09-21/chipmaker-qualcomm-is-said-to-explore-friendly-takeover-of-intel"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#neural-networks---transformers-2017",
+    "href": "slides/week_llm_leticia.html#neural-networks---transformers-2017",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "Neural Networks - Transformers (2017)",
+    "text": "Neural Networks - Transformers (2017)"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#prompt-engineering-examples",
+    "href": "slides/week_llm_leticia.html#prompt-engineering-examples",
+    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "section": "Prompt Engineering Examples",
+    "text": "Prompt Engineering Examples\n\nZero Shot: Classify the sentiment of the following review:\nFew Shot: Given these examples, Classify the sentiment of the following review:\nRole: Acting as a crowdworker, classify the sentiment of following review:\nChain-of-thought: prompting means guiding a language model through a series of connected logical steps or thoughts"
   }
 ]
