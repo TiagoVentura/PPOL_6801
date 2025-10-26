@@ -1662,8 +1662,8 @@
     "objectID": "slides/week_10.html#plans-for-today",
     "href": "slides/week_10.html#plans-for-today",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
-    "section": "Plans for Today:",
-    "text": "Plans for Today:\n\nFinal Project + Mid-Semester Review\nFinish Topic Models + Code\nOverview of scaling models\nScaling models using text\n\nsupervised models: wordscore\nunsupervised models: wordfish"
+    "section": "",
+    "text": "Final Project + Mid-Semester Review\nFinish Topic Models + Code\nOverview of scaling models\nScaling models using text\n\nsupervised models: wordscore\nunsupervised models: wordfish"
   },
   {
     "objectID": "slides/week_10.html#final-project",
@@ -1796,7 +1796,7 @@
     "href": "slides/week_10.html#wordscore-calculation",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "WordScore Calculation",
-    "text": "WordScore Calculation\n\n\nLearning Words\n\\[ P_{wr} = \\frac{F_{wr}}{\\sum_r F_{wr}}\\] - \\(P_{wr}\\): Given a set of reference texts, the probability that an occurrence of word \\(w\\) implies that we are reading text \\(r\\) is\n\n\\(F_{wr}\\): Frequency of word \\(w\\) in reference text \\(r\\)\n\n\n\n\nScoring Words\n\\[S_{wd} = \\sum_r (P_{wr} \\cdot A_{rd}) \\]\n\n\\(S_{wd}\\): Score of word \\(w\\) in dimension \\(d\\)\n\\(A_{rd}\\): Pre-defined position of reference text \\(r\\) in dimension \\(d\\)\n\\(A_{rd}\\) will be -1 for AOC and +1 for MGT documents, for example."
+    "text": "WordScore Calculation\n\n\nLearning Words\n\\[ P_{wr} = \\frac{F_{wr}}{\\sum_r F_{wr}}\\] - \\(P_{wr}\\): Given a set of reference texts, the probability that an occurrence of word \\(w\\) implies that we are reading text \\(r\\) is\n\n\\(F_{wr}\\): Frequency of word \\(w\\) in reference text \\(r\\)\n\n\n\n\n\nScoring Words\n\\[S_{wd} = \\sum_r (P_{wr} \\cdot A_{rd}) \\]\n\n\\(S_{wd}\\): Score of word \\(w\\) in dimension \\(d\\)\n\\(A_{rd}\\): Pre-defined position of reference text \\(r\\) in dimension \\(d\\)\n\\(A_{rd}\\) will be -1 for AOC and +1 for MGT documents, for example."
   },
   {
     "objectID": "slides/week_10.html#scoring-virgin-texts",
@@ -1873,7 +1873,7 @@
     "href": "slides/week_10.html#grimmer-vs-wordfish",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Grimmer vs Wordfish",
-    "text": "Grimmer vs Wordfish\n\n\n\nText-as-Data"
+    "text": "Grimmer vs Wordfish"
   },
   {
     "objectID": "slides/week_10.html#assumption",
@@ -1913,70 +1913,70 @@
   {
     "objectID": "slides/week_llm_leticia.html#motivation",
     "href": "slides/week_llm_leticia.html#motivation",
-    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
-    "section": "Motivation",
-    "text": "Motivation\n\nWe are going through a unique technological revolution with the use of Artificial intelligence.\nMost of the recent changes come from the so called Large Langue Models\n\nThey are everywhere — ChatGPT, Claude, Gemini, Copilot, LLaMA.\nUsed for writing, coding, summarizing, policy briefs, and internet search.\nThey’re reshaping education, research, and communication."
+    "title": "Large Language Models: Applications for Content Analysis",
+    "section": "",
+    "text": "We are going through a unique technological revolution with the use of Artificial intelligence.\nMost of the recent changes come from the so called Large Langue Models\n\nThey are everywhere — ChatGPT, Claude, Gemini, Copilot, LLaMA.\nUsed for writing, coding, summarizing, policy briefs, and internet search.\nThey’re reshaping education, research, and communication."
   },
   {
     "objectID": "slides/week_llm_leticia.html#section",
     "href": "slides/week_llm_leticia.html#section",
-    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "title": "Large Language Models: Applications for Content Analysis",
     "section": "",
     "text": "Most importantly: research tasks that until very recently required either sophisticated ML models, heavy dictionaries or a lot of human inputs can be performed with comparable performance by pre-trained LLMs models\n\nClassification Tasks (sentiment, political stance)\nUnsupervised task (topic modeling and clustering)\nData generation (summarization, generation of synthetic text and images)\nIdeological scaling\nImage analysis, object identification, OCR…"
   },
   {
     "objectID": "slides/week_llm_leticia.html#plans-for-today",
     "href": "slides/week_llm_leticia.html#plans-for-today",
-    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
-    "section": "Plans for Today:",
-    "text": "Plans for Today:\n\nEarly Language Models: N-Grams\nLarge Language Models (LLMs)\nOutsourcing Content Analysis Tasks with GenAI LLMs\nSome coding applications\n\nText Classification\nSynthetic Survey Responses\nIf we have time, I can show you two other options and you can vote for:\n\nAnalyzing open-ended survey questions\nImage processing and detecting elements on images with LLMs\n\n\n\n\n\nthis lecture draws on materials from Patrick Wu NLP Class"
+    "title": "Large Language Models: Applications for Content Analysis",
+    "section": "Plans for Today",
+    "text": "Plans for Today\n\nEarly Language Models: N-Grams\nLarge Language Models (LLMs)\nOutsourcing Content Analysis Tasks with GenAI LLMs\nSome coding applications\n\nText Classification\nSynthetic Survey Responses\nIf we have time, I can show you another application out these two options:\n\nAnalyzing open-ended survey questions\nImage processing and detecting elements on images with LLMs\n\n\n\n\n\nthis lecture draws on materials from Patrick Wu NLP Class"
   },
   {
     "objectID": "slides/week_llm_leticia.html#language-model",
     "href": "slides/week_llm_leticia.html#language-model",
-    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "title": "Large Language Models: Applications for Content Analysis",
     "section": "Language model",
     "text": "Language model\nLanguage Modeling is the task of predicting what word comes next after a sequence of words\n\nthe students opened their ______\n\nbooks\nlaptop\nexams\nminds\n\nMore formally, given a sequence of words \\(x_1\\), \\(x_2\\), \\(x_3\\) … compute of the probability of distribution of the next word \\(x_{t+1}\\)\nWhere \\(x_{t+1}\\) is any word in the vocabulary\nA system that does this is called a Language Model"
   },
   {
     "objectID": "slides/week_llm_leticia.html#early-language-models-n-grams",
     "href": "slides/week_llm_leticia.html#early-language-models-n-grams",
-    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "title": "Large Language Models: Applications for Content Analysis",
     "section": "Early Language Models: N-grams",
     "text": "Early Language Models: N-grams\n\nDefinition: An n-gram is a chunk of n consecutive words.\n\nunigrams: “the”, “students”, “opened”, ”their”\nbigrams: “the students”, “students opened”, “opened their”\ntrigrams: “the students opened”, “students opened their”\nfour-grams: “the students opened their\n\nIdea: Collect statistics about how frequent different n-grams are and use these to predict next word."
   },
   {
     "objectID": "slides/week_llm_leticia.html#a-little-bit-of-math",
     "href": "slides/week_llm_leticia.html#a-little-bit-of-math",
-    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "title": "Large Language Models: Applications for Content Analysis",
     "section": "A little bit of math…",
     "text": "A little bit of math…\nStarting from a simple conditional probability\n\\[\nP(A|B)= \\frac{P(A, B)}{P(B)}\n\\]\nSuppose we are learning a 4-gram Language Model\n\nstudents opened their _______\n\nAssume A={“book”}, B={“the students opened their”},\n\\[\nP(book|\\text{the students opened their}) \\sim \\frac{ \\text{counts}( \\text{the students opened their book})}{\\text{counts} (\\text{the students opened their})}\n\\]"
   },
   {
     "objectID": "slides/week_llm_leticia.html#section-1",
     "href": "slides/week_llm_leticia.html#section-1",
-    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "title": "Large Language Models: Applications for Content Analysis",
     "section": "",
     "text": "For example, suppose that in the corpus:\n\n“students opened their” occurred 1000 times\n“students opened their books” occurred 400 times\n\nP(books | students opened their) = 0.4\n\n“students opened their exams” occurred 100 times\n\nP(exams | students opened their) = 0.1"
   },
   {
     "objectID": "slides/week_llm_leticia.html#n-gram-language-models-in-practice",
     "href": "slides/week_llm_leticia.html#n-gram-language-models-in-practice",
-    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "title": "Large Language Models: Applications for Content Analysis",
     "section": "N-gram language models in practice",
     "text": "N-gram language models in practice\n\ntoday the ____\n\n\nGet a probability distribution over words\n\ncompany 0.153\nbank 0.153\nprice 0.077 ….\n\nSample a word"
   },
   {
     "objectID": "slides/week_llm_leticia.html#section-2",
     "href": "slides/week_llm_leticia.html#section-2",
-    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "title": "Large Language Models: Applications for Content Analysis",
     "section": "",
     "text": "today the company\n\n\nGet a probability distribution over words\n\nof 0.30\nthe 0.08\nfor 0.077 ….\n\nSample a word… and repeat"
   },
   {
     "objectID": "slides/week_llm_leticia.html#neural-language-models",
     "href": "slides/week_llm_leticia.html#neural-language-models",
-    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "title": "Large Language Models: Applications for Content Analysis",
     "section": "Neural Language Models",
     "text": "Neural Language Models\n\nAs you can imagine: N-grams are not great. Cannot memorize long distance, explodes with large text, knows nothing about meaning.\nIn early 2000s, CS folks started improving language models with large models (neural networks) and large data (the internet)"
   },
@@ -1990,7 +1990,7 @@
   {
     "objectID": "slides/week_llm_leticia.html#large-language-models",
     "href": "slides/week_llm_leticia.html#large-language-models",
-    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "title": "Large Language Models: Applications for Content Analysis",
     "section": "Large Language Models",
     "text": "Large Language Models\n\nSame intuition of n-gram language models: word prediction.\n\nBut using:\n\nBillions or trillions of parameters.\nTrained on petabytes of text (the internet, books, code, websites, pretty much everything you can imagine)\ntrained with masking\n\n\nAfter training, these models learn word representation and language generation.\nThere are two ways to use LLMs\n\nOut of the box: refers to utilizing the model without any updating of the parameters of the model\nFinetune: involves further training the model using gradient-based updates"
   },
@@ -2004,14 +2004,14 @@
   {
     "objectID": "slides/week_llm_leticia.html#structure-of-a-prompt",
     "href": "slides/week_llm_leticia.html#structure-of-a-prompt",
-    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "title": "Large Language Models: Applications for Content Analysis",
     "section": "Structure of a Prompt",
     "text": "Structure of a Prompt\n\nInstruction: a specific task or instruction you want the model to perform\nContext: additional information or context that can steer the model to better responses\nInput data: the input or question that we are interested in finding a response to\nOutput indicator: the type or format of the output\nOf course, you don’t need all four elements, but prompts that have all four elements are often effective"
   },
   {
     "objectID": "slides/week_llm_leticia.html#llms-classification",
     "href": "slides/week_llm_leticia.html#llms-classification",
-    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "title": "Large Language Models: Applications for Content Analysis",
     "section": "LLMs: Classification",
     "text": "LLMs: Classification\n\nRathje et. al. “GPT is an effective tool for multilingual psychological text analysis”\n\n\nUse LLMs with zero-shot prompting for measure psycological concepts (sentiment classification).\n\n\n“Is the sentiment of this text positive, neutral, or negative? Answer only with a number: 1 if positive, 2 if neutral, and 3 if negative. Here is the text: [tweet, news headline or Reddit comment text]”\n\n\nTo see this as next work prediction, think about this example:\n\nP(w=positive|I love this class) &gt; P(w=neutral|I love this class)\n\nIs positive the most likely next word?\n\nNo… but it is more likely than the word negative\nOr other negative words that are close to negative in the embedding space."
   },
@@ -2025,21 +2025,21 @@
   {
     "objectID": "slides/week_llm_leticia.html#results",
     "href": "slides/week_llm_leticia.html#results",
-    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "title": "Large Language Models: Applications for Content Analysis",
     "section": "Results",
     "text": "Results"
   },
   {
     "objectID": "slides/week_llm_leticia.html#llms-scaling",
     "href": "slides/week_llm_leticia.html#llms-scaling",
-    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "title": "Large Language Models: Applications for Content Analysis",
     "section": "LLMs: Scaling",
     "text": "LLMs: Scaling\n\nWu et. al. “Large Language Models Can Be Used to Estimate the Latent Positions of Politicians”\n\n\nNovel approach to measure ideal points for politicians using LLMs.\nUse ChatGPT-3.5 to pairwise compare the members of the congress in a pre-specific dimension.\n\nsimilar task to the readability score using crowdworkers\n\nUse the Bradley-Terry Model to estimate a unidimensional scale measuring latent political positions of interest\nEstimate both ideological scaling, and issue specific scales (Gun Control and Abortion)"
   },
   {
     "objectID": "slides/week_llm_leticia.html#results-1",
     "href": "slides/week_llm_leticia.html#results-1",
-    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "title": "Large Language Models: Applications for Content Analysis",
     "section": "Results",
     "text": "Results"
   },
@@ -2053,14 +2053,14 @@
   {
     "objectID": "slides/week_llm_leticia.html#prompts",
     "href": "slides/week_llm_leticia.html#prompts",
-    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "title": "Large Language Models: Applications for Content Analysis",
     "section": "Prompts",
     "text": "Prompts\n\n“It is [YEAR]. You are a [AGE] year-old, [MARST], [RACETH] [GENDER] with [EDUCATION] making [INCOME] per year, living in the United States. You are [IDEO], [REGIS] [PID] who [INTEREST] pays attention to what’s going on in government and politics.”"
   },
   {
     "objectID": "slides/week_llm_leticia.html#results-2",
     "href": "slides/week_llm_leticia.html#results-2",
-    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "title": "Large Language Models: Applications for Content Analysis",
     "section": "Results",
     "text": "Results"
   },
@@ -2081,50 +2081,358 @@
   {
     "objectID": "slides/week_llm_leticia.html#usage",
     "href": "slides/week_llm_leticia.html#usage",
-    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "title": "Large Language Models: Applications for Content Analysis",
     "section": "Usage",
     "text": "Usage\nAll these applications are hard to do at scale via LLMs web-browser versions (as ChatGPT).\nInstead we will use access via API (programming call either through R and Python) to access and ask the models to perform certain tasks:\n\nOpenAI API: https://openai.com/api/\nClaude Antrophic: https://www.claude.com/platform/api\nhttps://ai.google.dev/"
   },
   {
     "objectID": "slides/week_llm_leticia.html#out-of-the-box-llms-with-prompts",
     "href": "slides/week_llm_leticia.html#out-of-the-box-llms-with-prompts",
-    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "title": "Large Language Models: Applications for Content Analysis",
     "section": "Out of the Box LLMs with Prompts",
     "text": "Out of the Box LLMs with Prompts\nPrompts: instructions we give to a language model in natural language\n\nBasis of prompting is on contextual generation\nGiven the prompt as context, the LLM will generate the next token based on its token probability, conditioned on the prompt:"
   },
   {
     "objectID": "slides/week_llm_leticia.html#example",
     "href": "slides/week_llm_leticia.html#example",
-    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "title": "Large Language Models: Applications for Content Analysis",
     "section": "Example:",
     "text": "Example:\n\n\n\n\n\n\n\nSource: Kojima et al. 2022"
   },
   {
     "objectID": "slides/week_llm_leticia.html#llms-synthetic-survey-data",
     "href": "slides/week_llm_leticia.html#llms-synthetic-survey-data",
-    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "title": "Large Language Models: Applications for Content Analysis",
     "section": "LLMs: Synthetic Survey Data",
     "text": "LLMs: Synthetic Survey Data\n\nBisbee et. al. “Synthetic Replacements for Human Survey Data? The Perils of Large Language Models”\n\n\nCan LLMs be leveraged for public opinion research? Can LLMs be used to generate synthetic survey responses?\nPrompt LLMs to:\n\nFirst adopt various personas defined by demographic and political characteristics\nAnswer a battery of questions about feelings towards social and political groups\nFeatures are taken from the American National Election Study"
   },
   {
     "objectID": "slides/week_llm_leticia.html#llms-synthetic-browsing-data",
     "href": "slides/week_llm_leticia.html#llms-synthetic-browsing-data",
-    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "title": "Large Language Models: Applications for Content Analysis",
     "section": "LLMs: Synthetic Browsing Data",
     "text": "LLMs: Synthetic Browsing Data\n\nMy own early stage work: using LLMs to augment browsing data\n\nSystem Prompt: This is text completion in English\n\n\nUser Prompt: The url in triple quotations is a url that links to a news item. [URL] Without accessing the url in triple quotations, please provide a possible summary of the content of the url. Without going on the internet, produce the online news article based on this URL. Limit to three paragraphs, and return only the article. Please consider the domain, publication date, and keywords in the URL, when available.\n\n\nURL Example:https://www.bloomberg.com/news/articles/2024-09-21/chipmaker-qualcomm-is-said-to-explore-friendly-takeover-of-intel"
   },
   {
     "objectID": "slides/week_llm_leticia.html#neural-networks---transformers-2017",
     "href": "slides/week_llm_leticia.html#neural-networks---transformers-2017",
-    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "title": "Large Language Models: Applications for Content Analysis",
     "section": "Neural Networks - Transformers (2017)",
     "text": "Neural Networks - Transformers (2017)"
   },
   {
     "objectID": "slides/week_llm_leticia.html#prompt-engineering-examples",
     "href": "slides/week_llm_leticia.html#prompt-engineering-examples",
-    "title": "Large Language Models: Off the Shelf Application for Content Analysis",
+    "title": "Large Language Models: Applications for Content Analysis",
     "section": "Prompt Engineering Examples",
     "text": "Prompt Engineering Examples\n\nZero Shot: Classify the sentiment of the following review:\nFew Shot: Given these examples, Classify the sentiment of the following review:\nRole: Acting as a crowdworker, classify the sentiment of following review:\nChain-of-thought: prompting means guiding a language model through a series of connected logical steps or thoughts"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#section-3",
+    "href": "slides/week_llm_leticia.html#section-3",
+    "title": "Large Language Models: Applications for Content Analysis",
+    "section": "",
+    "text": "As you can imagine: N-grams are not great. Cannot memorize long distance, explodes with large text, knows nothing about meaning.\nIn early 2000s, CS folks started improving language models with large models (neural networks) and large data (the internet)"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html#large-language-models-1",
+    "href": "slides/week_llm_leticia.html#large-language-models-1",
+    "title": "Large Language Models: Applications for Content Analysis",
+    "section": "Large Language Models",
+    "text": "Large Language Models\n\nSame intuition of n-gram language models: word prediction.\n\nBut using:\n\nBillions or trillions of parameters.\nTrained on petabytes of text (the internet, books, code, websites, pretty much everything you can imagine)\ntrained with masking\n\n\nAfter training, these models learn word representation and language generation.\nThere are two ways to use LLMs\n\nOut of the box: refers to utilizing the model without any updating of the parameters of the model\nFinetune: involves further training the model using gradient-based updates"
+  },
+  {
+    "objectID": "slides/week_8.html#plans-for-today",
+    "href": "slides/week_8.html#plans-for-today",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Plans for Today",
+    "text": "Plans for Today\n\nMid-semester survey\nOverview of where we are going\nIntroduction to Deep Learning"
+  },
+  {
+    "objectID": "slides/week_8.html#mid-semester-survey",
+    "href": "slides/week_8.html#mid-semester-survey",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Mid-Semester Survey:",
+    "text": "Mid-Semester Survey:"
+  },
+  {
+    "objectID": "slides/week_8.html#neural-networks---transformers-2017",
+    "href": "slides/week_8.html#neural-networks---transformers-2017",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Neural Networks - Transformers (2017)",
+    "text": "Neural Networks - Transformers (2017)"
+  },
+  {
+    "objectID": "slides/week_8.html#our-plans-for-the-next-few-weeks",
+    "href": "slides/week_8.html#our-plans-for-the-next-few-weeks",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Our plans for the next few weeks",
+    "text": "Our plans for the next few weeks\n\ntoday: introduction to deep learning\nnext: word embeddings\nnext, next: applications of word embeddings\nnext, next, next: break for your replication\nnext, next, next,next: Transformers (attention is all you need)\nnext, next, next, next, next: LLMs"
+  },
+  {
+    "objectID": "slides/week_8.html#vector-space-model",
+    "href": "slides/week_8.html#vector-space-model",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Vector Space Model",
+    "text": "Vector Space Model\nTo represent documents as numbers, we learned about the vector space model representation:\n\nA document \\(D_i\\) is represented as a collection of features \\(W\\) (words, tokens, n-grams..)\nEach feature \\(w_i\\) can be place in a real line, then a document \\(D_i\\) is a point in a \\(W\\) dimensional space\n\n\nImagine the sentence below: “If that is a joke, I love it. If not, can’t wait to unpack that with you later.”\n\nSorted Vocabulary =(a, can’t, i, if, is, it, joke, later, love, not, that, to, unpack, wait, with, you”)\nFeature Representation = (1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1)\nFeatures will typically be the n-gram (mostly unigram) frequencies of the tokens in the document, or some function of those frequencies\n\n\n\nNow each document is now a vector (vector space model)\n\nstacking these vectors will give you our workhose representation for text: Document Feature Matrix"
+  },
+  {
+    "objectID": "slides/week_8.html#documents",
+    "href": "slides/week_8.html#documents",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Documents",
+    "text": "Documents\nDocument 1 = “yes yes yes no no no”\nDocument 2 = “yes yes yes yes yes yes” :::"
+  },
+  {
+    "objectID": "slides/week_8.html#visualizing-vector-space-model",
+    "href": "slides/week_8.html#visualizing-vector-space-model",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Visualizing Vector Space Model",
+    "text": "Visualizing Vector Space Model\nIn the vector space, we can use geometry to build well-defined comparison measures between the documents"
+  },
+  {
+    "objectID": "slides/week_8.html#vector-space-model-vs-representation-learning",
+    "href": "slides/week_8.html#vector-space-model-vs-representation-learning",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Vector Space Model vs Representation Learning",
+    "text": "Vector Space Model vs Representation Learning\nThe vector space model is super useful, and has been used in many many many applications in computational linguistics and social science applications of text-as-data. Including:\n\nDescriptive statistics of documents (count words, text-similarity, complexity, etc..)\nSupervised Machine Learning Models for Text Classification (DFM becomes the input of the models)\nUnsupervised Machine Learning (Topic Models & Clustering)"
+  },
+  {
+    "objectID": "slides/week_8.html#distributional-semantics",
+    "href": "slides/week_8.html#distributional-semantics",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Distributional Semantics",
+    "text": "Distributional Semantics\n\n“you shall know a word by the company it keeps.” J. R. Firth 1957\n\nDistributional semantics: words that are used in the same contexts tend to be similar in their meaning.\n\n\nHow can we use this insight to build a word representation?\n\nMove from sparse representation to dense representation\nRepresent words as vectors of numbers with high number of dimensions\nEach feature on this vectors embeds some information from the word (gender? noun? sentiment? stance?)\nLearn this representation from unlabeled data."
+  },
+  {
+    "objectID": "slides/week_8.html#sparse-vs-dense-vectors",
+    "href": "slides/week_8.html#sparse-vs-dense-vectors",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Sparse vs Dense Vectors",
+    "text": "Sparse vs Dense Vectors\n\nOne-hot encoding / Sparse Representation:\n\ncat = \\(\\begin{bmatrix} 0,0, 0, 0, 0, 0, 1, 0, 0 \\end{bmatrix}\\)\ndog = \\(\\begin{bmatrix} 0,0, 0, 0, 0, 1, 0, 0, 0 \\end{bmatrix}\\)\n\n\nWord Embedding / Dense Representation:\n\ncat = \\(\\begin{bmatrix} 0.25, -0.75, 0.90, 0.12, -0.50, 0.33, 0.66, -0.88, 0.10, -0.45 \\end{bmatrix}\\)\ndog = \\(\\begin{bmatrix} 0.25, 1.75, 0.90, 0.12, -0.50, 0.33, 0.66, -0.88, 0.10, -0.45 \\end{bmatrix}\\)"
+  },
+  {
+    "objectID": "slides/week_8.html#with-colors-and-real-word-vectors",
+    "href": "slides/week_8.html#with-colors-and-real-word-vectors",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "With colors and real word vectors",
+    "text": "With colors and real word vectors\n\nSource: Illustrated Word2Vec"
+  },
+  {
+    "objectID": "slides/week_8.html#word-embeddings",
+    "href": "slides/week_8.html#word-embeddings",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Word Embeddings",
+    "text": "Word Embeddings\n\nEncoding similarity: vectors are not ortogonal anymore!\nAutomatic Generalization: learn about one word allow us to automatically learn about related words\nEncodes Meaning: by learning the context, I can learn what a word means.\nAs a consequence:\n\nWord Embeddings improves by ORDERS OF MAGNITUDE several Text-as-Data Tasks.\nAllows to deal with unseen words.\nForm the core idea of state-of-the-art models, such as LLMs."
+  },
+  {
+    "objectID": "slides/week_8.html#deep-learning-for-text-analysis",
+    "href": "slides/week_8.html#deep-learning-for-text-analysis",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Deep Learning for Text Analysis",
+    "text": "Deep Learning for Text Analysis"
+  },
+  {
+    "objectID": "slides/week_8.html#basics-of-machine-learning",
+    "href": "slides/week_8.html#basics-of-machine-learning",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Basics of Machine Learning",
+    "text": "Basics of Machine Learning\nDeep Learning is a subfield of machine learning based on using neural networks models to learn.\nAs in any other statistical model, the goal of machine learning is to use data to learn about some output.\n\\[ y = f(X) + \\epsilon\\]\n\nWhere:\n\\(y\\) is the outcome/dependent/response variable\n\\(X\\) is a matrix of predictors/features/independent variables\n\\(f()\\) is some fixed but unknown function mapping X to y. The “signal” in the data\n\\(\\epsilon\\) is some random error term. The “noise” in the data."
+  },
+  {
+    "objectID": "slides/week_8.html#linear-models-ols",
+    "href": "slides/week_8.html#linear-models-ols",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Linear models (OLS)",
+    "text": "Linear models (OLS)\nThe simplest model we can use is an linear model (the classic OLS regression)\n\\[ y = b_0 + WX + \\epsilon\\]\n\nWhere:\n\n\\(W\\) is a vector of dimension p,\n\\(X\\) is the feature vector of dimension p\n\\(b\\) is a bias term (intercept)"
+  },
+  {
+    "objectID": "slides/week_8.html#using-matrix-algebra",
+    "href": "slides/week_8.html#using-matrix-algebra",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Using Matrix Algebra",
+    "text": "Using Matrix Algebra\n\\[\\mathbf{W} = \\begin{bmatrix} w_1 & w_2 & \\dots & w_p\\end{bmatrix}\\]\n\\[\\mathbf{X} = \\begin{bmatrix} X_1 \\\\ X_2 \\\\ X_3 \\\\ \\vdots \\\\ X_p \\end{bmatrix}\\]\nWith matrix multiplication:\n\\[\\mathbf{W} \\mathbf{X} + b = w_1 X_1 + w_2 X_2 + \\dots + w_p X_p + b\\]"
+  },
+  {
+    "objectID": "slides/week_8.html#logistic-regression",
+    "href": "slides/week_8.html#logistic-regression",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Logistic Regression",
+    "text": "Logistic Regression\nIf we want to model some type of non-linearity, necessary for example when our outcome is binary, we can add a transformation function to make things non-linear:\n\\[ y = \\sigma (b_0 + WX + \\epsilon)\\]\nWhere:\n\\[ \\sigma(b_0 + WX + \\epsilon) = \\frac{1}{1 + \\exp(-b_0 + WX + \\epsilon)}\\]"
+  },
+  {
+    "objectID": "slides/week_8.html#section-1",
+    "href": "slides/week_8.html#section-1",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "",
+    "text": "But… Embedded in this model, there is the idea we represent words as a one-hot encoding.\n\n“cat”: [0,0, 0, 0, 0, 0, 1, 0, ….., V] , on a V dimensional vector\n“dog”: [0,0, 0, 0, 0, 0, 0, 1, …., V], on a V dimensional vector\n\n\nWhat these vectors look like?\n\nreally sparse\nthose vectors are orthogonal\nno natural notion of similarity"
+  },
+  {
+    "objectID": "slides/week_8.html#logistic-regression-as-a-neural-network",
+    "href": "slides/week_8.html#logistic-regression-as-a-neural-network",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Logistic Regression as a Neural Network",
+    "text": "Logistic Regression as a Neural Network\nAssume we have a simple model of voting. We want to predict if individual \\(i\\) will vote (\\(y=1\\)), and we will use four socio demographic factors to make this prediction.\nClassic statistical approach with logistic regression:\n\\[ \\hat{P(Y_i=1|X)} = \\sigma(b_0 + WX + \\epsilon) \\]\nWe use MLE (Maximum Likelihood estimation) to find the parameters \\(W\\) and \\(b_0\\). We assume:\n\\[ Y_i \\sim \\text{Bernoulli}(\\pi_i) \\]\nThe likelihood function for \\(n\\) independent observations is:\n\\[L(W, b_0) = \\prod_{i=1}^{n} \\pi_i^{y_i} (1 - \\pi_i)^{1 - y_i}.\\]"
+  },
+  {
+    "objectID": "slides/week_8.html#neural-network-graphical-representation",
+    "href": "slides/week_8.html#neural-network-graphical-representation",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Neural Network Graphical Representation",
+    "text": "Neural Network Graphical Representation\n\n\n\n\n\n\n\nSource: https://carpentries-incubator.github.io/ml4bio-workshop/05-logit-ann/index.html"
+  },
+  {
+    "objectID": "slides/week_8.html#deep-neural-networks",
+    "href": "slides/week_8.html#deep-neural-networks",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Deep Neural Networks",
+    "text": "Deep Neural Networks\nA Deep Neural Network is equivalent to stacking multiple logistic regressions vertically and repeat this process multiple times across many layers.\nAs a Matrix, instead of:\n\\[\\mathbf{W}_{previous} = \\begin{bmatrix} w_1 & w_2 & \\dots & w_p\\end{bmatrix}\\]\nWe use this set of parameters:\n\\[\n\\mathbf{W} = \\begin{bmatrix} w_{11} & w_{12} & w_{13} & \\dots & w_{1p} \\\\\n                               w_{21} & w_{22} & w_{23} & \\dots & w_{2p} \\\\\n                               w_{31} & w_{32} & w_{33} & \\dots & w_{3p} \\\\\n                               \\vdots & \\vdots & \\vdots & \\vdots & \\vdots \\\\\n                               w_{k1} & w_{k2} & w_{k3} & \\dots & w_{kp}\n                \\end{bmatrix}\n\\]"
+  },
+  {
+    "objectID": "slides/week_8.html#section-2",
+    "href": "slides/week_8.html#section-2",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "",
+    "text": "Then, every line becomes a different logistic regression\n\\[\\mathbf{WX} = \\begin{bmatrix}  \\sigma(w_{11} X_1 + w_{12} X_2 + \\dots + w_{1p}X_p) \\\\ \\sigma(w_{21} X_1 + w_{22} X_2 + \\dots + w_{2p}X_p) \\\\ \\sigma(w_{31} X_1 + w_{32} X_2 + \\dots + w_{3p}X_p )\\\\ \\vdots \\\\ \\sigma(w_{k1} X_1 + w_{k2} X_2 + \\dots + w_{kp}X_p) \\end{bmatrix}\\] We then combine all of those with another set of parameters:\n\\[\n\\begin{align*}\n    \\mathbf{HA} &= h1 \\cdot \\sigma(w_{11} X_1 + w_{12} X_2 + \\dots + w_{1p}X_p)\\\\\n                &+ h_2\\cdot \\sigma(w_{21} X_1 + w_{22} X_2 + \\dots + w_{2p}X_p)\\\\\n                &+ h_3 \\cdot \\sigma (w_{31} X_1 + w_{32} X_2 + \\dots + w_{3p}X_p)\\\\\n                &+ \\dots + h_k + \\sigma(w_{k1} X_1 + w_{k2} X_2 + \\dots + w_{kp}X_p)\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "slides/week_8.html#feed-forward-on-a-deep-neural-network",
+    "href": "slides/week_8.html#feed-forward-on-a-deep-neural-network",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Feed Forward on a Deep Neural Network",
+    "text": "Feed Forward on a Deep Neural Network"
+  },
+  {
+    "objectID": "slides/week_8.html#key-components",
+    "href": "slides/week_8.html#key-components",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Key Components",
+    "text": "Key Components\n\nInput: p features (the original data) of an observation are linearly transformed into k1 features using a weight matrix of size k1×p\nEmbedding Matrices: Parameters you multiply your data by.\nNeurons: Number of dimensions on your embedding matrices\nHidden Layer: the transformation that consists of the linear transformation and an activation function\nOutput Layer: the transformation that consists of the linear transformation and then (usually) a sigmoid (or some other activation function) to produce the final output predictions"
+  },
+  {
+    "objectID": "slides/week_8.html#lets-take-a-step-back",
+    "href": "slides/week_8.html#lets-take-a-step-back",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Let’s take a step back!",
+    "text": "Let’s take a step back!\nWeights matrices are just parameters… the \\(\\beta_s\\) of our regression models.\n\nThere are too MANY of them!! Neural Networks are a black box!\nBut… they also serve as way to project covariates (or words!) in a dense dimensional space.\nRemember:\n\nOne-hot encoding / Sparse Representation:\n\ncat = \\(\\begin{bmatrix} 0,0, 0, 0, 0, 0, 1, 0, 0 \\end{bmatrix}\\)\ndog = \\(\\begin{bmatrix} 0,0, 0, 0, 0, 1, 0, 0, 0 \\end{bmatrix}\\)\n\nWord Embedding / Dense Representation:\n\ncat = \\(\\begin{bmatrix} 0.25, -0.75, 0.90, 0.12, -0.50, 0.33, 0.66, -0.88, 0.10, -0.45 \\end{bmatrix}\\)\ndog = \\(\\begin{bmatrix} 0.25, 1.75, 0.90, 0.12, -0.50, 0.33, 0.66, -0.88, 0.10, -0.45 \\end{bmatrix}\\)"
+  },
+  {
+    "objectID": "slides/week_8.html#deep-neural-network-for-textual-data",
+    "href": "slides/week_8.html#deep-neural-network-for-textual-data",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Deep Neural Network for Textual Data",
+    "text": "Deep Neural Network for Textual Data"
+  },
+  {
+    "objectID": "slides/week_8.html#estimation-how-do-get-good-parameters",
+    "href": "slides/week_8.html#estimation-how-do-get-good-parameters",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Estimation: How do get good parameters?",
+    "text": "Estimation: How do get good parameters?\nTo estimate the parameters, we will use a algorithm called gradient descent.\nAs in any other estimation approaches, we start with a loss function.\n\nLoss function: used to measure how well or poorly a model is making predictions\n\nThe model makes a guess (prediction)\nThe loss function compares the guess to the correct answer (the actual data)\nIt then calculates the number that represents how “off” the answer was, which is the loss\n\nThe goal in training a model is to minimize this loss"
+  },
+  {
+    "objectID": "slides/week_8.html#section-4",
+    "href": "slides/week_8.html#section-4",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "",
+    "text": "Error in knitr::include_graphics(\"./figs/loss.png\"): Cannot find the file(s): \"./figs/loss.png\""
+  },
+  {
+    "objectID": "slides/week_8.html#updating-parameters",
+    "href": "slides/week_8.html#updating-parameters",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Updating parameters",
+    "text": "Updating parameters\n\nDefine a loss function\nGradient Descent Algorithm:\n\nInitialize weights randomly\nFeed Forward: Matrix Multiplication + Activation function\nGet the loss for this iteration\nCompute gradient (partial derivatives): \\(\\frac{\\partial J(\\mathbf{W})}{\\partial \\mathbf{W}}\\)\nUpdate weights: \\(W_{new}: W_{old} -\\eta \\cdot \\frac{\\partial J(\\mathbf{W})}{\\partial \\mathbf{W}}\\)\nLoop until convergence:"
+  },
+  {
+    "objectID": "slides/week_8.html#the-famous-cross-entropy-loss-functions",
+    "href": "slides/week_8.html#the-famous-cross-entropy-loss-functions",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "The Famous: Cross-entropy loss functions",
+    "text": "The Famous: Cross-entropy loss functions\nTake the log to make things easier:\n\\[-\\ell(W, b_0) = - \\sum_{i=1}^{n} \\Big[ y_i \\log(\\pi_i) + (1 - y_i)\\log(1 - \\pi_i) \\Big]\\]\nWhere \\(\\pi_i\\) = \\(\\sigma(b_0 + WX + \\epsilon)\\)\nTo solve this analytically:\n\ntake the derivative of \\(\\ell\\) with respects to the parameter\nset this equation to zero.\nmost times this solution will not exist, so we will use numerical approaches"
+  },
+  {
+    "objectID": "slides/week_8.html#examples",
+    "href": "slides/week_8.html#examples",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Examples",
+    "text": "Examples\nLinear Regression: MSE\n\\[\\text{RSS} = \\sum_{i=1}^{n} (y_i - \\widehat{y}_i)^2 \\]\nLogistic Regression: Negative Log Likelihood of a Bernoulli distribution\n\\[L(\\beta) = -\\sum_{i=1}^{n} \\left( y_i \\log(\\widehat{y}_i) + (1-y_i)\\log(1 - \\widehat{y}_i) \\right)\\]\nFully-Connected Neural Network (Classification, Binary): Binary Cross Entropy\n\\[L(\\mathbf{W}) = -\\frac{1}{n}\\sum_{i=1}^{n} \\left( y_i \\log(\\widehat{y}_i) + (1-y_i)\\log(1 - \\widehat{y}_i) \\right)\\]"
+  },
+  {
+    "objectID": "slides/week_8.html#quizz",
+    "href": "slides/week_8.html#quizz",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Quizz",
+    "text": "Quizz\nLogistic Regression: Negative Log Likelihood of a Bernoulli distribution\n\\[L(\\beta) = -\\sum_{i=1}^{n} \\left( y_i \\log(\\widehat{y}_i) + (1-y_i)\\log(1 - \\widehat{y}_i) \\right)\\]\n1 - What happens when your label y = 1, and your model outputs 1 as the predicted value?\n2 - What happens when your label y = 1, and your model outputs 0.02 as the predicted value?"
+  },
+  {
+    "objectID": "slides/week_8.html#visualizing-the-loss",
+    "href": "slides/week_8.html#visualizing-the-loss",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Visualizing the loss",
+    "text": "Visualizing the loss"
+  },
+  {
+    "objectID": "slides/week_8.html#start-doing",
+    "href": "slides/week_8.html#start-doing",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Start doing",
+    "text": "Start doing\n\nRecording a video going through the code we’re going over in class that day\n\n\nExplaining more about the assignments\n\n\nMove the coding exercise to the same day\n\n\nExplain more about the code\n\n\nWhile coding in class is helpful, I’d appreciate a slightly deeper dive into concepts.\n\n\nmaybe advice going through coding material before or after class. because doing it on the class is too time consuming"
+  },
+  {
+    "objectID": "slides/week_8.html#stop-doing",
+    "href": "slides/week_8.html#stop-doing",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Stop Doing",
+    "text": "Stop Doing\n\ngoing through the code in class\n\n\nI don’t think we need to devote as much time to coding\n\n\nMaybe just have us read the paper that will be covered in the upcoming class,\n\n\nthe morning-3-hour-class, lol\n\n\nI personally don’t find the textbook very helpful\n\n\nI would spend less time on the earlier methods that aren’t really used anymore"
+  },
+  {
+    "objectID": "slides/week_8.html#continue-doing",
+    "href": "slides/week_8.html#continue-doing",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Continue Doing",
+    "text": "Continue Doing\n\nI appreciate the readings a lot and I wish we had more time dedicated to talking through them. (LET ME KNOW WHICH! HELP TO DO THAT)\n\n\nEverything is nice in PPOL 6801 (THANK YOU!)\n\n\nGoing over the R code in class! I like the half code, half lecture style.\n\n\nOverall, I think the class is pretty well curated!"
+  },
+  {
+    "objectID": "slides/week_8.html#most-useful-material",
+    "href": "slides/week_8.html#most-useful-material",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Most useful material",
+    "text": "Most useful material\n\nProblem sets with 54%!"
+  },
+  {
+    "objectID": "slides/week_8.html#where-we-are-going",
+    "href": "slides/week_8.html#where-we-are-going",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Where we are going…",
+    "text": "Where we are going…\n\nWe are living through a fast pacing transformation on the use of text-as-data\nThe most recent changes come from the so called Large Langue Models, and their increasing capability of generating human-like text.\nThis revolution was enabled by:\n\nIncreasing accessibility to data\nBetter ways to represent word\nUse of deep learning architectures to model text."
+  },
+  {
+    "objectID": "slides/week_8.html#section-3",
+    "href": "slides/week_8.html#section-3",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "",
+    "text": "Then, every line becomes a different logistic regression\n\\[\\mathbf{WX} = \\begin{bmatrix}  \\sigma(w_{11} X_1 + w_{12} X_2 + \\dots + w_{1p}X_p) \\\\ \\sigma(w_{21} X_1 + w_{22} X_2 + \\dots + w_{2p}X_p) \\\\ \\sigma(w_{31} X_1 + w_{32} X_2 + \\dots + w_{3p}X_p )\\\\ \\vdots \\\\ \\sigma(w_{k1} X_1 + w_{k2} X_2 + \\dots + w_{kp}X_p) \\end{bmatrix}\\] We then combine all of those with another set of parameters:\n\\[\n\\begin{align*}\n    \\mathbf{HA} &= h1 \\cdot \\sigma(w_{11} X_1 + w_{12} X_2 + \\dots + w_{1p}X_p)\\\\\n                &+ h_2\\cdot \\sigma(w_{21} X_1 + w_{22} X_2 + \\dots + w_{2p}X_p)\\\\\n                &+ h_3 \\cdot \\sigma (w_{31} X_1 + w_{32} X_2 + \\dots + w_{3p}X_p)\\\\\n                &+ \\dots + h_k + \\sigma(w_{k1} X_1 + w_{k2} X_2 + \\dots + w_{kp}X_p)\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "schedule.html#week-7-october-20-1",
+    "href": "schedule.html#week-7-october-20-1",
+    "title": "Weekly Materials & Readings",
+    "section": "Week 7: October 20",
+    "text": "Week 7: October 20\n\nTopics: Introduction to Deep Learning\nLecture: Week 8 - Deep Learning\nCoding Materials (OPTIONAL):\n\nLogistic Regression as a Neural Network\nIntroduction to Pytorch"
+  },
+  {
+    "objectID": "slides/week_llm_leticia.html",
+    "href": "slides/week_llm_leticia.html",
+    "title": "Large Language Models: Applications for Content Analysis",
+    "section": "",
+    "text": "We are going through a unique technological revolution with the use of Artificial intelligence.\nMost of the recent changes come from the so called Large Langue Models\n\nThey are everywhere — ChatGPT, Claude, Gemini, Copilot, LLaMA.\nUsed for writing, coding, summarizing, policy briefs, and internet search.\nThey’re reshaping education, research, and communication."
+  },
+  {
+    "objectID": "slides/week_10.html",
+    "href": "slides/week_10.html",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "",
+    "text": "Final Project + Mid-Semester Review\nFinish Topic Models + Code\nOverview of scaling models\nScaling models using text\n\nsupervised models: wordscore\nunsupervised models: wordfish"
   }
 ]

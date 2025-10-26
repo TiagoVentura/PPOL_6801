@@ -72,3 +72,15 @@ subtitle: "Data Science and Public Policy, McCourt School for Public Polcy, Geor
 -   **Lecture**: [Week 7 - Scaling](/slides/week_10.html)
 
 -   **Coding Materials**: <a href="/code/week10_scaling.R" download> Week 10 - Scaling</a>
+
+## Week 7: October 20
+
+-   **Topics**: Introduction to Deep Learning
+
+-   **Lecture**: [Week 8 - Deep Learning](/slides/week_8.html)
+
+-   **Coding Materials (OPTIONAL)**:
+
+     - [Logistic Regression as a Neural Network](https://colab.research.google.com/drive/1_MeUXbm2-L2QCMnn0CJcmzSexxDYUWVf?usp=sharing)
+
+    -   [Introduction to Pytorch](https://docs.pytorch.org/tutorials/beginner/introyt/introyt1_tutorial.html)

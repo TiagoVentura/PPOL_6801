@@ -27,6 +27,7 @@ open_ai_token = ""
 
 # mine is stored locally
 api_key <- Sys.getenv("OPENAI_API_KEY")
+#api_key <- "YOU_KEY_HERE"
 
 
 ## to communicate with the API, we need two steps: 
@@ -80,10 +81,10 @@ d <- read_csv("data/incivility.csv")
 d %>% View()
 
 ## first write your zero-shot prompt
-
-prompt <- "As an expert annotator, you will be asked to annotate a sample of social media posts \n
+prompt <- "As an expert annotator, 
+you will be asked to annotate a sample of social media posts \n
 I would like you to determine if the post can be considered uncivil, toxic or an attack to other people \n
-Return a number with 1 when you consider the post uncivil, toxicy or an atack, 0 otherwise. Here is the posts"
+Return a number with 1 when you consider the post uncivil, toxicy or an atack, 0 otherwise. Here are the posts"
 
 # write a generic function to query the open ai api
 payload <- list(
@@ -130,7 +131,9 @@ raw_response$choices$message$content
 query_open_ai <- function(prompt, 
                           post, 
                           output_structure,
-                          system_profile="You are a helpful assistant that determines the sentiment of a list of social media posts"){
+                          system_profile="You are a helpful assistant
+                          that determines the sentiment of a list of
+                          social media posts"){
   
 # payload  
 payload <- list(
@@ -187,7 +190,7 @@ Return a json with:
 # structure
 output_structure <- list(
   name = "code_social_media",
-  description = "Annotates a social media posts", 
+  description = "Annotates a social media post", 
   parameters = list(
     type = "object",
     properties = list(
@@ -209,7 +212,7 @@ output_structure <- list(
 post="such a nice person! But you are lying to people!"
 
 # Run one example
-query_open_ai(prompt, post, output_structure)
+query_open_ai(prompt, post, output_structure) %>% view()
 
 # Let's run in our dataset now
 output=list()
@@ -219,8 +222,34 @@ print(i)
 }
 
 # check results
-output %>% bind_rows()
+output %>% bind_rows() %>% pull(reasoning)
 
+
+# Example Reasoning -------------------------------------------------------
+prompt = " I will give you a set of explanations of why some posts are civil or uncivil. 
+These reasons were given by an AI model. I want you to highlight what
+were the main cues to model was working to make these decisions. 
+Each reason is separated by this mark ;"
+
+
+output_structure <- list(
+  name = "summarization",
+  description = "summarize content of incivility descriptions", 
+  parameters = list(
+    type = "object",
+    properties = list(
+      text = list(
+        type = "string", description = "summary")),
+    required = c("text", "label", "reasoning")
+  ))
+
+# post
+reasons = output %>% bind_rows() %>% pull(reasoning)
+reasons = paste(reasons, collapse = ";")
+
+reason_ai <- query_open_ai(prompt, reasons, output_structure)
+
+reason_ai$text
 
 
 # Example 2: Another Annotation task  -------------------------------------------
@@ -274,6 +303,8 @@ output_structure <- list(
 # query api
 response=list()
 
+links_df$body_clean[[1]]
+
 for(i in 1:10){
   # query    
   response[[i]] = query_open_ai(prompt, links_df$body_clean[[i]],output_structure)
@@ -282,7 +313,7 @@ for(i in 1:10){
 
 response %>% 
   bind_rows() %>%
-  bind_cols(links_df[1:10,"body_clean"])
+  bind_cols(links_df[1:10,"body_clean"]) %>% view()
 
 
 # Example 3: Synthethic data with Large Language Models ---------------------------------------------------------
@@ -409,6 +440,7 @@ audit_data <- expand.grid(age = c(20,35,50,65),
                           pid = c('Republican','Democrat','Independent'),
                           stringsAsFactors = F) %>%
   as_tibble()
+dim(audit_data)
 
 # output
 function_info <- list(
@@ -443,7 +475,7 @@ function_info <- list(
 
 # create many prompts
 prompts = create_prompt(audit_data)
-samples = sample(length(prompts), 2)
+samples = sample(length(prompts), 10)
 
 # let check this
 res=list()

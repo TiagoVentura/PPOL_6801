@@ -1,5 +1,5 @@
 ---
-title: "Large Language Models: Off the Shelf Application for Content Analysis"
+title: "Large Language Models: Applications for Content Analysis"
 author: "<span style = 'font-size: 200%;'> Professor: Tiago Ventura </span>"
 execute: 
   echo: false
@@ -18,7 +18,7 @@ format:
     chalkboard: 
       buttons: false
     preview-links: auto
-    footer: "Text-as-Data"
+    footer: ""
     theme: [simple, custom.scss]
 editor_options: 
   chunk_output_type: console
@@ -48,7 +48,7 @@ editor_options:
 
 -   Image analysis, object identification, OCR...
 
-## Plans for Today:
+## Plans for Today
 
 -   Early Language Models: N-Grams
 
@@ -61,17 +61,18 @@ editor_options:
     -   Text Classification
 
     -   Synthetic Survey Responses
-    
-    -  If we have time, I can show you two other options and you can vote for: 
-        
-        - Analyzing open-ended survey questions
-        
-        - Image processing and detecting elements on images with LLMs
 
+    -   If we have time, I can show you another application out these two options:
+
+        -   Analyzing open-ended survey questions
+
+        -   Image processing and detecting elements on images with LLMs
 
 ::: aside
 *this lecture draws on materials from Patrick Wu [NLP Class](https://patrickywu.com/)*
 :::
+
+# What is a language model? {background-color="#447099"}
 
 ## Language model
 
@@ -110,7 +111,7 @@ Starting from a simple conditional probability
 
 $$
 P(A|B)= \frac{P(A, B)}{P(B)}
-$$ 
+$$
 
 Suppose we are learning a 4-gram Language Model
 
@@ -150,7 +151,7 @@ For example, suppose that in the corpus:
 
 ## 
 
->today *the company*
+> today *the company*
 
 -   Get a probability distribution over words
 
@@ -160,7 +161,9 @@ For example, suppose that in the corpus:
 
 -   Sample a word... and repeat
 
-## Neural Language Models
+# **Large** Language Models {background-color="#447099"}
+
+## 
 
 -   As you can imagine: N-grams are not great. Cannot memorize long distance, explodes with large text, knows nothing about meaning.
 
@@ -179,11 +182,11 @@ knitr::include_graphics("./week13_figs/transformers.png")
     -   But using:
         -   Billions or trillions of parameters.
         -   Trained on petabytes of text (the internet, books, code, websites, pretty much everything you can imagine)
-        - trained with masking
+        -   trained with masking
 
-- After training, these models learn word representation and language generation. 
+-   After training, these models learn word representation and language generation.
 
-- There are two ways to use LLMs
+-   There are two ways to use LLMs
 
     -   **Out of the box**: refers to utilizing the model without any updating of the parameters of the model
     -   **Finetune**: involves further training the model using gradient-based updates

@@ -1,6 +1,5 @@
 ##############################################################################
 # File-Name: week6_unsupervised_learning.r
-# Date: February 27, 2024
 # author: Tiago Ventura
 # course: PPOL 6801 - text as data
 # topics: unsupervised learning
@@ -252,11 +251,11 @@ dfm_stm <-  quanteda::convert(dfm_news_non_na, to = "stm")
 dfm_stm$documents[[1]]
 
 # Models
-stm_m <- stm(documents=dfm_stm$documents,
-              vocab=dfm_stm$vocab, 
-              data = dfm_stm$meta, 
-              K = 30,
-              init.type = "Spectral")
+#stm_m <- stm(documents=dfm_stm$documents,
+#              vocab=dfm_stm$vocab, 
+#              data = dfm_stm$meta, 
+#              K = 30,
+#              init.type = "Spectral")
 
 #save(stm_m, file="data/stm_model.rdata")
 
@@ -276,7 +275,7 @@ plot(stm_m)
 # finding documents
 thoughts3 <- findThoughts(stm_m, 
                           texts = dfm_stm$meta$text,
-                          n = 2, topics = 10)$docs
+                          n = 10, topics = 24)$docs
 
 # see main words
 labelTopics(stm_m, topics=14)
@@ -290,7 +289,8 @@ stm_m$theta
 
 # Topics and words
 td_beta <- tidy(stm_m)
-td_gamma <- tidy(stm_m, matrix = "gamma",
+td_gamma <- tidy(stm_m, 
+                 matrix = "gamma",
                  document_names = rownames(dfm_stm))
 
 
@@ -406,7 +406,6 @@ many_models_search_k$results %>%
   labs(x = "Semantic coherence",
        y = "Exclusivity",
        title = "Comparing exclusivity and semantic coherence")
-
 
 # see all metrics
 many_models_search_k$results %>%
