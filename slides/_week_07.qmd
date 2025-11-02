@@ -295,7 +295,7 @@ knitr::include_graphics("./week7_figs/sg_arc.png")
 
 ## Check your matrices
 
-::: columns
+::::: columns
 ::: {.column width="70%"}
 ```{r echo=FALSE, out.width = "100%"}
 knitr::include_graphics("./week7_figs/rustic.png") 
@@ -313,7 +313,7 @@ Practice with a vocabulary of size 5, a embedding with 3 dimensions, and the tas
 
 -   **Step 3: Softmax entire vector**
 :::
-:::
+:::::
 
 ## Word Embeddings Matrices
 

@@ -24,14 +24,13 @@ format:
 
 ## Plans for Today
 
-- Mid-semester survey
+-   Mid-semester survey
 
-- Overview of where we are going
+-   Overview of where we are going
 
-- Introduction to Deep Learning
+-   Introduction to Deep Learning
 
-#  Mid-Semester Survey: 
-
+# Mid-Semester Survey:
 
 ## Start doing
 
@@ -43,7 +42,7 @@ format:
 
 > Explain more about the code
 
->  While coding in class is helpful, I'd appreciate a slightly deeper dive into concepts.
+> While coding in class is helpful, I'd appreciate a slightly deeper dive into concepts.
 
 > maybe advice going through coding material before or after class. because doing it on the class is too time consuming
 
@@ -52,8 +51,8 @@ format:
 > going through the code in class
 
 > I don't think we need to devote as much time to coding
- 
-> Maybe just have us read the paper that will be covered in the upcoming class, 
+
+> Maybe just have us read the paper that will be covered in the upcoming class,
 
 > the morning-3-hour-class, lol
 
@@ -73,56 +72,53 @@ format:
 
 ## Most useful material
 
-- Problem sets with 54%!
+-   Problem sets with 54%!
 
- 
-## Where we are going... 
+## Where we are going...
 
--  We are living through a fast pacing transformation on the use of text-as-data
+-   We are living through a fast pacing transformation on the use of text-as-data
 
--  The most recent changes come from the so called Large Langue Models, and their increasing capability of generating human-like text. 
+-   The most recent changes come from the so called Large Langue Models, and their increasing capability of generating human-like text.
 
--  This revolution was enabled by:
-   
-   - Increasing accessibility to data
-   
-   - Better ways to represent word
-   
-   - Use of deep learning architectures to model text. 
-   
+-   This revolution was enabled by:
+
+    -   Increasing accessibility to data
+
+    -   Better ways to represent word
+
+    -   Use of deep learning architectures to model text.
+
 ## Neural Networks - Transformers (2017)
 
 ```{r echo=FALSE, out.width = "100%"}
 knitr::include_graphics("./week13_figs/transformers.png") 
 ```
 
-
 # 
 
-For us to understand this figure, **we should first:** 
+For us to understand this figure, **we should first:**
 
-- Grasp the basic concepts of how a neural network model operates
+-   Grasp the basic concepts of how a neural network model operates
 
-- Understand the idea of dense representation of words (word vectors) vs Sparse Representation (DFMs)
+-   Understand the idea of dense representation of words (word vectors) vs Sparse Representation (DFMs)
 
-- Understand attention mechanisms
+-   Understand attention mechanisms
 
-- Get to transformers
-
+-   Get to transformers
 
 ## Our plans for the next few weeks
 
-- **today:** introduction to deep learning
+-   **today:** introduction to deep learning
 
-- **next:** word embeddings
+-   **next:** word embeddings
 
-- **next, next**: applications of word embeddings
+-   **next, next**: applications of word embeddings
 
-- **next, next, next**: break for your replication
+-   **next, next, next**: break for your replication
 
-- **next, next, next,next**: Transformers (attention is all you need)
+-   **next, next, next,next**: Transformers (attention is all you need)
 
-- **next, next, next, next, next:** LLMs
+-   **next, next, next, next, next:** LLMs
 
 # Text Representation: From Sparse to Dense Vectors
 
@@ -154,8 +150,7 @@ Now each document is now a vector (vector space model)
 
 Document 1 = "yes yes yes no no no"
 
-Document 2 = "yes yes yes yes yes yes"
-:::
+Document 2 = "yes yes yes yes yes yes" :::
 
 ```{r echo=FALSE, fig.align="center",fig.width=8}
 # Load necessary libraries
@@ -217,7 +212,6 @@ annotate(geom="label", x=5, y=1, label="Distance",
   theme_minimal()
 ```
 
-
 ## Vector Space Model vs Representation Learning
 
 The vector space model is super useful, and has been used in many many many applications in computational linguistics and social science applications of text-as-data. Including:
@@ -228,8 +222,7 @@ The vector space model is super useful, and has been used in many many many appl
 
 -   Unsupervised Machine Learning (Topic Models & Clustering)
 
-
-##
+## 
 
 **But**... Embedded in this model, there is the idea we represent [words]{.red} as a [one-hot encoding]{.red}.
 
@@ -268,23 +261,21 @@ The vector space model is super useful, and has been used in many many many appl
 
 ## Sparse vs Dense Vectors
 
-::: noincremental
+:::: noincremental
 **One-hot encoding / Sparse Representation:**
 
 -   cat = $\begin{bmatrix} 0,0, 0, 0, 0, 0, 1, 0, 0 \end{bmatrix}$
 
 -   dog = $\begin{bmatrix} 0,0, 0, 0, 0, 1, 0, 0, 0 \end{bmatrix}$
 
-:::fragment
-
+::: fragment
 **Word Embedding / Dense Representation:**
 
 -   cat = $\begin{bmatrix} 0.25, -0.75, 0.90, 0.12, -0.50, 0.33, 0.66, -0.88, 0.10, -0.45 \end{bmatrix}$
 
 -   dog = $\begin{bmatrix} 0.25, 1.75, 0.90, 0.12, -0.50, 0.33, 0.66, -0.88, 0.10, -0.45 \end{bmatrix}$
 :::
-
-:::
+::::
 
 ## With colors and real word vectors
 
@@ -380,7 +371,7 @@ Assume we have a simple model of voting. We want to predict if individual $i$ wi
 
 Classic statistical approach with logistic regression:
 
-$$ \hat{P(Y_i=1|X)} = \sigma(b_0 + WX + \epsilon) $$ 
+$$ \hat{P(Y_i=1|X)} = \sigma(b_0 + WX + \epsilon) $$
 
 We use MLE (Maximum Likelihood estimation) to find the parameters $W$ and $b_0$. We assume:
 
@@ -392,19 +383,19 @@ $$L(W, b_0) = \prod_{i=1}^{n} \pi_i^{y_i} (1 - \pi_i)^{1 - y_i}.$$
 
 ## The Famous: Cross-entropy loss functions
 
-Take the log to make things easier: 
+Take the log to make things easier:
 
 $$-\ell(W, b_0) = - \sum_{i=1}^{n} \Big[ y_i \log(\pi_i) + (1 - y_i)\log(1 - \pi_i) \Big]$$
 
 Where $\pi_i$ = $\sigma(b_0 + WX + \epsilon)$
 
-To solve this analytically: 
+To solve this analytically:
 
-- take the derivative of $\ell$ with respects to the parameter
+-   take the derivative of $\ell$ with respects to the parameter
 
-- set this equation to zero. 
+-   set this equation to zero.
 
-- most times this solution will not exist, so we will use numerical approaches
+-   most times this solution will not exist, so we will use numerical approaches
 
 ## Neural Network Graphical Representation
 
@@ -470,7 +461,6 @@ knitr::include_graphics("./figs/feed_forward.png")
 
 ## 
 
-
 ```{r echo=FALSE, out.width = "100%"}
 knitr::include_graphics("./figs/nlp_nn.png") 
 ```
@@ -505,21 +495,21 @@ knitr::include_graphics("./figs/nlp_nn.png")
 
 ## Estimation: How do get good parameters?
 
-To estimate the parameters, we will use a algorithm called gradient descent. 
+To estimate the parameters, we will use a algorithm called gradient descent.
 
-As in any other estimation approaches, we start with a loss function. 
+As in any other estimation approaches, we start with a loss function.
 
-- Loss function: used to measure how well or poorly a model is making predictions
+-   Loss function: used to measure how well or poorly a model is making predictions
 
-     - The model makes a guess (prediction)
+    -   The model makes a guess (prediction)
 
-     - The loss function compares the guess to the correct answer (the actual data)
+    -   The loss function compares the guess to the correct answer (the actual data)
 
-     - It then calculates the number that represents how “off” the answer was, which is the loss
+    -   It then calculates the number that represents how “off” the answer was, which is the loss
 
-- The goal in training a model is to minimize this loss
+-   The goal in training a model is to minimize this loss
 
-## Examples 
+## Examples
 
 **Linear Regression: MSE**
 
@@ -533,13 +523,13 @@ $$L(\beta) = -\sum_{i=1}^{n} \left( y_i \log(\widehat{y}_i) + (1-y_i)\log(1 - \w
 
 $$L(\mathbf{W}) = -\frac{1}{n}\sum_{i=1}^{n} \left( y_i \log(\widehat{y}_i) + (1-y_i)\log(1 - \widehat{y}_i) \right)$$
 
-## Quizz 
+## Quizz
 
 **Logistic Regression: Negative Log Likelihood of a Bernoulli distribution**
 
 $$L(\beta) = -\sum_{i=1}^{n} \left( y_i \log(\widehat{y}_i) + (1-y_i)\log(1 - \widehat{y}_i) \right)$$
 
-1 - What happens when your label y = 1, and your model outputs 1 as the predicted value? 
+1 - What happens when your label y = 1, and your model outputs 1 as the predicted value?
 
 2 - What happens when your label y = 1, and your model outputs 0.02 as the predicted value?
 
@@ -548,7 +538,6 @@ $$L(\beta) = -\sum_{i=1}^{n} \left( y_i \log(\widehat{y}_i) + (1-y_i)\log(1 - \w
 ```{r echo=FALSE, out.width = "100%"}
 knitr::include_graphics("./figs/loss.png") 
 ```
-
 
 ## Updating parameters
 
