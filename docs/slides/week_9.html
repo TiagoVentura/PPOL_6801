@@ -342,21 +342,27 @@
 </section>
 <section id="plans-for-today" class="slide level2 center">
 <h2>Plans for Today</h2>
+<div>
 <ul>
-<li class="fragment"><p>Logistics: Replication</p></li>
-<li class="fragment"><p>Word Embeddings</p>
+<li><p>Logistics: Replication</p></li>
+<li><p>Word Embeddings</p>
 <ul>
-<li class="fragment"><p>Semantics, Distributional Hypothesis, Moving from Sparse to Dense Vectors</p></li>
-<li class="fragment"><p>Word2Vec Algorithm</p>
+<li><p>Semantics, Distributional Hypothesis, Moving from Sparse to Dense Vectors</p></li>
+<li><p>Word2Vec Algorithm</p>
 <ul>
-<li class="fragment"><p>Mathematical Model</p></li>
-<li class="fragment"><p>Estimate with Neural Networks</p></li>
-<li class="fragment"><p>Estimate using Co-Occurance matrices</p></li>
+<li><p>Mathematical Model</p></li>
+<li><p>Estimate with Neural Networks</p></li>
+<li><p>Estimate using Co-Occurance matrices</p></li>
 </ul></li>
 </ul></li>
-<li class="fragment"><p>Coding: Either today or next week.</p></li>
-<li class="fragment"><p>Next week: we will see several applications of word embeddings</p></li>
+<li><p>In class exercise: How to select good embeddings?</p></li>
+<li><p>Next week:</p>
+<ul>
+<li><p>Coding</p></li>
+<li><p>In class exercise about the readings (please do the readings!!)</p></li>
+</ul></li>
 </ul>
+</div>
 </section>
 <section>
 <section id="replication" class="title-slide slide level1 center">
@@ -365,32 +371,33 @@
 </section>
 <section id="week-10-presentation-this-is-all-in-the-syllabus" class="slide level2 center">
 <h2>Week 10: Presentation (This is all in the syllabus!)</h2>
+<div>
 <p>You will do a presentation of your replication in two week.</p>
 <ul>
-<li class="fragment"><p>Each group will have about 20 minutes (15 presentation + 5 Q&amp;A)</p></li>
-<li class="fragment"><p>You presentation should have the following sections:</p>
-<pre><code>-   Introduction: introduction summarizing the article.
-
--   Methods: data used in the article
-
--   Results: the results you were able to replicate
-
--   Differences: any differences between your results and the authors'
-
--   Autopsy of the replication: what did work and what did not work
-
--   Extension: what would you do differently if you were to write this article today? Where would you innovate?</code></pre></li>
+<li><p>Each group will have about 20 minutes (15 presentation + 5 Q&amp;A)</p></li>
+<li><p>You presentation should have the following sections:</p>
+<ul>
+<li><p>Introduction: introduction summarizing the article.</p></li>
+<li><p>Methods: data used in the article</p></li>
+<li><p>Results: the results you were able to replicate</p></li>
+<li><p>Differences: any differences between your results and the authors’</p></li>
+<li><p>Autopsy of the replication: what did work and what did not work</p></li>
+<li><p>Extension: what would you do differently if you were to write this article today? Where would you innovate?</p></li>
+</ul></li>
 </ul>
+</div>
 </section>
 <section id="eow-replication-repository" class="slide level2 center">
 <h2>EOW: Replication Repository</h2>
 <p>By Friday EOD of the replication week, you should share with me and all your colleagues (share on the slack channel) your replication report. The replication report should be:</p>
+<div>
 <ul>
-<li class="fragment"><p>a GitHub repo with a well-detailed readme. See a model here: <a href="https://github.com/TiagoVentura/winning_plosone" class="uri">https://github.com/TiagoVentura/winning_plosone</a></p></li>
-<li class="fragment"><p>your presentation as a pdf</p></li>
-<li class="fragment"><p>the code used in the replication as a notebook (Markdown or Jupyter)</p></li>
-<li class="fragment"><p>a report with a maximum of 5 pages (it is fine if you do less than that) summarizing the replication process, with emphasis on four sections of your presentation: Results, Differences, Autopsy, and Extension.</p></li>
+<li><p>a GitHub repo with a well-detailed readme. See a model here: <a href="https://github.com/TiagoVentura/winning_plosone" class="uri">https://github.com/TiagoVentura/winning_plosone</a></p></li>
+<li><p>your presentation as a pdf</p></li>
+<li><p>the code used in the replication as a notebook (Markdown or Jupyter)</p></li>
+<li><p>a report with a maximum of 5 pages (it is fine if you do less than that) summarizing the replication process, with emphasis on four sections of your presentation: Results, Differences, Autopsy, and Extension.</p></li>
 </ul>
+</div>
 </section></section>
 <section>
 <section id="word-embeddings" class="title-slide slide level1 center">
@@ -425,7 +432,7 @@
 <p><span class="red">Distributional semantics</span>: words that are used in the same contexts tend to be similar in their meaning.</p>
 <div>
 <ul>
-<li class="fragment"><p>How can we use this insight to build a word representation?</p>
+<li class="fragment"><p><strong>How can we use this insight to build a word representation?</strong></p>
 <ul>
 <li class="fragment"><p>Learn this representation from the unlabeled data.</p></li>
 <li class="fragment"><p>Move from sparse representation to dense representation</p></li>
@@ -447,37 +454,51 @@
 <li class="fragment"><p>Form the core idea of state-of-the-art models, such as LLMs.</p></li>
 </ul>
 </section>
+<section id="section" class="slide level2 center">
+<h2></h2>
+
+<img data-src="embeddings.jpeg" style="width:70.0%" class="r-stretch"></section>
 <section id="estimating-word-embeddings" class="slide level2 center">
 <h2>Estimating Word Embeddings</h2>
 <h3 id="approches">Approches:</h3>
+<div>
 <div class="fragment">
 <ul>
-<li class="fragment"><span class="red">Neural Networks:</span> rely on the idea of <strong>self-supervision</strong>
+<li><span class="red">Neural Networks:</span> rely on the idea of <strong>self-supervision</strong>
 <ul>
-<li class="fragment">use unlabeled data and use words to predict sequence</li>
-<li class="fragment">the famous <strong>word2vec</strong> algorithm
+<li>use unlabeled data and use words to predict sequence</li>
+<li>the famous <strong>word2vec</strong> algorithm
 <ul>
-<li class="fragment">Skipgram: predicts context words</li>
-<li class="fragment">Continuous Bag of Words: predict center word</li>
+<li>Skipgram: predicts context words</li>
+<li>Continuous Bag of Words: predict center word</li>
 </ul></li>
 </ul></li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li class="fragment"><span class="red">Count-based methods</span>: look at how often words co-occur with neighbors.
+<li><span class="red">Count-based methods</span>: look at how often words co-occur with neighbors.
 <ul>
-<li class="fragment">Use this matrix, and use some factorization to retrieve vectors for the words</li>
-<li class="fragment">This approach is implemented by the “GloVE” algorithm</li>
-<li class="fragment">Fast, not computationally intensive, but not the best representation, because it is not fully local</li>
+<li>Use this matrix, and use some factorization to retrieve vectors for the words</li>
+<li>Fast, not computationally intensive, but not the best representation, because it is not fully local</li>
+<li>This approach is somewhat implemented by the “GloVE” algorithm</li>
 </ul></li>
 </ul>
+</div>
 </div>
 </section>
 <section id="word2vec-a-framework-for-learning-word-vectors-mikolov-et-al.-2013" class="slide level2 center">
 <h2>Word2Vec: a framework for learning word vectors (Mikolov et al.&nbsp;2013)</h2>
-<h3 id="core-idea">Core Idea:</h3>
-<div>
+<p>Developed in 2013 by Tomas Mikolov and colleagues at Google</p>
+<ul>
+<li class="fragment"><p>Popular embedding method; fast to train, with pre-trained embeddings available online</p></li>
+<li class="fragment"><p>Trained on large text corpora such as Google News (100 billion words), Wikipedia, and other massive datasets</p></li>
+<li class="fragment"><p>Captures semantic information by learning how words appear in similar contexts</p></li>
+<li class="fragment"><p>Represents word meaning based on surrounding words (context)</p></li>
+</ul>
+</section>
+<section id="word2veccore-idea" class="slide level2 center">
+<h2>Word2Vec:Core Idea</h2>
 <ul>
 <li class="fragment"><p>We have a large corpus (“body”) of text: a long list of words</p></li>
 <li class="fragment"><p>Every word in a fixed vocabulary is represented by a vector</p></li>
@@ -488,7 +509,6 @@
 <li class="fragment">Neural Network + Gradient Descent</li>
 </ul></li>
 </ul>
-</div>
 </section>
 <section id="skipgram-example-self-supervision-big-idea" class="slide level2 center">
 <h2>Skipgram Example: Self-Supervision (Big Idea!)</h2>
@@ -509,8 +529,8 @@
 </div>
 <div class="fragment">
 <ul>
-<li class="fragment"><p><strong>In logistic regression: probability of a event occur given data X and parameters</strong> <span class="math inline">\(\beta\)</span>:</p>
-<p><span class="math display">\[ P(y=1| X, \beta ) = X * \beta  + \epsilon\]</span></p>
+<li class="fragment"><p><strong>In logistic regression: probability of a event occur given data X and parameters <span class="math inline">\(\beta\)</span></strong>:</p>
+<p><span class="math display">\[ P(y=1| X, \beta ) = X * \beta  + \epsilon \]</span></p>
 <ul>
 <li class="fragment"><p><span class="math inline">\(X * \beta\)</span> is not a proper probability function, so we make it to proper probability by using a logit transformation.</p></li>
 <li class="fragment"><p><span class="math inline">\(P(y=1|X, \beta ) = \frac{exp(XB)}{1 + exp(XB)}\)</span></p></li>
@@ -544,11 +564,8 @@
 <li class="fragment"><span class="math inline">\(u_c \cdot u_t\)</span> is also not a proper probability distribution. So we will use a softmax transformation.</li>
 </ul>
 <div class="fragment">
-<p><span class="math display">\[P(w_t|w_{t-1}) = \frac{exp(u_c \cdot u_t)}{{\sum_{w}^V exp(u_c*u_w)}}\]</span></p>
+<p><span class="math display">\[P(w_t|w_{t-1}) = \frac{exp(u_c \cdot u_t)}{{\sum_{w}^V exp(u_c*u_w)}}\]</span> - mathematically, this is the logistic transformation (sigmoid) for multiple classes.</p>
 </div>
-<ul>
-<li class="fragment">mathematically, this is the logistic transformation (sigmoid) for multiple classes.</li>
-</ul>
 </section>
 <section id="softmax-transformation" class="slide level2 center">
 <h2>Softmax Transformation</h2>
@@ -571,13 +588,13 @@
 <h2>Skipgram Architecture</h2>
 
 <img data-src="./week7_figs/sg_arc.png" style="width:70.0%" class="r-stretch"></section>
-<section id="section" class="slide level2 center">
+<section id="section-1" class="slide level2 center">
 <h2></h2>
 
 <img data-src="./figs/nlp_nn.png" style="width:100.0%" class="r-stretch"></section>
 <section id="training-word2vec-step-1-learn-the-word-embedding" class="slide level2 center">
 <h2>Training Word2Vec Step 1: learn the word embedding</h2>
-<p>Step 1: Compute Hidden Layer Representation</p>
+<p><strong>Step 1: Compute Hidden Layer Representation</strong></p>
 <ul>
 <li class="fragment"><p>Input: A one-hot vector X where only the center word c has a value of 1, all others are 0 (size 1 x V)</p></li>
 <li class="fragment"><p>Goal: Convert this into a dense vector of size D, where D is much smaller than the vocabulary size</p></li>
@@ -592,7 +609,9 @@
 </ul></li>
 <li class="fragment"><p>This selects the i-th row of W, which is the word embedding for c</p></li>
 </ul>
-<p>##Example</p>
+</section>
+<section id="example" class="slide level2 center">
+<h2>Example</h2>
 <p>Let’s practice with a vocabulary of size 5, a embedding with 3 dimensions, and the task is to predict ONLY the next word.</p>
 <p><strong>Step 1: v_{1,5} * W_{5,3} = C_{1,3}</strong></p>
 <div>
@@ -624,9 +643,9 @@
 </section>
 <section id="training-word2vec-step-2-compute-output-probabilities" class="slide level2 center">
 <h2>Training Word2Vec Step 2: Compute Output Probabilities</h2>
-<p>Step 2 Goal: Predict which words are likely to appear near the center word</p>
+<p><strong>Step 2 Goal: Predict which words are likely to appear near the center word</strong></p>
 <ul>
-<li class="fragment"><p>The hidden representation h = XW is multiplied by a second weight matrix W′ (initialized randomly)</p></li>
+<li class="fragment"><p>The hidden representation h = VtW is multiplied by a second weight matrix W′ (initialized randomly)</p></li>
 <li class="fragment"><p>This produces a |V|-dimensional vector of unnormalized scores (logits), one for each word in the vocabulary. THIS IS A MEASURE FOR SIMILARITY FOR FREE!!</p></li>
 <li class="fragment"><p>Compute the output scores (DOT Product between center and all other words!!!):</p>
 <ul>
@@ -643,7 +662,7 @@
 <li class="fragment">Where <span class="math inline">\(W_2\)</span> is the embedding for context/target words</li>
 </ul>
 <div class="fragment">
-<p><span class="math display">\[ C_{1,3} * W2_{3,5} = P_{1,5} \]</span></p>
+<p><span class="math display">\[ C_{1,3} * W'_{3,5} = P_{1,5} \]</span></p>
 <p><span class="math display">\[ \begin{bmatrix}.3 &amp; -.16&amp; -.13 \end{bmatrix} *
 \begin{bmatrix}
 .1 &amp; .3 &amp; -.23 &amp; .3  &amp; .5 \\
@@ -697,7 +716,7 @@ L=
 <h2>Understanding the Loss Function</h2>
 <p><strong>Negative Log-Likelihood</strong></p>
 <p><span class="math display">\[
-\log \mathcal{L}_{\text{full}} =
+\log L =
 \sum_{t=1}^{T} \
 \sum_{\substack{-m \leq j \leq m \\ j \neq 0}}
 \left[
@@ -745,7 +764,7 @@ L=
 <p>Embeddings need quite a lot of text to train: e.g.&nbsp;want to disambiguate meanings from contexts. You can download <span class="red">pre-trained</span>, or get the code and <span class="red">train locally</span></p>
 <ul>
 <li class="fragment"><p><span class="red">Word2Vec</span> is trained on the Google News dataset (∼ 100B words, 2013)</p></li>
-<li class="fragment"><p><span class="red">GloVe</span> are trained on different things: Wikipedia (2014) + Gigaword (6B words), Common Crawl, Twitter. And uses a co-occurence matrix instead of Neural Networks (More about that later today)</p></li>
+<li class="fragment"><p><span class="red">GloVe</span> are trained on different things: Wikipedia (2014) + Gigaword (6B words), Common Crawl, Twitter. And uses a mix of co-occurence matrix + local estimation instead of Neural Networks (More about that later today)</p></li>
 <li class="fragment"><p><span class="red">fastext</span> from facebook</p></li>
 </ul>
 </section>
@@ -772,41 +791,59 @@ L=
 <li class="fragment"><p>Dimensionality: dimensions of the word vectors (50, 100, 300)</p></li>
 <li class="fragment"><p>Window Size: how big of a window you want around the center word (5-10 good balance)</p></li>
 <li class="fragment"><p>Minimum Count: how many times a word has to appear in the corpus for it to be assigned a vector (5 default in Word2Vec; for small, 1-3)</p></li>
-<li class="fragment"><p>Model Type: skip-gram or continuous bag-of-words</p></li>
+<li class="fragment"><p>Model Type: Word2Vec (skip-gram or continuous bag-of-words), Glove vs Word2Vec, Fully Global with Matrix Factorization</p></li>
 <li class="fragment"><p>Number of Iterations: number of iterations (epochs) over the corpus (5 common default; 10-20 useful for smaller datasets)</p></li>
 </ul>
 </section>
 <section id="decisions-when-using-embeddings-rodriguez-and-spirling-2022" class="slide level2 center">
 <h2>Decisions when using embeddings, Rodriguez and Spirling, 2022</h2>
-<p>::::: columns ::: {.column width=“100%”}</p>
-
-<img data-src="./week9_figs/rodriguez.png" style="width:70.0%" class="r-stretch"><p>:::</p>
-<p>Consider: Window size, Number of dimensions for the embedding matrix, Pre-trained vs locally fit variants, Which algorithm to use?</p>
+<div class="columns">
+<div class="column" style="width:100%;">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="./week9_figs/rodriguez.png" style="width:70.0%"></p>
+</div>
+</div>
+</div>
+</div>
+<p>Consider: Window size, Number of dimensions for the embedding matrix, Pre-trained vs locally fit variants, which algorithm to use between Glove and Word2Vect</p>
 </section>
 <section id="in-class-exercise" class="slide level2 center">
 <h2>In class exercise</h2>
-<p>Work in 4 groups, and tell me what is the response the authors give to each of these decisions. Share your screen to show the graph with this result and explain it.</p>
+<p>Work in 5 groups, to answer:</p>
+<ol type="a">
+<li class="fragment"><p>How do the authors evaluate performance (Turing Test)</p></li>
+<li class="fragment"><p>Responses for each:</p>
+<ul>
+<li class="fragment">Window size</li>
+<li class="fragment">Number of dimensions</li>
+<li class="fragment">Pre-Trained (Glove) vs Local Models</li>
+<li class="fragment">Glove vs Word2Vec</li>
+</ul></li>
+<li class="fragment"><p>Share your screen to show the graph with this result and explain it.</p></li>
+</ol>
 </section>
 </section>
+<section>
 <section id="word-embeddings-via-count-based-methods-no-deep-learning" class="title-slide slide level1 center">
 <h1>Word Embeddings via Count Based Methods (No Deep Learning)</h1>
 
 </section>
-
-<section>
-<section id="count-based-approaches" class="title-slide slide level1 center">
-<h1>Count Based Approaches</h1>
+<section id="count-based-approaches" class="slide level2 center">
+<h2>Count Based Approaches</h2>
 <p>Count-based methods rely on word co-occurrence to learn embeddings:</p>
 <ol type="1">
 <li class="fragment"><p>Compute Unigram Probabilities: Measure how often each word appears in the corpus</p></li>
 <li class="fragment"><p>Compute Word Co-occurrences: Count how often words appear together across the entire corpus</p></li>
 <li class="fragment"><p>Calculate PMI (Pointwise Mutual Information): Measures how much more often two words co-occur than expected by chance</p></li>
 </ol>
+<div class="fragment">
 <p><span class="math display">\[
 PMI(\text{word}_1, \text{word}_2) = \log \frac{P(\text{word}_1, \text{word}_2)}{P(\text{word}_1) \, P(\text{word}_2)}
 \]</span></p>
+</div>
 </section>
-<section id="section-1" class="slide level2 center">
+<section id="section-2" class="slide level2 center">
 <h2></h2>
 <ol start="4" type="1">
 <li class="fragment"><p>Construct a Co-occurrence Matrix: Store PMI values in a large word-by-word matrix</p></li>
@@ -818,14 +855,16 @@ PMI(\text{word}_1, \text{word}_2) = \log \frac{P(\text{word}_1, \text{word}_2)}{
 <ul>
 <li class="fragment">Love this youtube video here: https://www.youtube.com/watch?v=vSczTbgc8Rc</li>
 </ul></li>
-<li class="fragment"><p>No local information, so does not produce great embeddings. But very efficient computationally.</p></li>
 <li class="fragment"><p>Glove algorithm is a variation of this approach.</p></li>
 </ul>
+</section></section>
+<section id="see-you-next-week" class="title-slide slide level1 center">
+<h1>See you next week!</h1>
 
 <div class="footer footer-default">
 <p>Text-as-Data</p>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
