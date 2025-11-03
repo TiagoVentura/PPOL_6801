@@ -407,6 +407,7 @@ $$
 
 For each position $t$, predict context words within a window of fixed size $m$, given center word $w$.
 
+:::fragment
 **Likelihood Function with Probabilities**
 
 $$
@@ -415,7 +416,8 @@ L=
 \prod_{\substack{-m \leq j \leq m \\ j \neq 0}} 
 P(w_{t+j}|w_t)
 $$
-
+:::
+:::fragment
 **Likelihood Function**
 
 $$
@@ -425,6 +427,8 @@ L=
 \frac{\exp\left( \mathbf{u}_{w_{t+j}}^\top \mathbf{v}_{w_t} \right)}
 {\sum_{w \in V} \exp\left( \mathbf{u}_w^\top \mathbf{v}_{w_t} \right)}
 $$
+:::
+:::fragment
 **Log-Likelihood**
 
 $$
@@ -436,13 +440,13 @@ $$
 {\sum_{w \in V} \exp\left( \mathbf{u}_w^\top \mathbf{v}_{w_t} \right)}
 \right)
 $$
-
+:::
 ## Understanding the Loss Function
 
-**Negative Log-Likelihood**
+**Negative Log-Likelihood + Decomposing the log**
 
 $$
-\log L = 
+-\log L = 
 \sum_{t=1}^{T} \ 
 \sum_{\substack{-m \leq j \leq m \\ j \neq 0}} 
 \left[
@@ -471,25 +475,33 @@ knitr::include_graphics("./week7_figs/matrices.png")
 
 :::nonincremental
 
+:::fragment
 **Step 1: Input**
 
    - SG: Take a single word as input
    - CBOW: Take multiple words (context) as input
+:::
+:::fragment
 
 **Step 2: Embedding Representation**
 
 - SG: Map it to its embedding vector (hidden layer weights)
 - CBOW: Average their embeddings (combining hidden layer weights)
+:::
+:::fragment
 
 **Step 3: Prediction**
 
 - SG: Predict multiple context words from this embedding.
 - CBOW: Predict the target word using this averaged representation
+:::
+:::fragment
 
 **Step 4: Loss Computation**
 
 - SG: Use softmax or negative sampling to compute loss.
 - CBOW: Compute loss with softmax or negative sampling
+:::
 :::
 
 ## Training Embeddings
@@ -550,7 +562,7 @@ knitr::include_graphics("./week9_figs/rodriguez.png")
 :::
 :::::
 
-Consider: Window size, Number of dimensions for the embedding matrix, Pre-trained vs locally fit variants, which algorithm to use between Glove and Word2Vect
+Consider: Window size, Number of dimensions for the embedding matrix, Pre-trained vs locally fit variants, which algorithm to use between Glove and Word2Vec.
 
 
 ## In class exercise

@@ -2328,14 +2328,14 @@
     "href": "slides/week_9.html#word2vec-skipgram-loss-function",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Word2Vec Skipgram: Loss function",
-    "text": "Word2Vec Skipgram: Loss function\nFor each position \\(t\\), predict context words within a window of fixed size \\(m\\), given center word \\(w\\).\nLikelihood Function with Probabilities\n\\[\nL=\n\\prod_{t=1}^{T} \\\n\\prod_{\\substack{-m \\leq j \\leq m \\\\ j \\neq 0}}\nP(w_{t+j}|w_t)\n\\]\nLikelihood Function\n\\[\nL=\n\\prod_{t=1}^{T} \\\n\\prod_{\\substack{-m \\leq j \\leq m \\\\ j \\neq 0}}\n\\frac{\\exp\\left( \\mathbf{u}_{w_{t+j}}^\\top \\mathbf{v}_{w_t} \\right)}\n{\\sum_{w \\in V} \\exp\\left( \\mathbf{u}_w^\\top \\mathbf{v}_{w_t} \\right)}\n\\] Log-Likelihood\n\\[\n\\log L=\n\\sum_{t=1}^{T} \\\n\\sum_{\\substack{-m \\leq j \\leq m \\\\ j \\neq 0}}\n\\log \\left(\n\\frac{\\exp\\left( \\mathbf{u}_{w_{t+j}}^\\top \\mathbf{v}_{w_t} \\right)}\n{\\sum_{w \\in V} \\exp\\left( \\mathbf{u}_w^\\top \\mathbf{v}_{w_t} \\right)}\n\\right)\n\\]"
+    "text": "Word2Vec Skipgram: Loss function\nFor each position \\(t\\), predict context words within a window of fixed size \\(m\\), given center word \\(w\\).\n\nLikelihood Function with Probabilities\n\\[\nL=\n\\prod_{t=1}^{T} \\\n\\prod_{\\substack{-m \\leq j \\leq m \\\\ j \\neq 0}}\nP(w_{t+j}|w_t)\n\\]\n\n\nLikelihood Function\n\\[\nL=\n\\prod_{t=1}^{T} \\\n\\prod_{\\substack{-m \\leq j \\leq m \\\\ j \\neq 0}}\n\\frac{\\exp\\left( \\mathbf{u}_{w_{t+j}}^\\top \\mathbf{v}_{w_t} \\right)}\n{\\sum_{w \\in V} \\exp\\left( \\mathbf{u}_w^\\top \\mathbf{v}_{w_t} \\right)}\n\\]\n\n\nLog-Likelihood\n\\[\n\\log L=\n\\sum_{t=1}^{T} \\\n\\sum_{\\substack{-m \\leq j \\leq m \\\\ j \\neq 0}}\n\\log \\left(\n\\frac{\\exp\\left( \\mathbf{u}_{w_{t+j}}^\\top \\mathbf{v}_{w_t} \\right)}\n{\\sum_{w \\in V} \\exp\\left( \\mathbf{u}_w^\\top \\mathbf{v}_{w_t} \\right)}\n\\right)\n\\]"
   },
   {
     "objectID": "slides/week_9.html#understanding-the-loss-function",
     "href": "slides/week_9.html#understanding-the-loss-function",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Understanding the Loss Function",
-    "text": "Understanding the Loss Function\nNegative Log-Likelihood\n\\[\n\\log L =\n\\sum_{t=1}^{T} \\\n\\sum_{\\substack{-m \\leq j \\leq m \\\\ j \\neq 0}}\n\\left[\n- \\mathbf{u}_{w_{t+j}}^\\top \\mathbf{v}_{w_t}\n+ \\log \\sum_{w \\in V} \\exp\\left( \\mathbf{u}_w^\\top \\mathbf{v}_{w_t} \\right)\n\\right]\n\\] First term: Rewards for assigning high probability to the correct word.\nSecond Term: Penalty for assigning high probabilities to other wrong words"
+    "text": "Understanding the Loss Function\nNegative Log-Likelihood + Decomposing the log\n\\[\n-\\log L =\n\\sum_{t=1}^{T} \\\n\\sum_{\\substack{-m \\leq j \\leq m \\\\ j \\neq 0}}\n\\left[\n- \\mathbf{u}_{w_{t+j}}^\\top \\mathbf{v}_{w_t}\n+ \\log \\sum_{w \\in V} \\exp\\left( \\mathbf{u}_w^\\top \\mathbf{v}_{w_t} \\right)\n\\right]\n\\] First term: Rewards for assigning high probability to the correct word.\nSecond Term: Penalty for assigning high probabilities to other wrong words"
   },
   {
     "objectID": "slides/week_9.html#real-skipgram-algorithm",
@@ -2356,7 +2356,7 @@
     "href": "slides/week_9.html#skip-gram-vs.-cbow-neural-network-process",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Skip-gram vs. CBOW: Neural Network Process",
-    "text": "Skip-gram vs. CBOW: Neural Network Process\n\nStep 1: Input\n\nSG: Take a single word as input\nCBOW: Take multiple words (context) as input\n\nStep 2: Embedding Representation\n\nSG: Map it to its embedding vector (hidden layer weights)\nCBOW: Average their embeddings (combining hidden layer weights)\n\nStep 3: Prediction\n\nSG: Predict multiple context words from this embedding.\nCBOW: Predict the target word using this averaged representation\n\nStep 4: Loss Computation\n\nSG: Use softmax or negative sampling to compute loss.\nCBOW: Compute loss with softmax or negative sampling"
+    "text": "Skip-gram vs. CBOW: Neural Network Process\n\n\nStep 1: Input\n\nSG: Take a single word as input\nCBOW: Take multiple words (context) as input\n\n\n\nStep 2: Embedding Representation\n\nSG: Map it to its embedding vector (hidden layer weights)\nCBOW: Average their embeddings (combining hidden layer weights)\n\n\n\nStep 3: Prediction\n\nSG: Predict multiple context words from this embedding.\nCBOW: Predict the target word using this averaged representation\n\n\n\nStep 4: Loss Computation\n\nSG: Use softmax or negative sampling to compute loss.\nCBOW: Compute loss with softmax or negative sampling"
   },
   {
     "objectID": "slides/week_9.html#training-embeddings",
@@ -2384,7 +2384,7 @@
     "href": "slides/week_9.html#decisions-when-using-embeddings-rodriguez-and-spirling-2022",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Decisions when using embeddings, Rodriguez and Spirling, 2022",
-    "text": "Decisions when using embeddings, Rodriguez and Spirling, 2022\n\n\n\n\n\n\n\n\n\nConsider: Window size, Number of dimensions for the embedding matrix, Pre-trained vs locally fit variants, which algorithm to use between Glove and Word2Vect"
+    "text": "Decisions when using embeddings, Rodriguez and Spirling, 2022\n\n\n\n\n\n\n\n\n\nConsider: Window size, Number of dimensions for the embedding matrix, Pre-trained vs locally fit variants, which algorithm to use between Glove and Word2Vec."
   },
   {
     "objectID": "slides/week_9.html#in-class-exercise",

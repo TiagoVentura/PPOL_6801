@@ -687,6 +687,7 @@ P(w_t|w_{t-1}) = \frac{exp(0.041)}{{exp(-0.041)  +  exp(0.1204) + exp(-0.02233) 
 <section id="word2vec-skipgram-loss-function" class="slide level2 center">
 <h2>Word2Vec Skipgram: Loss function</h2>
 <p>For each position <span class="math inline">\(t\)</span>, predict context words within a window of fixed size <span class="math inline">\(m\)</span>, given center word <span class="math inline">\(w\)</span>.</p>
+<div class="fragment">
 <p><strong>Likelihood Function with Probabilities</strong></p>
 <p><span class="math display">\[
 L=
@@ -694,6 +695,8 @@ L=
 \prod_{\substack{-m \leq j \leq m \\ j \neq 0}}
 P(w_{t+j}|w_t)
 \]</span></p>
+</div>
+<div class="fragment">
 <p><strong>Likelihood Function</strong></p>
 <p><span class="math display">\[
 L=
@@ -701,7 +704,10 @@ L=
 \prod_{\substack{-m \leq j \leq m \\ j \neq 0}}
 \frac{\exp\left( \mathbf{u}_{w_{t+j}}^\top \mathbf{v}_{w_t} \right)}
 {\sum_{w \in V} \exp\left( \mathbf{u}_w^\top \mathbf{v}_{w_t} \right)}
-\]</span> <strong>Log-Likelihood</strong></p>
+\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Log-Likelihood</strong></p>
 <p><span class="math display">\[
 \log L=
 \sum_{t=1}^{T} \
@@ -711,12 +717,13 @@ L=
 {\sum_{w \in V} \exp\left( \mathbf{u}_w^\top \mathbf{v}_{w_t} \right)}
 \right)
 \]</span></p>
+</div>
 </section>
 <section id="understanding-the-loss-function" class="slide level2 center">
 <h2>Understanding the Loss Function</h2>
-<p><strong>Negative Log-Likelihood</strong></p>
+<p><strong>Negative Log-Likelihood + Decomposing the log</strong></p>
 <p><span class="math display">\[
-\log L =
+-\log L =
 \sum_{t=1}^{T} \
 \sum_{\substack{-m \leq j \leq m \\ j \neq 0}}
 \left[
@@ -737,26 +744,34 @@ L=
 <section id="skip-gram-vs.-cbow-neural-network-process" class="slide level2 center">
 <h2>Skip-gram vs.&nbsp;CBOW: Neural Network Process</h2>
 <div>
+<div class="fragment">
 <p><strong>Step 1: Input</strong></p>
 <ul>
 <li>SG: Take a single word as input</li>
 <li>CBOW: Take multiple words (context) as input</li>
 </ul>
+</div>
+<div class="fragment">
 <p><strong>Step 2: Embedding Representation</strong></p>
 <ul>
 <li>SG: Map it to its embedding vector (hidden layer weights)</li>
 <li>CBOW: Average their embeddings (combining hidden layer weights)</li>
 </ul>
+</div>
+<div class="fragment">
 <p><strong>Step 3: Prediction</strong></p>
 <ul>
 <li>SG: Predict multiple context words from this embedding.</li>
 <li>CBOW: Predict the target word using this averaged representation</li>
 </ul>
+</div>
+<div class="fragment">
 <p><strong>Step 4: Loss Computation</strong></p>
 <ul>
 <li>SG: Use softmax or negative sampling to compute loss.</li>
 <li>CBOW: Compute loss with softmax or negative sampling</li>
 </ul>
+</div>
 </div>
 </section>
 <section id="training-embeddings" class="slide level2 center">
@@ -806,7 +821,7 @@ L=
 </div>
 </div>
 </div>
-<p>Consider: Window size, Number of dimensions for the embedding matrix, Pre-trained vs locally fit variants, which algorithm to use between Glove and Word2Vect</p>
+<p>Consider: Window size, Number of dimensions for the embedding matrix, Pre-trained vs locally fit variants, which algorithm to use between Glove and Word2Vec.</p>
 </section>
 <section id="in-class-exercise" class="slide level2 center">
 <h2>In class exercise</h2>
