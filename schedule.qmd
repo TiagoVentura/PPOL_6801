@@ -84,7 +84,7 @@ subtitle: "Data Science and Public Policy, McCourt School for Public Polcy, Geor
     -   [Logistic Regression as a Neural Network](https://colab.research.google.com/drive/1_MeUXbm2-L2QCMnn0CJcmzSexxDYUWVf?usp=sharing)
 
     -   [Introduction to Pytorch](https://docs.pytorch.org/tutorials/beginner/introyt/introyt1_tutorial.html)
-    
+
 ## Week 9: November 3
 
 -   **Topics**: Word Embeddings - Theory
@@ -94,9 +94,23 @@ subtitle: "Data Science and Public Policy, McCourt School for Public Polcy, Geor
 -   **Coding Materials in R**:
 
     -   <a href="/code/week7_word_embeddings.R" download> Week 9 - Word Embeddings in R </a>
-    
-- **Coding Materials in Python (Optional)**
+
+-   **Coding Materials in Python (Optional)**
 
     -   Word Vectors with Gensim: <a href="https://www.dropbox.com/scl/fi/v5ld2gpswxb2tmyezwyx4/_day2_word_vectors.ipynb?rlkey=2eb88oe4dme7f57c60rimbtke&dl=0" download> notebook </a>
 
-    
+## Week 10: November 10
+
+-   **Topics**: Word Embeddings - Applied Paper
+
+-   **Lecture**: [Week 10 - Word embeddings II](/slides/week_10.html)
+
+-   **Coding Materials in R**:
+
+    -   <a href="/code/week7_word_embeddings.R" download> Week 9 - Word Embeddings in R </a>
+
+-   **Coding Materials in Python (Optional)**
+
+    -   Word Vectors with Gensim: <a href="https://www.dropbox.com/scl/fi/v5ld2gpswxb2tmyezwyx4/_day2_word_vectors.ipynb?rlkey=2eb88oe4dme7f57c60rimbtke&dl=0" download> notebook </a>
+
+

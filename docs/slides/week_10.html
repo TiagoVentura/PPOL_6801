@@ -329,7 +329,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">PPOL 6801 - Text as Data - Computational Linguistics</h1>
-  <p class="subtitle"><span style="font-size: 140%;"> <br> Week 10: Scaling Models for Text</span></p>
+  <p class="subtitle"><span style="font-size: 140%;"> <br> Week 10: Word Embeddings II</span></p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -343,444 +343,161 @@
 <section id="plans-for-today" class="slide level2 center">
 <h2>Plans for Today:</h2>
 <ul>
-<li class="fragment"><p>Final Project + Mid-Semester Review</p></li>
-<li class="fragment"><p>Finish Topic Models + Code</p></li>
-<li class="fragment"><p>Overview of scaling models</p></li>
-<li class="fragment"><p>Scaling models using text</p>
-<ul>
-<li class="fragment"><p>supervised models: wordscore</p></li>
-<li class="fragment"><p>unsupervised models: wordfish</p></li>
-</ul></li>
+<li><p>Quick introduction to Word Embedding + Matrix Factorization</p></li>
+<li><p>Coding</p></li>
+<li><p>In class Exercise: Applied Readings</p></li>
 </ul>
 </section>
-<section id="final-project" class="slide level2 center">
-<h2>Final Project</h2>
-<table>
-<colgroup>
-<col style="width: 25%">
-<col style="width: 31%">
-<col style="width: 20%">
-<col style="width: 22%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Requirement</strong></th>
-<th><strong>Due</strong></th>
-<th><strong>Length</strong></th>
-<th><strong>Percentage</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Project Proposal</td>
-<td><strong>EOD Friday Week 8</strong></td>
-<td>2 pages</td>
-<td>5%</td>
-</tr>
-<tr class="even">
-<td>Presentation</td>
-<td>Week 14</td>
-<td>10-15 minutes</td>
-<td>10%</td>
-</tr>
-<tr class="odd">
-<td>Project Report</td>
-<td>Wednesday Week 15</td>
-<td>10 pages</td>
-<td>25%</td>
-</tr>
-</tbody>
-</table>
-<p>For the project proposal:</p>
-<ul>
-<li class="fragment"><p>you need to schedule a 30min with me at least a week before the due date.</p></li>
-<li class="fragment"><p>For this meeting, I expect you to send me a draft of your ideas.</p></li>
-</ul>
-</section>
-<section id="project-proposal" class="slide level2 center">
-<h2>Project Proposal</h2>
-<p>The project proposal asks that you sketch out a general 2 page (single-spaced; 12pt font) project proposal.</p>
-<ul>
-<li class="fragment"><p>A high-level statement of the problem you intend to address or the analysis you aim to generate</p></li>
-<li class="fragment"><p>The data source(s) you intend to use</p></li>
-<li class="fragment"><p>Your plan to obtain that data</p></li>
-<li class="fragment"><p>The text as data method you plan to use.</p></li>
-<li class="fragment"><p>A definition for what “success” means with respect to your project.</p></li>
-</ul>
-</section>
-<section id="mid-semester-survey-httpsforms.gleevayewpzgrzrwtpi9" class="title-slide slide level1 center">
-<h1>Mid-semester survey: <a href="https://forms.gle/evAYeWPzgrzrWtpi9" class="uri">https://forms.gle/evAYeWPzgrzrWtpi9</a></h1>
-
-</section>
-
-<section>
-<section id="review-topic-models" class="title-slide slide level1 center">
-<h1>Review: Topic Models</h1>
-
-</section>
-<section id="intuition-language-model" class="slide level2 center">
-<h2>Intuition: Language Model</h2>
-<ul>
-<li class="fragment"><p><strong>Step 1: For each <span class="red">document</span>:</strong></p>
-<ul>
-<li class="fragment">Randomly choose a <span class="red">distribution</span> over topics. That is, choose one of many multinomial distributions, each which mixes the topics in different proportions.</li>
-</ul></li>
-<li class="fragment"><p><strong>Step 2: For each topic</strong></p>
-<ul>
-<li class="fragment">Randomly choose a <strong>distribution</strong> of words, also from one of many multinomial distributions., each with mixes words in different proportions</li>
-</ul></li>
-<li class="fragment"><p><strong>Step 3: Then, for every <span class="red">word</span> in the document</strong></p>
-<ul>
-<li class="fragment">Randomly choose a <span class="red">topic</span> from the distribution over topics from step 1.</li>
-<li class="fragment">Randomly choose a <span class="red">word</span> from the distribution over the vocabulary that the topic implies.</li>
-</ul></li>
-</ul>
-</section>
-<section id="mathematical-model-lda-topic-model" class="slide level2 center">
-<h2>Mathematical Model: LDA Topic Model</h2>
-<p>To estimate the model, we need to assume some known mathematical distributions for this data generating process:</p>
-<ul>
-<li class="fragment"><p><strong>For every topic:</strong> Each topic k has a word distribution <span class="math inline">\(\beta_k\)</span> , drawn from a Dirichlet prior:</p>
-<ul>
-<li class="fragment"><span class="math inline">\(\beta_k \sim \text{Dirichlet}(\tau)\)</span></li>
-</ul></li>
-<li class="fragment"><p><strong>For every document:</strong> Each document d has a topic distribution <span class="math inline">\(\theta_d\)</span> , drawn from a Dirichlet prior</p>
-<ul>
-<li class="fragment"><span class="math inline">\(\theta_d \sim \text{Dirichlet}(\alpha)\)</span>,</li>
-</ul></li>
-<li class="fragment"><p><strong>For every word</strong>:</p>
-<ul>
-<li class="fragment">For each word wdn in document d, choose a topic <span class="math inline">\(z_{dn}\)</span> based on the document’s topic distribution, a topic <span class="math inline">\(z_{dn} \sim \text{Multinomial}(\theta_d)\)</span>.</li>
-<li class="fragment">Choose a word <span class="math inline">\(w_{dn}\)</span> from the topic’s word distribution: <span class="math inline">\(w_{dn} \sim \text{Multinomial}(\beta_{z_{dn}})\)</span></li>
-</ul></li>
-<li class="fragment"><p><strong>where:</strong></p>
-<ul>
-<li class="fragment"><span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\tau\)</span> are hyperparameter of the Dirichlet priors</li>
-<li class="fragment"><span class="math inline">\(\beta_k\)</span> is drawn from a Dirichlet for per-topic word distribution</li>
-<li class="fragment"><span class="math inline">\(\theta_d\)</span> is drawn from a Dirichlet for the topic distribution for documents - <span class="math inline">\(K\)</span> topics</li>
-<li class="fragment"><span class="math inline">\(D\)</span> documents in the corpus</li>
-<li class="fragment"><span class="math inline">\(dn\)</span> word position in document <span class="math inline">\(d\)</span></li>
-</ul></li>
-</ul>
-</section>
-<section id="parameters" class="slide level2 center">
-<h2>Parameters</h2>
-
-<img data-src="./week6_figs/topic_matrices.png" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
-<section id="choosing-the-number-of-topics" class="slide level2 center">
-<h2>Choosing the number of topics</h2>
+<section id="estimating-word-embeddings" class="slide level2 center">
+<h2>Estimating Word Embeddings</h2>
+<h3 id="approches">Approches:</h3>
 <div>
+<div class="fragment">
 <ul>
-<li><p>Choosing K is “one of the most difficult questions in unsupervised learning” (Grimmer and Stewart, 2013, p.19)</p></li>
-<li><p><strong>Common approach</strong>: decide based on cross-validated statistical measures of model fit or other measures of topic quality.</p>
+<li><span class="red">Neural Networks:</span> rely on the idea of <strong>self-supervision</strong>
 <ul>
-<li>(Heldout) Log-likelihood: How well the model explains the observed data. Higher (closer to 0) is better</li>
-<li>Semantic coherence: How often top words in a topic appear together, indicating topic interpretability.</li>
-<li>Residuals: Checks how well the model explains the word co-occurrence patterns in the data.</li>
-<li>Exclusivity: Measures distinctiveness of topics — how unique their top words are.</li>
+<li>use unlabeled data and use words to predict sequence</li>
+<li>the famous <strong>word2vec</strong> algorithm
+<ul>
+<li>Skipgram: predicts context words</li>
+<li>Continuous Bag of Words: predict center word</li>
+</ul></li>
 </ul></li>
 </ul>
+</div>
+<div class="fragment">
+<ul>
+<li><span class="red">Count-based methods</span>: look at how often words co-occur with neighbors.
+<ul>
+<li>Use this matrix, and use some factorization to retrieve vectors for the words</li>
+<li>Fast, not computationally intensive, but not the best representation, because it is not fully local</li>
+<li>This approach is somewhat implemented by the “GloVE” algorithm</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="recurrent-neural-networks" class="slide level2 center">
+<h2>Recurrent Neural Networks</h2>
+<div class="cell" data-layout-align="center" data-hash="week_10_cache/revealjs/unnamed-chunk-1_599da87ac1e42c5f65da6f71900e1d8c">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="rnn2.png" style="width:50.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+
+<aside><div>
+<p>Source: <a href="https://web.stanford.edu/class/cs224n/index.html#schedule">CS224N</a></p>
+</div></aside></section>
+<section id="transformers" class="slide level2 center">
+<h2>Transformers</h2>
+<div class="cell" data-hash="week_10_cache/revealjs/unnamed-chunk-2_86fa4d82338fa418478432dee3590da3">
+<div class="cell-output-display">
+<p><img data-src="./week13_figs/transformers.png" style="width:100.0%"></p>
+</div>
+</div>
+
+<aside><div>
+<p>Source: <a href="https://web.stanford.edu/class/cs224n/index.html#schedule">CS224N</a></p>
+</div></aside></section>
+<section>
+<section id="word-embeddings-via-count-based-methods-no-deep-learning" class="title-slide slide level1 center">
+<h1>Word Embeddings via Count Based Methods (No Deep Learning)</h1>
+
+</section>
+<section id="count-based-approaches" class="slide level2 center">
+<h2>Count Based Approaches</h2>
+<p>Count-based methods rely on word co-occurrence to learn embeddings:</p>
+<ol type="1">
+<li><p>Compute Unigram Probabilities: Measure how often each word appears in the corpus</p></li>
+<li><p>Compute Word Co-occurrences: Count how often words appear together across the entire corpus</p></li>
+<li><p>Calculate PMI (Pointwise Mutual Information): Measures how much more often two words co-occur than expected by chance</p></li>
+</ol>
+<div class="fragment">
+<p><span class="math display">\[
+PMI(\text{word}_1, \text{word}_2) = \log \frac{P(\text{word}_1, \text{word}_2)}{P(\text{word}_1) \, P(\text{word}_2)}
+\]</span></p>
 </div>
 </section>
 <section id="section" class="slide level2 center">
 <h2></h2>
-
-<img data-src="./week6_figs/topic_selection.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
-<section id="validation-of-topics" class="slide level2 center">
-<h2>Validation of topics</h2>
+<ol start="4" type="1">
+<li><p>Construct a Co-occurrence Matrix: Store PMI values in a large word-by-word matrix</p></li>
+<li><p>Apply Singular Value Decomposition (SVD): Reduce the matrix to extract meaningful lower-dimensional word vectors</p></li>
+</ol>
 <ul>
-<li class="fragment"><p>Working with topic models require a lot of back-and-forth and humans in the loop.</p></li>
-<li class="fragment"><p>How to measure the quality of the topics?</p></li>
-</ul>
-<div class="fragment">
-<div>
+<li><p>SVD is a matrix factorization technique used in linear algebra and data science</p></li>
+<li><p>Reduces dimensionality by identifying important patterns in data: splits the matrix into fundamental patterns (singular vectors), ranked by importance (singular values)</p>
 <ul>
-<li><p>Crowdsourcing for:</p>
-<ul>
-<li>whether a topic has (human-identifiable) semantic coherence: <span class="red">word intrusion</span>, asking subjects to identify a spurious word inserted into a topic</li>
-<li>whether the association between a document and a topic makes sense: <span class="red">topic intrusion</span>, asking subjects to identify a topic that was not associated with the document by the model</li>
-<li>See <a href="https://www.cambridge.org/core/journals/political-analysis/article/abs/topics-concepts-and-measurement-a-crowdsourced-procedure-for-validating-topics-as-measures/F28DC93AFD4C8DE63CC235BC6D684257">Ying et al, 2022, Political Analysis.</a></li>
+<li>Love this youtube video here: https://www.youtube.com/watch?v=vSczTbgc8Rc</li>
 </ul></li>
+<li><p>Glove algorithm is a variation of this approach.</p></li>
 </ul>
-</div>
+</section>
+<section id="coding" class="slide level2 center">
+<h2>Coding!</h2>
+</section>
+
+
+<section id="applications" class="slide level2 center">
+<h2>Applications</h2>
+<p>Let’s discuss now several applications of embeddings on social science papers. These paper show:</p>
 <ul>
-<li class="fragment">Contextual Knowledge, reading the topics, and showing it has face-validity.</li>
+<li><p>How to use embeddings to track semantic changes over time</p></li>
+<li><p>How to use embeddings to measure emotion in political language.</p></li>
+<li><p>How to use embeddings to measure gender and ethnic stereotypes</p></li>
+<li><p>And a favorite of political scientists, how to use embeddings to measure ideology.</p></li>
 </ul>
-</div>
+</section>
+<section id="in-class-exercise" class="slide level2 center">
+<h2>In class exercise</h2>
+<ol type="1">
+<li><p>Work in pairs</p></li>
+<li><p>Each pair will select one of the five applied papers for this week</p></li>
+<li><p>Prepare a presentation about this paper for your colleagues (30min)</p></li>
+<li><p>Your presentation needs to answer three key questions:</p>
+<ul>
+<li><p>How are word embeddings used?</p></li>
+<li><p>What substantive/applied insights are extracted from the embeddings approach?</p></li>
+<li><p>Could this be done with non-embeddings methods (any of the things we saw before embeddings)?</p></li>
+</ul></li>
+<li><p>Every group will have 5 minutes to present</p></li>
+</ol>
+</section>
+<section id="papers-and-pairs" class="slide level2 center">
+<h2>Papers and pairs</h2>
+<ul>
+<li><p>Rodman, E., 2020. A Timely Intervention: Tracking the Changing Meanings of Political Concepts with Word Vectors. Political Analysis, 28(1), pp.87-111.</p></li>
+<li><p>Gennaro, Gloria, and Elliott Ash. “Emotion and reason in political language.” The Economic Journal 132, no. 643 (2022): 1037-1059.</p></li>
+<li><p>Rheault, Ludovic, and Christopher Cochrane. “Word embeddings for the analysis of ideological placement in parliamentary corpora.” Political Analysis 28, no. 1 (2020): 112-133.</p></li>
+<li><p>Austin C. Kozlowski, Austin C., Matt Taddy, and James A. Evans. 2019. “The Geometry of Culture: Analyzing the Meanings of Class through Word Embeddings.” American Sociological Review 84, no. 5: 905–49.</p></li>
+<li><p>Garg, Nikhil, Londa Schiebinger, Dan Jurafsky and James Zou. 2018. “Word embeddings quantify 100 years of gender and ethnic stereotypes.” Proceedings of the National Academy of Sciences 115(16):E3635–E3644.</p></li>
+</ul>
 </section></section>
 <section>
-<section id="applications" class="title-slide slide level1 center">
-<h1>Applications</h1>
-
-</section>
-<section id="barbera-et-al-american-political-science-review-2020." class="slide level2 center">
-<h2>Barbera et al, American Political Science Review, 2020.</h2>
-<div>
-<ul>
-<li><p>Data: tweets sent by US legislators, samples of the public, and media outlets.</p></li>
-<li><p>LDA with K = 100 topics</p></li>
-<li><p>Topic predictions are used to understand agenda-setting dynamics (who leads? who follows?)</p></li>
-<li><p>Conclusion: Legislators are more likely to follow, than to lead, discussion of public issues,</p></li>
-</ul>
-</div>
-</section>
-<section id="motolinia-american-political-science-review-2021" class="slide level2 center">
-<h2>Motolinia, American Political Science Review, 2021</h2>
-<div>
-<ul>
-<li>Data: transcripts of legislative sessions in Mexican states</li>
-<li>Correlated Topic model to identify “particularistic” legislation; i.e.&nbsp;laws with clear benefits to voters</li>
-<li>Each topic is then classified into particularistic or not</li>
-<li>Validation: correlation with spending</li>
-<li>Use exogenous electoral reform that allowed legislators to be re-elected</li>
-</ul>
-</div>
-</section>
-<section id="exercise" class="slide level2 center">
-<h2>Exercise</h2>
-<div>
-<ul>
-<li><p>Take 5-min to read the methods sections of these papers</p></li>
-<li><p>List to me some of the decisions the authors need to make to get the topic models to work.</p></li>
-<li><p>Do you think these make sense? What would you do different?</p></li>
-</ul>
-</div>
-</section>
-<section id="extensions-many-more-beyond-lda" class="slide level2 center">
-<h2>Extensions: Many more beyond LDA</h2>
-<div>
-<ul>
-<li><p><strong>Structural topic model:</strong> allow (1) topic prevalence, (2) topic content to vary as a function of document-level covariates (e.g., how do topics vary over time or documents produced in 1990 talk about something differently than documents produced in 2020?); implemented in stm in R (Roberts, Stewart, Tingley, Benoit)</p></li>
-<li><p><strong>Correlated topic model:</strong> way to explore between-topic relationships (Blei and Lafferty, 2017); implemented in topicmodels in R; possibly somewhere in Python as well!</p></li>
-<li><p><strong>Keyword-assisted topic model:</strong> seed topic model with keywords to try to increase the face validity of topics to what you’re trying to measure; implemented in keyATM in R (Eshima, Imai, Sasaki, 2019)</p></li>
-<li><p><strong>BertTopic:</strong> BERTopic is a topic modeling technique that leverages transformers and TF-IDF to create dense clusters of words.</p></li>
-</ul>
-</div>
-</section>
-<section id="stm-adding-structure-to-the-lda" class="slide level2 center">
-<h2>STM: Adding Structure to the LDA</h2>
-<div class="columns">
-<div class="column" style="width:70%;">
-<div class="cell" data-hash="week_10_cache/revealjs/unnamed-chunk-3_f96c0f2de7cb2d90368fddd73f1e921e">
-<div class="cell-output-display">
-<p><img data-src="./week6_figs/stm.png" style="width:80.0%"></p>
-</div>
-</div>
-</div><div class="column" style="width:30%;">
-<p><br> <br> <br></p>
-<div>
-<ul>
-<li><p><span class="red">Prevalence</span>: Prior on the mixture over topics is now document-specific, and can be a function of covariates.</p></li>
-<li><p><span class="red">Content</span>: distribution over words is now document-specific and can be a function of covariates.</p></li>
-</ul>
-<p>See <a href="https://scholar.harvard.edu/files/dtingley/files/topicmodelsopenendedexperiments.pdf">Roberts et al 2014</a></p>
-</div>
-</div>
-</div>
-</section></section>
-<section id="coding" class="title-slide slide level1 center">
-<h1>Coding</h1>
+<section id="have-fun" class="title-slide slide level1 center">
+<h1>Have fun!</h1>
 
 </section>
 
-<section>
-<section id="scaling-policy-positions-with-text" class="title-slide slide level1 center">
-<h1>Scaling policy positions with Text</h1>
-
-</section>
-<section id="section-1" class="slide level2 center">
-<h2></h2>
-<div>
-<p><strong>Many substantive questions in policy and politics depends on estimating ideological preferences</strong>:</p>
-<ul>
-<li>Is polarization increasing over time?
-<ul>
-<li>are parties moving together over time?</li>
-</ul></li>
-<li>Do governments/coalitions last longer conditional on:
-<ul>
-<li>how homogeneous coalition is?</li>
-<li>distance between coalition and congress ideal points?</li>
-<li>distance between coalition and median voter?</li>
-</ul></li>
-<li>Does ideology affect policy decisions?
-<ul>
-<li>Economic cycles and elections?</li>
-<li>Globalization and the social welfare state?</li>
-</ul></li>
-<li>Does motivated reasoning affects beliefs/sharing of online misinformation?</li>
-</ul>
-<p>Many more examples ….</p>
-</div>
-</section>
-<section id="wnominate" class="slide level2 center">
-<h2>WNominate</h2>
-
-<img data-src="./week10_figs/plot_dw_example.png" style="width:100.0%" class="r-stretch"></section>
-<section id="scaling-with-without-computational-text-analysis" class="slide level2 center">
-<h2>Scaling with without computational text analysis</h2>
-<div>
-<div class="fragment">
-<ul>
-<li><p>Surveys</p>
-<ul>
-<li>Ask elites or regular voters about policy preference, and scale them in some sort of political continuum. Methods as: factor analysis, singula value decomposition, PCA, etc…</li>
-</ul></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><p>Behavioral data (for example, roll-call voting):</p>
-<ul>
-<li>Politicians vote on proposals (or judges make decisions) that are close to their ideal points
-<ul>
-<li>Use statistical methods (mostly matrix factorization) to estimate orthogonal dimensions ~ Nominate Scores</li>
-</ul></li>
-</ul></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><p>Content Analysis using Text</p>
-<ul>
-<li>Manually label content of political manifestos (Comparative Manifestos Project) and place them in ideological scales</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="scaling-models-with-computational-text-analysis" class="slide level2 center">
-<h2>Scaling models with computational text analysis</h2>
-<p>In the past 20 years, computational text analysis has been widely used for building scaling models.</p>
-<ul>
-<li class="fragment"><p>Advantages: fast, reliable, deals with large volumes of text, and easy to translate to other domains/language.</p></li>
-<li class="fragment"><p><strong>Wordscore:</strong> supervised approach, mimic naive bayes models, start with reference, and score virgin texts.</p></li>
-<li class="fragment"><p><strong>Wordfish:</strong> unsupervised approach, learn word occurrence from the documents using a ideal-points model.</p></li>
-</ul>
-</section>
-<section id="wordscore-laver-benoit-garry-2003-apsr" class="slide level2 center">
-<h2>Wordscore (Laver, Benoit, Garry, 2003, APSR)</h2>
-<ul>
-<li class="fragment"><strong>Def:</strong> supervised approach, similar to naive bayes models, learn association between words and reference text, and score virgin text.</li>
-</ul>
-<div class="fragment">
-<p><span class="red">Step 1</span>: Begin with a reference set (training set) of texts that have known positions.</p>
-<ul>
-<li class="fragment">Get speeches by AOC , give it -1 score.</li>
-<li class="fragment">Get speeches by MTG, give it a +1 score.</li>
-</ul>
-</div>
-<div class="fragment">
-<p><span class="red">Step 2</span>: Generate word scores from these reference texts</p>
-<ul>
-<li class="fragment">Pretty much like the naive bayes, but the class becomes a number (-1 or +1)</li>
-</ul>
-</div>
-<div class="fragment">
-<p><span class="red">Step 3</span>: Score the virgin texts (test set) of texts using those word scores</p>
-<ul>
-<li class="fragment">scale virgin score to the same original metric (-1 to +1)</li>
-</ul>
-</div>
-</section>
-<section id="wordscore-calculation" class="slide level2 center">
-<h2>WordScore Calculation</h2>
-<div class="fragment">
-<!-- -->
-<h4 id="learning-words">Learning Words</h4>
-<p><span class="math display">\[ P_{wr} = \frac{F_{wr}}{\sum_r F_{wr}}\]</span> - <span class="math inline">\(P_{wr}\)</span>: Given a set of reference texts, the probability that an occurrence of word <span class="math inline">\(w\)</span> implies that we are reading text <span class="math inline">\(r\)</span> is</p>
-<ul>
-<li class="fragment"><span class="math inline">\(F_{wr}\)</span>: Frequency of word <span class="math inline">\(w\)</span> in reference text <span class="math inline">\(r\)</span></li>
-</ul>
-</div>
-<div class="fragment">
-<!-- -->
-<h4 id="scoring-words">Scoring Words</h4>
-<p><span class="math display">\[S_{wd} = \sum_r (P_{wr} \cdot A_{rd}) \]</span></p>
-<ul>
-<li class="fragment"><p><span class="math inline">\(S_{wd}\)</span>: Score of word <span class="math inline">\(w\)</span> in dimension <span class="math inline">\(d\)</span></p></li>
-<li class="fragment"><p><span class="math inline">\(A_{rd}\)</span>: Pre-defined position of reference text <span class="math inline">\(r\)</span> in dimension <span class="math inline">\(d\)</span></p></li>
-<li class="fragment"><p><span class="math inline">\(A_{rd}\)</span> will be -1 for AOC and +1 for MGT documents, for example.</p></li>
-</ul>
-</div>
-</section>
-<section id="scoring-virgin-texts" class="slide level2 center">
-<h2>Scoring virgin texts</h2>
-<p><span class="math display">\[ S_{vd} = \sum_w (F_{wv} · S_{wd}) \]</span> - <span class="math inline">\(S_{vd}\)</span> weighted average of the scores by word frequency.</p>
-</section>
-<section id="example" class="slide level2 center">
-<h2>Example</h2>
-<p>Republican manifesto uses `wall’ 830 times in 1000 words, while Democrat use it only 160 times. Assume 1 for republican and -1 for democrat</p>
-<p><span class="math display">\[P_{wr} = 830/(830+160)\]</span></p>
-<p><span class="math display">\[P_{wl} =  160/(830+160) \]</span> <span class="math display">\[ S_w = 0.83*1 + -1*.16 = 0.66\]</span></p>
-<ul>
-<li class="fragment"><p>Virgin text 1 mentions wall 200 times in 1000 words ~ <span class="math inline">\(0.2 * 0.66 = 0.132\)</span></p></li>
-<li class="fragment"><p>Virgin text 2 mentions wall 1 times in 1000 words ~ <span class="math inline">\(0.001 * 0:66 = 0.0066\)</span></p></li>
-<li class="fragment"><p>Repeat for all words!</p></li>
-</ul>
-</section>
-<section id="results" class="slide level2 center">
-<h2>Results</h2>
-
-<img data-src="./week10_figs/wordscores.png" style="width:100.0%" class="r-stretch"></section>
-<section id="wordfish-slapin-and-proksch-2008-ajps" class="slide level2 center">
-<h2>Wordfish (Slapin and Proksch, 2008, AJPS)</h2>
-<p>Same assumptions as in <strong>Wordscore</strong> (<span class="midgray">word usage provides information about policy placement</span>), but in an <span class="red">unsupervised setting</span> and with <span class="red">fully specified language model</span>.</p>
-<div class="fragment">
-<!-- -->
-<h4 id="the-count-of-word-j-from-party-i-in-year-t">The count of word <span class="math inline">\(j\)</span> from party <span class="math inline">\(i\)</span> , in year <span class="math inline">\(t\)</span>:</h4>
-<p><span class="math display">\[ y_{ijt}   \sim  Pois(\lambda)\]</span></p>
-<p><span class="math display">\[ \lambda_{ijt}=\exp({\alpha_{it} + \psi_j + \beta_j\times\omega_{it}}) \]</span></p>
-<ul>
-<li class="fragment"><p><span class="math inline">\(\alpha_{it}\)</span>: fixed effect(s) for party <span class="math inline">\(i\)</span> in time <span class="math inline">\(t\)</span> ~ deal with parties that write too much</p></li>
-<li class="fragment"><p><span class="math inline">\(\psi_j\)</span>: word fixed effect: some parties just use certain words more (e.g.&nbsp;their own name)</p></li>
-<li class="fragment"><p><span class="math inline">\(\beta_j\)</span>: <span class="red">word specific weights</span> (discrimination parameter, adds more information than simple usage)</p></li>
-<li class="fragment"><p><span class="math inline">\(\omega_{it}\)</span> estimate of <span class="red">party’s position</span> in a given year.</p></li>
-</ul>
-</div>
-</section>
-<section id="estimation" class="slide level2 center">
-<h2>Estimation</h2>
-<p><span class="math display">\[ \lambda_{ijt}=\exp({\alpha_{it} + \psi_j + \beta_j\times\omega_{it}}) \]</span></p>
-<p>Nothing on RHS is known: everything needs to be estimated.</p>
-<ul>
-<li class="fragment"><p>Use Expectation Maximization (EM) algorithm (same as we could use for topic models):</p>
-<ul>
-<li class="fragment"><p>Initialize values based on counts of words and length of party manifestors a in the data</p></li>
-<li class="fragment"><p>E-Step: run a poisson regression holding word parameters fixed (word verbose and word discrimination), and estimating the party parameters (party verbose and party position) based on counts of each word j in document it</p></li>
-<li class="fragment"><p>M-Step: run a Poisson regression holding party parameters fixed, and estimating the word parameters based on counts of each word j in document it</p></li>
-<li class="fragment"><p>Iterate until convergence</p></li>
-</ul></li>
-<li class="fragment"><p>Other option: Bayesian Estimation with Gibbs sampling.</p></li>
-</ul>
-</section>
-<section id="results-i" class="slide level2 center">
-<h2>Results I</h2>
-
-<img data-src="./week10_figs/wordfish_i.png" style="width:100.0%" class="r-stretch"></section>
-<section id="results-ii" class="slide level2 center">
-<h2>Results II</h2>
-
-<img data-src="./week10_figs/wordfish_ii.png" style="width:100.0%" class="r-stretch"></section>
-<section id="assumption" class="slide level2 center">
-<h2>Assumption</h2>
-<p>All scaling models (either supervised or unsupervised) make a strong assumption of <strong>ideological dominance assumption</strong></p>
-<blockquote>
-<p>the primary distinguishing feature of the language of the political actors is ideology.</p>
-</blockquote>
-<ul>
-<li class="fragment"><p>When the assumption holds: the model will reliably capture ideological differences</p></li>
-<li class="fragment"><p>When the assumption doesn’t hold: the models will capture other dimension that separates language use, not exactly policy scaling.</p></li>
-</ul>
-</section>
-<section id="grimmer-vs-wordfish" class="slide level2 center">
-<h2>Grimmer vs Wordfish</h2>
 
 
-<img data-src="wordfish_grimmer.png" style="width:100.0%" class="r-stretch"><div class="footer footer-default">
-<p>Text-as-Data</p>
-</div>
-</section></section>
+
+
+
+
+
+
+
+
+
+
+
+</section>
+
     </div>
   </div>
 

@@ -10,8 +10,8 @@ format:
     transition: slide
     background-transition: fade
     code-line-numbers: false
-    width: 1400
-    height: 800
+    width: 1600
+    height: 900
     center: true
     slide-number: true
     incremental: true

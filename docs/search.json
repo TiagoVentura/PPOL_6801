@@ -1621,7 +1621,7 @@
     "href": "slides/week_10.html#plans-for-today",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Plans for Today:",
-    "text": "Plans for Today:\n\nFinal Project + Mid-Semester Review\nFinish Topic Models + Code\nOverview of scaling models\nScaling models using text\n\nsupervised models: wordscore\nunsupervised models: wordfish"
+    "text": "Plans for Today:\n\nQuick introduction to Word Embedding + Matrix Factorization\nCoding\nIn class Exercise: Applied Readings"
   },
   {
     "objectID": "slides/week_10.html#final-project",
@@ -2504,5 +2504,306 @@
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Example",
     "text": "Example\nLet’s practice with a vocabulary of size 5, a embedding with 3 dimensions, and the task is to predict ONLY the next word.\nStep 1: v_{1,5} * W_{5,3} = C_{1,3}\n\n\nWhere W is the embedding for center words\n\n\n\\[\n\\mathbf{v} =\n\\begin{bmatrix}\n0 \\\\\n0 \\\\\n1 \\\\\n0 \\\\\n0\n\\end{bmatrix}\n\\]\n\\[\n\\mathbf{W} =\n\\begin{bmatrix}\n.1 & .3 & -.23 \\\\\n.2 & -.06 & -.26 \\\\\n.3 & -.16& -.13 \\\\\n.5 & .26 & -.03 \\\\\n.6 & -.46 & -.53\n\\end{bmatrix}\n\\]\n\\[v_T*W = C = \\begin{bmatrix}.3 & -.16& -.13 \\end{bmatrix} \\]"
+  },
+  {
+    "objectID": "slides/week_10.html#estimating-word-embeddings",
+    "href": "slides/week_10.html#estimating-word-embeddings",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Estimating Word Embeddings",
+    "text": "Estimating Word Embeddings\nApproches:\n\n\n\nNeural Networks: rely on the idea of self-supervision\n\nuse unlabeled data and use words to predict sequence\nthe famous word2vec algorithm\n\nSkipgram: predicts context words\nContinuous Bag of Words: predict center word\n\n\n\n\n\n\nCount-based methods: look at how often words co-occur with neighbors.\n\nUse this matrix, and use some factorization to retrieve vectors for the words\nFast, not computationally intensive, but not the best representation, because it is not fully local\nThis approach is somewhat implemented by the “GloVE” algorithm"
+  },
+  {
+    "objectID": "slides/week_10.html#recurrent-neural-networks",
+    "href": "slides/week_10.html#recurrent-neural-networks",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Recurrent Neural Networks",
+    "text": "Recurrent Neural Networks\n\n\n\n\n\n\n\n\n\n\n\nSource: CS224N"
+  },
+  {
+    "objectID": "slides/week_10.html#transformers",
+    "href": "slides/week_10.html#transformers",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Transformers",
+    "text": "Transformers\n\n\n\n\n\n\n\nSource: CS224N"
+  },
+  {
+    "objectID": "slides/week_10.html#count-based-approaches",
+    "href": "slides/week_10.html#count-based-approaches",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Count Based Approaches",
+    "text": "Count Based Approaches\nCount-based methods rely on word co-occurrence to learn embeddings:\n\nCompute Unigram Probabilities: Measure how often each word appears in the corpus\nCompute Word Co-occurrences: Count how often words appear together across the entire corpus\nCalculate PMI (Pointwise Mutual Information): Measures how much more often two words co-occur than expected by chance\n\n\n\\[\nPMI(\\text{word}_1, \\text{word}_2) = \\log \\frac{P(\\text{word}_1, \\text{word}_2)}{P(\\text{word}_1) \\, P(\\text{word}_2)}\n\\]"
+  },
+  {
+    "objectID": "slides/week_10.html#section",
+    "href": "slides/week_10.html#section",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "",
+    "text": "Construct a Co-occurrence Matrix: Store PMI values in a large word-by-word matrix\nApply Singular Value Decomposition (SVD): Reduce the matrix to extract meaningful lower-dimensional word vectors\n\n\nSVD is a matrix factorization technique used in linear algebra and data science\nReduces dimensionality by identifying important patterns in data: splits the matrix into fundamental patterns (singular vectors), ranked by importance (singular values)\n\nLove this youtube video here: https://www.youtube.com/watch?v=vSczTbgc8Rc\n\nGlove algorithm is a variation of this approach."
+  },
+  {
+    "objectID": "slides/week_10.html#decisions-when-using-embeddings-rodriguez-and-spirling-2022",
+    "href": "slides/week_10.html#decisions-when-using-embeddings-rodriguez-and-spirling-2022",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Decisions when using embeddings, Rodriguez and Spirling, 2022",
+    "text": "Decisions when using embeddings, Rodriguez and Spirling, 2022\n\n\n\n\n\n\n\n\n \nWhen using/training embeddings, we face four key decisions:\n\nWindow size\nNumber of dimensions for the embedding matrix\nPre-trained versus locally fit variants\nWhich algorithm to use?"
+  },
+  {
+    "objectID": "slides/week_10.html#findings",
+    "href": "slides/week_10.html#findings",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Findings",
+    "text": "Findings\n\n\npopular, easily available pretrained embeddings perform at a level close to—or surpassing—both human coders andmore complicated locally fit models.\nGloVe pretrained word embeddings achieve on average—for the set of political queries—80% of human performance and are generally preferred to locally trained embeddings\nLarger window size and embeddings are often preferred."
+  },
+  {
+    "objectID": "slides/week_10.html#applications-1",
+    "href": "slides/week_10.html#applications-1",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Applications",
+    "text": "Applications\nLet’s discuss now several applications of embeddings on social science papers. These paper show:\n\nHow to use embeddings to track semantic changes over time\nHow to use embeddings to measure emotion in political language.\nHow to use embeddings to measure gender and ethnic stereotypes\nAnd a favorite of political scientists, how to use embeddings to measure ideology."
+  },
+  {
+    "objectID": "slides/week_10.html#how-will-we-make-this-discussion-fun",
+    "href": "slides/week_10.html#how-will-we-make-this-discussion-fun",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "How will we make this discussion fun?",
+    "text": "How will we make this discussion fun?\n\nI: introduce the paper and the main goals\nYou: will explain to me how the author use the word embeddings to do so."
+  },
+  {
+    "objectID": "slides/week_10.html#capturing-cultural-dimensions-with-embeddings",
+    "href": "slides/week_10.html#capturing-cultural-dimensions-with-embeddings",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Capturing cultural dimensions with embeddings",
+    "text": "Capturing cultural dimensions with embeddings\n\nAustin C. Kozlowski, Austin C., Matt Taddy, and James A. Evans. 2019. “The Geometry of Culture: Analyzing the Meanings of Class through Word Embeddings.” American Sociological Review 84, no. 5: 905–49. https://doi.org/10.1177/0003122419877135.\n\n\nWord Embeddings can be use to capture cultural dimensions\nDimensions of word embedding vector space models closely correspond to meaningful “cultural dimensions,” such as rich-poor, moral-immoral, and masculine-feminine.\na word vector’s position on these dimensions reflects the word’s respective cultural associations"
+  },
+  {
+    "objectID": "slides/week_10.html#your-turn-how",
+    "href": "slides/week_10.html#your-turn-how",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Your turn: How?",
+    "text": "Your turn: How?\n\nHow are the cultural dimensions built?\nHow associations between words and dimensions are calculated?\nHow are the result validated?"
+  },
+  {
+    "objectID": "slides/week_10.html#results-1",
+    "href": "slides/week_10.html#results-1",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Results",
+    "text": "Results"
+  },
+  {
+    "objectID": "slides/week_10.html#semantic-changes-over-time",
+    "href": "slides/week_10.html#semantic-changes-over-time",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Semantic changes over time",
+    "text": "Semantic changes over time\n\nRodman, E., 2020. A Timely Intervention: Tracking the Changing Meanings of Political Concepts with Word Vectors. Political Analysis, 28(1), pp.87-111.\n\n\nWord Vectors allow us to capture semantic meaning\nInteresting social science questions hinge on the recognition that meaning changes over time\nHow can we properly use word to vectors to track changes over time?\nThree challenges:\n\nArbitrary Cut Points\nLanguage Instability (same concept != words)\nSpatial Noncomparability (latent spaces are not constants)\n\nSolutions:\n\nnaive time series model (just cut)\noverlapping time series model (just cut and add a t-1)\nchronologically trained model (initialize with global parameters)\naligned time series method (post-modelling adjustments)"
+  },
+  {
+    "objectID": "slides/week_10.html#results-2",
+    "href": "slides/week_10.html#results-2",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Results",
+    "text": "Results"
+  },
+  {
+    "objectID": "slides/week_10.html#your-turn-how-1",
+    "href": "slides/week_10.html#your-turn-how-1",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Your turn: How?",
+    "text": "Your turn: How?\n\nHow does she uses word2vec?\nWhat is there pipeline to build a golden set?\nWhat is her outcome measure and how she builds it?"
+  },
+  {
+    "objectID": "slides/week_10.html#ideological-scaling",
+    "href": "slides/week_10.html#ideological-scaling",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Ideological Scaling",
+    "text": "Ideological Scaling\n\nRheault, Ludovic, and Christopher Cochrane. “Word embeddings for the analysis of ideological placement in parliamentary corpora.” Political Analysis 28, no. 1 (2020): 112-133.\n\n\nCan word vectors be used to produce scaling estimates of ideological placement on political text?\n\nYes, and word vectors are even better\n\nIt captures semantics\nNo need of training data (self-supervision)"
+  },
+  {
+    "objectID": "slides/week_10.html#your-turn-how-with-a-little-help.",
+    "href": "slides/week_10.html#your-turn-how-with-a-little-help.",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Your turn: How? With a little help.",
+    "text": "Your turn: How? With a little help.\n\n\n\n\n\n\n\n\n\nOther than the a vector for the covariate, what are the other things this model gives you?\nCan you get these vectors without having to re-estimate the model?"
+  },
+  {
+    "objectID": "slides/week_10.html#results-3",
+    "href": "slides/week_10.html#results-3",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Results",
+    "text": "Results"
+  },
+  {
+    "objectID": "slides/week_10.html#measuring-emotion",
+    "href": "slides/week_10.html#measuring-emotion",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Measuring Emotion",
+    "text": "Measuring Emotion\n\nGennaro, Gloria, and Elliott Ash. “Emotion and reason in political language.” The Economic Journal 132, no. 643 (2022): 1037-1059."
+  },
+  {
+    "objectID": "slides/week_10.html#you-turn-how",
+    "href": "slides/week_10.html#you-turn-how",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "You turn: How?",
+    "text": "You turn: How?\n\nWhat are the seed words for emotion and cognition?\nHow are word vectors for speech aggregated?\nHow are word vectors for seed words aggregated?\nHow do the authors measure emotionality in text?"
+  },
+  {
+    "objectID": "slides/week_10.html#gender-and-ethnic-stereotypes",
+    "href": "slides/week_10.html#gender-and-ethnic-stereotypes",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Gender and ethnic stereotypes",
+    "text": "Gender and ethnic stereotypes\n\nGarg, Nikhil, Londa Schiebinger, Dan Jurafsky and James Zou. 2018. “Word embeddings quantify 100 years of gender and ethnic stereotypes.” Proceedings of the National Academy of Sciences 115(16):E3635–E3644.\n\n\nWord Embeddings are trained in huge volumes of data\nTraining data contain stereotypes, for example, in gender and ethnic dimensions.\nHow can we use word vectors to understand these stereotypes?"
+  },
+  {
+    "objectID": "slides/week_10.html#your-turn-how-2",
+    "href": "slides/week_10.html#your-turn-how-2",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Your turn: how?",
+    "text": "Your turn: how?\n\nWhat are the measures of biases proposed by the author?\nWhat the input here? And the variation over time?"
+  },
+  {
+    "objectID": "slides/week_10.html#results-4",
+    "href": "slides/week_10.html#results-4",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Results",
+    "text": "Results"
+  },
+  {
+    "objectID": "slides/week_10.html#applications",
+    "href": "slides/week_10.html#applications",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Applications",
+    "text": "Applications\nLet’s discuss now several applications of embeddings on social science papers. These paper show:\n\nHow to use embeddings to track semantic changes over time\nHow to use embeddings to measure emotion in political language.\nHow to use embeddings to measure gender and ethnic stereotypes\nAnd a favorite of political scientists, how to use embeddings to measure ideology."
+  },
+  {
+    "objectID": "slides/week_10.html#in-class-exercise",
+    "href": "slides/week_10.html#in-class-exercise",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "In class exercise",
+    "text": "In class exercise\n\nWork in pairs\nEach pair will select one of the five applied papers for this week\nPrepare a presentation about this paper for your colleagues (30min)\nYour presentation needs to answer three key questions:\n\nHow are word embeddings used?\nWhat substantive/applied insights are extracted from the embeddings approach?\nCould this be done with non-embeddings methods (any of the things we saw before embeddings)?\n\nEvery group will have 5 minutes to present"
+  },
+  {
+    "objectID": "slides/week_10.html#papers-and-pairs",
+    "href": "slides/week_10.html#papers-and-pairs",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Papers and pairs",
+    "text": "Papers and pairs\n\nRodman, E., 2020. A Timely Intervention: Tracking the Changing Meanings of Political Concepts with Word Vectors. Political Analysis, 28(1), pp.87-111.\nGennaro, Gloria, and Elliott Ash. “Emotion and reason in political language.” The Economic Journal 132, no. 643 (2022): 1037-1059.\nRheault, Ludovic, and Christopher Cochrane. “Word embeddings for the analysis of ideological placement in parliamentary corpora.” Political Analysis 28, no. 1 (2020): 112-133.\nAustin C. Kozlowski, Austin C., Matt Taddy, and James A. Evans. 2019. “The Geometry of Culture: Analyzing the Meanings of Class through Word Embeddings.” American Sociological Review 84, no. 5: 905–49.\nGarg, Nikhil, Londa Schiebinger, Dan Jurafsky and James Zou. 2018. “Word embeddings quantify 100 years of gender and ethnic stereotypes.” Proceedings of the National Academy of Sciences 115(16):E3635–E3644."
+  },
+  {
+    "objectID": "slides/week_10.html#coding",
+    "href": "slides/week_10.html#coding",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Coding!",
+    "text": "Coding!"
+  },
+  {
+    "objectID": "schedule.html#week-10-november-10",
+    "href": "schedule.html#week-10-november-10",
+    "title": "Weekly Materials & Readings",
+    "section": "Week 10: November 10",
+    "text": "Week 10: November 10\n\nTopics: Word Embeddings - Applied Paper\nLecture: Week 10 - Word embeddings II\nCoding Materials in R:\n\n Week 9 - Word Embeddings in R \n\nCoding Materials in Python (Optional)\n\nWord Vectors with Gensim:  notebook"
+  },
+  {
+    "objectID": "slides/week_13.html",
+    "href": "slides/week_13.html",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "",
+    "text": "Q&A about Transformers\nOutsourcing Text-as-Data Tasks with GenAI LLMs\nTheory & Code for Applications\n\nText Classification\nScaling\nSynthetic Survey Responses"
+  },
+  {
+    "objectID": "slides/week_13.html#plans-for-today",
+    "href": "slides/week_13.html#plans-for-today",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "",
+    "text": "Q&A about Transformers\nOutsourcing Text-as-Data Tasks with GenAI LLMs\nTheory & Code for Applications\n\nText Classification\nScaling\nSynthetic Survey Responses"
+  },
+  {
+    "objectID": "slides/week_13.html#transformers",
+    "href": "slides/week_13.html#transformers",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Transformers",
+    "text": "Transformers"
+  },
+  {
+    "objectID": "slides/week_13.html#outsourcing-text-as-data-tasks-with-genai-llms",
+    "href": "slides/week_13.html#outsourcing-text-as-data-tasks-with-genai-llms",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Outsourcing Text-as-Data Tasks with GenAI LLMs",
+    "text": "Outsourcing Text-as-Data Tasks with GenAI LLMs\nInstead of training your own model, or use a pre-trained model, researchers can use the language capabilities of LLMs to perform computational text-analysis tasks.\n\nPrompt Engineering:\n\nZero Shot: Classify the sentiment of the following review:\nFew Shot: Given these examples, Classify the sentiment of the following review:\nRole: Acting as a crowdworker, classify the sentiment of following review:\nChain-of-thought: prompting means guiding a language model through a series of connected logical steps or thoughts"
+  },
+  {
+    "objectID": "slides/week_13.html#social-science-applicattions",
+    "href": "slides/week_13.html#social-science-applicattions",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Social Science Applicattions",
+    "text": "Social Science Applicattions\nThis is an area of active research! Hundreads of working papers, and we will discus some of my favorites. We will cover three core application:\n\nUsing LLMs to classification tasks.\nUsing LLMs to build ideological scores.\nUsing LLMs to generate synthetic survey data, and examining sources of bias."
+  },
+  {
+    "objectID": "slides/week_13.html#llms-classification",
+    "href": "slides/week_13.html#llms-classification",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "LLMs: Classification",
+    "text": "LLMs: Classification\n\nRathje et. al. “GPT is an effective tool for multilingual psychological text analysis”\n\n\nDictionaries show low accuracy on text classification tasks (Really?!?)\nML models are better but more expensive on time and resources\n\nAnd require retraining for multi-lingual tasks\n\nUse LLMs with zero-shot prompting for measure psycological concepts (sentiment classification)."
+  },
+  {
+    "objectID": "slides/week_13.html#how-does-it-work",
+    "href": "slides/week_13.html#how-does-it-work",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "How does it work?",
+    "text": "How does it work?\n\n“Is the sentiment of this text positive, neutral, or negative? Answer only with a number: 1 if positive, 2 if neutral, and 3 if negative. Here is the text: [tweet, news headline or Reddit comment text]”\n\n\nTo think about this as next work prediction, think about this example:\n\nP(w=positive|I love this class) &gt; P(w=neutral|I love this class)\n\nIs this the most likely next work?\nNo… but it is more likely than the word negative\nOr other negative words that are close to negative in the embedding space."
+  },
+  {
+    "objectID": "slides/week_13.html#results",
+    "href": "slides/week_13.html#results",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Results",
+    "text": "Results"
+  },
+  {
+    "objectID": "slides/week_13.html#llms-scaling",
+    "href": "slides/week_13.html#llms-scaling",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "LLMs: Scaling",
+    "text": "LLMs: Scaling\n\nWu et. al. “Large Language Models Can Be Used to Estimate the Latent Positions of Politicians”\n\n\nNovel approach to measure ideal points for politicians using LLMs.\nUse ChatGPT-3.5 to pairwise compare the members of the congress in a pre-specific dimension.\n\nsimilar task to the readability score using crowdworkers\n\nUse the Bradley-Terry Model to estimate a unidimensional scale measuring latent political positions of interest\nEstimate both ideological scaling, and issue specific scales (Gun Control and Abortion)"
+  },
+  {
+    "objectID": "slides/week_13.html#results-1",
+    "href": "slides/week_13.html#results-1",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Results",
+    "text": "Results"
+  },
+  {
+    "objectID": "slides/week_13.html#llms-survey-responses-and-bias",
+    "href": "slides/week_13.html#llms-survey-responses-and-bias",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "LLMs: Survey Responses and Bias",
+    "text": "LLMs: Survey Responses and Bias\n\nBisbee et. al. “Synthetic Replacements for Human Survey Data? The Perils of Large Language Models”\n\n\nPublic opinion polling is in crises ~ non-random non-repsonse + high costs to get it right\nCan LLMs be leveraged for public opinion research? Can LLMs be used to generate synthetic survey responses?\nPrompt ChatGPT to:\n\nFirst adopt various personas defined by demographic and political characteristics\nAnswer a battery of questions about feelings towards social and political groups\nFeatures are taken from the American National Election Study"
+  },
+  {
+    "objectID": "slides/week_13.html#prompts",
+    "href": "slides/week_13.html#prompts",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Prompts",
+    "text": "Prompts\n\n“It is [YEAR]. You are a [AGE] year-old, [MARST], [RACETH] [GENDER] with [EDUCATION] making [INCOME] per year, living in the United States. You are [IDEO], [REGIS] [PID] who [INTEREST] pays attention to what’s going on in government and politics.”"
+  },
+  {
+    "objectID": "slides/week_13.html#results-2",
+    "href": "slides/week_13.html#results-2",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Results",
+    "text": "Results"
+  },
+  {
+    "objectID": "slides/week_13.html#results-3",
+    "href": "slides/week_13.html#results-3",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Results",
+    "text": "Results"
+  },
+  {
+    "objectID": "slides/week_13.html#results-4",
+    "href": "slides/week_13.html#results-4",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Results",
+    "text": "Results"
   }
 ]
