@@ -318,6 +318,8 @@ toks_fcm <- fcm(toks_feats,
 
 head(toks_fcm)
 
+### MESSAGE TO MYSELF: DO NOT RUN THIS IN CLASS!!!!
+
 # estimate glove model using text2vec
 ## set parameters
 glove <- GlobalVectors$new(rank = DIM, 
@@ -334,12 +336,12 @@ end = Sys.time()
 print(end-start)
 
 #saveRDS(wv_main, file = "data/local_glove_2025.rds")
-saveRDS(glove, file = "data/local_glove_context_2025.rds")
+#saveRDS(glove, file = "data/local_glove_context_2025.rds")
 
 wv_main = read_rds(file = "data/local_glove_2025.rds")
 glove = read_rds(file = "data/local_glove_context_2025.rds")
 
-
+# see
 wv_main
 
 # get output
@@ -467,7 +469,7 @@ reticulate::use_condaenv("ppol6801")
 reticulate::py_config()
 
 # install
-conda_install("ppol6801", packages = c("gensim"))
+#conda_install("ppol6801", packages = c("gensim"))
 
 gensim <- import("gensim") # import python gensim library
 Word2Vec <- gensim$models$Word2Vec # Extract the Word2Vec model
@@ -483,7 +485,8 @@ MIN_COUNT <- 10L
 WORKERS <- as.integer(as.integer(RcppParallel::defaultNumThreads()))
 print(WORKERS)
 
-## run the model. it is actually quite fast using gensim
+
+### NOTE TO MYSELF-- ALSO DO NOT RUN THIS.
 start_time_est <- Sys.time()
 basemodel = Word2Vec(text, 
                      workers = WORKERS,
@@ -497,13 +500,14 @@ basemodel = Word2Vec(text,
 Sys.time() - start_time_est
 
 # convert to a matrix
+#embeds <- read_rds("data/word2vec_gensim.rds")
+
 library(Matrix)
 embeds <- basemodel$wv$vectors
 rownames(embeds) <- basemodel$wv$index_to_key
 
 # save
 #saveRDS(embeds, file ="data/word2vec_gensim.rds")
-embeds <- read_rds("data/word2vec_gensim.rds")
 
 # again see nearest words                      
 nearest_words(embeds, "obama", n=10)
@@ -720,3 +724,6 @@ print_cmat(lasso_cmat_wv)
 
 ## but mostly, these embeddings will for the core of more sophisticated models, 
 ## as transformers and LLMs. 
+
+
+## Switch now to the python notebook!!

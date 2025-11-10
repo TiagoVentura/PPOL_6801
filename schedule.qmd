@@ -112,5 +112,3 @@ subtitle: "Data Science and Public Policy, McCourt School for Public Polcy, Geor
 -   **Coding Materials in Python (Optional)**
 
     -   Word Vectors with Gensim: <a href="https://www.dropbox.com/scl/fi/v5ld2gpswxb2tmyezwyx4/_day2_word_vectors.ipynb?rlkey=2eb88oe4dme7f57c60rimbtke&dl=0" download> notebook </a>
-
-

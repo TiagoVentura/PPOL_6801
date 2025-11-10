@@ -2805,5 +2805,12 @@
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Results",
     "text": "Results"
+  },
+  {
+    "objectID": "slides/week_10.html#neural-networks-approach",
+    "href": "slides/week_10.html#neural-networks-approach",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Neural Networks Approach",
+    "text": "Neural Networks Approach\n\nWe saw ONE way to estimate word vectors with neural networks: Word2Vec\nHowever, at this point in time, we actually do not really use Word2Vec embedding in modern DL\nConsider Word2Vec as a general approach of learn dense representation of words via self-supervision.\nBut… you will have many many many distinct NN architectures doing this."
   }
 ]

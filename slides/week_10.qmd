@@ -34,14 +34,12 @@ editor_options:
 
 -   In class Exercise: Applied Readings
 
-
 ## Estimating Word Embeddings
 
 ### Approches:
 
-::: nonincremental
+::::: nonincremental
 ::: fragment
-
 -   [Neural Networks:]{.red} rely on the idea of **self-supervision**
     -   use unlabeled data and use words to predict sequence
     -   the famous **word2vec** algorithm
@@ -55,32 +53,38 @@ editor_options:
     -   Fast, not computationally intensive, but not the best representation, because it is not fully local
     -   This approach is somewhat implemented by the "GloVE" algorithm
 :::
-:::
+:::::
 
+## Neural Networks Approach
 
-## Recurrent Neural Networks 
+- We saw ONE way to estimate word vectors with neural networks: Word2Vec
+
+- However, at this point in time, we actually do not really use Word2Vec embedding in modern DL
+
+- Consider Word2Vec as a general approach of learn dense representation of words via self-supervision. 
+
+- But... you will have many many many distinct NN architectures doing this. 
+
+## Recurrent Neural Networks
 
 ```{r echo=FALSE, out.width = "50%"}
 #| fig-align: "center"
 knitr::include_graphics("rnn2.png") 
 ```
 
-
-:::aside
+::: aside
 Source: [CS224N](https://web.stanford.edu/class/cs224n/index.html#schedule)
 :::
 
 ## Transformers
 
-
 ```{r echo=FALSE, out.width = "100%"}
 knitr::include_graphics("./week13_figs/transformers.png") 
 ```
 
-:::aside
+::: aside
 Source: [CS224N](https://web.stanford.edu/class/cs224n/index.html#schedule)
 :::
-
 
 # Word Embeddings via Count Based Methods (No Deep Learning)
 
@@ -88,40 +92,35 @@ Source: [CS224N](https://web.stanford.edu/class/cs224n/index.html#schedule)
 
 Count-based methods rely on word co-occurrence to learn embeddings:
 
+1.  Compute Unigram Probabilities: Measure how often each word appears in the corpus
 
-1. Compute Unigram Probabilities: Measure how often each word appears in the
-corpus
+2.  Compute Word Co-occurrences: Count how often words appear together across the entire corpus
 
-2. Compute Word Co-occurrences: Count how often words appear together across
-the entire corpus
-
-3. Calculate PMI (Pointwise Mutual Information): Measures how much more often two words co-occur than expected by chance
+3.  Calculate PMI (Pointwise Mutual Information): Measures how much more often two words co-occur than expected by chance
 
 ::: fragment
-
 $$
 PMI(\text{word}_1, \text{word}_2) = \log \frac{P(\text{word}_1, \text{word}_2)}{P(\text{word}_1) \, P(\text{word}_2)}
 $$
 :::
 
-##
+## 
 
-4. Construct a Co-occurrence Matrix: Store PMI values in a large word-by-word
-matrix
+4.  Construct a Co-occurrence Matrix: Store PMI values in a large word-by-word matrix
 
-5. Apply Singular Value Decomposition (SVD): Reduce the matrix to extract
-meaningful lower-dimensional word vectors
+5.  Apply Singular Value Decomposition (SVD): Reduce the matrix to extract meaningful lower-dimensional word vectors
 
-  - SVD is a matrix factorization technique used in linear algebra and data science
-  - Reduces dimensionality by identifying important patterns in data: splits the matrix into fundamental patterns (singular vectors), ranked by importance (singular values)
-  
-       - Love this youtube video here: https://www.youtube.com/watch?v=vSczTbgc8Rc
-   
-- Glove algorithm is a variation of this approach. 
-       
+-   SVD is a matrix factorization technique used in linear algebra and data science
+
+-   Reduces dimensionality by identifying important patterns in data: splits the matrix into fundamental patterns (singular vectors), ranked by importance (singular values)
+
+    -   Love this youtube video here: https://www.youtube.com/watch?v=vSczTbgc8Rc
+
+-   Glove algorithm is a variation of this approach.
+
 ## Coding!
 
-## Decisions when using embeddings, Rodriguez and Spirling, 2022{visibility="hidden"}
+## Decisions when using embeddings, Rodriguez and Spirling, 2022 {visibility="hidden"}
 
 ::::: columns
 ::: {.column width="60%"}
@@ -145,7 +144,7 @@ When using/training embeddings, we face four key decisions:
 :::
 :::::
 
-## Findings{visibility="hidden"}
+## Findings {visibility="hidden"}
 
 ```{r echo=FALSE, out.width = "100%", fig.align="center"}
 knitr::include_graphics("./week7_figs/rodriguez.png") 
@@ -171,35 +170,33 @@ Let's discuss now several applications of embeddings on social science papers. T
 
 ## In class exercise
 
-1. Work in pairs 
+1.  Work in pairs
 
-2. Each pair will select one of the five applied papers for this week 
+2.  Each pair will select one of the five applied papers for this week
 
-3. Prepare a presentation about this paper for your colleagues (30min)
+3.  Prepare a presentation about this paper for your colleagues (30min)
 
-4. Your presentation needs to answer three key questions: 
+4.  Your presentation needs to answer three key questions:
 
-   - How are word embeddings used?
-   
-   - What substantive/applied insights are extracted from the embeddings approach?
-   
-   - Could this be done with non-embeddings methods (any of the things we saw before embeddings)? 
-   
-4. Every group will have 5 minutes to present
+    -   How are word embeddings used?
 
+    -   What substantive/applied insights are extracted from the embeddings approach?
+
+    -   Could this be done with non-embeddings methods (any of the things we saw before embeddings)?
+
+5.  Every group will have 5 minutes to present
 
 ## Papers and pairs
 
-- Rodman, E., 2020. A Timely Intervention: Tracking the Changing Meanings of Political Concepts with Word Vectors. Political Analysis, 28(1), pp.87-111.
+-   Rodman, E., 2020. A Timely Intervention: Tracking the Changing Meanings of Political Concepts with Word Vectors. Political Analysis, 28(1), pp.87-111.
 
-- Gennaro, Gloria, and Elliott Ash. “Emotion and reason in political language.” The Economic Journal 132, no. 643 (2022): 1037-1059.
+-   Gennaro, Gloria, and Elliott Ash. “Emotion and reason in political language.” The Economic Journal 132, no. 643 (2022): 1037-1059.
 
-- Rheault, Ludovic, and Christopher Cochrane. “Word embeddings for the analysis of ideological placement in parliamentary corpora.” Political Analysis 28, no. 1 (2020): 112-133.
+-   Rheault, Ludovic, and Christopher Cochrane. “Word embeddings for the analysis of ideological placement in parliamentary corpora.” Political Analysis 28, no. 1 (2020): 112-133.
 
-- Austin C. Kozlowski, Austin C., Matt Taddy, and James A. Evans. 2019. “The Geometry of Culture: Analyzing the Meanings of Class through Word Embeddings.” American Sociological Review 84, no. 5: 905–49.
+-   Austin C. Kozlowski, Austin C., Matt Taddy, and James A. Evans. 2019. “The Geometry of Culture: Analyzing the Meanings of Class through Word Embeddings.” American Sociological Review 84, no. 5: 905–49.
 
-- Garg, Nikhil, Londa Schiebinger, Dan Jurafsky and James Zou. 2018. “Word embeddings quantify 100 years of gender and ethnic stereotypes.” Proceedings of the National Academy of Sciences 115(16):E3635–E3644.
-
+-   Garg, Nikhil, Londa Schiebinger, Dan Jurafsky and James Zou. 2018. “Word embeddings quantify 100 years of gender and ethnic stereotypes.” Proceedings of the National Academy of Sciences 115(16):E3635–E3644.
 
 # Have fun!
 
@@ -213,7 +210,7 @@ Let's discuss now several applications of embeddings on social science papers. T
 
 -   a word vector's position on these dimensions reflects the word's respective cultural associations
 
-## Your turn: How?{visibility="hidden"}
+## Your turn: How? {visibility="hidden"}
 
 -   How are the cultural dimensions built?
 
@@ -221,19 +218,19 @@ Let's discuss now several applications of embeddings on social science papers. T
 
 -   How are the result validated?
 
-## Results{visibility="hidden"}
+## Results {visibility="hidden"}
 
 ```{r echo=FALSE, out.width = "100%", fig.align="center"}
 knitr::include_graphics("./week9_figs/culture_1.png") 
 ```
 
-## Results{visibility="hidden"}
+## Results {visibility="hidden"}
 
 ```{r echo=FALSE, out.width = "100%", fig.align="center"}
 knitr::include_graphics("./week9_figs/culture_2.png") 
 ```
 
-## Semantic changes over time{visibility="hidden"}
+## Semantic changes over time {visibility="hidden"}
 
 > Rodman, E., 2020. A Timely Intervention: Tracking the Changing Meanings of Political Concepts with Word Vectors. Political Analysis, 28(1), pp.87-111.
 
@@ -256,13 +253,13 @@ knitr::include_graphics("./week9_figs/culture_2.png")
     -   chronologically trained model (initialize with global parameters)
     -   aligned time series method (post-modelling adjustments)
 
-## Results{visibility="hidden"}
+## Results {visibility="hidden"}
 
 ```{r echo=FALSE, out.width = "100%", fig.align="center"}
 knitr::include_graphics("./week9_figs/rodman.png") 
 ```
 
-## Your turn: How?{visibility="hidden"}
+## Your turn: How? {visibility="hidden"}
 
 -   How does she uses word2vec?
 
@@ -270,7 +267,7 @@ knitr::include_graphics("./week9_figs/rodman.png")
 
 -   What is her outcome measure and how she builds it?
 
-## Ideological Scaling{visibility="hidden"}
+## Ideological Scaling {visibility="hidden"}
 
 > Rheault, Ludovic, and Christopher Cochrane. "Word embeddings for the analysis of ideological placement in parliamentary corpora." Political Analysis 28, no. 1 (2020): 112-133.
 
@@ -282,7 +279,7 @@ knitr::include_graphics("./week9_figs/rodman.png")
 
         -   No need of training data (self-supervision)
 
-## Your turn: How? With a little help.{visibility="hidden"}
+## Your turn: How? With a little help. {visibility="hidden"}
 
 ::::: columns
 ::: {.column width="50%"}
@@ -298,7 +295,7 @@ knitr::include_graphics("./week9_figs/scaling_00.png")
 :::
 :::::
 
-## Results{visibility="hidden"}
+## Results {visibility="hidden"}
 
 ::::: columns
 ::: {.column width="50%"}
@@ -314,7 +311,7 @@ knitr::include_graphics("./week9_figs/scaling_02.png")
 :::
 :::::
 
-## Measuring Emotion{visibility="hidden"}
+## Measuring Emotion {visibility="hidden"}
 
 > Gennaro, Gloria, and Elliott Ash. "Emotion and reason in political language." The Economic Journal 132, no. 643 (2022): 1037-1059.
 
@@ -322,7 +319,7 @@ knitr::include_graphics("./week9_figs/scaling_02.png")
 knitr::include_graphics("./week9_figs/emotion.png") 
 ```
 
-## You turn: How?{visibility="hidden"}
+## You turn: How? {visibility="hidden"}
 
 -   What are the seed words for emotion and cognition?
 
@@ -332,7 +329,7 @@ knitr::include_graphics("./week9_figs/emotion.png")
 
 -   How do the authors measure emotionality in text?
 
-## Gender and ethnic stereotypes{visibility="hidden"}
+## Gender and ethnic stereotypes {visibility="hidden"}
 
 > Garg, Nikhil, Londa Schiebinger, Dan Jurafsky and James Zou. 2018. "Word embeddings quantify 100 years of gender and ethnic stereotypes." Proceedings of the National Academy of Sciences 115(16):E3635--E3644.
 
@@ -342,13 +339,13 @@ knitr::include_graphics("./week9_figs/emotion.png")
 
 -   How can we use word vectors to understand these stereotypes?
 
-## Your turn: how?{visibility="hidden"}
+## Your turn: how? {visibility="hidden"}
 
 -   What are the measures of biases proposed by the author?
 
 -   What the input here? And the variation over time?
 
-## Results{visibility="hidden"}
+## Results {visibility="hidden"}
 
 ::::: columns
 ::: {.column width="50%"}
@@ -364,4 +361,4 @@ knitr::include_graphics("./week9_figs/bias_02.png")
 :::
 :::::
 
-# `r fontawesome::fa("laptop-code")` Coding!{visibility="hidden"}
+# `r fontawesome::fa("laptop-code")` Coding! {visibility="hidden"}
