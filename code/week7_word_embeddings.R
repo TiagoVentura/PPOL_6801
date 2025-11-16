@@ -2,7 +2,7 @@
 # File-Name: week_word_embeddings.r
 # author: Tiago Ventura
 # course: PPOL 6801 - text as data
-# topics: unsupervised learning
+# topics: Word embeddings
 # Machine: MacOS High Sierra
 ##############################################################################
 
@@ -83,7 +83,20 @@ unigram_probs <- cpts %>%
   # calculate probabilities
   mutate(p = n / sum(n))
 
+head(unigram_probs)
 ## Step 2: Skipgram Probabilities
+df <- tibble(id = c(1, 2), 
+             text=c("hello, I am tiago", "hello, I am sarah")) %>% 
+       unnest_tokens(ngram, 
+                     text, 
+                     token = "ngrams", n = 2)  %>%
+  # creating an id for ngram
+  mutate(ngramID = row_number()) %>% 
+  # create a new id which is pasting id for the comment and id for the ngram
+  tidyr::unite(skipgramID, id, ngramID)  %>%
+  unnest_tokens(word, ngram)
+  
+  
 
 #create context window with length 6
 tidy_skipgrams <- cpts %>% 
@@ -97,18 +110,20 @@ tidy_skipgrams <- cpts %>%
   # unnesting again
   unnest_tokens(word, ngram)
 
+
 # let's see how it looks like
 head(tidy_skipgrams, n=20)
 
 ## What we need to do now is to calculate the joint probability of word 1 and word 2 across all the windows. 
 ## basically for every window
-
 tidy_skipgrams <- tidy_skipgrams %>%
   pairwise_count(word, skipgramID, diag = TRUE, sort = TRUE) %>% # diag = T means that we also count when the word appears twice within the window
   mutate(p = n / sum(n))
 
 ## Step 3: Get the PMI
 head(tidy_skipgrams)
+dim(tidy_skipgrams)
+tail(normalized_prob)
 
 ## Join the skipgram with the unigram probabilities
 normalized_prob <- tidy_skipgrams %>%
@@ -126,7 +141,7 @@ normalized_prob <- tidy_skipgrams %>%
 pmi_matrix <- normalized_prob %>%
   mutate(pmi = log10(p_together)) 
 
-
+tail(pmi_matrix)
 ## Step 4 - Convert to a huge matrix
 ?cast_sparse
 pmi_matrix <- pmi_matrix %>%
@@ -137,6 +152,9 @@ pmi_matrix <- pmi_matrix %>%
 sum(is.na(pmi_matrix@x))
 pmi_matrix@x[is.na(pmi_matrix@x)] <- 0
 
+dim(pmi_matrix)
+
+
 ## Step 5 - Matrix Factorization
 
 # run SVD
@@ -144,6 +162,7 @@ pmi_matrix@x[is.na(pmi_matrix@x)] <- 0
 pmi_svd <- irlba(pmi_matrix, 200, maxit = 500)
 
 str(pmi_svd)
+
 
 # Here are your word vectors
 word_vectors <- pmi_svd$u
@@ -170,6 +189,7 @@ nearest_words <- function(word_vectors, word, n){
 }
 
 rownames(word_vectors)
+
 # See some words
 nearest_words(word_vectors, "error", 10) 
 nearest_words(word_vectors, "month", 10) 
@@ -303,7 +323,7 @@ head(toks_feats)
 ## Defining parameters for the Glove Model
 
 # See more about text2vec here: https://text2vec.org/glove.html 
-WINDOW_SIZE <- 6 # size of the windown for counting co-occurence
+WINDOW_SIZE <- 6 # size of the window for counting co-occurence
 DIM <- 300 # dimensions of the embeddings
 ITERS <- 100 # iterations of the models
 COUNT_MIN <- 10 # minimum count of words that we want to keep
@@ -355,8 +375,8 @@ word_vectors <- wv_main + t(word_vectors_context) # word vectors
 
 # features?
 head(rownames(word_vectors))
-
 class(word_vectors)
+word_vectors[1:100,]
 
 # 2.2 -  Pretrained GLoVE embeddings -------------------------------------------
 
@@ -419,11 +439,11 @@ nearest_words(word_vectors, "abortion", n=10)
 nearest_words(glove_matrix, "abortion", n=10)
 
 # see how we can do mathematical operation with wors
-berlin <- glove_matrix["paris", , drop = FALSE] -
-  glove_matrix["france", , drop = FALSE] +
-  glove_matrix["germany", , drop = FALSE]
+berlin <- glove_matrix["queen", , drop = FALSE] -
+  glove_matrix["girl", , drop = FALSE] +
+  glove_matrix["boy", , drop = FALSE]
 
-library("quanteda.textstats")
+#library("quanteda.textstats")
 cos_sim <- textstat_simil(x = as.dfm(glove_matrix), y = as.dfm(berlin),
                           method = "cosine")
 
@@ -462,11 +482,12 @@ text <- (str_split(text, " "))
 
 # activate gensim
 library(reticulate)
+
 # activate my conda envinroment
-reticulate::use_condaenv("ppol6801")
+#reticulate::use_condaenv("ppol6801")
 
 # check you py version
-reticulate::py_config()
+#reticulate::py_config()
 
 # install
 #conda_install("ppol6801", packages = c("gensim"))
@@ -486,7 +507,7 @@ WORKERS <- as.integer(as.integer(RcppParallel::defaultNumThreads()))
 print(WORKERS)
 
 
-### NOTE TO MYSELF-- ALSO DO NOT RUN THIS.
+### NOTE TO MYSELF -- ALSO DO NOT RUN THIS.
 start_time_est <- Sys.time()
 basemodel = Word2Vec(text, 
                      workers = WORKERS,
@@ -724,6 +745,5 @@ print_cmat(lasso_cmat_wv)
 
 ## but mostly, these embeddings will for the core of more sophisticated models, 
 ## as transformers and LLMs. 
-
 
 ## Switch now to the python notebook!!

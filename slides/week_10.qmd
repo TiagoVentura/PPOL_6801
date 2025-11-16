@@ -57,13 +57,13 @@ editor_options:
 
 ## Neural Networks Approach
 
-- We saw ONE way to estimate word vectors with neural networks: Word2Vec
+-   We saw ONE way to estimate word vectors with neural networks: Word2Vec
 
-- However, at this point in time, we actually do not really use Word2Vec embedding in modern DL
+-   However, at this point in time, we actually do not really use Word2Vec embedding in modern DL
 
-- Consider Word2Vec as a general approach of learn dense representation of words via self-supervision. 
+-   Consider Word2Vec as a general approach of learn dense representation of words via self-supervision.
 
-- But... you will have many many many distinct NN architectures doing this. 
+-   But... you will have many many many distinct NN architectures doing this.
 
 ## Recurrent Neural Networks
 
