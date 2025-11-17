@@ -236,7 +236,9 @@ Or one of the three below:
 
 **Required Readings**
 
--   \[SLP\] - Chapter 9.
+-   [SLP - Chapter 8](https://stanford.edu/~jurafsky/slp3/8.pdf)
+
+-  [Hugging face textbook](https://huggingface.co/learn/llm-course/chapter1/1)
 
 -   Jay Alammar. 2018. "The Illustrated Transformer." https://jalammar.github.io/illustratedtransformer/
 
