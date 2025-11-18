@@ -246,17 +246,15 @@ Or one of the three below:
 
 -   [Timoneda and Vera, BERT, RoBERTa or DeBERTa? Comparing Performance Across Transformer Models in Political Science Text](https://www.journals.uchicago.edu/doi/full/10.1086/730737), The Journal of Politics 87, no. 1 (2025): 000-000.
 
-### Week 13: Large Language Models: Prompting, building chatbots, and social science applications. (Invited Speaker: Dr. Christopher Barrie, Professor Sociology New York University) (December 1)
+### Week 13: Large Language Models: (Invited Speaker: Dr. Patrick Wu, Professor Computer Science, American University) (December 1)
 
 -   **Topics**: We will see some social science application of LLMs chatbots. We will also discuss a working paper on replicability of research using LLMs.
 
 **Required Readings:**
 
--   \[SLP\] - Chapter 10.
+-   \[SLP\] - Chapter 8.
 
 -   [Hugging Face NLP Course, Ch. 2](https://huggingface.co/learn/llm-course/chapter2/1)
-
--   [Barrie, Christopher, Alexis Palmer, and Arthur Spirling. "Replication for language models problems, principles, and best practice for political science."](https://arthurspirling.org/documents/BarriePalmerSpirling_TrustMeBro.pdf)
 
 **Optional:**
 

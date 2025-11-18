@@ -78,7 +78,7 @@ How can we systematically classify text into meaningful categories (e.g., positi
 
 ## What is Supervised Learning?
 
-**Def:** machine learning algorithm type that requires **labeled input** data to understandcthe mapping function from the input to the output
+**Def:** machine learning algorithm type that requires **labeled input** data to understand the mapping function from the input to the output
 
 ::: fragment
 **SUPERVISED:** The true labels y act as a “supervisor” for the learning process
