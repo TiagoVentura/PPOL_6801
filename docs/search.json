@@ -2853,28 +2853,28 @@
     "href": "slides/week_12.html#transformers-summary",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Transformers: Summary",
-    "text": "Transformers: Summary\nDefinition: a Neural Network with a specific structure that includes a mechanism called self-attention. It has become the standard architecture for building large language models\nPublication: first introduced at in the paper Attention is All You Need by a group of researchers from Google Brain.\nUsage: Core architecture behind most recent developments of Natural Language Processing (LLMs):\n\n\n\n\n\n\n\n\n\n\n\nsource: https://huggingface.co/learn/llm-course/chapter1/4"
+    "text": "Transformers: Summary\nDefinition: a Neural Network with a specific structure that includes a mechanism called self-attention.\nPublication: first introduced in the paper Attention is All You Need by a group of researchers from Google Brain.\nUsage: Core architecture behind most recent developments of Natural Language Processing, such as recent LLMs:\n\n\n\n\n\n\n\n\n\n\n\nsource: https://huggingface.co/learn/llm-course/chapter1/4"
   },
   {
     "objectID": "slides/week_12.html#terminology",
     "href": "slides/week_12.html#terminology",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Terminology",
-    "text": "Terminology\n\nTransformers: Neural architectures built around multihead self-attention\nBert: Encoder only Transformer, pretrained on unlabeled text to predict masked tokens in a sentence, ~ 300M parameters. Other similar models: RoBERTa, DiBERTa, XLMRoBERTa, among others\nLLMs: Large Language Models. Language models (next word prediction) based on Transformer, often Decoder only models\nGPT-x: A decoder-only autoregressive transformer, owned by OPENAI. GPT-3 has ~ 175 billion parameters\nLLama: also decoder model, owned by META, trying to keep up with OpenAI\nRNN: Non-transformers, Recurrent Neural Network, processes sequences sequentially, inputs static embeddings, outputs probability over vocabulary\nLSTM: Non-Transformers, Long Short-Term Memory network, an enhanced RNN with gating mechanisms."
+    "text": "Terminology\n\nTransformers: Neural architectures built around multihead self-attention\nRNN: Non-transformers, Recurrent Neural Network, processes sequences sequentially, inputs static embeddings, outputs probability over vocabulary\nLSTM: Non-Transformers, Long Short-Term Memory network, an enhanced RNN with gating mechanisms.\nBert: Encoder only Transformer, pretrained on unlabeled text to predict masked tokens in a sentence, ~ 300M parameters. Other similar models: RoBERTa, DiBERTa, XLMRoBERTa, among others\nLLMs: Large Language Models. Language models (next word prediction) based on Transformer, often Decoder only models\nGPT-x: A decoder-only autoregressive transformer, owned by OPENAI. GPT-3 has ~ 175 billion parameters\nLLama: also decoder model, owned by META, trying to keep up with OpenAI"
   },
   {
     "objectID": "slides/week_12.html#nlp-tasks-leading-to-transformers",
     "href": "slides/week_12.html#nlp-tasks-leading-to-transformers",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "NLP Tasks leading to Transformers",
-    "text": "NLP Tasks leading to Transformers\nThe development of Transformers comes from tasks based on next word prediction (as the Word Embeddings Algorithm we saw). These are at the foundation two core NLP applications:\n\nLanguage Modeling: Predicts the next token using prior sequence\nMachine Translation: translate text from one language to another by learning the representation of input text, and predicting words on the translated language."
+    "text": "NLP Tasks leading to Transformers\nThe development of Transformers comes from tasks based on next word prediction (as the word embeddings algorithms we saw). These are at the foundation two core NLP applications:\n\nLanguage Modeling: Predicts the next token using prior sequence\nMachine Translation: translate text from one language to another by learning the representation of input text, and predicting words on the translated language."
   },
   {
     "objectID": "slides/week_12.html#notable-aspects-of-transformers",
     "href": "slides/week_12.html#notable-aspects-of-transformers",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Notable aspects of Transformers",
-    "text": "Notable aspects of Transformers\nWe will go over four notable aspects of Transformers:\n\nEncoder x Decoder: separates learning embeddings from input (encoding) to text generation (decoding)\nAttention + Contextual Knowledge: the REAL DEAL. Allows words to focus on the most relevant words of a particular sequence. Different vectors for “tower”, “eiffel tower” or “beer tower”. Or the teddy bear examples from Darren and Puran\nParallelization: All tokens are processed simultaneously rather than sequentially. This means we can process words in parallel via GPUs!!\nTraining via masking: Masked inputs to train bi-directional models"
+    "text": "Notable aspects of Transformers\nWe will go over four notable aspects of Transformers:\n\nEncoder x Decoder: separates learning embeddings from input (encoding) to text generation (decoding)\nAttention + Contextual Knowledge: the REAL DEAL. Allows words to focus on the most relevant words of a particular sequence. Different vectors for “tower”, “eiffel tower” or “beer tower”. Or the teddy bear examples from Darren and Puran\nParallelization: All tokens are processed simultaneously rather than sequentially. This means we can process words in parallel via GPUs!!\nTraining via Masked Attention Masked inputs to train bi-directional models"
   },
   {
     "objectID": "slides/week_12.html#a-tour-from-embeddings-to-transformers",
@@ -2888,7 +2888,7 @@
     "href": "slides/week_12.html#fixed-window-neural-language-model",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Fixed Window Neural Language Model",
-    "text": "Fixed Window Neural Language Model\nPaper: Y. Bengio, et al. (2000/2003): A Neural Probabilistic Language Model\n\n\n output distribution\n\\[\\hat{y} = \\mathrm{softmax}(U h + b_2) \\in \\mathbb{R}^{|V|}\\]\nhidden layer\n\\[h = f(W e + b_1)\\]\nconcatenated word embeddings\n\\[e = [e^{(1)}; e^{(2)}; e^{(3)}; e^{(4)}]\\]\nwords / one-hot vectors\n\\[x^{(1)}, x^{(2)}, x^{(3)}, x^{(4)}\\]\n\n\n\n\n\n\n\n\n\n\nSource: CS224N"
+    "text": "Fixed Window Neural Language Model\n\n\n output distribution\n\\[\\hat{y} = \\mathrm{softmax}(U h + b_2) \\in \\mathbb{R}^{|V|}\\]\nhidden layer\n\\[h = f(W e + b_1)\\]\nconcatenated word embeddings\n\\[e = [e^{(1)}; e^{(2)}; e^{(3)}; e^{(4)}]\\]\nwords / one-hot vectors\n\\[x^{(1)}, x^{(2)}, x^{(3)}, x^{(4)}\\]\n\n\n\n\n\n\n\n\n\n\nSource: CS224N"
   },
   {
     "objectID": "slides/week_12.html#rnn",
@@ -2916,14 +2916,14 @@
     "href": "slides/week_12.html#reccurrant-neural-network-rnn",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Reccurrant Neural Network (RNN)",
-    "text": "Reccurrant Neural Network (RNN)\nDef: neural network architecture that processes sentences sequentially with hidden states that carry over-time information.\n\n\n output distribution\n\\[\\hat{y}^{(t)} = \\mathrm{softmax}\\left(U h^{(t)} + b_2\\right) \\in \\mathbb{R}^{|V|}\\]\nhidden states\n\\[h^{(t)} = \\sigma\\left(W_h h^{(t-1)} + W_e e^{(t)} + b_1\\right)\\]\n\\[h^{(0)} \\text{ is the initial hidden state}\\]\nword embeddings\n\\[ e^{(t)} = E x^{(t)} \\]\nwords / one-hot vectors\n\\[x^{(t)} \\in \\mathbb{R}^{|V|}\\]\n\n\n\n\n\n\n\n\n\n\nSource: CS224N"
+    "text": "Reccurrant Neural Network (RNN)\nDef: Neural network architecture that processes sentences sequentially with hidden states that carry over-time information.\n\n\n output distribution\n\\[\\hat{y}^{(t)} = \\mathrm{softmax}\\left(U h^{(t)} + b_2\\right) \\in \\mathbb{R}^{|V|}\\]\nhidden states\n\\[h^{(t)} = \\sigma\\left(W_h h^{(t-1)} + W_e e^{(t)} + b_1\\right)\\]\n\\[h^{(0)} \\text{ is the initial hidden state}\\]\nword embeddings\n\\[ e^{(t)} = E x^{(t)} \\]\nwords / one-hot vectors\n\\[x^{(t)} \\in \\mathbb{R}^{|V|}\\]\n\n\n\n\n\n\n\n\n\n\nSource: CS224N"
   },
   {
     "objectID": "slides/week_12.html#challenges-with-pre-transformers-models",
     "href": "slides/week_12.html#challenges-with-pre-transformers-models",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Challenges with pre-transformers models",
-    "text": "Challenges with pre-transformers models\n\nBottleneck problem: RNNs are unrolled from left-to-right. Hard to capture long-term dependency\nNearby words are often more important becuase they are incorporated more recently\nGradients are unstable (vanishing or exploding) because they depend on continuous chain rules for the calculation\nNon-parallelizable: RNNs handles text sequentially, so you cannot really speed things up with GPUs"
+    "text": "Challenges with pre-transformers models\n\nBottleneck problem: RNNs are unrolled from left-to-right. Hard to capture long-term dependency\nNearby words are often more important because they are incorporated more recently\nGradients are unstable (vanishing or exploding) because they depend on continuous chain rules for the calculation\nNon-parallelizable: RNNs handles text sequentially, so you cannot really speed things up with GPUs"
   },
   {
     "objectID": "slides/week_12.html#notable-aspects-of-transformers-1",
@@ -2958,7 +2958,7 @@
     "href": "slides/week_12.html#self-attention-definition",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Self-Attention: Definition",
-    "text": "Self-Attention: Definition\nDef: the mechanism in the transformer that weighs and combines the representations of context words in the token encoding\n\nWord2vec: the representation of a word’s meaning is always the same vector irrespective of the contex\n\nthe vector for ‘bear’ is the same, no matter if it refers to a ‘teddy bear’,a ’black bear”, or a the show “the bear”.\n\nTransformers can build contextual representations of word meaning (contextual embeddings) by integrating the meaning of these helpful contextual words.\nThe encoder will input a static embedding for each token, but output a contextual embedding for the token in the sentence"
+    "text": "Self-Attention: Definition\nDef: the mechanism in the transformer that weighs and combines the representations of context words in the token encoding\n\nWord2vec: the representation of a word’s meaning is always the same vector irrespective of the context\n\nthe vector for ‘bear’ is the same, no matter if it refers to a ‘teddy bear’,a ’black bear”, or a the show “the bear”.\n\nTransformers can build contextual representations of word meaning (contextual embeddings) by encoding the meaning of contextual words into the token representation.\nThe encoder will input a static embedding for each token, but output a contextual embedding for the token in the sentence"
   },
   {
     "objectID": "slides/week_12.html#hypothetical-example",
@@ -3000,7 +3000,7 @@
     "href": "slides/week_12.html#section-2",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "",
-    "text": "Step 4: Compute output as weighted sum of values\n\\[\no_i = \\sum_j \\alpha_{ij} v_j\n\\] ## Self-Attention on Transformers\n$$\n(Q, K, V) = !( )V\n$$"
+    "text": "Step 4: Compute output as weighted sum of values\n\\[\no_i = \\sum_j \\alpha_{ij} v_j\n\\]"
   },
   {
     "objectID": "slides/week_12.html#step-1",
@@ -3084,14 +3084,14 @@
     "href": "slides/week_12.html#self-attention-intuition",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Self-Attention: Intuition",
-    "text": "Self-Attention: Intuition\n\nConsider these sentences:\n\n“The chicken didn’t cross the road because it was too tired.”\n“The chicken didn’t cross the road because it was too wide.”\n\n“It” refers to different nouns in each sentence.\nIf we read the sentences from left to right, we get: The chicken didn’t cross the road because it…. ?\nAt this point, we don’t know what “it” is referring to."
+    "text": "Self-Attention: Intuition\n\nConsider these sentences:\n\n“The chicken didn’t cross the road because it was too tired.”\n“The chicken didn’t cross the road because it was too wide.”\n\n“It” refers to different nouns in each sentence.\nIf we read the sentences from left to right, we get: The chicken didn’t cross the road because it…. ?\nAt this point, we don’t know what “it” is referring to.\nOne of the fundamental limitations of RNNs was that you must walk through the sequence one word at a time. Self-attention solves many of these issues!"
   },
   {
     "objectID": "slides/week_12.html#parallelization",
     "href": "slides/week_12.html#parallelization",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Parallelization",
-    "text": "Parallelization\n\nThe attention calculate occurs for every token \\(i\\) with respects to all other tokens \\(j\\) in the sequence.\nNo sequence dependence across the tokens, as in the RNN.\nAs a consequence: these operations are parallelizable.\nThat’s why everyone is fighting for GPUs!!"
+    "text": "Parallelization\n\nThe attention calculation occurs for every token \\(i\\) with respects to all other tokens \\(j\\) in the sequence.\nNo sequence dependence across the tokens, as in the RNN.\nAs a consequence: these operations are parallelizable.\nThat’s why everyone is fighting for GPUs!!"
   },
   {
     "objectID": "slides/week_12.html#masked-attention",
@@ -3112,7 +3112,7 @@
     "href": "slides/week_12.html#a-final-note-on-transformers",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "A final note on Transformers",
-    "text": "A final note on Transformers\nModern large language models (LLMs) are all based on transformers. You can see how good they are!\nThere are encoder-only models (e.g., BERT), decoder-only models (e.g., GPT), and encoder-decoder models (e.g., T5)\n\nEncoder-only: BERT (all variants: BERT-base, BERT-large), RoBERTa, DistilBERT, others…\nDecoder-only: GPT, LLaMa, Mistral, most other LLMs\nEncoder-Decoder:T5, Bart,"
+    "text": "A final note on Transformers\nModern large language models (LLMs) are all based on transformers. There are encoder-only models (e.g., BERT), decoder-only models (e.g., GPT), and encoder-decoder models (e.g., T5)\n\nEncoder-only: BERT (all variants: BERT-base, BERT-large), RoBERTa, DistilBERT, others…\nDecoder-only: GPT, LLaMa, Mistral, most other LLMs\nEncoder-Decoder:T5, Bart,"
   },
   {
     "objectID": "slides/week_12.html#encoder-only",
@@ -3133,7 +3133,7 @@
     "href": "slides/week_12.html#bert-schematic",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Bert Schematic",
-    "text": "Bert Schematic\nTo use encoder model in text classification, you add a new classification head to the model\n\nClassification head: a neural network on top of sentence embedding, represented by [CLS] token… but it could be really just the mean of all tokens.\n\n\n\n\n\n\n\n\n\n\n\n\nsource: SLP Chapter 10"
+    "text": "Bert Schematic\nTo use encoder model in text classification, you add a new classification head to the model\n\n\nClassification head: a neural network on top of sentence embedding, represented by [CLS] token… but it could be really just the mean of all tokens.\n\n\n\n\n\n\n\n\n\n\n\n\n\nsource: SLP Chapter 10"
   },
   {
     "objectID": "slides/week_12.html#pretraining-a-transformer-language-model",
@@ -3148,5 +3148,33 @@
     "title": "Weekly Materials & Readings",
     "section": "Week 12: November 22",
     "text": "Week 12: November 22\n\nTopics: Transformers\nLecture: Week 12 - Transformers\nCoding: Below you have more code than we will cover in class. It is a mix between code I wrote, and code from my colleague (Sebastian Vallejo) from a class we co-taught in the summer\n\nOff-the-shelf transformers\nFine-tunning transformers\nFurther Training Transformers\nLLM as annotators"
+  },
+  {
+    "objectID": "slides/week_12.html#self-attention-on-transformers",
+    "href": "slides/week_12.html#self-attention-on-transformers",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Self-Attention on Transformers",
+    "text": "Self-Attention on Transformers\n\\[\n\\text{Attention}(Q, K, V)\n    = \\mathrm{softmax}\\left(\n        \\frac{QK^\\top}{\\sqrt{d_k}}\n      \\right)V\n\\]"
+  },
+  {
+    "objectID": "slides/week_12.html#unmasked-self-attention-encoder",
+    "href": "slides/week_12.html#unmasked-self-attention-encoder",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Unmasked Self-Attention (Encoder)",
+    "text": "Unmasked Self-Attention (Encoder)\nTransformers are trained in next-word prediction… But this affects only the decoder part of the model!\n\nEncoder: each token in the self-attention can attend to all other tokens simultaneously within the same input sequence.\nThis is called: bidirectional attention. It helps the encoder build rich contextual representations."
+  },
+  {
+    "objectID": "slides/week_12.html#masked-attention-decoder",
+    "href": "slides/week_12.html#masked-attention-decoder",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Masked Attention (Decoder)",
+    "text": "Masked Attention (Decoder)\n\nIn our previous examples of self-attention, each query attend to all preceding and subsequent outputs\nBut sometimes we don’t want to do that—we want the model to only learn from the preceding input\n\nEspecially important if we are training generative models (DECODER MODELS)\n\nWe can use masked attention, where the model is only allowed to attend to previous inputs"
+  },
+  {
+    "objectID": "slides/week_12.html#encoder-only-works-great-for-classification",
+    "href": "slides/week_12.html#encoder-only-works-great-for-classification",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "Encoder Only (works great for classification!)",
+    "text": "Encoder Only (works great for classification!)\n\nThese models convert an input sequence of text into a numerical representation\nThese models show state-of-art performance on tasks like text classification and named entity recognition (see Timoneda and Vallejo’s paper).\nUses full (or bidirectional) self-attention"
   }
 ]

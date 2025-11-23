@@ -16,7 +16,7 @@ format:
     center: true
     fig-align: center
     slide-number: true
-    incremental: false
+    incremental: true
     chalkboard: 
       buttons: false
     preview-links: auto
@@ -26,18 +26,13 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Plans for Today:
-
-# Transformers
-
 ## Transformers: Summary
 
-**Definition:** a Neural Network with a specific structure that includes a
-mechanism called self-attention. It has become the standard architecture for building large language models
+**Definition:** a Neural Network with a specific structure that includes a mechanism called **self-attention**. 
 
-**Publication:** first introduced at in the paper [Attention is All You Need](https://arxiv.org/pdf/1706.03762) by a group of researchers from Google Brain.
+**Publication:** first introduced in the paper [Attention is All You Need](https://arxiv.org/pdf/1706.03762) by a group of researchers from Google Brain.
 
-**Usage:** Core architecture behind most recent developments of Natural Language Processing (LLMs):
+**Usage:** Core architecture behind most recent developments of Natural Language Processing, such as recent LLMs:
 
 
 ```{r echo=FALSE, out.width = "100%", fig.align='center'}
@@ -52,6 +47,10 @@ source: https://huggingface.co/learn/llm-course/chapter1/4
 
 - **Transformers:** Neural architectures built around multihead self-attention
 
+- **RNN:** Non-transformers, Recurrent Neural Network, processes sequences sequentially, inputs static embeddings, outputs probability over vocabulary
+
+- **LSTM:** Non-Transformers, Long Short-Term Memory network, an enhanced RNN with gating mechanisms.
+
 - **Bert:** Encoder only Transformer, pretrained on unlabeled text to predict masked tokens in a sentence, ~ 300M parameters. Other similar models: RoBERTa, DiBERTa, XLMRoBERTa, among others
 
 - **LLMs:** Large Language Models. Language models (next word prediction) based on Transformer, often Decoder only models
@@ -60,30 +59,14 @@ source: https://huggingface.co/learn/llm-course/chapter1/4
 
 - **LLama:** also decoder model, owned by META, trying to keep up with OpenAI
 
-- **RNN:** Non-transformers, Recurrent Neural Network, processes sequences sequentially, inputs static embeddings, outputs probability over vocabulary
-
-- **LSTM:** Non-Transformers, Long Short-Term Memory network, an enhanced RNN with gating mechanisms.
 
 ## NLP Tasks leading to Transformers
 
-The development of Transformers comes from tasks based on next word prediction (as the Word Embeddings Algorithm we saw). These are at the foundation two core NLP applications: 
+The development of Transformers comes from tasks based on next word prediction (as the word embeddings algorithms we saw). These are at the foundation two core NLP applications: 
 
 - **Language Modeling**: Predicts the next token using prior sequence
 
 - **Machine Translation**: translate text from one language to another by learning the representation of input text, and predicting words on the translated language. 
-
-## Notable aspects of Transformers
-
-We will go over four notable aspects of Transformers: 
-
-- **Encoder x Decoder:** separates learning embeddings from input (encoding) to text generation (decoding)
-
-- **Attention + Contextual Knowledge:** the REAL DEAL. Allows words to focus on the most relevant words of a particular sequence. Different vectors for "tower", "eiffel tower" or "beer tower". Or the teddy bear examples from Darren and Puran
-
-- **Parallelization:** All tokens are processed simultaneously rather than sequentially. This means we can process words in parallel via GPUs!!
-
-- **Training via masking:** Masked inputs to train bi-directional models
-
 
 ## A Tour: From Embeddings to Transformers
 
@@ -98,8 +81,6 @@ Between Embbedings and Transformers, the field of NLP  used a variety of DL arch
 
 
 ## Fixed Window Neural Language Model
-
-**Paper:** Y. Bengio, et al. (2000/2003): A Neural Probabilistic Language Model
 
 :::: {.columns}
 
@@ -141,7 +122,7 @@ Source: [CS224N](https://web.stanford.edu/class/cs224n/index.html#schedule)
 :::
 ## Reccurrant Neural Network (RNN)
 
-**Def:** neural network architecture that processes sentences sequentially with hidden states that carry over-time information. 
+**Def:** Neural network architecture that processes sentences sequentially with hidden states that carry over-time information. 
 
 :::: {.columns}
 
@@ -205,7 +186,7 @@ Source: https://colah.github.io/posts/2015-08-Understanding-LSTMs/
 
 - Bottleneck problem: RNNs are unrolled from left-to-right. Hard to capture long-term dependency
 
-- Nearby words are often more important becuase they are incorporated more recently
+- Nearby words are often more important because they are incorporated more recently
 
 - Gradients are unstable (vanishing or exploding) because they depend on continuous chain rules for the calculation
    
@@ -222,7 +203,7 @@ We will go over four notable aspects of Transformers:
 
 - **Parallelization:** All tokens are processed simultaneously rather than sequentially. This means we can process words in parallel via GPUs!!
 
-- **Masked Attention** Masked inputs to train bi-directional models
+- **Training via Masked Attention** Masked inputs to train bi-directional models
 
 
 ## Original Transformer Architecture 
@@ -230,6 +211,8 @@ We will go over four notable aspects of Transformers:
 ```{r echo=FALSE, out.width = "100%"}
 knitr::include_graphics("./week13_figs/transformers.png") 
 ```
+
+# Feature 1: Encoder and Decoder {background="#364D72"}
 
 ## Encoder and Decoder
 
@@ -258,16 +241,18 @@ knitr::include_graphics("enc_1.png")
 knitr::include_graphics("enc_2.png") 
 ```
 
+# Feature 2: Self-Attention {background="#364D72"}
+
 ## Self-Attention: Definition
 
 **Def:** the mechanism in the transformer that weighs and combines the
 representations of context words in the token encoding
 
-- Word2vec:  the representation of a word’s meaning is always the same vector irrespective of the contex
+- Word2vec:  the representation of a word’s meaning is always the same vector irrespective of the context
 
    - the vector for 'bear' is the same, no matter if it refers to a 'teddy bear',a 'black bear", or a the show "the bear". 
 
-- Transformers can build contextual representations of word meaning (**contextual embeddings**) by integrating the meaning of these helpful contextual words. 
+- Transformers can build contextual representations of word meaning (**contextual embeddings**) by encoding the meaning of contextual words into the token representation. 
 
 - The encoder will input a **static embedding** for each token, but output a **contextual embedding** for the token in the sentence
 
@@ -285,6 +270,8 @@ representations of context words in the token encoding
 
 - At this point, we don’t know what “it” is referring to.
 
+- One of the fundamental limitations of RNNs was that you must walk
+through the sequence one word at a time. Self-attention solves many of these issues!
 
 ## Self-Attention Hypothetical example
 
@@ -332,7 +319,7 @@ $$
 e_{ij} = q_i^{\top} k_j
 $$
 
-Attention weights:
+**Attention weights:**
 
 $$
 \alpha_{ij} = 
@@ -346,15 +333,14 @@ $$
 $$
 o_i = \sum_j \alpha_{ij} v_j
 $$
+
 ## Self-Attention on Transformers
 
 $$
-
 \text{Attention}(Q, K, V)
-    = \mathrm{softmax}\!\left(
+    = \mathrm{softmax}\left(
         \frac{QK^\top}{\sqrt{d_k}}
       \right)V
-
 $$
 
 
@@ -394,7 +380,7 @@ source:https://jalammar.github.io/illustrated-transformer/
 
 ## Illustrated Transformers: Weights
 
-```{r echo=FALSE, out.width = "100%", fig.align="center"}
+```{r echo=FALSE, out.width = "80%", fig.align="center"}
 knitr::include_graphics("ill4.png") 
 ```
 
@@ -424,9 +410,11 @@ knitr::include_graphics("./week13_figs/transformers.png")
 - **Layer normalization:** A normalization technique that stabilizes training and gradient calculation
 
 
+# Feature 3: Parallelization {background="#364D72"}
+
 ## Parallelization
 
-- The attention calculate occurs for every token $i$ with respects to all other tokens $j$ in the sequence. 
+- The attention calculation occurs for every token $i$ with respects to all other tokens $j$ in the sequence. 
 
 - No sequence dependence across the tokens, as in the RNN. 
 
@@ -434,25 +422,7 @@ knitr::include_graphics("./week13_figs/transformers.png")
 
 - That's why everyone is fighting for GPUs!!
 
-## Masked Attention
-
-- In our previous examples of self-attention,  each query  attend to all preceding and subsequent outputs
-
-- But sometimes we don’t want to do that—we want the model to only learn from the preceding input
- 
-  - Especially important if we are training generative models (DECODER MODELS)
-  
--  We can use masked attention, where the model is only allowed to attend to previous inputs
-
-##
-
-```{r echo=FALSE, out.width = "100%"}
-knitr::include_graphics("masked_att.png") 
-```
-
-:::aside
-source: https://generativeai.pub/attention-in-transformer-simple-diagram-explanation-9124c94611dc
-:::
+# Feature 4: Training and Masked Attention {background="#364D72"}
 
 ## Pretraining a Transformer Language Model
 
@@ -468,12 +438,42 @@ Goal: Learn to predict the next word from context.
 
 5. Use gradient descent to minimize this loss
 
+
+## Unmasked Self-Attention (Encoder)
+
+Transformers are trained in next-word prediction... But this affects only the decoder part of the model!
+
+- Encoder: each token in the self-attention can attend to all other tokens simultaneously within the same input sequence.
+
+- This is called: bidirectional attention. It helps the encoder build rich contextual representations. 
+
+
+  
+## Masked Attention (Decoder)
+
+- In our previous examples of self-attention,  each query  attend to all preceding and subsequent outputs
+
+- But sometimes we don’t want to do that—we want the model to only learn from the preceding input
+ 
+  - Especially important if we are training generative models (DECODER MODELS)
+  
+-  We can use masked attention, where the model is only allowed to attend to previous inputs
+
+
+##
+
+```{r echo=FALSE, out.width = "100%"}
+knitr::include_graphics("masked_att.png") 
+```
+
+:::aside
+source: https://generativeai.pub/attention-in-transformer-simple-diagram-explanation-9124c94611dc
+:::
+# Different uses of Transformers 
   
 ## A final note on Transformers
 
-Modern large language models (LLMs) are all based on transformers. You can see how good they are!
-
-There are encoder-only models (e.g., BERT), decoder-only models (e.g.,
+Modern large language models (LLMs) are all based on transformers. There are encoder-only models (e.g., BERT), decoder-only models (e.g.,
 GPT), and encoder-decoder models (e.g., T5)
 
 - Encoder-only: BERT (all variants: BERT-base, BERT-large), RoBERTa, DistilBERT, others...
@@ -482,7 +482,7 @@ GPT), and encoder-decoder models (e.g., T5)
 
 - Encoder-Decoder:T5, Bart, 
 
-## Encoder Only 
+## Encoder Only (works great for classification!)
 
 - These models convert an input sequence of text into a numerical
 representation 
@@ -495,7 +495,10 @@ representation
 
 To use encoder model in text classification, you add a new classification head to the model 
 
+:::nonincremental
 - **Classification head:** a neural network on top of sentence embedding, represented by [CLS] token... but it could be really just the mean of all tokens. 
+
+:::
 
 ```{r echo=FALSE, out.width = "100%", fig.align="center"}
 knitr::include_graphics("bert.png") 

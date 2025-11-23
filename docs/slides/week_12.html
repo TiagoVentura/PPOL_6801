@@ -340,19 +340,11 @@
 </div>
 
 </section>
-<section id="plans-for-today" class="slide level2 center">
-<h2>Plans for Today:</h2>
-</section>
-<section>
-<section id="transformers" class="title-slide slide level1 center">
-<h1>Transformers</h1>
-
-</section>
 <section id="transformers-summary" class="slide level2 center">
 <h2>Transformers: Summary</h2>
-<p><strong>Definition:</strong> a Neural Network with a specific structure that includes a mechanism called self-attention. It has become the standard architecture for building large language models</p>
-<p><strong>Publication:</strong> first introduced at in the paper <a href="https://arxiv.org/pdf/1706.03762">Attention is All You Need</a> by a group of researchers from Google Brain.</p>
-<p><strong>Usage:</strong> Core architecture behind most recent developments of Natural Language Processing (LLMs):</p>
+<p><strong>Definition:</strong> a Neural Network with a specific structure that includes a mechanism called <strong>self-attention</strong>.</p>
+<p><strong>Publication:</strong> first introduced in the paper <a href="https://arxiv.org/pdf/1706.03762">Attention is All You Need</a> by a group of researchers from Google Brain.</p>
+<p><strong>Usage:</strong> Core architecture behind most recent developments of Natural Language Processing, such as recent LLMs:</p>
 <div class="cell" data-layout-align="center" data-hash="week_12_cache/revealjs/unnamed-chunk-1_c80e3726c8404bb1a5a3ba370af5c62b">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -369,45 +361,34 @@
 <section id="terminology" class="slide level2 center">
 <h2>Terminology</h2>
 <ul>
-<li><p><strong>Transformers:</strong> Neural architectures built around multihead self-attention</p></li>
-<li><p><strong>Bert:</strong> Encoder only Transformer, pretrained on unlabeled text to predict masked tokens in a sentence, ~ 300M parameters. Other similar models: RoBERTa, DiBERTa, XLMRoBERTa, among others</p></li>
-<li><p><strong>LLMs:</strong> Large Language Models. Language models (next word prediction) based on Transformer, often Decoder only models</p></li>
-<li><p><strong>GPT-x:</strong> A decoder-only autoregressive transformer, owned by OPENAI. GPT-3 has ~ 175 billion parameters</p></li>
-<li><p><strong>LLama:</strong> also decoder model, owned by META, trying to keep up with OpenAI</p></li>
-<li><p><strong>RNN:</strong> Non-transformers, Recurrent Neural Network, processes sequences sequentially, inputs static embeddings, outputs probability over vocabulary</p></li>
-<li><p><strong>LSTM:</strong> Non-Transformers, Long Short-Term Memory network, an enhanced RNN with gating mechanisms.</p></li>
+<li class="fragment"><p><strong>Transformers:</strong> Neural architectures built around multihead self-attention</p></li>
+<li class="fragment"><p><strong>RNN:</strong> Non-transformers, Recurrent Neural Network, processes sequences sequentially, inputs static embeddings, outputs probability over vocabulary</p></li>
+<li class="fragment"><p><strong>LSTM:</strong> Non-Transformers, Long Short-Term Memory network, an enhanced RNN with gating mechanisms.</p></li>
+<li class="fragment"><p><strong>Bert:</strong> Encoder only Transformer, pretrained on unlabeled text to predict masked tokens in a sentence, ~ 300M parameters. Other similar models: RoBERTa, DiBERTa, XLMRoBERTa, among others</p></li>
+<li class="fragment"><p><strong>LLMs:</strong> Large Language Models. Language models (next word prediction) based on Transformer, often Decoder only models</p></li>
+<li class="fragment"><p><strong>GPT-x:</strong> A decoder-only autoregressive transformer, owned by OPENAI. GPT-3 has ~ 175 billion parameters</p></li>
+<li class="fragment"><p><strong>LLama:</strong> also decoder model, owned by META, trying to keep up with OpenAI</p></li>
 </ul>
 </section>
 <section id="nlp-tasks-leading-to-transformers" class="slide level2 center">
 <h2>NLP Tasks leading to Transformers</h2>
-<p>The development of Transformers comes from tasks based on next word prediction (as the Word Embeddings Algorithm we saw). These are at the foundation two core NLP applications:</p>
+<p>The development of Transformers comes from tasks based on next word prediction (as the word embeddings algorithms we saw). These are at the foundation two core NLP applications:</p>
 <ul>
-<li><p><strong>Language Modeling</strong>: Predicts the next token using prior sequence</p></li>
-<li><p><strong>Machine Translation</strong>: translate text from one language to another by learning the representation of input text, and predicting words on the translated language.</p></li>
-</ul>
-</section>
-<section id="notable-aspects-of-transformers" class="slide level2 center">
-<h2>Notable aspects of Transformers</h2>
-<p>We will go over four notable aspects of Transformers:</p>
-<ul>
-<li><p><strong>Encoder x Decoder:</strong> separates learning embeddings from input (encoding) to text generation (decoding)</p></li>
-<li><p><strong>Attention + Contextual Knowledge:</strong> the REAL DEAL. Allows words to focus on the most relevant words of a particular sequence. Different vectors for “tower”, “eiffel tower” or “beer tower”. Or the teddy bear examples from Darren and Puran</p></li>
-<li><p><strong>Parallelization:</strong> All tokens are processed simultaneously rather than sequentially. This means we can process words in parallel via GPUs!!</p></li>
-<li><p><strong>Training via masking:</strong> Masked inputs to train bi-directional models</p></li>
+<li class="fragment"><p><strong>Language Modeling</strong>: Predicts the next token using prior sequence</p></li>
+<li class="fragment"><p><strong>Machine Translation</strong>: translate text from one language to another by learning the representation of input text, and predicting words on the translated language.</p></li>
 </ul>
 </section>
 <section id="a-tour-from-embeddings-to-transformers" class="slide level2 center">
 <h2>A Tour: From Embeddings to Transformers</h2>
 <p>Between Embbedings and Transformers, the field of NLP used a variety of DL architectures to tasks related to Machine Translations and Language Modeling. Let’s briefly understand them so that we can see the transformative impact of Transformers</p>
 <ol type="1">
-<li><p>Fixed Window Neural Networks</p></li>
-<li><p>RNN</p></li>
-<li><p>LSTM</p></li>
+<li class="fragment"><p>Fixed Window Neural Networks</p></li>
+<li class="fragment"><p>RNN</p></li>
+<li class="fragment"><p>LSTM</p></li>
 </ol>
 </section>
 <section id="fixed-window-neural-language-model" class="slide level2 center">
 <h2>Fixed Window Neural Language Model</h2>
-<p><strong>Paper:</strong> Y. Bengio, et al.&nbsp;(2000/2003): A Neural Probabilistic Language Model</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><br><br> <strong>output distribution</strong></p>
@@ -432,7 +413,7 @@
 </div></aside></section>
 <section id="reccurrant-neural-network-rnn" class="slide level2 center">
 <h2>Reccurrant Neural Network (RNN)</h2>
-<p><strong>Def:</strong> neural network architecture that processes sentences sequentially with hidden states that carry over-time information.</p>
+<p><strong>Def:</strong> Neural network architecture that processes sentences sequentially with hidden states that carry over-time information.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><br><br> <strong>output distribution</strong></p>
@@ -471,38 +452,43 @@
 <section id="challenges-with-pre-transformers-models" class="slide level2 center">
 <h2>Challenges with pre-transformers models</h2>
 <ul>
-<li><p>Bottleneck problem: RNNs are unrolled from left-to-right. Hard to capture long-term dependency</p></li>
-<li><p>Nearby words are often more important becuase they are incorporated more recently</p></li>
-<li><p>Gradients are unstable (vanishing or exploding) because they depend on continuous chain rules for the calculation</p></li>
-<li><p>Non-parallelizable: RNNs handles text sequentially, so you cannot really speed things up with GPUs</p></li>
+<li class="fragment"><p>Bottleneck problem: RNNs are unrolled from left-to-right. Hard to capture long-term dependency</p></li>
+<li class="fragment"><p>Nearby words are often more important because they are incorporated more recently</p></li>
+<li class="fragment"><p>Gradients are unstable (vanishing or exploding) because they depend on continuous chain rules for the calculation</p></li>
+<li class="fragment"><p>Non-parallelizable: RNNs handles text sequentially, so you cannot really speed things up with GPUs</p></li>
 </ul>
 </section>
-<section id="notable-aspects-of-transformers-1" class="slide level2 center">
+<section id="notable-aspects-of-transformers" class="slide level2 center">
 <h2>Notable aspects of Transformers</h2>
 <p>We will go over four notable aspects of Transformers:</p>
 <ul>
-<li><p><strong>Encoder x Decoder:</strong> separates learning embeddings from input (encoding) to text generation (decoding)</p></li>
-<li><p><strong>Attention + Contextual Knowledge:</strong> the REAL DEAL. Allows words to focus on the most relevant words of a particular sequence. Different vectors for “tower”, “eiffel tower” or “beer tower”. Or the teddy bear examples from Darren and Puran</p></li>
-<li><p><strong>Parallelization:</strong> All tokens are processed simultaneously rather than sequentially. This means we can process words in parallel via GPUs!!</p></li>
-<li><p><strong>Masked Attention</strong> Masked inputs to train bi-directional models</p></li>
+<li class="fragment"><p><strong>Encoder x Decoder:</strong> separates learning embeddings from input (encoding) to text generation (decoding)</p></li>
+<li class="fragment"><p><strong>Attention + Contextual Knowledge:</strong> the REAL DEAL. Allows words to focus on the most relevant words of a particular sequence. Different vectors for “tower”, “eiffel tower” or “beer tower”. Or the teddy bear examples from Darren and Puran</p></li>
+<li class="fragment"><p><strong>Parallelization:</strong> All tokens are processed simultaneously rather than sequentially. This means we can process words in parallel via GPUs!!</p></li>
+<li class="fragment"><p><strong>Training via Masked Attention</strong> Masked inputs to train bi-directional models</p></li>
 </ul>
 </section>
 <section id="original-transformer-architecture" class="slide level2 center">
 <h2>Original Transformer Architecture</h2>
 
 <img data-src="./week13_figs/transformers.png" style="width:100.0%" class="r-stretch"></section>
+<section>
+<section id="feature-1-encoder-and-decoder" class="title-slide slide level1 center" data-background="#364D72">
+<h1>Feature 1: Encoder and Decoder</h1>
+
+</section>
 <section id="encoder-and-decoder" class="slide level2 center">
 <h2>Encoder and Decoder</h2>
 <p>The original transformer is primarily composed of two blocks:</p>
 <ul>
-<li><p><strong>Encoder (left):</strong> The encoder receives an input and builds a representation of it (its features).</p>
+<li class="fragment"><p><strong>Encoder (left):</strong> The encoder receives an input and builds a representation of it (its features).</p>
 <ul>
-<li><p>Encodes words via self-attention mechanism, and by itself.</p></li>
-<li><p>Every token in every sequence gets an embedding. These are dynamic embeddings, they change their direction when tokens are used in different contexts.</p></li>
+<li class="fragment"><p>Encodes words via self-attention mechanism, and by itself.</p></li>
+<li class="fragment"><p>Every token in every sequence gets an embedding. These are dynamic embeddings, they change their direction when tokens are used in different contexts.</p></li>
 </ul></li>
-<li><p><strong>Decoder (right):</strong> The decoder uses the encoder’s representation (features) along with other inputs to generate a target sequence.</p>
+<li class="fragment"><p><strong>Decoder (right):</strong> The decoder uses the encoder’s representation (features) along with other inputs to generate a target sequence.</p>
 <ul>
-<li>Text generation: it spells out for you an probability for next word sequence</li>
+<li class="fragment">Text generation: it spells out for you an probability for next word sequence</li>
 </ul></li>
 </ul>
 </section>
@@ -513,30 +499,36 @@
 <section id="looking-inside-of-an-encoder-block" class="slide level2 center">
 <h2>Looking Inside of an Encoder Block</h2>
 
-<img data-src="enc_2.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section>
+<img data-src="enc_2.png" style="width:100.0%" class="r-stretch quarto-figure-center"></section></section>
+<section>
+<section id="feature-2-self-attention" class="title-slide slide level1 center" data-background="#364D72">
+<h1>Feature 2: Self-Attention</h1>
+
+</section>
 <section id="self-attention-definition" class="slide level2 center">
 <h2>Self-Attention: Definition</h2>
 <p><strong>Def:</strong> the mechanism in the transformer that weighs and combines the representations of context words in the token encoding</p>
 <ul>
-<li><p>Word2vec: the representation of a word’s meaning is always the same vector irrespective of the contex</p>
+<li class="fragment"><p>Word2vec: the representation of a word’s meaning is always the same vector irrespective of the context</p>
 <ul>
-<li>the vector for ‘bear’ is the same, no matter if it refers to a ‘teddy bear’,a ’black bear”, or a the show “the bear”.</li>
+<li class="fragment">the vector for ‘bear’ is the same, no matter if it refers to a ‘teddy bear’,a ’black bear”, or a the show “the bear”.</li>
 </ul></li>
-<li><p>Transformers can build contextual representations of word meaning (<strong>contextual embeddings</strong>) by integrating the meaning of these helpful contextual words.</p></li>
-<li><p>The encoder will input a <strong>static embedding</strong> for each token, but output a <strong>contextual embedding</strong> for the token in the sentence</p></li>
+<li class="fragment"><p>Transformers can build contextual representations of word meaning (<strong>contextual embeddings</strong>) by encoding the meaning of contextual words into the token representation.</p></li>
+<li class="fragment"><p>The encoder will input a <strong>static embedding</strong> for each token, but output a <strong>contextual embedding</strong> for the token in the sentence</p></li>
 </ul>
 </section>
 <section id="self-attention-intuition" class="slide level2 center">
 <h2>Self-Attention: Intuition</h2>
 <ul>
-<li><p>Consider these sentences:</p>
+<li class="fragment"><p>Consider these sentences:</p>
 <ul>
-<li><p>“The chicken didn’t cross the road because <strong>it</strong> was too tired.”</p></li>
-<li><p>“The chicken didn’t cross the road because <strong>it</strong> was too wide.”</p></li>
+<li class="fragment"><p>“The chicken didn’t cross the road because <strong>it</strong> was too tired.”</p></li>
+<li class="fragment"><p>“The chicken didn’t cross the road because <strong>it</strong> was too wide.”</p></li>
 </ul></li>
-<li><p>“It” refers to different nouns in each sentence.</p></li>
-<li><p>If we read the sentences from left to right, we get: The chicken didn’t cross the road because it…. ?</p></li>
-<li><p>At this point, we don’t know what “it” is referring to.</p></li>
+<li class="fragment"><p>“It” refers to different nouns in each sentence.</p></li>
+<li class="fragment"><p>If we read the sentences from left to right, we get: The chicken didn’t cross the road because it…. ?</p></li>
+<li class="fragment"><p>At this point, we don’t know what “it” is referring to.</p></li>
+<li class="fragment"><p>One of the fundamental limitations of RNNs was that you must walk through the sequence one word at a time. Self-attention solves many of these issues!</p></li>
 </ul>
 </section>
 <section id="self-attention-hypothetical-example" class="slide level2 center">
@@ -572,7 +564,7 @@ v_i = V x_i \quad \text{(values)}
 <p><span class="math display">\[
 e_{ij} = q_i^{\top} k_j
 \]</span></p>
-<p>Attention weights:</p>
+<p><strong>Attention weights:</strong></p>
 <p><span class="math display">\[
 \alpha_{ij} =
 \frac{\exp(e_{ij})}{\sum_{j'} \exp(e_{ij'})}
@@ -583,10 +575,16 @@ e_{ij} = q_i^{\top} k_j
 <p><strong>Step 4</strong>: Compute output as weighted sum of values</p>
 <p><span class="math display">\[
 o_i = \sum_j \alpha_{ij} v_j
-\]</span> ## Self-Attention on Transformers</p>
-<p>$$</p>
-<p>(Q, K, V) = !( )V</p>
-<p>$$</p>
+\]</span></p>
+</section>
+<section id="self-attention-on-transformers" class="slide level2 center">
+<h2>Self-Attention on Transformers</h2>
+<p><span class="math display">\[
+\text{Attention}(Q, K, V)
+    = \mathrm{softmax}\left(
+        \frac{QK^\top}{\sqrt{d_k}}
+      \right)V
+\]</span></p>
 </section>
 <section id="illustrated-transformers-basic-parameters" class="slide level2 center">
 <h2>Illustrated Transformers: Basic Parameters</h2>
@@ -635,11 +633,11 @@ o_i = \sum_j \alpha_{ij} v_j
 </div></aside></section>
 <section id="illustrated-transformers-weights" class="slide level2 center">
 <h2>Illustrated Transformers: Weights</h2>
-<div class="cell" data-layout-align="center" data-hash="week_12_cache/revealjs/unnamed-chunk-12_b5f02728f54513df263e9212a2f6abb5">
+<div class="cell" data-layout-align="center" data-hash="week_12_cache/revealjs/unnamed-chunk-12_a27ecbe4f3edfc9d5d2b970e41bd9dfa">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="ill4.png" style="width:100.0%"></p>
+<p><img data-src="ill4.png" style="width:80.0%"></p>
 </figure>
 </div>
 </div>
@@ -655,31 +653,60 @@ o_i = \sum_j \alpha_{ij} v_j
 <section id="more-details-on-the-transformers-block" class="slide level2 center">
 <h2>More details on the Transformers Block</h2>
 <ul>
-<li><p><strong>Multi-Head Attention:</strong> repeat the self-attention multiple times in the same block.</p></li>
-<li><p><strong>Many Encoder Blocks:</strong> one encoder feeds the output token into many other blocs</p></li>
-<li><p><strong>Feed Forward NN:</strong> after every self-attention, there is a feed forward neural network to allow non-linearities to be modelled</p></li>
-<li><p><strong>Positional Encoding:</strong> position of the token in the sequence in embedded as a learneable parameters</p></li>
-<li><p><strong>Layer normalization:</strong> A normalization technique that stabilizes training and gradient calculation</p></li>
+<li class="fragment"><p><strong>Multi-Head Attention:</strong> repeat the self-attention multiple times in the same block.</p></li>
+<li class="fragment"><p><strong>Many Encoder Blocks:</strong> one encoder feeds the output token into many other blocs</p></li>
+<li class="fragment"><p><strong>Feed Forward NN:</strong> after every self-attention, there is a feed forward neural network to allow non-linearities to be modelled</p></li>
+<li class="fragment"><p><strong>Positional Encoding:</strong> position of the token in the sequence in embedded as a learneable parameters</p></li>
+<li class="fragment"><p><strong>Layer normalization:</strong> A normalization technique that stabilizes training and gradient calculation</p></li>
 </ul>
+</section></section>
+<section>
+<section id="feature-3-parallelization" class="title-slide slide level1 center" data-background="#364D72">
+<h1>Feature 3: Parallelization</h1>
+
 </section>
 <section id="parallelization" class="slide level2 center">
 <h2>Parallelization</h2>
 <ul>
-<li><p>The attention calculate occurs for every token <span class="math inline">\(i\)</span> with respects to all other tokens <span class="math inline">\(j\)</span> in the sequence.</p></li>
-<li><p>No sequence dependence across the tokens, as in the RNN.</p></li>
-<li><p>As a consequence: these operations are parallelizable.</p></li>
-<li><p>That’s why everyone is fighting for GPUs!!</p></li>
+<li class="fragment"><p>The attention calculation occurs for every token <span class="math inline">\(i\)</span> with respects to all other tokens <span class="math inline">\(j\)</span> in the sequence.</p></li>
+<li class="fragment"><p>No sequence dependence across the tokens, as in the RNN.</p></li>
+<li class="fragment"><p>As a consequence: these operations are parallelizable.</p></li>
+<li class="fragment"><p>That’s why everyone is fighting for GPUs!!</p></li>
+</ul>
+</section></section>
+<section>
+<section id="feature-4-training-and-masked-attention" class="title-slide slide level1 center" data-background="#364D72">
+<h1>Feature 4: Training and Masked Attention</h1>
+
+</section>
+<section id="pretraining-a-transformer-language-model" class="slide level2 center">
+<h2>Pretraining a Transformer Language Model</h2>
+<p>Goal: Learn to predict the next word from context.</p>
+<ol type="1">
+<li class="fragment"><p>Start with a large corpus of unlabeled text</p></li>
+<li class="fragment"><p>For each token <span class="math inline">\(w_t\)</span> , the model predicts <span class="math inline">\(w_{t+1}\)</span></p></li>
+<li class="fragment"><p>The model uses self-attention to create a contextualized representation of <span class="math inline">\(w_1, ... , w_t\)</span></p></li>
+<li class="fragment"><p>Prediction is compared to the actual <span class="math inline">\(w_{t+1}\)</span> using cross-entropy loss</p></li>
+<li class="fragment"><p>Use gradient descent to minimize this loss</p></li>
+</ol>
+</section>
+<section id="unmasked-self-attention-encoder" class="slide level2 center">
+<h2>Unmasked Self-Attention (Encoder)</h2>
+<p>Transformers are trained in next-word prediction… But this affects only the decoder part of the model!</p>
+<ul>
+<li class="fragment"><p>Encoder: each token in the self-attention can attend to all other tokens simultaneously within the same input sequence.</p></li>
+<li class="fragment"><p>This is called: bidirectional attention. It helps the encoder build rich contextual representations.</p></li>
 </ul>
 </section>
-<section id="masked-attention" class="slide level2 center">
-<h2>Masked Attention</h2>
+<section id="masked-attention-decoder" class="slide level2 center">
+<h2>Masked Attention (Decoder)</h2>
 <ul>
-<li><p>In our previous examples of self-attention, each query attend to all preceding and subsequent outputs</p></li>
-<li><p>But sometimes we don’t want to do that—we want the model to only learn from the preceding input</p>
+<li class="fragment"><p>In our previous examples of self-attention, each query attend to all preceding and subsequent outputs</p></li>
+<li class="fragment"><p>But sometimes we don’t want to do that—we want the model to only learn from the preceding input</p>
 <ul>
-<li>Especially important if we are training generative models (DECODER MODELS)</li>
+<li class="fragment">Especially important if we are training generative models (DECODER MODELS)</li>
 </ul></li>
-<li><p>We can use masked attention, where the model is only allowed to attend to previous inputs</p></li>
+<li class="fragment"><p>We can use masked attention, where the model is only allowed to attend to previous inputs</p></li>
 </ul>
 </section>
 <section id="section-3" class="slide level2 center">
@@ -692,42 +719,37 @@ o_i = \sum_j \alpha_{ij} v_j
 
 <aside><div>
 <p>source: https://generativeai.pub/attention-in-transformer-simple-diagram-explanation-9124c94611dc</p>
-</div></aside></section>
-<section id="pretraining-a-transformer-language-model" class="slide level2 center">
-<h2>Pretraining a Transformer Language Model</h2>
-<p>Goal: Learn to predict the next word from context.</p>
-<ol type="1">
-<li><p>Start with a large corpus of unlabeled text</p></li>
-<li><p>For each token <span class="math inline">\(w_t\)</span> , the model predicts <span class="math inline">\(w_{t+1}\)</span></p></li>
-<li><p>The model uses self-attention to create a contextualized representation of <span class="math inline">\(w_1, ... , w_t\)</span></p></li>
-<li><p>Prediction is compared to the actual <span class="math inline">\(w_{t+1}\)</span> using cross-entropy loss</p></li>
-<li><p>Use gradient descent to minimize this loss</p></li>
-</ol>
+</div></aside></section></section>
+<section>
+<section id="different-uses-of-transformers" class="title-slide slide level1 center">
+<h1>Different uses of Transformers</h1>
+
 </section>
 <section id="a-final-note-on-transformers" class="slide level2 center">
 <h2>A final note on Transformers</h2>
-<p>Modern large language models (LLMs) are all based on transformers. You can see how good they are!</p>
-<p>There are encoder-only models (e.g., BERT), decoder-only models (e.g., GPT), and encoder-decoder models (e.g., T5)</p>
+<p>Modern large language models (LLMs) are all based on transformers. There are encoder-only models (e.g., BERT), decoder-only models (e.g., GPT), and encoder-decoder models (e.g., T5)</p>
 <ul>
-<li><p>Encoder-only: BERT (all variants: BERT-base, BERT-large), RoBERTa, DistilBERT, others…</p></li>
-<li><p>Decoder-only: GPT, LLaMa, Mistral, most other LLMs</p></li>
-<li><p>Encoder-Decoder:T5, Bart,</p></li>
+<li class="fragment"><p>Encoder-only: BERT (all variants: BERT-base, BERT-large), RoBERTa, DistilBERT, others…</p></li>
+<li class="fragment"><p>Decoder-only: GPT, LLaMa, Mistral, most other LLMs</p></li>
+<li class="fragment"><p>Encoder-Decoder:T5, Bart,</p></li>
 </ul>
 </section>
-<section id="encoder-only" class="slide level2 center">
-<h2>Encoder Only</h2>
+<section id="encoder-only-works-great-for-classification" class="slide level2 center">
+<h2>Encoder Only (works great for classification!)</h2>
 <ul>
-<li><p>These models convert an input sequence of text into a numerical representation</p></li>
-<li><p>These models show state-of-art performance on tasks like text classification and named entity recognition (see Timoneda and Vallejo’s paper).</p></li>
-<li><p>Uses full (or bidirectional) self-attention</p></li>
+<li class="fragment"><p>These models convert an input sequence of text into a numerical representation</p></li>
+<li class="fragment"><p>These models show state-of-art performance on tasks like text classification and named entity recognition (see Timoneda and Vallejo’s paper).</p></li>
+<li class="fragment"><p>Uses full (or bidirectional) self-attention</p></li>
 </ul>
 </section>
 <section id="bert-schematic" class="slide level2 center">
 <h2>Bert Schematic</h2>
 <p>To use encoder model in text classification, you add a new classification head to the model</p>
+<div>
 <ul>
 <li><strong>Classification head:</strong> a neural network on top of sentence embedding, represented by [CLS] token… but it could be really just the mean of all tokens.</li>
 </ul>
+</div>
 <div class="cell" data-layout-align="center" data-hash="week_12_cache/revealjs/unnamed-chunk-15_a48c90c0abc9acd070828a611c905e50">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">

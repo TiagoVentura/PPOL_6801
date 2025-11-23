@@ -112,28 +112,25 @@ subtitle: "Data Science and Public Policy, McCourt School for Public Polcy, Geor
 -   **Coding Materials in Python (Optional)**
 
     -   Word Vectors with Gensim: <a href="https://www.dropbox.com/scl/fi/v5ld2gpswxb2tmyezwyx4/_day2_word_vectors.ipynb?rlkey=2eb88oe4dme7f57c60rimbtke&dl=0" download> notebook </a>
-    
+
 ## Week 11: November 17
 
-- **Topics**: Replication Class
+-   **Topics**: Replication Class
 
-- **Materials**: Check the paper your colleagues are replication [here](https://docs.google.com/spreadsheets/d/1gLkGc7wSUcWsH97sdE_8yPoxyEPpPpnpyzCPBS4z8Ig/edit?gid=0#gid=0)
-
+-   **Materials**: Check the paper your colleagues are replication [here](https://docs.google.com/spreadsheets/d/1gLkGc7wSUcWsH97sdE_8yPoxyEPpPpnpyzCPBS4z8Ig/edit?gid=0#gid=0)
 
 ## Week 12: November 22
 
-- **Topics:** Transformers
+-   **Topics:** Transformers
 
 -   **Lecture**: [Week 12 - Transformers](/slides/week_12.html)
 
-- **Coding:** Below you have more code than we will cover in class. It is a mix between code I wrote, and code from my colleague (Sebastian Vallejo) from a class we co-taught in the summer
+-   **Coding:** Below you have more code than we will cover in class. It is a mix between code I wrote, and code from my colleague (Sebastian Vallejo) from a class we co-taught in the summer
 
-   - [Off-the-shelf transformers](https://drive.google.com/file/d/1fY-bqzcTeCFNXT3ehYlevx_0gYi4Bkuh/view?usp=sharing)
-   
-   - [Fine-tunning transformers]( https://colab.research.google.com/drive/1-vfuQ47hlGpPcEmsQBIpLBnBdWKgW9ih?usp=sharing)
-   
-   - [Further Training Transformers]( https://colab.research.google.com/drive/1_nmDGG_OzU3MjIa4T6JZTD_ra6kAa0wW)
-   
-   - [LLM as annotators]( https://colab.research.google.com/drive/19KXG7mauoCBwNfyvwR6mrXsAXS4TgX86)
+    -   [Off-the-shelf transformers](https://colab.research.google.com/drive/1fY-bqzcTeCFNXT3ehYlevx_0gYi4Bkuh)
 
+    -   [Fine-tunning transformers](https://colab.research.google.com/drive/1-vfuQ47hlGpPcEmsQBIpLBnBdWKgW9ih?usp=sharing)
 
+    -   [Further Training Transformers](https://colab.research.google.com/drive/1_nmDGG_OzU3MjIa4T6JZTD_ra6kAa0wW)
+
+    -   [LLM as annotators](https://colab.research.google.com/drive/19KXG7mauoCBwNfyvwR6mrXsAXS4TgX86)
