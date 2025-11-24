@@ -2993,14 +2993,14 @@
     "href": "slides/week_12.html#section-1",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "",
-    "text": "Step3: Compute pairwise similarities and normalize with softmax. Similarity between query (q_i) and key (k_j) as a simple dot product\n\\[\ne_{ij} = q_i^{\\top} k_j\n\\]\nAttention weights:\n\\[\n\\alpha_{ij} =\n\\frac{\\exp(e_{ij})}{\\sum_{j'} \\exp(e_{ij'})}\n\\]"
+    "text": "Step 2: Each word embedding is transformed using three weight matrices: Q, K, V:\n\\[\nq_i = Q x_i \\quad \\text{(queries)}\n\\]\n\\[\nk_i = K x_i \\quad \\text{(keys)}\n\\]\n\\[\nv_i = V x_i \\quad \\text{(values)}\n\\]"
   },
   {
     "objectID": "slides/week_12.html#section-2",
     "href": "slides/week_12.html#section-2",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "",
-    "text": "Step 4: Compute output as weighted sum of values\n\\[\no_i = \\sum_j \\alpha_{ij} v_j\n\\]"
+    "text": "Step3: Compute pairwise similarities and normalize with softmax. Similarity between query (q_i) and key (k_j) as a simple dot product\n\\[\ne_{ij} = q_i^{\\top} k_j\n\\]\nAttention weights:\n\\[\n\\alpha_{ij} =\n\\frac{\\exp(e_{ij})}{\\sum_{j'} \\exp(e_{ij'})}\n\\]"
   },
   {
     "objectID": "slides/week_12.html#step-1",
@@ -3105,7 +3105,7 @@
     "href": "slides/week_12.html#section-3",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "",
-    "text": "source: https://generativeai.pub/attention-in-transformer-simple-diagram-explanation-9124c94611dc"
+    "text": "Step 4: Compute output as weighted sum of values\n\\[\no_i = \\sum_j \\alpha_{ij} v_j\n\\]"
   },
   {
     "objectID": "slides/week_12.html#a-final-note-on-transformers",
@@ -3176,5 +3176,19 @@
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Encoder Only (works great for classification!)",
     "text": "Encoder Only (works great for classification!)\n\nThese models convert an input sequence of text into a numerical representation\nThese models show state-of-art performance on tasks like text classification and named entity recognition (see Timoneda and Vallejo’s paper).\nUses full (or bidirectional) self-attention"
+  },
+  {
+    "objectID": "slides/week_12.html#section-4",
+    "href": "slides/week_12.html#section-4",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "",
+    "text": "source: https://generativeai.pub/attention-in-transformer-simple-diagram-explanation-9124c94611dc"
+  },
+  {
+    "objectID": "slides/week_12.html#section-5",
+    "href": "slides/week_12.html#section-5",
+    "title": "PPOL 6801 - Text as Data - Computational Linguistics",
+    "section": "",
+    "text": "source: https://generativeai.pub/attention-in-transformer-simple-diagram-explanation-9124c94611dc"
   }
 ]

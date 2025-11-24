@@ -340,6 +340,13 @@
 </div>
 
 </section>
+<section>
+<section id="section" class="title-slide slide level1 center">
+<h1></h1>
+<div style="text-align: center;">
+<p><img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzQyY2VxZzR0d2lvcTJnMTdzcnN6aDBpZjNrdXgzOTJlNzlxZndjOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VeWllmR9zfaco/giphy.gif" style="width: 100%;"></p>
+</div>
+</section>
 <section id="transformers-summary" class="slide level2 center">
 <h2>Transformers: Summary</h2>
 <p><strong>Definition:</strong> a Neural Network with a specific structure that includes a mechanism called <strong>self-attention</strong>.</p>
@@ -471,7 +478,7 @@
 <section id="original-transformer-architecture" class="slide level2 center">
 <h2>Original Transformer Architecture</h2>
 
-<img data-src="./week13_figs/transformers.png" style="width:100.0%" class="r-stretch"></section>
+<img data-src="./week13_figs/transformers.png" style="width:100.0%" class="r-stretch"></section></section>
 <section>
 <section id="feature-1-encoder-and-decoder" class="title-slide slide level1 center" data-background="#364D72">
 <h1>Feature 1: Encoder and Decoder</h1>
@@ -545,7 +552,7 @@ x_i = E w_i,
 \]</span></p>
 <p>With E having the dimensions d (embedding size) and V (vocabulary size)</p>
 </section>
-<section id="section" class="slide level2 center">
+<section id="section-1" class="slide level2 center">
 <h2></h2>
 <p><strong>Step 2:</strong> Each word embedding is transformed using three weight matrices: Q, K, V:</p>
 <p><span class="math display">\[
@@ -558,7 +565,7 @@ k_i = K x_i \quad \text{(keys)}
 v_i = V x_i \quad \text{(values)}
 \]</span></p>
 </section>
-<section id="section-1" class="slide level2 center">
+<section id="section-2" class="slide level2 center">
 <h2></h2>
 <p><strong>Step3</strong>: Compute pairwise similarities and normalize with softmax. Similarity between query (q_i) and key (k_j) as a simple dot product</p>
 <p><span class="math display">\[
@@ -570,7 +577,7 @@ e_{ij} = q_i^{\top} k_j
 \frac{\exp(e_{ij})}{\sum_{j'} \exp(e_{ij'})}
 \]</span></p>
 </section>
-<section id="section-2" class="slide level2 center">
+<section id="section-3" class="slide level2 center">
 <h2></h2>
 <p><strong>Step 4</strong>: Compute output as weighted sum of values</p>
 <p><span class="math display">\[
@@ -709,7 +716,7 @@ o_i = \sum_j \alpha_{ij} v_j
 <li class="fragment"><p>We can use masked attention, where the model is only allowed to attend to previous inputs</p></li>
 </ul>
 </section>
-<section id="section-3" class="slide level2 center">
+<section id="section-4" class="slide level2 center">
 <h2></h2>
 <div class="cell" data-hash="week_12_cache/revealjs/unnamed-chunk-14_a1dcf475a66f7345ea713d181b1b7ecb">
 <div class="cell-output-display">

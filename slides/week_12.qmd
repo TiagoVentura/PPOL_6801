@@ -26,6 +26,13 @@ editor_options:
   chunk_output_type: console
 ---
 
+# 
+<div style="text-align: center;">
+  <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzQyY2VxZzR0d2lvcTJnMTdzcnN6aDBpZjNrdXgzOTJlNzlxZndjOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VeWllmR9zfaco/giphy.gif" style="width: 100%;">
+</div>
+
+
+
 ## Transformers: Summary
 
 **Definition:** a Neural Network with a specific structure that includes a mechanism called **self-attention**. 
