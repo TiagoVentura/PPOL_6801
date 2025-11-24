@@ -15,8 +15,8 @@ format:
     height: 900
     center: true
     fig-align: center
-    slide-number: false
-    incremental: true
+    slide-number: true
+    incremental: false
     chalkboard: 
       buttons: false
     preview-links: auto
@@ -27,6 +27,7 @@ editor_options:
 ---
 
 # 
+
 <div style="text-align: center;">
   <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzQyY2VxZzR0d2lvcTJnMTdzcnN6aDBpZjNrdXgzOTJlNzlxZndjOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VeWllmR9zfaco/giphy.gif" style="width: 1zz%;">
 </div>
