@@ -15,7 +15,7 @@ format:
     height: 900
     center: true
     fig-align: center
-    slide-number: true
+    slide-number: false
     incremental: true
     chalkboard: 
       buttons: false
