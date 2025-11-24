@@ -29,7 +29,7 @@ editor_options:
 # 
 
 <div style="text-align: center;">
-  <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzQyY2VxZzR0d2lvcTJnMTdzcnN6aDBpZjNrdXgzOTJlNzlxZndjOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VeWllmR9zfaco/giphy.gif" style="width: 1zz%;">
+  <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzQyY2VxZzR0d2lvcTJnMTdzcnN6aDBpZjNrdXgzOTJlNzlxZndjOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VeWllmR9zfaco/giphy.gif" style="width: 100%;">
 </div>
 
 
