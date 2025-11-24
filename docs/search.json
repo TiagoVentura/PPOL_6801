@@ -2888,7 +2888,7 @@
     "href": "slides/week_12.html#fixed-window-neural-language-model",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Fixed Window Neural Language Model",
-    "text": "Fixed Window Neural Language Model\n\n\n output distribution\n\\[\\hat{y} = \\mathrm{softmax}(U h + b_2) \\in \\mathbb{R}^{|V|}\\]\nhidden layer\n\\[h = f(W e + b_1)\\]\nconcatenated word embeddings\n\\[e = [e^{(1)}; e^{(2)}; e^{(3)}; e^{(4)}]\\]\nwords / one-hot vectors\n\\[x^{(1)}, x^{(2)}, x^{(3)}, x^{(4)}\\]\n\n\n\n\n\n\n\n\n\n\nSource: CS224N"
+    "text": "Fixed Window Neural Language Model\n\n\noutput distribution\n\\[\\hat{y} = \\mathrm{softmax}(U h + b_2) \\in \\mathbb{R}^{|V|}\\]\nhidden layer\n\\[h = f(W e + b_1)\\]\nconcatenated word embeddings\n\\[e = [e^{(1)}; e^{(2)}; e^{(3)}; e^{(4)}]\\]\nwords / one-hot vectors\n\\[x^{(1)}, x^{(2)}, x^{(3)}, x^{(4)}\\]\n\n\n\n\n\n\n\n\n\n\nSource: CS224N"
   },
   {
     "objectID": "slides/week_12.html#rnn",
@@ -2916,7 +2916,7 @@
     "href": "slides/week_12.html#reccurrant-neural-network-rnn",
     "title": "PPOL 6801 - Text as Data - Computational Linguistics",
     "section": "Reccurrant Neural Network (RNN)",
-    "text": "Reccurrant Neural Network (RNN)\nDef: Neural network architecture that processes sentences sequentially with hidden states that carry over-time information.\n\n\n output distribution\n\\[\\hat{y}^{(t)} = \\mathrm{softmax}\\left(U h^{(t)} + b_2\\right) \\in \\mathbb{R}^{|V|}\\]\nhidden states\n\\[h^{(t)} = \\sigma\\left(W_h h^{(t-1)} + W_e e^{(t)} + b_1\\right)\\]\n\\[h^{(0)} \\text{ is the initial hidden state}\\]\nword embeddings\n\\[ e^{(t)} = E x^{(t)} \\]\nwords / one-hot vectors\n\\[x^{(t)} \\in \\mathbb{R}^{|V|}\\]\n\n\n\n\n\n\n\n\n\n\nSource: CS224N"
+    "text": "Reccurrant Neural Network (RNN)\nDef: Neural network architecture that processes sentences sequentially with hidden states that carry over-time information.\n\n\noutput distribution\n\\[\\hat{y}^{(t)} = \\mathrm{softmax}\\left(U h^{(t)} + b_2\\right) \\in \\mathbb{R}^{|V|}\\]\nhidden states\n\\[h^{(t)} = \\sigma\\left(W_h h^{(t-1)} + W_e e^{(t)} + b_1\\right)\\]\n\\[h^{(0)} \\text{ is the initial hidden state}\\]\nword embeddings\n\\[ e^{(t)} = E x^{(t)} \\]\nwords / one-hot vectors\n\\[x^{(t)} \\in \\mathbb{R}^{|V|}\\]\n\n\n\n\n\n\n\n\n\n\nSource: CS224N"
   },
   {
     "objectID": "slides/week_12.html#challenges-with-pre-transformers-models",

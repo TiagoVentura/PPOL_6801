@@ -28,7 +28,7 @@ editor_options:
 
 # 
 <div style="text-align: center;">
-  <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzQyY2VxZzR0d2lvcTJnMTdzcnN6aDBpZjNrdXgzOTJlNzlxZndjOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VeWllmR9zfaco/giphy.gif" style="width: 100%;">
+  <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzQyY2VxZzR0d2lvcTJnMTdzcnN6aDBpZjNrdXgzOTJlNzlxZndjOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VeWllmR9zfaco/giphy.gif" style="width: 1zz%;">
 </div>
 
 
@@ -92,7 +92,6 @@ Between Embbedings and Transformers, the field of NLP  used a variety of DL arch
 :::: {.columns}
 
 ::: {.column width="50%"}
-<br><br>
 **output distribution**
 
 $$\hat{y} = \mathrm{softmax}(U h + b_2) \in \mathbb{R}^{|V|}$$
@@ -134,7 +133,6 @@ Source: [CS224N](https://web.stanford.edu/class/cs224n/index.html#schedule)
 :::: {.columns}
 
 ::: {.column width="50%"}
-<br><br>
 **output distribution**
 
 $$\hat{y}^{(t)} = \mathrm{softmax}\left(U h^{(t)} + b_2\right) \in \mathbb{R}^{|V|}$$
